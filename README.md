@@ -2,7 +2,7 @@ Welcome to the community feedback repository for the FORScan Viewer & Diff Tool.
 
 🚀 The App
 The core application is hosted privately to ensure the security of the processing engine and proprietary data mappings. You can access the live tool here:
-👉 [[Link to your Streamlit App URL](https://forscanviewerpro.streamlit.app/)]
+👉 (https://forscanviewerpro.streamlit.app/)
 
 Key Features:
 As-Built Analysis: Upload your .abt or .ab files for instant human-readable decoding.
