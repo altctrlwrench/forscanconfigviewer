@@ -1,0 +1,24 @@
+title: Rear Camera 'Full View Not Available' Warning Overlay Removal
+raw_community_title: 'Removes "Full View Not Available" message in rear camera view.
+
+
+  (Allows cams in motion at any speed without black box in middle)'
+category: Cameras and ADAS
+platform: Explorer
+model_years: 2025-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2025-2026 Explorer.xlsx
+steps:
+- module: APIM
+  address: 7D0-02-02
+  mask: xxx*-xxxx-xx--
+  nibble: 3
+  recommended_hex: '*'
+  community_instruction: If your current value is 0 then change to 1, 2 change to
+    3, 4 change to 5, 6 change to 7
+  feature_name: RCOD HMI w/o Blackbox (RCODHMIB)
+  target_state: RCODHMIB Disabled
+  bit: 0
+  action: 0

@@ -1,0 +1,20 @@
+title: Double Horn Honk on Keyless Exit Disable
+raw_community_title: Double Horn on Lock key fob in truck
+category: Chimes and Horn
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2023 Super Duty.xlsx
+steps:
+- module: BDYCM-BCM
+  address: 726-63-02
+  mask: xxx0-xxxx-xx--
+  nibble: 3
+  recommended_hex: '0'
+  community_instruction: 0=Disable  1=Enable
+  feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+  target_state: LPKENEC DISABLED
+  bit: 3
+  action: 0

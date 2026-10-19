@@ -1,0 +1,16 @@
+title: 12V Power Outlet (Power Point) Timeout Duration
+raw_community_title: Power Point Timeout Duration (in seconds converted to hex)
+category: Convenience and Electrical
+platform: Bronco
+model_years: 2021-2024
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2022 Bronco.xlsx
+steps:
+- module: BDYCM
+  address: 726-57-01
+  mask: ABCD-xxxx-xx--
+  type: continuous
+  unit: seconds
+  instruction: 'Calculator: https://docs.google.com/spreadsheets/d/15RmCgd740T10K0PnG44p42FCod9BSG3f6yrUc0X5qxw/edit?usp=sharing'

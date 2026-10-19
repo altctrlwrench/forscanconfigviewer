@@ -1,0 +1,61 @@
+title: Remote Engine Start Enable (Manual Transmission)
+raw_community_title: Remote Start - 7-Speed
+category: Convenience and Electrical
+platform: Bronco
+model_years: 2021-2024
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2022 Bronco.xlsx
+steps:
+- module: IPC
+  address: 720-02-02
+  mask: xxxx-Fxxx-xx--
+  nibble: 4
+  recommended_hex: F
+  community_instruction: Remote Start Climate, Drivers Seat, Feature, Passenger Seat
+  feature_name: Remote Start - Climate Settings (RSCS)
+  target_state: RSCS enabled
+  bit: 3
+  action: 1
+- module: BCM
+  address: 726-30-01
+  mask: xxxx-xxx1-xx--
+  nibble: 7
+  recommended_hex: '1'
+  community_instruction: Remote Start Enable
+  feature_name: Remote_Start_Enable_Cfg (RSEC)
+  target_state: RSEC DISABLED
+  bit: 3
+  action: 0
+- module: BCM
+  address: 726-63-02
+  mask: xxxx-xxx1-xx--
+  nibble: 7
+  recommended_hex: '1'
+  community_instruction: Remote Start Lightning Enable
+  feature_name: RStart_Lighting_Enable_Cfg (RSLEC)
+  target_state: RSLEC DISABLE
+  bit: 3
+  action: 0
+- module: BCM
+  address: 726-66-01
+  mask: xxxx-xxx1-xx--
+  nibble: 7
+  recommended_hex: '1'
+  community_instruction: Two-way Remote Keyless Entry Enable
+  feature_name: TwoWayRKE_Enable_Cfg (TWRKEEC)
+  target_state: TWRKEEC DISABLE
+  bit: 3
+  action: 0
+- module: APIM
+  address: 7D0-09-01
+  mask: xxxx-xxxx-Fx--
+  nibble: 8
+  recommended_hex: F
+  community_instruction: Enables toggles in APIM for Feature, Climate, and Drivers/Passenger
+    seat.
+  feature_name: Remote Start Climate Settings (RSCS)
+  target_state: RSCS Enabled
+  bit: 3
+  action: 1

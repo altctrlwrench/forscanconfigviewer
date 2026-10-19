@@ -1,0 +1,39 @@
+title: Auto Start/Stop System Disable
+raw_community_title: Auto Start/Stop Disabled
+category: Powertrain and Drivetrain
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: PSCM
+  address: 730-03-01
+  mask: xxxx-xxxx-00--
+  nibbles:
+  - nibble: 8
+    recommended_hex: '0'
+    community_instruction: tricks Auto Start/Stop into thinking a steering event is
+      happening at a stop so ASS never happens
+    feature_name: Start / Stop
+    target_state: Disabled
+    bit: 3
+    action: 0
+  - nibble: 9
+    recommended_hex: '0'
+    community_instruction: tricks Auto Start/Stop into thinking a steering event is
+      happening at a stop so ASS never happens
+    feature_name: Start / Stop
+    target_state: Disabled
+    bit: 3
+    action: 0
+- module: HVAC
+  address: 733-01-05
+  mask: xxxx-x0xx-xx--
+  nibble: 5
+  recommended_hex: '0'
+  community_instruction: optional - disables Auto Stop/Start switch from illuminating
+  feature_name: Front Left Heated Seat High Setting (FLHSHS)
+  bit: 1
+  action: 0

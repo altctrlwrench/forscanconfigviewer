@@ -1,0 +1,19 @@
+title: Key-in-Ignition Warning Chime Disable
+raw_community_title: Disable key-in ignition chime
+category: Chimes and Horn
+platform: Bronco
+model_years: 2021-2024
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2022 Bronco.xlsx
+steps:
+- module: IPC
+  address: 720-01-02
+  mask: xxxx-x*xx-xx--
+  nibble: 5
+  recommended_hex: '*'
+  community_instruction: changed from 0 to 2
+  feature_name: Fuel Operated Heater  (FOH)
+  bit: 3
+  action: 0

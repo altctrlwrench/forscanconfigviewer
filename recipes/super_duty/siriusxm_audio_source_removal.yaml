@@ -1,0 +1,20 @@
+title: SiriusXM Audio Source Removal
+raw_community_title: XM/Sirius Radio from Source -Remove
+category: Audio and Entertainment
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2023 Super Duty.xlsx
+steps:
+- module: APIM
+  address: 7D0-01-01
+  mask: '*xxx-xxxx-xx--'
+  nibble: 0
+  recommended_hex: '*'
+  community_instruction: If * is A change to 8, if 2 change to 0. (Back 2)
+  feature_name: SDARS (SDARS)
+  target_state: SDARS SDARS HMI and DTCs Disabled
+  bit: 1
+  action: 0

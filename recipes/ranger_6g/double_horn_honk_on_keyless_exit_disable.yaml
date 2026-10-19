@@ -1,0 +1,21 @@
+title: Double Horn Honk on Keyless Exit Disable
+raw_community_title: Disable double honk when leaving cabin
+category: Chimes and Horn
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: (2024+) 6G Ranger.xlsx
+forscan_menu: Double Honk On Leaving Cabin (Change Enabled to Disabled)
+steps:
+- module: BCM
+  address: 726-63-02
+  mask: xxx*-xxxx-xx--
+  nibble: 3
+  recommended_hex: '*'
+  community_instruction: 0=Disabled (target setting), 1=Enabled (Default)
+  feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+  target_state: LPKENEC DISABLED
+  bit: 3
+  action: 0

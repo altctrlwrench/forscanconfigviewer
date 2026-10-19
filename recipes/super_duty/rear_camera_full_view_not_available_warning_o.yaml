@@ -1,0 +1,23 @@
+title: Rear Camera 'Full View Not Available' Warning Overlay Removal
+raw_community_title: Remove Black Box when rear camera on while driving
+category: Cameras and ADAS
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2023 Super Duty.xlsx
+prerequisites: Sync version must be 23151 rev 902 or higher
+steps:
+- module: APIM
+  address: 7D0-02-02
+  mask: xxx*-xxxx-xx--
+  nibble: 3
+  recommended_hex: '*'
+  hex_offset: '+1'
+  community_instruction: Add 1 to Current Value - Sync version must be 23151 rev 902
+    or higher
+  feature_name: RCOD HMI w/o Blackbox (RCODHMIB)
+  target_state: RCODHMIB Disabled
+  bit: 0
+  action: 0

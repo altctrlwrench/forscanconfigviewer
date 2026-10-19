@@ -1,0 +1,76 @@
+title: Automatic Door Locking at Speed (Autolock)
+raw_community_title: Auto lock doors at speed
+category: Locks and Security
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: (2024+) 6G Ranger.xlsx
+forscan_menu: Auto Lock - Initial Value, Personal 1-4,  and Vehicle (Enabled (Default
+  NA), Disabled)
+steps:
+- module: BCM
+  address: 724-19-02
+  mask: x*x*-x*x*-x*--
+  nibbles:
+  - nibble: 1
+    recommended_hex: '*'
+    hex_offset: '+8'
+    community_instruction: set to 1 (e.g. 0101 0101 01--)
+    bit: 3
+    action: 0
+  - nibble: 3
+    recommended_hex: '*'
+    hex_offset: '+8'
+    bit: 3
+    action: 0
+  - nibble: 5
+    recommended_hex: '*'
+    hex_offset: '+8'
+    bit: 3
+    action: 0
+  - nibble: 7
+    recommended_hex: '*'
+    hex_offset: '+8'
+    bit: 3
+    action: 0
+  - nibble: 9
+    recommended_hex: '*'
+    hex_offset: '+8'
+    bit: 3
+    action: 0
+- module: APIM
+  address: 7D0-09-01
+  mask: xx*x-xxxx-xx--
+  nibble: 2
+  recommended_hex: '*'
+  hex_offset: '+8'
+  community_instruction: Enables Autolock Control Function in APIM (may already be
+    on)
+  feature_name: Autolock Control Function (ACF)
+  target_state: ACF Enabled
+  bit: 3
+  action: 1
+- module: IPC
+  address: 720-06-01
+  mask: xxxx-*xxx-xx--
+  nibble: 4
+  recommended_hex: '*'
+  hex_offset: '+8'
+  community_instruction: Adds Audible locking feedback
+  feature_name: Locking Feedback Audible (LFA)
+  target_state: LFA enabled
+  bit: 2
+  action: 1
+- module: IPC
+  address: 720-06-01
+  mask: xxxx-*xxx-xx--
+  nibble: 4
+  recommended_hex: '*'
+  hex_offset: '+8'
+  community_instruction: Adds visual locking feedback
+  feature_name: Locking Feedback Visual (LFV)
+  target_state: LFV enabled
+  bit: 1
+  action: 1

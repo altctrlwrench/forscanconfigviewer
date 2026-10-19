@@ -1,0 +1,27 @@
+title: Rear Turn Signal Bulb Outage Detection
+raw_community_title: Rear Turn Bulb Outage Detection (2021-2023)
+category: Lighting
+platform: F-150
+model_years: 2021-2023
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: BCM
+  address: 726-44-02
+  mask: '**xx-xxxx-xx--'
+  nibbles:
+  - nibble: 0
+    recommended_hex: '*'
+    community_instruction: 00=No Outage 01=Outage - set to no outage when upgrading
+      to LED
+    feature_name: VrmsReduce_Low_Beam_Cfg (VRLBC)
+    bit: 3
+    action: 0
+  - nibble: 1
+    recommended_hex: '*'
+    community_instruction: No info for 24+
+    feature_name: VrmsReduce_Low_Beam_Cfg (VRLBC)
+    bit: 3
+    action: 0

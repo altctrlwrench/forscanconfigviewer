@@ -1,0 +1,28 @@
+title: Navigation Destination Input in Motion Enable
+raw_community_title: Navigation in Motion
+category: Sync and Infotainment
+platform: Bronco
+model_years: 2021-2024
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2022 Bronco.xlsx
+steps:
+- module: APIM
+  address: 7D0-03-01
+  mask: 57xx-xxxx-xx--
+  nibbles:
+  - nibble: 0
+    recommended_hex: '5'
+    community_instruction: 911 Assist will be disabled, potentially Sirius Travel
+      Link too.
+    feature_name: First Letter of Country Code (FLCC)
+    bit: 3
+    action: 0
+  - nibble: 1
+    recommended_hex: '7'
+    community_instruction: 911 Assist will be disabled, potentially Sirius Travel
+      Link too.
+    feature_name: First Letter of Country Code (FLCC)
+    bit: 3
+    action: 0

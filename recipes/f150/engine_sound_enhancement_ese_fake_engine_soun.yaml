@@ -1,0 +1,18 @@
+title: Engine Sound Enhancement (ESE) / Fake Engine Sound Disable
+raw_community_title: Disable Fake Engine Noise
+category: Audio and Entertainment
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: ACM
+  address: 727-01-01
+  mask: xxxx-xxxx-0x--
+  nibble: 8
+  recommended_hex: '0'
+  feature_name: External CD (ECD)
+  bit: 3
+  action: 0

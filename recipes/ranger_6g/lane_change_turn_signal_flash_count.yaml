@@ -1,0 +1,16 @@
+title: Lane Change Turn Signal Flash Count
+raw_community_title: Number of lane change blinks
+category: Lighting
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: (2024+) 6G Ranger.xlsx
+forscan_menu: 'Lane Change Cancel Blink Number (Set to # of blinks (Default is 3))'
+steps:
+- module: SCCM
+  address: 724-01-01
+  mask: xxxx-**xx---
+  type: continuous
+  instruction: 84=1, 8C=3, 90=4, 94=5, 98=6, etc.

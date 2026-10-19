@@ -1,0 +1,306 @@
+title: Seatbelt Warning Chimes Disable (Driver & Passenger)
+raw_community_title: Seatbelt Chimes-Disables All
+category: Chimes and Horn
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2023 Super Duty.xlsx
+steps:
+- module: IPC
+  address: 720-13-01
+  mask: 0000-0000-00--
+  nibbles:
+  - nibble: 0
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: Belt_Minder_Chime_Operator_Cfg (BMCOC)
+    target_state: BMCOC disabled
+    bit: 3
+    action: 0
+  - nibble: 1
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R1C2_Belt_Minder_Chime_Cfg (RCBMCC)
+    target_state: RCBMCC disabled
+    bit: 3
+    action: 0
+  - nibble: 2
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R2C1_Belt_Minder_Chime_Cfg (RCBMCC)
+    target_state: RCBMCC disabled
+    bit: 3
+    action: 0
+  - nibble: 3
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R2C5_Belt_Minder_Chime_Cfg (RCBMCC)
+    target_state: RCBMCC disabled
+    bit: 3
+    action: 0
+  - nibble: 4
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R3C4_Belt_Minder_Chime_Cfg (RCBMCC)
+    target_state: RCBMCC disabled
+    bit: 3
+    action: 0
+  - nibble: 5
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R4C3_Belt_Minder_Chime_Cfg (RCBMCC)
+    target_state: RCBMCC disabled
+    bit: 3
+    action: 0
+  - nibble: 6
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R5C2_Belt_Minder_Chime_Cfg (RCBMCC)
+    target_state: RCBMCC disabled
+    bit: 3
+    action: 0
+  - nibble: 7
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R1_Bench (RB)
+    target_state: RB No Bench
+    bit: 3
+    action: 0
+  - nibble: 8
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R2_Bench (RB)
+    target_state: RB No Bench
+    bit: 3
+    action: 0
+  - nibble: 9
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R3_Bench (RB)
+    target_state: RB No Bench
+    bit: 3
+    action: 0
+- module: IPC
+  address: 720-13-02
+  mask: 0000-0000-00--
+  nibbles:
+  - nibble: 0
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R4_Bench (RB)
+    target_state: RB No Bench
+    bit: 3
+    action: 0
+  - nibble: 1
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R5_Bench (RB)
+    target_state: RB No Bench
+    bit: 3
+    action: 0
+  - nibble: 2
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R6_Bench (RB)
+    target_state: RB No Bench
+    bit: 3
+    action: 0
+  - nibble: 3
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R2C2_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 4
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R2C3_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 5
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R2C4_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 6
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R4_Bench (RB)
+    target_state: RB No Bench
+    bit: 3
+    action: 0
+  - nibble: 7
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R4_Bench (RB)
+    target_state: RB No Bench
+    bit: 3
+    action: 0
+  - nibble: 8
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R4_Bench (RB)
+    target_state: RB No Bench
+    bit: 3
+    action: 0
+  - nibble: 9
+    recommended_hex: '0'
+    community_instruction: Tells the truck there are no seatbelts nor belt minders
+      installed
+    feature_name: R4_Bench (RB)
+    target_state: RB No Bench
+    bit: 3
+    action: 0
+- module: ''
+  address: 720-14-01
+  mask: 0000-0000-00--
+  nibbles:
+  - nibble: 0
+    recommended_hex: '0'
+    feature_name: R2C5_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 1
+    recommended_hex: '0'
+    feature_name: R3C1_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 2
+    recommended_hex: '0'
+    feature_name: R3C2_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 3
+    recommended_hex: '0'
+    feature_name: R3C3_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 4
+    recommended_hex: '0'
+    feature_name: R3C4_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 5
+    recommended_hex: '0'
+    feature_name: R3C5_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 6
+    recommended_hex: '0'
+    feature_name: R4C1_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 7
+    recommended_hex: '0'
+    feature_name: R4C2_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 8
+    recommended_hex: '0'
+    feature_name: R4C3_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 9
+    recommended_hex: '0'
+    feature_name: R4C4_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+- module: ''
+  address: 720-14-02
+  mask: 0000-0000-00--
+  nibbles:
+  - nibble: 0
+    recommended_hex: '0'
+    feature_name: R4C5_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 1
+    recommended_hex: '0'
+    feature_name: R5C1_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 2
+    recommended_hex: '0'
+    feature_name: R5C2_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 3
+    recommended_hex: '0'
+    feature_name: R5C3_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 4
+    recommended_hex: '0'
+    feature_name: R5C4_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 5
+    recommended_hex: '0'
+    feature_name: R5C5_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 6
+    recommended_hex: '0'
+    feature_name: R4C5_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 7
+    recommended_hex: '0'
+    feature_name: R4C5_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 8
+    recommended_hex: '0'
+    feature_name: R4C5_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0
+  - nibble: 9
+    recommended_hex: '0'
+    feature_name: R4C5_Seatbelt_Cfg (RCSC)
+    target_state: RCSC Seat not present
+    bit: 3
+    action: 0

@@ -1,0 +1,19 @@
+title: Startup Triple Ding Chime Disable
+raw_community_title: Triple Ding at Start Up
+category: Chimes and Horn
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2023 Super Duty.xlsx
+steps:
+- module: IPC
+  address: 720-01-02
+  mask: xxxx-x2--
+  nibble: 5
+  recommended_hex: '2'
+  feature_name: Seatbelt Warning Market (SWM)
+  target_state: SWM ECE
+  bit: 1
+  action: 1

@@ -1,0 +1,21 @@
+title: DRL - Switchback Operation with Turn Signal
+raw_community_title: Using DRL with Turn Signal
+category: Lighting
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: (2024+) 6G Ranger.xlsx
+forscan_menu: Using DRL with Turn Signal (Inhibited (Default, 2)
+steps:
+- module: BCM
+  address: 726-38-02
+  mask: xxx*-xxxx-xx--
+  nibble: 3
+  recommended_hex: '*'
+  community_instruction: 0 for Allow (target), 1 for Dim, 2 for Inhibit (Default)
+  feature_name: DRL_WithTurn_Cfg (DRLWTC)
+  target_state: DRLWTC ALLOW
+  bit: 3
+  action: 0

@@ -1,0 +1,20 @@
+title: Rear Turn Signal Bulb Outage Detection
+raw_community_title: Bulb-Rear Turn Bulb Outage Detection
+category: Lighting
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2023 Super Duty.xlsx
+steps:
+- module: BDYCM-BCM
+  address: 726-44-01
+  mask: xxxx-x*xx-xx--
+  nibble: 5
+  recommended_hex: '*'
+  community_instruction: Rear turn outage detection
+  feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
+  target_state: RBTOC NO_OUTAGE
+  bit: 3
+  action: 0

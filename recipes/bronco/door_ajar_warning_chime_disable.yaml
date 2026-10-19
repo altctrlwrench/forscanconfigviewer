@@ -1,0 +1,19 @@
+title: Door Ajar Warning Chime Disable
+raw_community_title: Disables door ajar chime
+category: Chimes and Horn
+platform: Bronco
+model_years: 2021-2024
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2022 Bronco.xlsx
+steps:
+- module: IPC
+  address: 720-01-02
+  mask: xx*x-xxxx-xx--
+  nibble: 2
+  recommended_hex: '*'
+  community_instruction: 0 = (still chimes once...but not endlessly)
+  feature_name: DTE Rate of Change (DTERC)
+  bit: 2
+  action: 0

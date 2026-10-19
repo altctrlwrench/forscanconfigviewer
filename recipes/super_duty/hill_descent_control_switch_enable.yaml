@@ -1,0 +1,20 @@
+title: Hill Descent Control Switch Enable
+raw_community_title: Hill Descent
+category: Powertrain and Drivetrain
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2023 Super Duty.xlsx
+steps:
+- module: ABS
+  address: 760-03-01
+  mask: xxxx-*xxx-xx--
+  nibble: 4
+  recommended_hex: '*'
+  hex_offset: '+2'
+  community_instruction: Add 2 to your value
+  feature_name: PATS (PATS)
+  bit: 2
+  action: 0

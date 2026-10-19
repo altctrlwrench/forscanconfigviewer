@@ -1,0 +1,15 @@
+title: Sync Bluetooth Broadcast Name Customization
+raw_community_title: Bluetooth Name
+category: Sync and Infotainment
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2023 Super Duty.xlsx
+steps:
+- module: APIM
+  address: 7D0-04-01
+  mask: xxxx-xx**-xx--
+  type: continuous
+  instruction: 2D=Raptor  0E=F150  0F=F250  10=F350  11=F450

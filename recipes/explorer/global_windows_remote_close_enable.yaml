@@ -1,0 +1,33 @@
+title: Global Windows Remote Close Enable
+raw_community_title: 'Enable Global Windows Close
+
+
+  https://www.explorerst.org/threads/global-windows
+
+  -close-enable-2025-explorer.9064/'
+category: Windows and Mirrors
+platform: Explorer
+model_years: 2025-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2025-2026 Explorer.xlsx
+steps:
+- module: PDM
+  address: 741-06-02
+  mask: xxxx-xxx1-xx--
+  nibble: 7
+  recommended_hex: '1'
+  community_instruction: '[BCM] - - Enable the following from DISABLED to ENABLED
+    in BdyCM (easy way): '
+  bit: 3
+  action: 0
+- module: DDM
+  address: 740-06-02
+  mask: xxxx-xxx1-xx--
+  nibble: 7
+  recommended_hex: '1'
+  feature_name: Global_Close_Cfg (GCC)
+  target_state: GCC DISABLED
+  bit: 3
+  action: 0

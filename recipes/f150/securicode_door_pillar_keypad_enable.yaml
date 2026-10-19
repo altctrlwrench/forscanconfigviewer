@@ -1,0 +1,39 @@
+title: SecuriCode Door Pillar Keypad Enable
+raw_community_title: Keypad Enable (wired keypad)
+category: Locks and Security
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: BCM
+  address: 726-31-01
+  mask: xxxx-xx01-xx--
+  nibbles:
+  - nibble: 6
+    recommended_hex: '0'
+    community_instruction: See this post if you don't know the factory code
+    feature_name: KeyPad_Enable_Cfg
+    target_state: Disable
+    bit: 3
+    action: 0
+  - nibble: 7
+    recommended_hex: '1'
+    community_instruction: See this post if you don't know the factory code
+    feature_name: KeyPad_Enable_Cfg (KPEC)
+    target_state: KPEC DISABLE
+    bit: 3
+    action: 0
+- module: APIM
+  address: 7D0-01-02
+  mask: xxxx-x*xx-xx--
+  nibble: 5
+  recommended_hex: '*'
+  community_instruction: optional - adds door keypad code to Sync settings use 6 if
+    you have ambient lighting or 2 if you don't
+  feature_name: Door Keypad Code (DKC)
+  target_state: DKC Available (Door Keypad menu button shall be displayed)
+  bit: 1
+  action: 1

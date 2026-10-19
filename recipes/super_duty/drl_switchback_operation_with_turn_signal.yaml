@@ -1,0 +1,20 @@
+title: DRL - Switchback Operation with Turn Signal
+raw_community_title: DRL w/Turn Signal (Switchback)
+category: Lighting
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2023 Super Duty.xlsx
+steps:
+- module: BDYCM-BCM
+  address: 726-38-02
+  mask: xxx*-xxxx-xx--
+  nibble: 3
+  recommended_hex: '*'
+  community_instruction: 0=On  1=Dim  2=Off
+  feature_name: DRL_WithTurn_Cfg (DRLWTC)
+  target_state: DRLWTC ALLOW
+  bit: 3
+  action: 0

@@ -1,0 +1,20 @@
+title: Head-Up Display (HUD) Navigation Turn-by-Turn Repeater
+raw_community_title: Navigation Display on HUD
+category: Cluster and Displays
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2023 Super Duty.xlsx
+steps:
+- module: APIM
+  address: 7D0-05-01
+  mask: x*xx-xxxx-xx--
+  nibble: 1
+  recommended_hex: '*'
+  community_instruction: If 1 (Gas) change to 2, If 5 (PSD) change to 6
+  feature_name: NAV Repeater Conformance (NAVRC)
+  target_state: NAVRC HUD Support
+  bit: 1
+  action: 1

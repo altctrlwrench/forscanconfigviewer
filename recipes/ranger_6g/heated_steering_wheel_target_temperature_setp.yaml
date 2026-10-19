@@ -1,0 +1,18 @@
+title: Heated Steering Wheel Target Temperature Setpoint
+raw_community_title: Adjust Temperature of Heated Steering Wheel
+category: Convenience and Electrical
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: (2024+) 6G Ranger.xlsx
+forscan_menu: Heated Steering Wheel Temp Level (35 Celsius (Default).  24 deg through
+  39 degrees
+steps:
+- module: SCCM
+  address: 724-06-01
+  mask: '*xxx-xxxx---'
+  type: continuous
+  instruction: 'FORScan Menu: Heated Steering Wheel Temp Level (35 Celsius (Default).  24
+    deg through 39 degrees'

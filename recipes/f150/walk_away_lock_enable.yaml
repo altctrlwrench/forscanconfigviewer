@@ -1,0 +1,63 @@
+title: Walk Away Lock Enable
+raw_community_title: Walk Away Lock (2024-2026 only) - locks the vehicle when you
+  walk away
+category: Locks and Security
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: BCM
+  address: 726-89-02
+  mask: x1x1-x1x1-x1--
+  nibbles:
+  - nibble: 1
+    recommended_hex: '1'
+    feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_1] (WALKAWAYLOCK_PERS_1)
+    target_state: WALKAWAYLOCK_PERS_1 DISABLE
+    bit: 3
+    action: 0
+  - nibble: 3
+    recommended_hex: '1'
+    feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_2] (WALKAWAYLOCK_PERS_2)
+    target_state: WALKAWAYLOCK_PERS_2 DISABLE
+    bit: 3
+    action: 0
+  - nibble: 5
+    recommended_hex: '1'
+    feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_3] (WALKAWAYLOCK_PERS_3)
+    target_state: WALKAWAYLOCK_PERS_3 DISABLE
+    bit: 3
+    action: 0
+  - nibble: 7
+    recommended_hex: '1'
+    feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_4] (WALKAWAYLOCK_PERS_4)
+    target_state: WALKAWAYLOCK_PERS_4 DISABLE
+    bit: 3
+    action: 0
+  - nibble: 9
+    recommended_hex: '1'
+    feature_name: Feat_Cfg [WALKAWAYLOCK] [VEHICLE] (WALKAWAYLOCK_VEHICLE)
+    target_state: WALKAWAYLOCK_VEHICLE DISABLE
+    bit: 3
+    action: 0
+- module: BCM
+  address: 726-90-01
+  mask: xxx1-xxxx-xx--
+  nibble: 3
+  recommended_hex: '1'
+  feature_name: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
+  target_state: WALKAWAYLOCK DISABLE
+  bit: 3
+  action: 0
+- module: APIM
+  address: 7D0-09-05
+  mask: xxxx-8xxx-xx--
+  nibble: 4
+  recommended_hex: '8'
+  feature_name: Walk Away Lock (WAL)
+  target_state: WAL Enabled
+  bit: 3
+  action: 1

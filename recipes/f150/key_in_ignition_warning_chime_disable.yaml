@@ -1,0 +1,20 @@
+title: Key-in-Ignition Warning Chime Disable
+raw_community_title: Disable key-in ignition chime
+category: Chimes and Horn
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: IPC
+  address: 720-02-01
+  mask: xx*x-xxxx-xx--
+  nibble: 2
+  recommended_hex: '*'
+  community_instruction: subtract 8 from current value (if E change to 6)
+  feature_name: Key In Ignition Warning Chime (KIIWC)
+  target_state: KIIWC disabled
+  bit: 3
+  action: 0

@@ -1,0 +1,22 @@
+title: Keyfob Car Finder (Double-Lock Horn Chirp)
+raw_community_title: Keyfob Car Finder
+category: Locks and Security
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: (2024+) 6G Ranger.xlsx
+forscan_menu: Audible Lock Feedback - Vehicle (Disabled, Enabled (Default))
+steps:
+- module: BCM
+  address: 726-24-02
+  mask: xxxx-xxxx-x*--
+  nibble: 9
+  recommended_hex: '*'
+  community_instruction: 1=enabled (default), 0=disabled (target setting). Forscan
+    not needed - Sync setting exists by default
+  feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+  target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+  bit: 3
+  action: 0

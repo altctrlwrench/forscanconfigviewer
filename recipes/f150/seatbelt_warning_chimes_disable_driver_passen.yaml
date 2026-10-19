@@ -1,0 +1,19 @@
+title: Seatbelt Warning Chimes Disable (Driver & Passenger)
+raw_community_title: Disable driver & passenger seatbelt minder
+category: Chimes and Horn
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: IPC
+  address: 720-01-01
+  mask: xxxx-xx0x-xx--
+  nibble: 6
+  recommended_hex: '0'
+  feature_name: Driver Beltminder (DB)
+  target_state: DB disabled
+  bit: 2
+  action: 0

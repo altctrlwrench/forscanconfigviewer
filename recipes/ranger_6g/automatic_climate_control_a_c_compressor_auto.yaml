@@ -1,0 +1,17 @@
+title: Automatic Climate Control A/C Compressor Auto-On Disable
+raw_community_title: Don't auto turn on A/C
+category: Convenience and Electrical
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: (2024+) 6G Ranger.xlsx
+forscan_menu: Humidity Sensor Type (Windshield Mounted (Default) -> "Not Present)
+steps:
+- module: HVAC
+  address: 733-01-02
+  mask: xxxx-*xxx-xx--
+  type: continuous
+  instruction: 'FORScan Menu: Humidity Sensor Type (Windshield Mounted (Default) ->
+    "Not Present)'

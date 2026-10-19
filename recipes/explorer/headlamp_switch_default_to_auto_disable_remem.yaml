@@ -1,0 +1,26 @@
+title: Headlamp Switch Default to Auto Disable (Remember Last Position)
+raw_community_title: Prevent headlamp from defaulting to "Auto" position
+category: Lighting
+platform: Explorer
+model_years: 2025-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2025-2026 Explorer.xlsx
+steps:
+- module: BCM
+  address: 726-74-01
+  mask: xx01-xxxx-xx--
+  nibbles:
+  - nibble: 2
+    recommended_hex: '0'
+    feature_name: BSI_OpenDTC_Cfg (BSIODTCC)
+    target_state: BSIODTCC NOT_USED
+    bit: 3
+    action: 0
+  - nibble: 3
+    recommended_hex: '1'
+    feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+    target_state: HPAIOC AUTO
+    bit: 3
+    action: 0
