@@ -1,0 +1,20 @@
+title: AWD Intelligent Power Distribution Gauge
+raw_community_title: Power delivery gauge (AWD)
+category: Cluster and Displays
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: (2024+) 6G Ranger.xlsx
+forscan_menu: PD Gauge option in MyView (Disabled (Default), Enabled)
+steps:
+- module: IPC
+  address: 720-07-01
+  mask: xxxx *xxx xx--
+  nibble: 4
+  community_instruction: 8=Enabled
+  feature_name: PWR_D Gauge Feature (PWRDGF)
+  target_state: PWRDGF enabled
+  bit: 3
+  action: 1

@@ -1,0 +1,19 @@
+title: Rear Turn Signal LED Outage Detection (Hyperflash Disable)
+raw_community_title: Bulb-Rear Turn LED Outage Detection
+category: Lighting
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2023 Super Duty.xlsx
+steps:
+- module: BDYCM-BCM
+  address: 726-40-02
+  mask: xxxx x*xx xx--
+  nibble: 5
+  community_instruction: Rear turn bulg outage detection
+  feature_name: Rear_LED_Turn_Outage_Cfg (RLEDTOC)
+  target_state: RLEDTOC NO_OUTAGE
+  bit: 3
+  action: 0

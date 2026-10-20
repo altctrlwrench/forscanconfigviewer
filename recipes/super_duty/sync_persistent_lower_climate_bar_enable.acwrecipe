@@ -1,0 +1,21 @@
+title: Sync Persistent Lower Climate Bar Enable
+raw_community_title: Enable Cimate Bar at the bottom of Sync screen
+category: Sync and Infotainment
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2023 Super Duty.xlsx
+steps:
+- module: APIM
+  address: 7D0-02-02
+  mask: xxx* xxxx xx--
+  nibble: 3
+  recommended_hex: '2'
+  hex_offset: '+2'
+  community_instruction: Add 2 to current value
+  feature_name: Climate Bar (CB)
+  target_state: CB Enabled
+  bit: 1
+  action: 1

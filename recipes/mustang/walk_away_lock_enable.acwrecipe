@@ -1,0 +1,53 @@
+title: Walk Away Lock Enable
+raw_community_title: Walk Away Lock (Job2 Mustang or Job1 that had a BCM update)
+category: Locks and Security
+platform: Mustang
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2024 Mustang Darkhorse (public).xlsx
+steps:
+- module: BCM
+  address: 726-91-01
+  mask: xxxx x*xx xx--
+  nibble: 5
+  recommended_hex: '1'
+  feature_name: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
+  target_state: WALKAWAYLOCK DISABLE
+  bit: 3
+  action: 0
+- module: BCM
+  address: 726-97-02
+  mask: x*x* x*x* x*--
+  nibbles:
+  - nibble: 1
+    recommended_hex: '1'
+    feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_1] (WALKAWAYLOCK_PERS_1)
+    target_state: WALKAWAYLOCK_PERS_1 DISABLE
+    bit: 3
+    action: 0
+  - nibble: 3
+    recommended_hex: '1'
+    feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_2] (WALKAWAYLOCK_PERS_2)
+    target_state: WALKAWAYLOCK_PERS_2 DISABLE
+    bit: 3
+    action: 0
+  - nibble: 5
+    recommended_hex: '1'
+    feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_3] (WALKAWAYLOCK_PERS_3)
+    target_state: WALKAWAYLOCK_PERS_3 DISABLE
+    bit: 3
+    action: 0
+  - nibble: 7
+    recommended_hex: '1'
+    feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_4] (WALKAWAYLOCK_PERS_4)
+    target_state: WALKAWAYLOCK_PERS_4 DISABLE
+    bit: 3
+    action: 0
+  - nibble: 9
+    recommended_hex: '1'
+    feature_name: Feat_Cfg [WALKAWAYLOCK] [VEHICLE] (WALKAWAYLOCK_VEHICLE)
+    target_state: WALKAWAYLOCK_VEHICLE DISABLE
+    bit: 3
+    action: 0

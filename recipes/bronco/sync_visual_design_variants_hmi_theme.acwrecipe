@@ -1,0 +1,15 @@
+title: Sync Visual Design Variants (HMI Theme)
+raw_community_title: Screen - Visual Design Variants (VDV)
+category: Sync and Infotainment
+platform: Bronco
+model_years: 2021-2024
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2022 Bronco.xlsx
+steps:
+- module: APIM
+  address: 7D0-03-01
+  mask: xxxx xxxx **--
+  type: continuous
+  instruction: 05=Lincoln Sync 4 13.2" (Dashcard)

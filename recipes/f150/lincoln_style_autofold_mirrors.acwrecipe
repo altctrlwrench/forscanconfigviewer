@@ -1,0 +1,62 @@
+title: Lincoln Style Autofold Mirrors
+raw_community_title: (2021-2023) Mirrors - Lincoln Autofold
+category: Windows and Mirrors
+platform: F-150
+model_years: 2021-2023
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+warnings: Puddle lights will not illuminate when Lincoln style autofold is active.
+steps:
+- module: DDM
+  address: 740-03-16
+  mask: xxxx xxxx **--
+  nibbles:
+  - nibble: 8
+    recommended_hex: '0'
+    community_instruction: click here for an explanation of regular autofold vs Lincoln
+      autofold
+    feature_name: Mirror_Folding_Cfg
+    target_state: Ford,
+    bit: 3
+    action: 0
+  - nibble: 9
+    recommended_hex: '1'
+    community_instruction: click here for an explanation of regular autofold vs Lincoln
+      autofold
+    feature_name: Mirror_Folding_Cfg
+    target_state: Ford,
+    bit: 3
+    action: 0
+- module: PDM
+  address: 741-03-16
+  mask: xxxx xxxx **--
+  nibbles:
+  - nibble: 8
+    recommended_hex: '0'
+    community_instruction: 'Note: the tradeoff of using Lincoln Autofold is that puddle
+      lights won''t work'
+    feature_name: Mirror_Folding_Cfg
+    target_state: Ford,
+    bit: 3
+    action: 0
+  - nibble: 9
+    recommended_hex: '1'
+    community_instruction: 'Note: the tradeoff of using Lincoln Autofold is that puddle
+      lights won''t work'
+    feature_name: Mirror_Folding_Cfg
+    target_state: Ford,
+    bit: 3
+    action: 0
+- module: APIM
+  address: 7D0-09-01
+  mask: xxxx xx*x xx--
+  nibble: 6
+  recommended_hex: A
+  hex_offset: '+4'
+  community_instruction: Add 4 to current value to enable reverse tilt.
+  feature_name: Mirrors Autofold (MA)
+  target_state: MA Enabled
+  bit: 3
+  action: 1

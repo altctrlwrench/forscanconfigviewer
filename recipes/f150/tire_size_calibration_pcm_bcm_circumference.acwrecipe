@@ -1,0 +1,24 @@
+title: Tire Size Calibration (PCM / BCM Circumference)
+raw_community_title: Tire Size - requires PCM Relearn procedure after change (2021-26)
+category: Powertrain and Drivetrain
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: BCM
+  address: 726-15-01
+  mask: xxxx xxxx **--
+  type: continuous
+  unit: mm
+  instruction: First two digits of tire circumference in MM encoded in hex.  Check
+    speed vs GPS, then tweak to correct speedometer with GSP speed
+- module: BCM
+  address: 726-15-02
+  mask: '**xx xx--'
+  type: continuous
+  unit: mm
+  instruction: First two digits of tire circumference in MM encoded in hex.  Check
+    speed vs GPS, then tweak to correct speedometer with GSP speed

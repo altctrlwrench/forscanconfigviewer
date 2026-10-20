@@ -1,0 +1,19 @@
+title: Double Horn Honk on Keyless Exit Disable
+raw_community_title: Disable Double Honk
+category: Chimes and Horn
+platform: Explorer
+model_years: 2025-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2025-2026 Explorer.xlsx
+steps:
+- module: BCM
+  address: 726-63-02
+  mask: xxx* xxxx xxxx
+  nibble: 3
+  recommended_hex: '0'
+  feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+  target_state: LPKENEC DISABLED
+  bit: 3
+  action: 0

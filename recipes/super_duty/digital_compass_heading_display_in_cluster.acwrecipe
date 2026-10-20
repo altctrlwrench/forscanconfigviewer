@@ -1,0 +1,20 @@
+title: Digital Compass Heading Display in Cluster
+raw_community_title: Compass Enable on IPC
+category: Cluster and Displays
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2023 Super Duty.xlsx
+steps:
+- module: IPC
+  address: 720-01-01
+  mask: xxxx xxxx *x--
+  nibble: 8
+  hex_offset: '+4'
+  community_instruction: Add 4 to current value
+  feature_name: Compass Sync (CS)
+  target_state: CS Present
+  bit: 2
+  action: 1

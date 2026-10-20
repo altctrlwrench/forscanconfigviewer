@@ -1,0 +1,32 @@
+title: Engine Sound Enhancement (ESE) / Fake Engine Sound Disable
+raw_community_title: 'Remove fake engine noise (STILL IN PROGRESS)
+
+
+  NOTE: If you have the Technology package with 14 speaker B&O system, use code 2
+  in the ACM, and Leave DSP as code D'
+category: Audio and Entertainment
+platform: Explorer
+model_years: 2025-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2025-2026 Explorer.xlsx
+steps:
+- module: ACM
+  address: 727-01-01
+  mask: xxxx xxxx *xxx
+  nibble: 8
+  recommended_hex: '0'
+  feature_name: Third Row Speaker Left Output  (TRSLO)
+  target_state: TRSLO Main Speaker Only
+  bit: 3
+  action: 0
+- module: DSP
+  address: 783-01-01
+  mask: '*xxx xxxx xx'
+  nibble: 0
+  recommended_hex: C
+  feature_name: ANC/Propulsion Sound (ANCPS)
+  target_state: ANCPS ANC not present
+  bit: 0
+  action: 0

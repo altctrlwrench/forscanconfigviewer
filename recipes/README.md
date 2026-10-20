@@ -24,7 +24,7 @@ recipes/
 
 ## 📜 Recipe Schema Specification
 
-Every recipe is stored as an individual `.yaml` file. Here is the reference template:
+Every recipe is stored as an individual `.acwrecipe` file (YAML-formatted specification natively associated with AsBuiltPro). Here is the reference template:
 
 ```yaml
 # ==============================================================================
@@ -56,9 +56,9 @@ warnings: "Check local regulations regarding auxiliary forward lighting" # Known
 steps:
   - module: "BCM"                                           # CAN Module acronym (BCM, IPC, APIM, DDM, PDM, etc.)
     address: "726-39-02"                                    # Target CAN address
-    mask: "xxx0-xxxx-xx--"                                  # FORScan visual display mask
+    mask: "xxx* xxxx xx--"                                  # FORScan display mask (asterisk indicates target position)
     nibble: 3                                               # 0-indexed character position (the 4th character)
-    recommended_hex: "0"                                    # Community suggested hex value
+    recommended_hex: "0"                                    # Community suggested hex value (separated from mask)
     hex_offset: "-1"                                        # Offset hint (e.g. "+8", "+2", "-1", optional)
     community_instruction: "If 1 change to 0"               # Text guidance from forum/sheet
     feature_name: "FrontFog_WithHighBeams_Cfg (FFWHBC)"     # Exact workbook subfeature name
@@ -74,17 +74,17 @@ steps:
 1. **Discrete Bitwise Flag (Default):**
    * Operates on isolated bits (`bit: 0`, `action: 1`) using bitwise AND/OR logic. Never overwrites adjacent factory features.
 2. **Multi-Nibble Atomic Enum (`type: byte_enum`):**
-   * For animations, themes, and visual design variants (e.g. 75th Anniversary Splash Screen `24`) where 2 or more nibbles represent a single unified code.
+   * For animations, themes, and visual design variants (e.g. 75th Anniversary Splash Screen `24`) where 2 or more nibbles represent a single unified code (mask `xxxx **xx xx--`).
 3. **Continuous Parameter (`type: continuous`):**
-   * For numerical calibrations and timers (e.g. Tire Circumference in `mm`, Power Point Timeout in `seconds`).
+   * For numerical calibrations and timers (e.g. Tire Circumference in `mm`, Power Point Timeout in `seconds`) (mask `**** xxxx xx--`).
 
 ---
 
 ## 🚀 How to Contribute a New Recipe
 
 1. **Fork this repository** and create a feature branch (`git checkout -b recipe/my-new-mod`).
-2. Create a new `.yaml` file inside the appropriate platform directory:
-   `recipes/<platform>/<short_name>.yaml`
+2. Create a new `.acwrecipe` file inside the appropriate platform directory:
+   `recipes/<platform>/<short_name>.acwrecipe`
 3. Fill in the fields following the schema above.
    * If you are a community contributor submitting an untested or community-tested mod, set **`validated: false`**.
 4. Submit a **Pull Request**.

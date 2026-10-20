@@ -1,0 +1,20 @@
+title: Keyfob Panic Alarm Enable/Disable
+raw_community_title: Keyfob Panic Alarm
+category: Locks and Security
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: (2024+) 6G Ranger.xlsx
+forscan_menu: Panic Alarm Mode (Change Honk and Lights to Lights only)
+steps:
+- module: BCM
+  address: 726-01-02
+  mask: xxxx xxx* xx--
+  nibble: 7
+  community_instruction: 0=lights & horn (default) 1=lights only (target setting)
+  feature_name: PanicAlarm_Cfg (PAC)
+  target_state: PAC BOTH
+  bit: 3
+  action: 0

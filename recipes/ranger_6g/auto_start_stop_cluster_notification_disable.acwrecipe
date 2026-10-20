@@ -1,0 +1,20 @@
+title: Auto Start/Stop Cluster Notification Disable
+raw_community_title: Disable Auto Stop Start Feature (only affects cluster visibility/nag)
+category: Cluster and Displays
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: (2024+) 6G Ranger.xlsx
+forscan_menu: Auto Stop Start (Enabled (Default), Disabled)
+steps:
+- module: IPC
+  address: 720-01-01
+  mask: xxxx *xxx xx--
+  nibble: 4
+  community_instruction: Bit2 (Subtract 2 to disable.  e.g. change 3 to 1)
+  feature_name: Auto Stop Start (ASS)
+  target_state: ASS disabled
+  bit: 1
+  action: 0

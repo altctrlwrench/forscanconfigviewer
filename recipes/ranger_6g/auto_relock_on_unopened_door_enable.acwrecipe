@@ -1,0 +1,21 @@
+title: Auto Relock on Unopened Door Enable
+raw_community_title: Auto Relock (Sync Menu)
+category: Locks and Security
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: (2024+) 6G Ranger.xlsx
+forscan_menu: Auto Relock (Disabled (Default), Enabled)
+steps:
+- module: APIM
+  address: 7D0-09-01
+  mask: xx*x xxxx xx--
+  nibble: 2
+  hex_offset: '+2'
+  community_instruction: Bit 2 (add 2 to enable, e.g. change 1 to 3)
+  feature_name: Autolock Control Function (ACF)
+  target_state: ACF Enabled
+  bit: 3
+  action: 1

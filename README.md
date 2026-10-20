@@ -27,7 +27,7 @@ Each recipe defines the exact CAN module registers, bitmasks, and offset math ne
 
 ### Contributing a Recipe:
 Have a modification working on your truck that isn't listed yet?
-1. Create a `.yaml` file under `recipes/<platform>/<feature_name>.yaml`.
+1. Create a `.acwrecipe` file under `recipes/<platform>/<feature_name>.acwrecipe`.
 2. Follow the [Recipe Schema Guide](recipes/README.md) and set `validated: false`.
 3. Open a Pull Request! Once verified, it will be marked `validated: true` and automatically added to As Built Pro.
 

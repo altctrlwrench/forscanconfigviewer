@@ -1,0 +1,20 @@
+title: Keyfob Panic Button Activation Mode
+raw_community_title: Keyfob Panic Button
+category: Locks and Security
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: (2024+) 6G Ranger.xlsx
+forscan_menu: Panic Activate (Change Pulse Click to Double Click)
+steps:
+- module: BCM
+  address: 726-62-01
+  mask: x*xx xxxx xx--
+  nibble: 1
+  community_instruction: 0=disabled, 1=2 clicks (target setting), 2=one click (default)
+  feature_name: PanicActivate_Cfg (PAC)
+  target_state: PAC DISABLE
+  bit: 3
+  action: 0

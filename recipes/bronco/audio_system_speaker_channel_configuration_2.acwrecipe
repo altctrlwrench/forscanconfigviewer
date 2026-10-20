@@ -1,0 +1,15 @@
+title: Audio System Speaker Channel Configuration
+raw_community_title: Base EQ configuration (non-LUX)
+category: Audio and Entertainment
+platform: Bronco
+model_years: 2021-2024
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2022 Bronco.xlsx
+steps:
+- module: ACM
+  address: 727-01-02
+  mask: xx** xxxx xxxx
+  type: continuous
+  instruction: 00 = EQ Off

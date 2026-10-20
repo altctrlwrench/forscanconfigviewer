@@ -1,0 +1,21 @@
+title: Rear Camera 'Full View Not Available' Warning Overlay Removal
+raw_community_title: Removes black box on reverse camera that says "full view not
+  available
+category: Cameras and ADAS
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: (2024+) 6G Ranger.xlsx
+forscan_menu: unknown, use asbuilt (advanced)
+steps:
+- module: APIM
+  address: 7D0-02-02
+  mask: xxx* xxxx xx--
+  nibble: 3
+  hex_offset: '+1'
+  community_instruction: Bit 1 (add 1 to enable, e.g. change 2 to 3)
+  feature_name: Powerflow Type (PT)
+  bit: 0
+  action: 0

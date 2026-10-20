@@ -1,0 +1,48 @@
+title: DRL - Amber Turn Signal Rings Only
+raw_community_title: Sets DRL to amber turrns only (DRL in amber LED bars)
+category: Lighting
+platform: Explorer
+model_years: 2020-2024
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2020-2024 Explorer.xlsx
+steps:
+- module: BCM
+  address: 726-42-01
+  mask: x*x* xxxx xx--
+  nibbles:
+  - nibble: 1
+    recommended_hex: '4'
+    community_instruction: Sets the White DRL to fixed position (off when the car
+      is in normal drive mode during daytime)
+    feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+    target_state: LFDRLLCUC NOT_USED
+    bit: 3
+    action: 0
+  - nibble: 3
+    recommended_hex: '4'
+    community_instruction: Sets the White DRL to fixed position (off when the car
+      is in normal drive mode during daytime)
+    feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+    target_state: RFDRLLCUC NOT_USED
+    bit: 3
+    action: 0
+- module: BCM
+  address: 726-43-01
+  mask: x*x* xxxx xx--
+  nibbles:
+  - nibble: 1
+    recommended_hex: '1'
+    community_instruction: Sets Turn to Turn and DRL
+    feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+    target_state: LFTLCUC NOT_USED
+    bit: 3
+    action: 0
+  - nibble: 3
+    recommended_hex: '1'
+    community_instruction: Sets Turn to Turn and DRL
+    feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+    target_state: RFTLCUC NOT_USED
+    bit: 3
+    action: 0

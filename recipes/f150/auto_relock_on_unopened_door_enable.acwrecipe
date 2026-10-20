@@ -1,0 +1,84 @@
+title: Auto Relock on Unopened Door Enable
+raw_community_title: Auto Relock - if you hit the unlock button on the fob and do
+  not open a door within the timer it will lock the truck
+category: Locks and Security
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: BCM
+  address: 726-20-01
+  mask: x*x* x*x* x*--
+  nibbles:
+  - nibble: 1
+    recommended_hex: '1'
+    feature_name: Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)
+    target_state: AUTORELOCK_PERS_1 DISABLE
+    bit: 3
+    action: 0
+  - nibble: 3
+    recommended_hex: '1'
+    feature_name: Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)
+    target_state: AUTORELOCK_PERS_2 DISABLE
+    bit: 3
+    action: 0
+  - nibble: 5
+    recommended_hex: '1'
+    feature_name: Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)
+    target_state: AUTORELOCK_PERS_3 DISABLE
+    bit: 3
+    action: 0
+  - nibble: 7
+    recommended_hex: '1'
+    feature_name: Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)
+    target_state: AUTORELOCK_PERS_4 DISABLE
+    bit: 3
+    action: 0
+  - nibble: 9
+    recommended_hex: '1'
+    feature_name: Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)
+    target_state: AUTORELOCK_VEHICLE DISABLE
+    bit: 3
+    action: 0
+- module: BCM
+  address: 726-27-01
+  mask: xxxx xxxx x*--
+  nibble: 9
+  recommended_hex: '1'
+  feature_name: FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)
+  target_state: AUTORELOCK DISABLE
+  bit: 3
+  action: 0
+- module: BCM
+  address: 726-58-02
+  mask: xxx* xxxx xx--
+  nibble: 3
+  community_instruction: 'Use this on 2021-23   duration: 1=30 seconds, 2=45 secs
+    (target setting)'
+  feature_name: AutoRelock_Timeduration_Cfg (ARTC)
+  target_state: ARTC NULL
+  bit: 3
+  action: 0
+- module: BCM
+  address: 726-58-02
+  mask: x*xx xxxx xx--
+  nibble: 1
+  community_instruction: 'Use this on 2024-26   duration: 1=30 seconds, 2=45 secs
+    (target setting)'
+  feature_name: AutoRelock_Timeduration_Cfg (ARTC)
+  target_state: ARTC NULL
+  bit: 3
+  action: 0
+- module: APIM
+  address: 7D0-09-01
+  mask: xx*x xxxx xx--
+  nibble: 2
+  recommended_hex: '3'
+  community_instruction: optional - adds Autorelock to settings, vehicle, locks
+  feature_name: Autolock Control Function (ACF)
+  target_state: ACF Enabled
+  bit: 3
+  action: 1

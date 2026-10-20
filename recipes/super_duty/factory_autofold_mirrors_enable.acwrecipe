@@ -1,0 +1,26 @@
+title: Factory Autofold Mirrors Enable
+raw_community_title: Autofold Mirror Factory
+category: Windows and Mirrors
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2023 Super Duty.xlsx
+steps:
+- module: DDM
+  address: 740-03-03
+  mask: xxxx xxxx x*--
+  nibble: 9
+  community_instruction: 0=Disabled  1 Enabled Factory Folding Mirror Enabled
+  feature_name: TrailerTowFold_Cfg (TTFC)
+  target_state: TTFC DISABLED
+  bit: 3
+  action: 0
+- module: PDM
+  address: 741-03-03
+  mask: xxxx xxxx x*--
+  nibble: 9
+  community_instruction: 0=Disabled  1 Enabled Factory Folding Mirror Enabled
+  bit: 3
+  action: 0

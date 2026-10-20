@@ -15,8 +15,9 @@ import yaml
 def compile_catalog(recipes_dir="recipes", dist_dir="dist"):
     os.makedirs(dist_dir, exist_ok=True)
     
-    yaml_files = glob.glob(os.path.join(recipes_dir, "**", "*.yaml"), recursive=True)
-    print(f"Found {len(yaml_files)} recipe files in {recipes_dir}/")
+    recipe_files = glob.glob(os.path.join(recipes_dir, "**", "*.acwrecipe"), recursive=True) + glob.glob(os.path.join(recipes_dir, "**", "*.yaml"), recursive=True)
+    recipe_files = sorted(list(set(recipe_files)))
+    print(f"Found {len(recipe_files)} recipe files in {recipes_dir}/")
     
     validated_recipes = []
     unvalidated_recipes = []
@@ -26,7 +27,7 @@ def compile_catalog(recipes_dir="recipes", dist_dir="dist"):
         'platforms': {}
     })
     
-    for yf in sorted(yaml_files):
+    for yf in recipe_files:
         try:
             with open(yf, 'r', encoding='utf-8') as f:
                 data = yaml.safe_load(f)
@@ -92,7 +93,7 @@ def compile_catalog(recipes_dir="recipes", dist_dir="dist"):
         'version': '1.0.0',
         'generated_at': None,
         'summary': {
-            'total_files': len(yaml_files),
+            'total_files': len(recipe_files),
             'validated_recipes': len(validated_recipes),
             'pending_recipes': len(unvalidated_recipes),
             'unique_canonical_features': len(canonical_features),

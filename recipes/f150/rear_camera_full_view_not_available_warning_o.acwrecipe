@@ -1,0 +1,20 @@
+title: Rear Camera 'Full View Not Available' Warning Overlay Removal
+raw_community_title: Removes black box on reverse camera that says "full view not
+  available"
+category: Cameras and ADAS
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+post_procedure: Reset APIM in FORScan or cycle ignition.
+steps:
+- module: APIM
+  address: 7D0-02-02
+  mask: xxx* xxxx xx--
+  nibble: 3
+  feature_name: RCOD HMI w/o Blackbox (RCODHMIB)
+  target_state: RCODHMIB Disabled
+  bit: 0
+  action: 0

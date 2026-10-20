@@ -1,0 +1,29 @@
+title: Lincoln Style Autofold Mirrors
+raw_community_title: Autofold Mirror Lincoln Style
+category: Windows and Mirrors
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2023 Super Duty.xlsx
+warnings: Puddle lights will not illuminate when Lincoln style autofold is active.
+steps:
+- module: DDM
+  address: 740-03-16
+  mask: xxxx x*xx xx--
+  nibble: 5
+  community_instruction: 0=Disabled  1 Enabled  Folding Mirror at door close.  Does
+    not open at unlock. (Disables Puddle Lights)
+  feature_name: Mirror_Folding_Cfg (MFC)
+  target_state: MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
+  bit: 3
+  action: 0
+- module: PDM
+  address: 741-03-16
+  mask: xxxx x*xx xx--
+  nibble: 5
+  community_instruction: 0=Disabled  1 Enabled  Folding Mirror at door close.  Does
+    not open at unlock. (Disables Puddle Lights)
+  bit: 3
+  action: 0

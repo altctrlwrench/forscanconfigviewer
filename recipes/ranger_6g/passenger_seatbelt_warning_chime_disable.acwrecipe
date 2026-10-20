@@ -1,0 +1,22 @@
+title: Passenger Seatbelt Warning Chime Disable
+raw_community_title: Disables chime for Passenger seatbelt
+category: Chimes and Horn
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: (2024+) 6G Ranger.xlsx
+forscan_menu: Belt Minder Chime - Row 1 Col 5 (Set to Disabled. Also can be done using
+  procedure in user manual)
+steps:
+- module: IPC
+  address: 720-13-01
+  mask: x*xx xxxx xx--
+  nibble: 1
+  hex_offset: '-1'
+  community_instruction: Bit 1 (subtract 1 to disable, e.g. change 1 to 0)
+  feature_name: R1C5 Belt Minder Chime (RCBMC)
+  target_state: RCBMC Disabled
+  bit: 0
+  action: 0

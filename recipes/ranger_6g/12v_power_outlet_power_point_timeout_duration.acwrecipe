@@ -1,0 +1,19 @@
+title: 12V Power Outlet (Power Point) Timeout Duration
+raw_community_title: Power Point Timeout Duration
+category: Convenience and Electrical
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: (2024+) 6G Ranger.xlsx
+forscan_menu: 'Power Point Timeout, s (Set to # of seconds desired (e.g. 1800 for
+  30 minutes))'
+steps:
+- module: BCM
+  address: 726-57-01
+  mask: '**** xxxx xx--'
+  type: continuous
+  unit: seconds
+  instruction: 0001=1 second.  convert decimal value to hex.   For example 3600 seconds
+    equates to 0E10, and 1800 seconds is 0708
