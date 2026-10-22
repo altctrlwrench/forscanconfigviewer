@@ -12,4 +12,5 @@ steps:
   address: 727-01-01
   mask: xx** **xx xxxx
   type: continuous
+  feature_name: Front Satellite Speakers (FSS)
   instruction: xx*x-xxxx-xxxx - Driver Front Kick Panel/Dash Speakers

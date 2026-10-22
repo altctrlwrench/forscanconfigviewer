@@ -13,12 +13,14 @@ steps:
   address: 740-06-02
   mask: xxxx xxx* **--
   type: continuous
+  feature_name: Global Close
   instruction: 'Optional: to add Global Open/Close to Sync 4 Settings menu set this
     in APIM: 7D0-09-01- xxxx xExx xx--'''
 - module: PDM
   address: 741-06-02
   mask: xxxx xxx* **--
   type: continuous
+  feature_name: Global Close
   instruction: 'Optional: to add Global Open/Close to Sync 4 Settings menu set this
     in APIM: 7D0-09-01- xxxx xExx xx--'''
 - module: BCM
@@ -45,11 +47,13 @@ steps:
   address: 726-22-01
   mask: xxxx xxxx **--
   type: continuous
+  feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE]
   instruction: 'Optional: to add Global Open/Close to Sync 4 Settings menu set this
     in APIM: 7D0-09-01- xxxx xExx xx--'''
 - module: BCM
   address: 726-22-02
   mask: xxxx xxxx **--
   type: continuous
+  feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE]
   instruction: 'Optional: to add Global Open/Close to Sync 4 Settings menu set this
     in APIM: 7D0-09-01- xxxx xExx xx--'''

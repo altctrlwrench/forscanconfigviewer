@@ -12,4 +12,5 @@ steps:
   address: 7D0-03-01
   mask: xxxx xxxx **--
   type: continuous
+  feature_name: Visual Design Variants (VDV)
   instruction: 05=Lincoln Sync 4 13.2" (Dashcard)

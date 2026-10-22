@@ -31,6 +31,7 @@
                 "mask": "**** xxxx xx--",
                 "type": "continuous",
                 "unit": "seconds",
+                "feature_name": "Power_Point_Maxtime_Cfg (PPMC)",
                 "instruction": "Calculator: https://docs.google.com/spreadsheets/d/15RmCgd740T10K0PnG44p42FCod9BSG3f6yrUc0X5qxw/edit?usp=sharing"
               }
             ],
@@ -52,6 +53,7 @@
                 "mask": "**** xxxx xx--",
                 "type": "continuous",
                 "unit": "seconds",
+                "feature_name": "Power_Point_Maxtime_Cfg (PPMC)",
                 "instruction": "turns off power point to 1 second after vehicle shuts off. Range: 1 - 64800. 0001 for 1 second, 001E for 30 seconds, 003C for 1 minute, 012C for 5 minutes, 0258 for 10 minutes, 0708 for 30 minutes, and 0E10 for 1 hour. FD20 for 18 hours"
               }
             ],
@@ -73,6 +75,7 @@
                 "mask": "**** xxxx xx--",
                 "type": "continuous",
                 "unit": "seconds",
+                "feature_name": "Power_Point_Maxtime_Cfg (PPMC)",
                 "instruction": "0001=1 second, 600=10 minutes, 1800=30 minutes, 3600=1hr. Ensure Power Point Timeout is not disabled.  Longer times possible (use calculator)"
               }
             ],
@@ -94,6 +97,7 @@
                 "mask": "**** xxxx xx--",
                 "type": "continuous",
                 "unit": "seconds",
+                "feature_name": "Power_Point_Maxtime_Cfg (PPMC)",
                 "instruction": "0001=1 second.  convert decimal value to hex.   For example 3600 seconds equates to 0E10, and 1800 seconds is 0708"
               }
             ],
@@ -115,6 +119,7 @@
                 "mask": "**** xxxx xx--",
                 "type": "continuous",
                 "unit": "seconds",
+                "feature_name": "Power_Point_Maxtime_Cfg (PPMC)",
                 "instruction": "Seconds converted to Hex (Stock is 1194-75 minutes)"
               }
             ],
@@ -263,6 +268,7 @@
                 "address": "7D0-01-01",
                 "mask": "xxxx xxxx **--",
                 "type": "continuous",
+                "feature_name": "Rear Camera (RC)",
                 "instruction": ""
               },
               {
@@ -446,6 +452,7 @@
                 "address": "727-01-01",
                 "mask": "xx** **xx xxxx",
                 "type": "continuous",
+                "feature_name": "Front Satellite Speakers (FSS)",
                 "instruction": "xx*x-xxxx-xxxx - Driver Front Kick Panel/Dash Speakers"
               }
             ],
@@ -464,6 +471,7 @@
                 "address": "727-01-02",
                 "mask": "xx** xxxx xxxx",
                 "type": "continuous",
+                "feature_name": "EQ Selection (EQS)",
                 "instruction": "00 = EQ Off"
               }
             ],
@@ -693,6 +701,7 @@
                 "address": "726-58-02",
                 "mask": "x*xx xxxx xx--",
                 "type": "continuous",
+                "feature_name": "AutoRelock_Timeduration_Cfg (ARTC)",
                 "instruction": "Sets for all 4 profiles"
               },
               {
@@ -1196,6 +1205,7 @@
                 "address": "733-01-02",
                 "mask": "xxxx *xxx xx--",
                 "type": "continuous",
+                "feature_name": "Wide Open Throttle Purge Type (WOTPT)",
                 "instruction": "FORScan Menu: Humidity Sensor Type (Windshield Mounted (Default) -> \"Not Present)"
               }
             ],
@@ -1226,30 +1236,40 @@
                     "nibble": 1,
                     "hex_offset": "+8",
                     "community_instruction": "set to 1 (e.g. 0101 0101 01--)",
+                    "feature_name": "Feat_Cfg [AUTOLOCK] [PERS_1] (AUTOLOCK_PERS_1)",
+                    "target_state": "AUTOLOCK_PERS_1 DISABLE",
                     "bit": 3,
                     "action": 0
                   },
                   {
                     "nibble": 3,
                     "hex_offset": "+8",
+                    "feature_name": "Feat_Cfg [AUTOLOCK] [PERS_2] (AUTOLOCK_PERS_2)",
+                    "target_state": "AUTOLOCK_PERS_2 DISABLE",
                     "bit": 3,
                     "action": 0
                   },
                   {
                     "nibble": 5,
                     "hex_offset": "+8",
+                    "feature_name": "Feat_Cfg [AUTOLOCK] [PERS_3] (AUTOLOCK_PERS_3)",
+                    "target_state": "AUTOLOCK_PERS_3 DISABLE",
                     "bit": 3,
                     "action": 0
                   },
                   {
                     "nibble": 7,
                     "hex_offset": "+8",
+                    "feature_name": "Feat_Cfg [AUTOLOCK] [PERS_4] (AUTOLOCK_PERS_4)",
+                    "target_state": "AUTOLOCK_PERS_4 DISABLE",
                     "bit": 3,
                     "action": 0
                   },
                   {
                     "nibble": 9,
                     "hex_offset": "+8",
+                    "feature_name": "Feat_Cfg [AUTOLOCK] [VEHICLE] (AUTOLOCK_VEHICLE)",
+                    "target_state": "AUTOLOCK_VEHICLE DISABLE",
                     "bit": 3,
                     "action": 0
                   }
@@ -1523,6 +1543,7 @@
                 "address": "706-02-02",
                 "mask": "xxxx xxxx x*--",
                 "type": "continuous",
+                "feature_name": "FeatureCfg_BA_DefaultMode",
                 "instruction": "Lane Biasing (Under Cruise Control), Predictive Speed Assist (Under Cruise Control)"
               },
               {
@@ -1857,6 +1878,7 @@
                 "address": "726-38-01",
                 "mask": "xxxx **xx xx--",
                 "type": "continuous",
+                "feature_name": "DRL_Ckt_FixedDim_DutyCycle_Cfg (DRLCFDDCC)",
                 "instruction": "set at about 60% brightness (3C hex) thru 75% brightness (4B hex) use lowest value you can before flickering appears.\n\n64 =100%, 5A = 90%, 4B =75%, 32 = 50%, 19 = 25%, 0A =10%"
               }
             ],
@@ -1900,6 +1922,7 @@
                 "address": "726-38-01",
                 "mask": "xxxx **xx xx--",
                 "type": "continuous",
+                "feature_name": "DRL_Ckt_FixedDim_DutyCycle_Cfg (DRLCFDDCC)",
                 "instruction": "To change brightness for last two nibbles set at about 60% (3C hex) thru 75% (4B hex) use lowest value you can before flickering appears"
               }
             ],
@@ -1987,6 +2010,7 @@
                 "address": "726-43-02",
                 "mask": "xxxx xx** xx--",
                 "type": "continuous",
+                "feature_name": "OutageABM_Cfg",
                 "instruction": "Daytime Running Lights (DRL) Include Parklamps Config"
               },
               {
@@ -1994,6 +2018,7 @@
                 "address": "726-87-01",
                 "mask": "xx** xxxx xx--",
                 "type": "continuous",
+                "feature_name": "SlaveExists_OHC_Cfg",
                 "instruction": "Daytime Running Lights (DRL) Include Parklamps Config"
               }
             ],
@@ -2735,6 +2760,7 @@
                 "address": "760-04-03",
                 "mask": "xxxx xxx* xx--",
                 "type": "continuous",
+                "feature_name": "SDM_GENERIC_MODE12 (SDMGENERICMODE)",
                 "instruction": "FORScan Menu: SDM - Mode 10 (Rock/Crawl?) (Disabled (Default), Enabled)"
               }
             ],
@@ -2892,6 +2918,8 @@
                 "mask": "xxxx xxxx x*--",
                 "nibble": 9,
                 "community_instruction": "0=Disabled  1 Enabled Factory Folding Mirror Enabled",
+                "feature_name": "TrailerTowFold_Cfg (TTFC)",
+                "target_state": "TTFC DISABLED",
                 "bit": 3,
                 "action": 0
               }
@@ -3431,6 +3459,8 @@
                 "nibble": 7,
                 "recommended_hex": "1",
                 "community_instruction": "[BCM] - - Enable the following from DISABLED to ENABLED in BdyCM (easy way): ",
+                "feature_name": "Global_Close_Cfg (GCC)",
+                "target_state": "GCC DISABLED",
                 "bit": 3,
                 "action": 0
               },
@@ -3497,12 +3527,16 @@
                   {
                     "nibble": 8,
                     "recommended_hex": "0",
+                    "feature_name": "Global Close",
+                    "target_state": "disabled,",
                     "bit": 3,
                     "action": 0
                   },
                   {
                     "nibble": 9,
                     "recommended_hex": "1",
+                    "feature_name": "Global_Open_Cfg (GOC)",
+                    "target_state": "GOC DISABLED",
                     "bit": 3,
                     "action": 0
                   }
@@ -3539,12 +3573,16 @@
                   {
                     "nibble": 0,
                     "recommended_hex": "0",
+                    "feature_name": "Global Open",
+                    "target_state": "disabled,",
                     "bit": 3,
                     "action": 0
                   },
                   {
                     "nibble": 1,
                     "recommended_hex": "1",
+                    "feature_name": "GlassSoftStop_Cfg (GSSC)",
+                    "target_state": "GSSC DISABLED",
                     "bit": 3,
                     "action": 0
                   }
@@ -3860,6 +3898,7 @@
                 "address": "740-06-02",
                 "mask": "xxxx xxx* **--",
                 "type": "continuous",
+                "feature_name": "Global Close",
                 "instruction": "Optional: to add Global Open/Close to Sync 4 Settings menu set this in APIM: 7D0-09-01- xxxx xExx xx--'"
               },
               {
@@ -3867,6 +3906,7 @@
                 "address": "741-06-02",
                 "mask": "xxxx xxx* **--",
                 "type": "continuous",
+                "feature_name": "Global Close",
                 "instruction": "Optional: to add Global Open/Close to Sync 4 Settings menu set this in APIM: 7D0-09-01- xxxx xExx xx--'"
               },
               {
@@ -3899,6 +3939,7 @@
                 "address": "726-22-01",
                 "mask": "xxxx xxxx **--",
                 "type": "continuous",
+                "feature_name": "Feat_Cfg [GLOBALCLOSE] [VEHICLE]",
                 "instruction": "Optional: to add Global Open/Close to Sync 4 Settings menu set this in APIM: 7D0-09-01- xxxx xExx xx--'"
               },
               {
@@ -3906,6 +3947,7 @@
                 "address": "726-22-02",
                 "mask": "xxxx xxxx **--",
                 "type": "continuous",
+                "feature_name": "Feat_Cfg [GLOBALOPEN] [VEHICLE]",
                 "instruction": "Optional: to add Global Open/Close to Sync 4 Settings menu set this in APIM: 7D0-09-01- xxxx xExx xx--'"
               }
             ],
@@ -3962,12 +4004,16 @@
                   {
                     "nibble": 8,
                     "recommended_hex": "0",
+                    "feature_name": "Global Close",
+                    "target_state": "disabled,",
                     "bit": 3,
                     "action": 0
                   },
                   {
                     "nibble": 9,
                     "recommended_hex": "1",
+                    "feature_name": "Global_Open_Cfg (GOC)",
+                    "target_state": "GOC DISABLED",
                     "bit": 3,
                     "action": 0
                   }
@@ -4004,12 +4050,16 @@
                   {
                     "nibble": 0,
                     "recommended_hex": "0",
+                    "feature_name": "Global Open",
+                    "target_state": "disabled,",
                     "bit": 3,
                     "action": 0
                   },
                   {
                     "nibble": 1,
                     "recommended_hex": "1",
+                    "feature_name": "GlassSoftStop_Cfg (GSSC)",
+                    "target_state": "GSSC DISABLED",
                     "bit": 3,
                     "action": 0
                   }
@@ -4325,6 +4375,7 @@
                 "address": "724-06-01",
                 "mask": "*xxx xxxx --",
                 "type": "continuous",
+                "feature_name": "HSW_Level_3_TempSetPt (HSWLTSP)",
                 "instruction": "FORScan Menu: Heated Steering Wheel Temp Level (35 Celsius (Default).  24 deg through 39 degrees"
               }
             ],
@@ -4345,6 +4396,7 @@
                 "address": "724-06-01",
                 "mask": "*xxx xxxx --",
                 "type": "continuous",
+                "feature_name": "HSW_Level_3_TempSetPt (HSWLTSP)",
                 "instruction": "Range 24\u00b0c-39\u00b0c (1-F) ex:B=35\u00b0c"
               }
             ],
@@ -4837,6 +4889,7 @@
                 "address": "724-01-01",
                 "mask": "xxxx **xx xx--",
                 "type": "continuous",
+                "feature_name": "SCMHdlpWashOnTime_Cfg (SCMHWOTC)",
                 "instruction": "* if your default value is 8C:"
               }
             ],
@@ -4857,6 +4910,7 @@
                 "address": "724-01-01",
                 "mask": "xxxx **xx --",
                 "type": "continuous",
+                "feature_name": "Lane Change Blink Number",
                 "instruction": "add 04 (hex) to your default value for each additional flash"
               }
             ],
@@ -4877,6 +4931,7 @@
                 "address": "724-01-01",
                 "mask": "xxxx **xx --",
                 "type": "continuous",
+                "feature_name": "LaneChange_Cancel_Blink_Num (LCCBN)",
                 "instruction": "84=1, 8C=3, 90=4, 94=5, 98=6, etc."
               }
             ],
@@ -4991,6 +5046,8 @@
                 "mask": "xxxx x*xx xx--",
                 "nibble": 5,
                 "community_instruction": "0=Disabled  1 Enabled  Folding Mirror at door close.  Does not open at unlock. (Disables Puddle Lights)",
+                "feature_name": "Mirror_Folding_Cfg (MFC)",
+                "target_state": "MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles",
                 "bit": 3,
                 "action": 0
               }
@@ -5715,6 +5772,7 @@
                 "address": "720-13-01",
                 "mask": "**** **** ****",
                 "type": "continuous",
+                "feature_name": "Belt Minder Chime Operator (BMCO)",
                 "instruction": "See Forum spreadsheet for more info"
               },
               {
@@ -5722,6 +5780,7 @@
                 "address": "720-13-02",
                 "mask": "**** ****",
                 "type": "continuous",
+                "feature_name": "R4 Bench (RB)",
                 "instruction": "See Forum spreadsheet for more info"
               },
               {
@@ -5729,6 +5788,7 @@
                 "address": "720-14-01",
                 "mask": "**** **** ****",
                 "type": "continuous",
+                "feature_name": "R2C5 Seatbelt (RCS)",
                 "instruction": "See Forum spreadsheet for more info"
               },
               {
@@ -5736,6 +5796,7 @@
                 "address": "720-14-02",
                 "mask": "**** ****",
                 "type": "continuous",
+                "feature_name": "R4C5 Seatbelt (RCS)",
                 "instruction": "See Forum spreadsheet for more info"
               }
             ],
@@ -6386,6 +6447,7 @@
                 "address": "7D0-04-01",
                 "mask": "xxxx xx** xx--",
                 "type": "continuous",
+                "feature_name": "Stop Mode Timer (SMT)",
                 "instruction": "2D=Raptor  0E=F150  0F=F250  10=F350  11=F450"
               }
             ],
@@ -6577,6 +6639,7 @@
                 "address": "7D0-03-01",
                 "mask": "xxxx **xx xx--",
                 "type": "continuous",
+                "feature_name": "Splash Screen (SS)",
                 "instruction": "Requires Sync ver 22012 or higher - reset APIM in FORScan after either/both changes. other screen available"
               }
             ],
@@ -6597,6 +6660,7 @@
                 "address": "7D0-03-01",
                 "mask": "xxxx **xx xx--",
                 "type": "continuous",
+                "feature_name": "Splash Screen (SS)",
                 "instruction": "No options set for webpage. Set to 24 for 75th."
               }
             ],
@@ -6623,6 +6687,7 @@
                 "address": "7D0-03-01",
                 "mask": "xxxx **xx xx--",
                 "type": "continuous",
+                "feature_name": "Splash Screen (SS)",
                 "instruction": "No target setting in As Built Pro. Use 1F for Lightning"
               }
             ],
@@ -6733,6 +6798,7 @@
                 "address": "7D0-03-01",
                 "mask": "xxxx xxxx **--",
                 "type": "continuous",
+                "feature_name": "Visual Design Variants (VDV)",
                 "instruction": "05=Lincoln Sync 4 13.2\" (Dashcard)"
               }
             ],
@@ -6821,6 +6887,7 @@
                 "mask": "xxxx xxxx **--",
                 "type": "continuous",
                 "unit": "mm",
+                "feature_name": "Tire Circumference (TC)",
                 "instruction": "First two digits of tire circumference in MM encoded in hex.  Check speed vs GPS, then tweak to correct speedometer with GSP speed"
               },
               {
@@ -6829,6 +6896,7 @@
                 "mask": "**xx xx--",
                 "type": "continuous",
                 "unit": "mm",
+                "feature_name": "Tire Circumference (TC)",
                 "instruction": "First two digits of tire circumference in MM encoded in hex.  Check speed vs GPS, then tweak to correct speedometer with GSP speed"
               }
             ],
@@ -6850,6 +6918,7 @@
                 "mask": "xxxx xxxx **--",
                 "type": "continuous",
                 "unit": "mm",
+                "feature_name": "Tire Circumference (TC)",
                 "instruction": "Tire Size Calculator https://docs.google.com/spreadsheets/d/1EaVYjY7QC8iYAdsiYnSeJQ9SbyMEVSTYz0Kmb0at4Ps/edit?usp=sharing"
               },
               {
@@ -6858,6 +6927,7 @@
                 "mask": "**xx xx--",
                 "type": "continuous",
                 "unit": "mm",
+                "feature_name": "Tire Circumference (TC)",
                 "instruction": "Tire Size Calculator https://docs.google.com/spreadsheets/d/1EaVYjY7QC8iYAdsiYnSeJQ9SbyMEVSTYz0Kmb0at4Ps/edit?usp=sharing"
               }
             ],
@@ -6947,6 +7017,7 @@
                 "address": "740-03-04",
                 "mask": "x*xx xxxx xx--",
                 "type": "continuous",
+                "feature_name": "SideTurnInd_Cfg (STIC)",
                 "instruction": ""
               },
               {
@@ -6954,6 +7025,7 @@
                 "address": "741-03-04",
                 "mask": "x*xx xxxx xx--",
                 "type": "continuous",
+                "feature_name": "SideTurnInd_Cfg (STIC)",
                 "instruction": ""
               }
             ],
@@ -6980,6 +7052,7 @@
                 "address": "760-03-01",
                 "mask": "xxxx *x--",
                 "type": "continuous",
+                "feature_name": "TTA (TTA)",
                 "instruction": "Confirmed: DIYPSCM (1/28/25) Lariat"
               },
               {
@@ -7162,6 +7235,7 @@
                 "address": "726-50-02",
                 "mask": "xxxx xxxx **--",
                 "type": "continuous",
+                "feature_name": "White_Lighting_Ckt_Cfg",
                 "instruction": ""
               },
               {
@@ -7932,6 +8006,7 @@
           "mask": "**** xxxx xx--",
           "type": "continuous",
           "unit": "seconds",
+          "feature_name": "Power_Point_Maxtime_Cfg (PPMC)",
           "instruction": "Calculator: https://docs.google.com/spreadsheets/d/15RmCgd740T10K0PnG44p42FCod9BSG3f6yrUc0X5qxw/edit?usp=sharing"
         }
       ]
@@ -7988,6 +8063,7 @@
           "address": "727-01-01",
           "mask": "xx** **xx xxxx",
           "type": "continuous",
+          "feature_name": "Front Satellite Speakers (FSS)",
           "instruction": "xx*x-xxxx-xxxx - Driver Front Kick Panel/Dash Speakers"
         }
       ]
@@ -8008,6 +8084,7 @@
           "address": "727-01-02",
           "mask": "xx** xxxx xxxx",
           "type": "continuous",
+          "feature_name": "EQ Selection (EQS)",
           "instruction": "00 = EQ Off"
         }
       ]
@@ -8198,12 +8275,16 @@
             {
               "nibble": 8,
               "recommended_hex": "0",
+              "feature_name": "Global Close",
+              "target_state": "disabled,",
               "bit": 3,
               "action": 0
             },
             {
               "nibble": 9,
               "recommended_hex": "1",
+              "feature_name": "Global_Open_Cfg (GOC)",
+              "target_state": "GOC DISABLED",
               "bit": 3,
               "action": 0
             }
@@ -8240,12 +8321,16 @@
             {
               "nibble": 0,
               "recommended_hex": "0",
+              "feature_name": "Global Open",
+              "target_state": "disabled,",
               "bit": 3,
               "action": 0
             },
             {
               "nibble": 1,
               "recommended_hex": "1",
+              "feature_name": "GlassSoftStop_Cfg (GSSC)",
+              "target_state": "GSSC DISABLED",
               "bit": 3,
               "action": 0
             }
@@ -8448,6 +8533,7 @@
           "address": "724-01-01",
           "mask": "xxxx **xx xx--",
           "type": "continuous",
+          "feature_name": "SCMHdlpWashOnTime_Cfg (SCMHWOTC)",
           "instruction": "* if your default value is 8C:"
         }
       ]
@@ -8624,6 +8710,7 @@
           "address": "7D0-03-01",
           "mask": "xxxx xxxx **--",
           "type": "continuous",
+          "feature_name": "Visual Design Variants (VDV)",
           "instruction": "05=Lincoln Sync 4 13.2\" (Dashcard)"
         }
       ]
@@ -8645,6 +8732,7 @@
           "mask": "**** xxxx xx--",
           "type": "continuous",
           "unit": "seconds",
+          "feature_name": "Power_Point_Maxtime_Cfg (PPMC)",
           "instruction": "turns off power point to 1 second after vehicle shuts off. Range: 1 - 64800. 0001 for 1 second, 001E for 30 seconds, 003C for 1 minute, 012C for 5 minutes, 0258 for 10 minutes, 0708 for 30 minutes, and 0E10 for 1 hour. FD20 for 18 hours"
         }
       ]
@@ -8864,6 +8952,7 @@
           "address": "726-58-02",
           "mask": "x*xx xxxx xx--",
           "type": "continuous",
+          "feature_name": "AutoRelock_Timeduration_Cfg (ARTC)",
           "instruction": "Sets for all 4 profiles"
         },
         {
@@ -9089,6 +9178,7 @@
           "address": "726-38-01",
           "mask": "xxxx **xx xx--",
           "type": "continuous",
+          "feature_name": "DRL_Ckt_FixedDim_DutyCycle_Cfg (DRLCFDDCC)",
           "instruction": "set at about 60% brightness (3C hex) thru 75% brightness (4B hex) use lowest value you can before flickering appears.\n\n64 =100%, 5A = 90%, 4B =75%, 32 = 50%, 19 = 25%, 0A =10%"
         }
       ]
@@ -9184,6 +9274,8 @@
           "nibble": 7,
           "recommended_hex": "1",
           "community_instruction": "[BCM] - - Enable the following from DISABLED to ENABLED in BdyCM (easy way): ",
+          "feature_name": "Global_Close_Cfg (GCC)",
+          "target_state": "GCC DISABLED",
           "bit": 3,
           "action": 0
         },
@@ -9554,6 +9646,7 @@
           "mask": "**** xxxx xx--",
           "type": "continuous",
           "unit": "seconds",
+          "feature_name": "Power_Point_Maxtime_Cfg (PPMC)",
           "instruction": "0001=1 second, 600=10 minutes, 1800=30 minutes, 3600=1hr. Ensure Power Point Timeout is not disabled.  Longer times possible (use calculator)"
         }
       ]
@@ -9643,6 +9736,7 @@
           "address": "7D0-01-01",
           "mask": "xxxx xxxx **--",
           "type": "continuous",
+          "feature_name": "Rear Camera (RC)",
           "instruction": ""
         },
         {
@@ -9999,6 +10093,7 @@
           "address": "706-02-02",
           "mask": "xxxx xxxx x*--",
           "type": "continuous",
+          "feature_name": "FeatureCfg_BA_DefaultMode",
           "instruction": "Lane Biasing (Under Cruise Control), Predictive Speed Assist (Under Cruise Control)"
         },
         {
@@ -10289,6 +10384,7 @@
           "address": "726-38-01",
           "mask": "xxxx **xx xx--",
           "type": "continuous",
+          "feature_name": "DRL_Ckt_FixedDim_DutyCycle_Cfg (DRLCFDDCC)",
           "instruction": "To change brightness for last two nibbles set at about 60% (3C hex) thru 75% (4B hex) use lowest value you can before flickering appears"
         }
       ]
@@ -10334,6 +10430,7 @@
           "address": "726-43-02",
           "mask": "xxxx xx** xx--",
           "type": "continuous",
+          "feature_name": "OutageABM_Cfg",
           "instruction": "Daytime Running Lights (DRL) Include Parklamps Config"
         },
         {
@@ -10341,6 +10438,7 @@
           "address": "726-87-01",
           "mask": "xx** xxxx xx--",
           "type": "continuous",
+          "feature_name": "SlaveExists_OHC_Cfg",
           "instruction": "Daytime Running Lights (DRL) Include Parklamps Config"
         }
       ]
@@ -10859,6 +10957,7 @@
           "address": "740-06-02",
           "mask": "xxxx xxx* **--",
           "type": "continuous",
+          "feature_name": "Global Close",
           "instruction": "Optional: to add Global Open/Close to Sync 4 Settings menu set this in APIM: 7D0-09-01- xxxx xExx xx--'"
         },
         {
@@ -10866,6 +10965,7 @@
           "address": "741-06-02",
           "mask": "xxxx xxx* **--",
           "type": "continuous",
+          "feature_name": "Global Close",
           "instruction": "Optional: to add Global Open/Close to Sync 4 Settings menu set this in APIM: 7D0-09-01- xxxx xExx xx--'"
         },
         {
@@ -10898,6 +10998,7 @@
           "address": "726-22-01",
           "mask": "xxxx xxxx **--",
           "type": "continuous",
+          "feature_name": "Feat_Cfg [GLOBALCLOSE] [VEHICLE]",
           "instruction": "Optional: to add Global Open/Close to Sync 4 Settings menu set this in APIM: 7D0-09-01- xxxx xExx xx--'"
         },
         {
@@ -10905,6 +11006,7 @@
           "address": "726-22-02",
           "mask": "xxxx xxxx **--",
           "type": "continuous",
+          "feature_name": "Feat_Cfg [GLOBALOPEN] [VEHICLE]",
           "instruction": "Optional: to add Global Open/Close to Sync 4 Settings menu set this in APIM: 7D0-09-01- xxxx xExx xx--'"
         }
       ]
@@ -11107,6 +11209,7 @@
           "address": "724-01-01",
           "mask": "xxxx **xx --",
           "type": "continuous",
+          "feature_name": "Lane Change Blink Number",
           "instruction": "add 04 (hex) to your default value for each additional flash"
         }
       ]
@@ -11556,6 +11659,7 @@
           "address": "7D0-03-01",
           "mask": "xxxx **xx xx--",
           "type": "continuous",
+          "feature_name": "Splash Screen (SS)",
           "instruction": "Requires Sync ver 22012 or higher - reset APIM in FORScan after either/both changes. other screen available"
         }
       ]
@@ -11576,6 +11680,7 @@
           "address": "7D0-03-01",
           "mask": "xxxx **xx xx--",
           "type": "continuous",
+          "feature_name": "Splash Screen (SS)",
           "instruction": "No target setting in As Built Pro. Use 1F for Lightning"
         }
       ]
@@ -11645,6 +11750,7 @@
           "mask": "xxxx xxxx **--",
           "type": "continuous",
           "unit": "mm",
+          "feature_name": "Tire Circumference (TC)",
           "instruction": "First two digits of tire circumference in MM encoded in hex.  Check speed vs GPS, then tweak to correct speedometer with GSP speed"
         },
         {
@@ -11653,6 +11759,7 @@
           "mask": "**xx xx--",
           "type": "continuous",
           "unit": "mm",
+          "feature_name": "Tire Circumference (TC)",
           "instruction": "First two digits of tire circumference in MM encoded in hex.  Check speed vs GPS, then tweak to correct speedometer with GSP speed"
         }
       ]
@@ -11732,6 +11839,7 @@
           "address": "740-03-04",
           "mask": "x*xx xxxx xx--",
           "type": "continuous",
+          "feature_name": "SideTurnInd_Cfg (STIC)",
           "instruction": ""
         },
         {
@@ -11739,6 +11847,7 @@
           "address": "741-03-04",
           "mask": "x*xx xxxx xx--",
           "type": "continuous",
+          "feature_name": "SideTurnInd_Cfg (STIC)",
           "instruction": ""
         }
       ]
@@ -11818,6 +11927,7 @@
           "address": "726-50-02",
           "mask": "xxxx xxxx **--",
           "type": "continuous",
+          "feature_name": "White_Lighting_Ckt_Cfg",
           "instruction": ""
         },
         {
@@ -12310,6 +12420,7 @@
           "mask": "**** xxxx xx--",
           "type": "continuous",
           "unit": "seconds",
+          "feature_name": "Power_Point_Maxtime_Cfg (PPMC)",
           "instruction": "0001=1 second.  convert decimal value to hex.   For example 3600 seconds equates to 0E10, and 1800 seconds is 0708"
         }
       ]
@@ -12432,6 +12543,7 @@
           "address": "733-01-02",
           "mask": "xxxx *xxx xx--",
           "type": "continuous",
+          "feature_name": "Wide Open Throttle Purge Type (WOTPT)",
           "instruction": "FORScan Menu: Humidity Sensor Type (Windshield Mounted (Default) -> \"Not Present)"
         }
       ]
@@ -12457,30 +12569,40 @@
               "nibble": 1,
               "hex_offset": "+8",
               "community_instruction": "set to 1 (e.g. 0101 0101 01--)",
+              "feature_name": "Feat_Cfg [AUTOLOCK] [PERS_1] (AUTOLOCK_PERS_1)",
+              "target_state": "AUTOLOCK_PERS_1 DISABLE",
               "bit": 3,
               "action": 0
             },
             {
               "nibble": 3,
               "hex_offset": "+8",
+              "feature_name": "Feat_Cfg [AUTOLOCK] [PERS_2] (AUTOLOCK_PERS_2)",
+              "target_state": "AUTOLOCK_PERS_2 DISABLE",
               "bit": 3,
               "action": 0
             },
             {
               "nibble": 5,
               "hex_offset": "+8",
+              "feature_name": "Feat_Cfg [AUTOLOCK] [PERS_3] (AUTOLOCK_PERS_3)",
+              "target_state": "AUTOLOCK_PERS_3 DISABLE",
               "bit": 3,
               "action": 0
             },
             {
               "nibble": 7,
               "hex_offset": "+8",
+              "feature_name": "Feat_Cfg [AUTOLOCK] [PERS_4] (AUTOLOCK_PERS_4)",
+              "target_state": "AUTOLOCK_PERS_4 DISABLE",
               "bit": 3,
               "action": 0
             },
             {
               "nibble": 9,
               "hex_offset": "+8",
+              "feature_name": "Feat_Cfg [AUTOLOCK] [VEHICLE] (AUTOLOCK_VEHICLE)",
+              "target_state": "AUTOLOCK_VEHICLE DISABLE",
               "bit": 3,
               "action": 0
             }
@@ -12678,6 +12800,7 @@
           "address": "760-04-03",
           "mask": "xxxx xxx* xx--",
           "type": "continuous",
+          "feature_name": "SDM_GENERIC_MODE12 (SDMGENERICMODE)",
           "instruction": "FORScan Menu: SDM - Mode 10 (Rock/Crawl?) (Disabled (Default), Enabled)"
         }
       ]
@@ -12950,6 +13073,7 @@
           "address": "724-06-01",
           "mask": "*xxx xxxx --",
           "type": "continuous",
+          "feature_name": "HSW_Level_3_TempSetPt (HSWLTSP)",
           "instruction": "FORScan Menu: Heated Steering Wheel Temp Level (35 Celsius (Default).  24 deg through 39 degrees"
         }
       ]
@@ -13046,6 +13170,7 @@
           "address": "724-01-01",
           "mask": "xxxx **xx --",
           "type": "continuous",
+          "feature_name": "LaneChange_Cancel_Blink_Num (LCCBN)",
           "instruction": "84=1, 8C=3, 90=4, 94=5, 98=6, etc."
         }
       ]
@@ -13117,6 +13242,7 @@
           "address": "720-13-01",
           "mask": "**** **** ****",
           "type": "continuous",
+          "feature_name": "Belt Minder Chime Operator (BMCO)",
           "instruction": "See Forum spreadsheet for more info"
         },
         {
@@ -13124,6 +13250,7 @@
           "address": "720-13-02",
           "mask": "**** ****",
           "type": "continuous",
+          "feature_name": "R4 Bench (RB)",
           "instruction": "See Forum spreadsheet for more info"
         },
         {
@@ -13131,6 +13258,7 @@
           "address": "720-14-01",
           "mask": "**** **** ****",
           "type": "continuous",
+          "feature_name": "R2C5 Seatbelt (RCS)",
           "instruction": "See Forum spreadsheet for more info"
         },
         {
@@ -13138,6 +13266,7 @@
           "address": "720-14-02",
           "mask": "**** ****",
           "type": "continuous",
+          "feature_name": "R4C5 Seatbelt (RCS)",
           "instruction": "See Forum spreadsheet for more info"
         }
       ]
@@ -13260,6 +13389,7 @@
           "address": "760-03-01",
           "mask": "xxxx *x--",
           "type": "continuous",
+          "feature_name": "TTA (TTA)",
           "instruction": "Confirmed: DIYPSCM (1/28/25) Lariat"
         },
         {
@@ -13387,6 +13517,7 @@
           "mask": "**** xxxx xx--",
           "type": "continuous",
           "unit": "seconds",
+          "feature_name": "Power_Point_Maxtime_Cfg (PPMC)",
           "instruction": "Seconds converted to Hex (Stock is 1194-75 minutes)"
         }
       ]
@@ -13819,6 +13950,8 @@
           "mask": "xxxx xxxx x*--",
           "nibble": 9,
           "community_instruction": "0=Disabled  1 Enabled Factory Folding Mirror Enabled",
+          "feature_name": "TrailerTowFold_Cfg (TTFC)",
+          "target_state": "TTFC DISABLED",
           "bit": 3,
           "action": 0
         }
@@ -13996,12 +14129,16 @@
             {
               "nibble": 8,
               "recommended_hex": "0",
+              "feature_name": "Global Close",
+              "target_state": "disabled,",
               "bit": 3,
               "action": 0
             },
             {
               "nibble": 9,
               "recommended_hex": "1",
+              "feature_name": "Global_Open_Cfg (GOC)",
+              "target_state": "GOC DISABLED",
               "bit": 3,
               "action": 0
             }
@@ -14038,12 +14175,16 @@
             {
               "nibble": 0,
               "recommended_hex": "0",
+              "feature_name": "Global Open",
+              "target_state": "disabled,",
               "bit": 3,
               "action": 0
             },
             {
               "nibble": 1,
               "recommended_hex": "1",
+              "feature_name": "GlassSoftStop_Cfg (GSSC)",
+              "target_state": "GSSC DISABLED",
               "bit": 3,
               "action": 0
             }
@@ -14201,6 +14342,7 @@
           "address": "724-06-01",
           "mask": "*xxx xxxx --",
           "type": "continuous",
+          "feature_name": "HSW_Level_3_TempSetPt (HSWLTSP)",
           "instruction": "Range 24\u00b0c-39\u00b0c (1-F) ex:B=35\u00b0c"
         }
       ]
@@ -14366,6 +14508,8 @@
           "mask": "xxxx x*xx xx--",
           "nibble": 5,
           "community_instruction": "0=Disabled  1 Enabled  Folding Mirror at door close.  Does not open at unlock. (Disables Puddle Lights)",
+          "feature_name": "Mirror_Folding_Cfg (MFC)",
+          "target_state": "MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles",
           "bit": 3,
           "action": 0
         }
@@ -14967,6 +15111,7 @@
           "address": "7D0-04-01",
           "mask": "xxxx xx** xx--",
           "type": "continuous",
+          "feature_name": "Stop Mode Timer (SMT)",
           "instruction": "2D=Raptor  0E=F150  0F=F250  10=F350  11=F450"
         }
       ]
@@ -15062,6 +15207,7 @@
           "address": "7D0-03-01",
           "mask": "xxxx **xx xx--",
           "type": "continuous",
+          "feature_name": "Splash Screen (SS)",
           "instruction": "No options set for webpage. Set to 24 for 75th."
         }
       ]
@@ -15131,6 +15277,7 @@
           "mask": "xxxx xxxx **--",
           "type": "continuous",
           "unit": "mm",
+          "feature_name": "Tire Circumference (TC)",
           "instruction": "Tire Size Calculator https://docs.google.com/spreadsheets/d/1EaVYjY7QC8iYAdsiYnSeJQ9SbyMEVSTYz0Kmb0at4Ps/edit?usp=sharing"
         },
         {
@@ -15139,6 +15286,7 @@
           "mask": "**xx xx--",
           "type": "continuous",
           "unit": "mm",
+          "feature_name": "Tire Circumference (TC)",
           "instruction": "Tire Size Calculator https://docs.google.com/spreadsheets/d/1EaVYjY7QC8iYAdsiYnSeJQ9SbyMEVSTYz0Kmb0at4Ps/edit?usp=sharing"
         }
       ]

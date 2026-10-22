@@ -13,4 +13,5 @@ steps:
   mask: '**** xxxx xx--'
   type: continuous
   unit: seconds
+  feature_name: Power_Point_Maxtime_Cfg (PPMC)
   instruction: Seconds converted to Hex (Stock is 1194-75 minutes)

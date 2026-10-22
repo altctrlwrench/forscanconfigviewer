@@ -12,19 +12,23 @@ steps:
   address: 720-13-01
   mask: '**** **** ****'
   type: continuous
+  feature_name: Belt Minder Chime Operator (BMCO)
   instruction: See Forum spreadsheet for more info
 - module: IPC
   address: 720-13-02
   mask: '**** ****'
   type: continuous
+  feature_name: R4 Bench (RB)
   instruction: See Forum spreadsheet for more info
 - module: IPC
   address: 720-14-01
   mask: '**** **** ****'
   type: continuous
+  feature_name: R2C5 Seatbelt (RCS)
   instruction: See Forum spreadsheet for more info
 - module: IPC
   address: 720-14-02
   mask: '**** ****'
   type: continuous
+  feature_name: R4C5 Seatbelt (RCS)
   instruction: See Forum spreadsheet for more info

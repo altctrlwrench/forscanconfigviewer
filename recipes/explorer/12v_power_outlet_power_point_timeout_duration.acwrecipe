@@ -13,6 +13,7 @@ steps:
   mask: '**** xxxx xx--'
   type: continuous
   unit: seconds
+  feature_name: Power_Point_Maxtime_Cfg (PPMC)
   instruction: 'turns off power point to 1 second after vehicle shuts off. Range:
     1 - 64800. 0001 for 1 second, 001E for 30 seconds, 003C for 1 minute, 012C for
     5 minutes, 0258 for 10 minutes, 0708 for 30 minutes, and 0E10 for 1 hour. FD20

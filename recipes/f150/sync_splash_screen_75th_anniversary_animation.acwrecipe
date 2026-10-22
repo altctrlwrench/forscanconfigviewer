@@ -15,5 +15,6 @@ steps:
   address: 7D0-03-01
   mask: xxxx **xx xx--
   type: continuous
+  feature_name: Splash Screen (SS)
   instruction: Requires Sync ver 22012 or higher - reset APIM in FORScan after either/both
     changes. other screen available

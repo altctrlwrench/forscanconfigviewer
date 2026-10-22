@@ -28,6 +28,7 @@ steps:
   address: 726-50-02
   mask: xxxx xxxx **--
   type: continuous
+  feature_name: White_Lighting_Ckt_Cfg
   instruction: ''
 - module: BCM
   address: 726-81-01

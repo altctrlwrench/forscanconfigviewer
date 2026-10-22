@@ -63,6 +63,7 @@ steps:
   address: 706-02-02
   mask: xxxx xxxx x*--
   type: continuous
+  feature_name: FeatureCfg_BA_DefaultMode
   instruction: Lane Biasing (Under Cruise Control), Predictive Speed Assist (Under
     Cruise Control)
 - module: IPMA

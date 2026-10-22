@@ -12,4 +12,5 @@ steps:
   address: 724-01-01
   mask: xxxx **xx --
   type: continuous
+  feature_name: Lane Change Blink Number
   instruction: add 04 (hex) to your default value for each additional flash

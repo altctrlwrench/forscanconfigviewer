@@ -13,4 +13,5 @@ steps:
   mask: '**** xxxx xx--'
   type: continuous
   unit: seconds
+  feature_name: Power_Point_Maxtime_Cfg (PPMC)
   instruction: 'Calculator: https://docs.google.com/spreadsheets/d/15RmCgd740T10K0PnG44p42FCod9BSG3f6yrUc0X5qxw/edit?usp=sharing'

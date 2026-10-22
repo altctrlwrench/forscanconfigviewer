@@ -13,4 +13,5 @@ steps:
   address: 760-04-03
   mask: xxxx xxx* xx--
   type: continuous
+  feature_name: SDM_GENERIC_MODE12 (SDMGENERICMODE)
   instruction: 'FORScan Menu: SDM - Mode 10 (Rock/Crawl?) (Disabled (Default), Enabled)'

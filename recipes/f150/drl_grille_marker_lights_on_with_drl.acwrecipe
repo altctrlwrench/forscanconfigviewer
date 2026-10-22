@@ -30,9 +30,11 @@ steps:
   address: 726-43-02
   mask: xxxx xx** xx--
   type: continuous
+  feature_name: OutageABM_Cfg
   instruction: Daytime Running Lights (DRL) Include Parklamps Config
 - module: BCM
   address: 726-87-01
   mask: xx** xxxx xx--
   type: continuous
+  feature_name: SlaveExists_OHC_Cfg
   instruction: Daytime Running Lights (DRL) Include Parklamps Config

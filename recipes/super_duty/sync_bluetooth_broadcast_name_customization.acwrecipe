@@ -12,4 +12,5 @@ steps:
   address: 7D0-04-01
   mask: xxxx xx** xx--
   type: continuous
+  feature_name: Stop Mode Timer (SMT)
   instruction: 2D=Raptor  0E=F150  0F=F250  10=F350  11=F450

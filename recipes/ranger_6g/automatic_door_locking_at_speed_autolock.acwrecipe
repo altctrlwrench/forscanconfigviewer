@@ -17,22 +17,32 @@ steps:
   - nibble: 1
     hex_offset: '+8'
     community_instruction: set to 1 (e.g. 0101 0101 01--)
+    feature_name: Feat_Cfg [AUTOLOCK] [PERS_1] (AUTOLOCK_PERS_1)
+    target_state: AUTOLOCK_PERS_1 DISABLE
     bit: 3
     action: 0
   - nibble: 3
     hex_offset: '+8'
+    feature_name: Feat_Cfg [AUTOLOCK] [PERS_2] (AUTOLOCK_PERS_2)
+    target_state: AUTOLOCK_PERS_2 DISABLE
     bit: 3
     action: 0
   - nibble: 5
     hex_offset: '+8'
+    feature_name: Feat_Cfg [AUTOLOCK] [PERS_3] (AUTOLOCK_PERS_3)
+    target_state: AUTOLOCK_PERS_3 DISABLE
     bit: 3
     action: 0
   - nibble: 7
     hex_offset: '+8'
+    feature_name: Feat_Cfg [AUTOLOCK] [PERS_4] (AUTOLOCK_PERS_4)
+    target_state: AUTOLOCK_PERS_4 DISABLE
     bit: 3
     action: 0
   - nibble: 9
     hex_offset: '+8'
+    feature_name: Feat_Cfg [AUTOLOCK] [VEHICLE] (AUTOLOCK_VEHICLE)
+    target_state: AUTOLOCK_VEHICLE DISABLE
     bit: 3
     action: 0
 - module: APIM

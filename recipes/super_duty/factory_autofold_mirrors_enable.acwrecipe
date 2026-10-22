@@ -22,5 +22,7 @@ steps:
   mask: xxxx xxxx x*--
   nibble: 9
   community_instruction: 0=Disabled  1 Enabled Factory Folding Mirror Enabled
+  feature_name: TrailerTowFold_Cfg (TTFC)
+  target_state: TTFC DISABLED
   bit: 3
   action: 0

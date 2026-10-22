@@ -38,10 +38,14 @@ steps:
   nibbles:
   - nibble: 8
     recommended_hex: '0'
+    feature_name: Global Close
+    target_state: disabled,
     bit: 3
     action: 0
   - nibble: 9
     recommended_hex: '1'
+    feature_name: Global_Open_Cfg (GOC)
+    target_state: GOC DISABLED
     bit: 3
     action: 0
 - module: DDM
@@ -66,10 +70,14 @@ steps:
   nibbles:
   - nibble: 0
     recommended_hex: '0'
+    feature_name: Global Open
+    target_state: disabled,
     bit: 3
     action: 0
   - nibble: 1
     recommended_hex: '1'
+    feature_name: GlassSoftStop_Cfg (GSSC)
+    target_state: GSSC DISABLED
     bit: 3
     action: 0
 - module: BCM

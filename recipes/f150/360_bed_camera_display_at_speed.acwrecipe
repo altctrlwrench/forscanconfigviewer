@@ -34,6 +34,7 @@ steps:
   address: 7D0-01-01
   mask: xxxx xxxx **--
   type: continuous
+  feature_name: Rear Camera (RC)
   instruction: ''
 - module: APIM
   address: 7D0-01-04

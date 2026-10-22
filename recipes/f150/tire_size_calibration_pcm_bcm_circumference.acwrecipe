@@ -13,6 +13,7 @@ steps:
   mask: xxxx xxxx **--
   type: continuous
   unit: mm
+  feature_name: Tire Circumference (TC)
   instruction: First two digits of tire circumference in MM encoded in hex.  Check
     speed vs GPS, then tweak to correct speedometer with GSP speed
 - module: BCM
@@ -20,5 +21,6 @@ steps:
   mask: '**xx xx--'
   type: continuous
   unit: mm
+  feature_name: Tire Circumference (TC)
   instruction: First two digits of tire circumference in MM encoded in hex.  Check
     speed vs GPS, then tweak to correct speedometer with GSP speed

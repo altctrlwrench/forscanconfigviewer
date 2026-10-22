@@ -13,5 +13,6 @@ steps:
   address: 733-01-02
   mask: xxxx *xxx xx--
   type: continuous
+  feature_name: Wide Open Throttle Purge Type (WOTPT)
   instruction: 'FORScan Menu: Humidity Sensor Type (Windshield Mounted (Default) ->
     "Not Present)'

@@ -56,6 +56,7 @@ steps:
   address: 726-58-02
   mask: x*xx xxxx xx--
   type: continuous
+  feature_name: AutoRelock_Timeduration_Cfg (ARTC)
   instruction: Sets for all 4 profiles
 - module: APIM
   address: 7D0-09-01

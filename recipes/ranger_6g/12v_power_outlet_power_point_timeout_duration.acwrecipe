@@ -15,5 +15,6 @@ steps:
   mask: '**** xxxx xx--'
   type: continuous
   unit: seconds
+  feature_name: Power_Point_Maxtime_Cfg (PPMC)
   instruction: 0001=1 second.  convert decimal value to hex.   For example 3600 seconds
     equates to 0E10, and 1800 seconds is 0708

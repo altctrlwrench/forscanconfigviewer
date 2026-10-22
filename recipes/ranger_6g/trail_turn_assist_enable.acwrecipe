@@ -13,6 +13,7 @@ steps:
   address: 760-03-01
   mask: xxxx *x--
   type: continuous
+  feature_name: TTA (TTA)
   instruction: 'Confirmed: DIYPSCM (1/28/25) Lariat'
 - module: APIM
   address: 7D0-02-01

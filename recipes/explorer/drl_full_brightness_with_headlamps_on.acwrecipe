@@ -28,6 +28,7 @@ steps:
   address: 726-38-01
   mask: xxxx **xx xx--
   type: continuous
+  feature_name: DRL_Ckt_FixedDim_DutyCycle_Cfg (DRLCFDDCC)
   instruction: 'set at about 60% brightness (3C hex) thru 75% brightness (4B hex)
     use lowest value you can before flickering appears.
 

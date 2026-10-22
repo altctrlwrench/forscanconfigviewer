@@ -12,4 +12,5 @@ steps:
   address: 724-01-01
   mask: xxxx **xx xx--
   type: continuous
+  feature_name: SCMHdlpWashOnTime_Cfg (SCMHWOTC)
   instruction: '* if your default value is 8C:'

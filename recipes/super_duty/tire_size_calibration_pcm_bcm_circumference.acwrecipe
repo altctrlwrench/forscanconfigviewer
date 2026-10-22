@@ -13,10 +13,12 @@ steps:
   mask: xxxx xxxx **--
   type: continuous
   unit: mm
+  feature_name: Tire Circumference (TC)
   instruction: Tire Size Calculator https://docs.google.com/spreadsheets/d/1EaVYjY7QC8iYAdsiYnSeJQ9SbyMEVSTYz0Kmb0at4Ps/edit?usp=sharing
 - module: ''
   address: 726-15-02
   mask: '**xx xx--'
   type: continuous
   unit: mm
+  feature_name: Tire Circumference (TC)
   instruction: Tire Size Calculator https://docs.google.com/spreadsheets/d/1EaVYjY7QC8iYAdsiYnSeJQ9SbyMEVSTYz0Kmb0at4Ps/edit?usp=sharing

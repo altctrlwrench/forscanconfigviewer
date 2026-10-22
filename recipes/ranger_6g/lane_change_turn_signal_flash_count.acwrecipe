@@ -13,4 +13,5 @@ steps:
   address: 724-01-01
   mask: xxxx **xx --
   type: continuous
+  feature_name: LaneChange_Cancel_Blink_Num (LCCBN)
   instruction: 84=1, 8C=3, 90=4, 94=5, 98=6, etc.
