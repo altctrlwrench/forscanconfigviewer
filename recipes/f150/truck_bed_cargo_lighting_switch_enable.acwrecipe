@@ -14,43 +14,131 @@ steps:
   nibbles:
   - nibble: 4
     recommended_hex: '0'
-    feature_name: Bed_Lamp_Cfg
-    target_state: Disable
-    bit: 3
-    action: 0
+    notes: No Data Table
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Bed_Lamp_Cfg
+      target_state: Disable
+    - bit: 2
+      action: 0
+      feature_name: Bed_Lamp_Cfg
+      target_state: Disable
+    - bit: 1
+      action: 0
+      feature_name: Bed_Lamp_Cfg
+      target_state: Disable
+    - bit: 0
+      action: 0
+      feature_name: Bed_Lamp_Cfg
+      target_state: Disable
   - nibble: 5
     recommended_hex: '1'
-    feature_name: BL_INT_Selection_Cfg (BLINTSC)
-    target_state: BLINTSC NULL
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: BL_INT_Selection_Cfg (BLINTSC)
+      target_state: BLINTSC NULL
+    - bit: 2
+      action: 0
+      feature_name: BL_INT_Selection_Cfg (BLINTSC)
+      target_state: BLINTSC NULL
+    - bit: 1
+      action: 0
+      feature_name: BL_INT_Selection_Cfg (BLINTSC)
+      target_state: BLINTSC NULL
+    - bit: 0
+      action: 1
+      feature_name: BL_INT_Selection_Cfg (BLINTSC)
+      target_state: BLINTSC AUTO
 - module: BCM
   address: 726-50-02
   mask: xxxx xxxx **--
-  type: continuous
-  feature_name: White_Lighting_Ckt_Cfg
-  instruction: ''
+  nibble: 8
+  recommended_hex: '0'
+  notes: No Data Table
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: White_Lighting_Ckt_Cfg
+    target_state: Bed Lamp
+  - bit: 2
+    action: 0
+    feature_name: White_Lighting_Ckt_Cfg
+    target_state: Bed Lamp
+  - bit: 1
+    action: 0
+    feature_name: White_Lighting_Ckt_Cfg
+    target_state: Bed Lamp
+  - bit: 0
+    action: 0
+    feature_name: White_Lighting_Ckt_Cfg
+    target_state: Bed Lamp
 - module: BCM
   address: 726-81-01
   mask: '**** xxxx xx--'
   nibbles:
   - nibble: 0
     recommended_hex: '0'
-    feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
-    bit: 3
-    action: 0
+    notes: No Data Table
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
+    - bit: 2
+      action: 0
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
+    - bit: 1
+      action: 0
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
+    - bit: 0
+      action: 0
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
   - nibble: 1
     recommended_hex: '2'
-    feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
-    bit: 3
-    action: 0
+    notes: No Data Table
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
+    - bit: 2
+      action: 0
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
+    - bit: 1
+      action: 1
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
+    - bit: 0
+      action: 0
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
   - nibble: 2
     recommended_hex: '0'
-    feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
-    bit: 3
-    action: 0
+    notes: No Data Table
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
+    - bit: 2
+      action: 0
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
+    - bit: 1
+      action: 0
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
+    - bit: 0
+      action: 0
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
   - nibble: 3
     recommended_hex: '1'
-    feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
-    bit: 3
-    action: 0
+    notes: No Data Table
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
+    - bit: 2
+      action: 0
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
+    - bit: 1
+      action: 0
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)
+    - bit: 0
+      action: 1
+      feature_name: Feat360_FlashOffTime_Cfg (FFOTC)

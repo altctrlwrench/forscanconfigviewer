@@ -7,13 +7,29 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: 'TPMS 0=Disabled  1=Enabled
+
+  TPMS  Front/Rear Tire pressure converted to hex'
 steps:
 - module: BDYCM-BCM
   address: 726-10-01
   mask: xxx* xxxx xx--
+  notes: TPMS 0=Disabled  1=Enabled
   nibble: 3
-  community_instruction: TPMS 0=Disabled  1=Enabled
-  feature_name: TPMEnable_Cfg (TPMEC)
-  target_state: TPMEC DISABLE
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: TPMEnable_Cfg (TPMEC)
+    target_state: TPMEC DISABLE
+  - bit: 2
+    action: 0
+    feature_name: TPMEnable_Cfg (TPMEC)
+    target_state: TPMEC DISABLE
+  - bit: 1
+    action: 0
+    feature_name: TPMEnable_Cfg (TPMEC)
+    target_state: TPMEC DISABLE
+  - bit: 0
+    action: 0
+    feature_name: TPMEnable_Cfg (TPMEC)
+    target_state: TPMEC DISABLE

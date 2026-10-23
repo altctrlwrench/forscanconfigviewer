@@ -7,13 +7,16 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: PD Gauge option in MyView (Disabled (Default), Enabled)
+
+  Trim: AWD?? [Confirmed: jezzzza (9/12/2024) Raptor]'
 forscan_menu: PD Gauge option in MyView (Disabled (Default), Enabled)
 steps:
 - module: IPC
   address: 720-07-01
   mask: xxxx *xxx xx--
+  notes: 8=Enabled
   nibble: 4
-  community_instruction: 8=Enabled
   feature_name: PWR_D Gauge Feature (PWRDGF)
   target_state: PWRDGF enabled
   bit: 3

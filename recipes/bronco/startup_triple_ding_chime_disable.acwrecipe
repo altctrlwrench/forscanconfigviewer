@@ -7,13 +7,19 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2022 Bronco.xlsx
+notes: 'Confirmed: mrjking200'
 steps:
 - module: IPC
   address: 720-01-02
   mask: xxxx x*-- xx--
   nibble: 5
   recommended_hex: '2'
-  community_instruction: Seatbelt warning market to ECE
-  feature_name: Fuel Operated Heater  (FOH)
-  bit: 3
-  action: 0
+  notes: Seatbelt warning market to ECE
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: Fuel Operated Heater  (FOH)
+  - bit: 1
+    action: 1
+    feature_name: Seatbelt Warning Market (SWM)
+    target_state: SWM ECE

@@ -7,13 +7,19 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
+notes: see IPC spreadsheet to disable EIOCM
 steps:
 - module: IPC
   address: 720-01-02
   mask: xx*x xx--
+  notes: see IPC spreadsheet to disable EIOCM | Engine/Ignition On chime disabled
   nibble: 2
-  community_instruction: see IPC spreadsheet to disable EIOCM
-  feature_name: Engine/Ignition On Chime - Message (EIOCM)
-  target_state: EIOCM Disabled
-  bit: 1
-  action: 0
+  bits:
+  - bit: 1
+    action: 0
+    feature_name: Engine/Ignition On Chime - Message (EIOCM)
+    target_state: EIOCM Disabled
+  - bit: 0
+    action: 0
+    feature_name: Engine/Ignition On Chime - Message (EIOCM)
+    target_state: EIOCM Disabled

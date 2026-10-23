@@ -7,13 +7,25 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: 'E-Turbo/Brake Controller
+
+  5-Turbo/No Brake Controller
+
+  A-Non Turbo/Brake Controller
+
+  2-Non Turbo/No Brake Controller'
 steps:
 - module: IPC
   address: 720-07-01
   mask: xxxx x*xx xx--
+  notes: E-Turbo/Brake Controller
   nibble: 5
-  community_instruction: E-Turbo/Brake Controller
-  feature_name: Turbo Boost (TB)
-  target_state: TB Yes
-  bit: 2
-  action: 1
+  bits:
+  - bit: 2
+    action: 1
+    feature_name: Turbo Boost (TB)
+    target_state: TB Yes
+  - bit: 1
+    action: 1
+    feature_name: Digital Gauge Interface (DGI)
+    target_state: DGI enabled

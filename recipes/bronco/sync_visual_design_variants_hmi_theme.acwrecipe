@@ -7,10 +7,29 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2022 Bronco.xlsx
+notes: '05=Lincoln Sync 4 13.2" (Dashcard)
+
+  06=Ford Sync 4 13.2" (Dashcard)
+
+  0A=12" Landscape (Dashcard)
+
+  Confirmed: Unconfirmed'
 steps:
 - module: APIM
   address: 7D0-03-01
   mask: xxxx xxxx **--
-  type: continuous
-  feature_name: Visual Design Variants (VDV)
-  instruction: 05=Lincoln Sync 4 13.2" (Dashcard)
+  notes: Leave 0
+  nibble: 8
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: First Letter of Country Code (FLCC)
+  - bit: 2
+    action: 0
+    feature_name: First Letter of Country Code (FLCC)
+  - bit: 1
+    action: 0
+    feature_name: First Letter of Country Code (FLCC)
+  - bit: 0
+    action: 0
+    feature_name: First Letter of Country Code (FLCC)

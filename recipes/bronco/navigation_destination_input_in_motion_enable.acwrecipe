@@ -7,22 +7,50 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2022 Bronco.xlsx
+notes: '911 Assist will be disabled, potentially Sirius Travel Link too.
+
+  First Letter of Country Code (FLCC)'
 steps:
 - module: APIM
   address: 7D0-03-01
   mask: '**xx xxxx xx--'
+  notes: '911 Assist will be disabled, potentially Sirius Travel Link too.
+
+    First Letter of Country Code (FLCC)'
   nibbles:
   - nibble: 0
     recommended_hex: '5'
-    community_instruction: 911 Assist will be disabled, potentially Sirius Travel
-      Link too.
-    feature_name: First Letter of Country Code (FLCC)
-    bit: 3
-    action: 0
+    notes: '911 Assist will be disabled, potentially Sirius Travel Link too.
+
+      First Letter of Country Code (FLCC)'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: First Letter of Country Code (FLCC)
+    - bit: 2
+      action: 1
+      feature_name: First Letter of Country Code (FLCC)
+    - bit: 1
+      action: 0
+      feature_name: First Letter of Country Code (FLCC)
+    - bit: 0
+      action: 1
+      feature_name: First Letter of Country Code (FLCC)
   - nibble: 1
     recommended_hex: '7'
-    community_instruction: 911 Assist will be disabled, potentially Sirius Travel
-      Link too.
-    feature_name: First Letter of Country Code (FLCC)
-    bit: 3
-    action: 0
+    notes: '911 Assist will be disabled, potentially Sirius Travel Link too.
+
+      First Letter of Country Code (FLCC)'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: First Letter of Country Code (FLCC)
+    - bit: 2
+      action: 1
+      feature_name: First Letter of Country Code (FLCC)
+    - bit: 1
+      action: 1
+      feature_name: First Letter of Country Code (FLCC)
+    - bit: 0
+      action: 1
+      feature_name: First Letter of Country Code (FLCC)

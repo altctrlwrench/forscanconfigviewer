@@ -11,19 +11,36 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2025-2026 Explorer.xlsx
+notes: If first digit is 1, change to 0, this  will turn off ANC (active noise cancellation).
+  use 2 to keep ANC enabled.
 steps:
 - module: ACM
   address: 727-01-01
   mask: xxxx xxxx *xxx
   nibble: 8
   recommended_hex: '0'
-  feature_name: Third Row Speaker Left Output  (TRSLO)
-  target_state: TRSLO Main Speaker Only
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: Third Row Speaker Left Output  (TRSLO)
+    target_state: TRSLO Main Speaker Only
+  - bit: 2
+    action: 0
+    feature_name: Third Row Speaker Left Output  (TRSLO)
+    target_state: TRSLO Main Speaker Only
+  - bit: 1
+    action: 0
+    feature_name: Third Row Speaker Left Output  (TRSLO)
+    target_state: TRSLO Main Speaker Only
+  - bit: 0
+    action: 0
+    feature_name: Third Row Speaker Left Output  (TRSLO)
+    target_state: TRSLO Main Speaker Only
 - module: DSP
   address: 783-01-01
   mask: '*xxx xxxx xx'
+  notes: Change 1st digit to C. Note:if your AS BUILT Is a D, leave it selected to
+    keep ANC enabled.
   nibble: 0
   recommended_hex: C
   feature_name: ANC/Propulsion Sound (ANCPS)

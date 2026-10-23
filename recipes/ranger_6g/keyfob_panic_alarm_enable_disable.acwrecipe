@@ -7,14 +7,31 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: Panic Alarm Mode (Change Honk and Lights to Lights only)
+
+  Trim: All? [Confirmed: craigc (9/10/2024) Lariat FX4]'
 forscan_menu: Panic Alarm Mode (Change Honk and Lights to Lights only)
 steps:
 - module: BCM
   address: 726-01-02
   mask: xxxx xxx* xx--
+  notes: 0=lights & horn (default) 1=lights only (target setting)
   nibble: 7
   community_instruction: 0=lights & horn (default) 1=lights only (target setting)
-  feature_name: PanicAlarm_Cfg (PAC)
-  target_state: PAC BOTH
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: PanicAlarm_Cfg (PAC)
+    target_state: PAC BOTH
+  - bit: 2
+    action: 0
+    feature_name: PanicAlarm_Cfg (PAC)
+    target_state: PAC BOTH
+  - bit: 1
+    action: 0
+    feature_name: PanicAlarm_Cfg (PAC)
+    target_state: PAC BOTH
+  - bit: 0
+    action: 1
+    feature_name: PanicAlarm_Cfg (PAC)
+    target_state: PAC LIGHTS_ONLY

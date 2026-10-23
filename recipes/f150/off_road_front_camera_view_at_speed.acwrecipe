@@ -15,13 +15,39 @@ steps:
   nibbles:
   - nibble: 6
     recommended_hex: '0'
-    feature_name: FeatureCfg_DPAC_OffRoadVersion
-    target_state: Disabled
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: FeatureCfg_DPAC_OffRoadVersion
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: FeatureCfg_DPAC_OffRoadVersion
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: FeatureCfg_DPAC_OffRoadVersion
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: FeatureCfg_DPAC_OffRoadVersion
+      target_state: Disabled
   - nibble: 7
     recommended_hex: '3'
-    feature_name: FeatureCfg_DPAC_OffRoadVersion
-    target_state: Disabled
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: FeatureCfg_DPAC_OffRoadVersion
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: FeatureCfg_DPAC_OffRoadVersion
+      target_state: Disabled
+    - bit: 1
+      action: 1
+      feature_name: FeatureCfg_DPAC_OffRoadVersion
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: FeatureCfg_DPAC_OffRoadVersion
+      target_state: Disabled

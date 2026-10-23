@@ -7,12 +7,30 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2022 Bronco.xlsx
+notes: '0 = Disable both; 2 = Disable drivers; 4 = disable passenger
+
+  Confirmed: LagoCJ/multi'
 steps:
 - module: IPC
   address: 720-01-01
   mask: xxxx xx*x xx--
+  notes: '0 = Disable both; 2 = Disable drivers; 4 = disable passenger
+
+    Confirmed: LagoCJ/multi'
   nibble: 6
-  community_instruction: 0 = Disable both; 2 = Disable drivers; 4 = disable passenger
-  feature_name: Driver Beltminder (DB)
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: Driver Beltminder (DB)
+  - bit: 2
+    action: 0
+    feature_name: Driver Beltminder (DB)
+    target_state: DB disabled
+  - bit: 1
+    action: 0
+    feature_name: Pass BeltMinder (PBM)
+    target_state: PBM disabled
+  - bit: 0
+    action: 0
+    feature_name: Mid Pass Beltminder (MPB)
+    target_state: MPB disabled

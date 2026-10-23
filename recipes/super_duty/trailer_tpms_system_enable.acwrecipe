@@ -7,13 +7,14 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: Add 2 to current value
 steps:
 - module: IPC
   address: 720-09-01
   mask: xx*x xxxx xx--
+  notes: Add 2 to current value
   nibble: 2
   hex_offset: '+2'
-  community_instruction: Add 2 to current value
   feature_name: Down shift Indicator (DI)
   target_state: DI enabled
   bit: 0

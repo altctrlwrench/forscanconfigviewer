@@ -7,14 +7,28 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: Using DRL with Turn Signal (Inhibited (Default, 2)'
 forscan_menu: Using DRL with Turn Signal (Inhibited (Default, 2)
 steps:
 - module: BCM
   address: 726-38-02
   mask: xxx* xxxx xx--
+  notes: 0 for Allow (target), 1 for Dim, 2 for Inhibit (Default)
   nibble: 3
-  community_instruction: 0 for Allow (target), 1 for Dim, 2 for Inhibit (Default)
-  feature_name: DRL_WithTurn_Cfg (DRLWTC)
-  target_state: DRLWTC ALLOW
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: DRL_WithTurn_Cfg (DRLWTC)
+    target_state: DRLWTC ALLOW
+  - bit: 2
+    action: 0
+    feature_name: DRL_WithTurn_Cfg (DRLWTC)
+    target_state: DRLWTC ALLOW
+  - bit: 1
+    action: 0
+    feature_name: DRL_WithTurn_Cfg (DRLWTC)
+    target_state: DRLWTC ALLOW
+  - bit: 0
+    action: 0
+    feature_name: DRL_WithTurn_Cfg (DRLWTC)
+    target_state: DRLWTC ALLOW

@@ -13,7 +13,21 @@ steps:
   mask: xxxx xxxx x*--
   nibble: 9
   recommended_hex: '1'
-  feature_name: Bumper Air Dam - Front (BADF)
-  target_state: BADF Less Front Bumper Air Dam
-  bit: 3
-  action: 0
+  notes: No data table
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: Bumper Air Dam - Front (BADF)
+    target_state: BADF Less Front Bumper Air Dam
+  - bit: 2
+    action: 0
+    feature_name: Bumper Air Dam - Front (BADF)
+    target_state: BADF Less Front Bumper Air Dam
+  - bit: 1
+    action: 0
+    feature_name: Bumper Air Dam - Front (BADF)
+    target_state: BADF Less Front Bumper Air Dam
+  - bit: 0
+    action: 1
+    feature_name: Bumper Air Dam - Front (BADF)
+    target_state: BADF Less Front Bumper Air Dam

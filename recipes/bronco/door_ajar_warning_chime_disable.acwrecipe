@@ -7,12 +7,26 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2022 Bronco.xlsx
+notes: '0 = (still chimes once...but not endlessly)
+
+  Confirmed: LagoCJ/multi'
 steps:
 - module: IPC
   address: 720-01-02
   mask: xx*x xxxx xx--
+  notes: '0 = (still chimes once...but not endlessly)
+
+    Confirmed: LagoCJ/multi'
   nibble: 2
-  community_instruction: 0 = (still chimes once...but not endlessly)
-  feature_name: DTE Rate of Change (DTERC)
-  bit: 2
-  action: 0
+  bits:
+  - bit: 2
+    action: 0
+    feature_name: DTE Rate of Change (DTERC)
+  - bit: 1
+    action: 0
+    feature_name: Engine/Ignition On Chime - Message (EIOCM)
+    target_state: EIOCM Disabled
+  - bit: 0
+    action: 0
+    feature_name: Engine/Ignition On Chime - Message (EIOCM)
+    target_state: EIOCM Disabled

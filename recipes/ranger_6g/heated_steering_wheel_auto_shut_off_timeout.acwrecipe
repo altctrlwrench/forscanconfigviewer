@@ -7,16 +7,33 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: Heated Steering Wheel Auto Shutoff Time (Infinite (Default),
+  1-10 min, 2-15 min, 3-20 min, 4-30 min, 5-40 min, 6-50 min, 7-60 min)'
 forscan_menu: Heated Steering Wheel Auto Shutoff Time (Infinite (Default), 1-10 min,
   2-15 min, 3-20 min, 4-30 min, 5-40 min, 6-50 min, 7-60 min)
 steps:
 - module: SCCM
   address: 724-06-01
   mask: x*xx xxxx --
+  notes: 0 = No shutoff timer (default, target setting), 1-10 min, 2-15 min, 3-20
+    min, 4-30 min, 5-40 min, 6-50 min, 7-60 min
   nibble: 1
   community_instruction: 0 = No shutoff timer (default, target setting), 1-10 min,
     2-15 min, 3-20 min, 4-30 min, 5-40 min, 6-50 min, 7-60 min
-  feature_name: HSW_AutoShutOffTime (HSWASOT)
-  target_state: HSWASOT Off (No AutoShutOff)
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: HSW_AutoShutOffTime (HSWASOT)
+    target_state: HSWASOT Off (No AutoShutOff)
+  - bit: 2
+    action: 0
+    feature_name: HSW_AutoShutOffTime (HSWASOT)
+    target_state: HSWASOT Off (No AutoShutOff)
+  - bit: 1
+    action: 0
+    feature_name: HSW_AutoShutOffTime (HSWASOT)
+    target_state: HSWASOT Off (No AutoShutOff)
+  - bit: 0
+    action: 0
+    feature_name: HSW_AutoShutOffTime (HSWASOT)
+    target_state: HSWASOT Off (No AutoShutOff)

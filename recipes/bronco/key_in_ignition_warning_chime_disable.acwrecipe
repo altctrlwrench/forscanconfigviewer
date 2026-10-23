@@ -7,12 +7,25 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2022 Bronco.xlsx
+notes: 'changed from 0 to 2
+
+  Confirmed: LagoCJ/multi'
 steps:
 - module: IPC
   address: 720-01-02
   mask: xxxx x*xx xx--
+  notes: 'changed from 0 to 2
+
+    Confirmed: LagoCJ/multi | Seatbelt warning switched to European standard.'
   nibble: 5
-  community_instruction: changed from 0 to 2
-  feature_name: Fuel Operated Heater  (FOH)
-  bit: 3
-  action: 0
+  community_instruction: 'changed from 0 to 2
+
+    Confirmed: LagoCJ/multi | Seatbelt warning switched to European standard.'
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: Fuel Operated Heater  (FOH)
+  - bit: 1
+    action: 1
+    feature_name: Seatbelt Warning Market (SWM)
+    target_state: SWM ECE

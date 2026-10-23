@@ -7,14 +7,14 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: (Check Diesel Measurements Screen before changing) Add 8 to current value
 steps:
 - module: IPC
   address: 720-07-02
   mask: x*xx xx--
+  notes: (Check Diesel Measurements Screen before changing) Add 8 to current value
   nibble: 1
   hex_offset: '+8'
-  community_instruction: (Check Diesel Measurements Screen before changing) Add 8
-    to current value
   feature_name: ManRegen (MR)
   target_state: MR enabled
   bit: 3

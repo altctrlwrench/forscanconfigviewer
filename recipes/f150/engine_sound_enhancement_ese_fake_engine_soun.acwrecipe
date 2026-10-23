@@ -13,6 +13,11 @@ steps:
   mask: xxxx xxxx *x--
   nibble: 8
   recommended_hex: '0'
-  feature_name: External CD (ECD)
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: External CD (ECD)
+  - bit: 0
+    action: 0
+    feature_name: Software ESE/EV-ESE (SESEEVESE)
+    target_state: SESEEVESE Disabled

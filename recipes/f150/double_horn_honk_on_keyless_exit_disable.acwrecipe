@@ -7,14 +7,28 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
+notes: disables double honk when exiting running vehicle
 steps:
 - module: BCM
   address: 726-63-02
   mask: xxx* xxxx xx--
+  notes: disables double honk when exiting running vehicle
   nibble: 3
   recommended_hex: '0'
-  community_instruction: disables double honk when exiting running vehicle
-  feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
-  target_state: LPKENEC DISABLED
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+    target_state: LPKENEC DISABLED
+  - bit: 2
+    action: 0
+    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+    target_state: LPKENEC DISABLED
+  - bit: 1
+    action: 0
+    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+    target_state: LPKENEC DISABLED
+  - bit: 0
+    action: 0
+    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+    target_state: LPKENEC DISABLED

@@ -13,7 +13,12 @@ steps:
   mask: xxxx xxx* xx--
   nibble: 7
   recommended_hex: '1'
-  feature_name: QT HMI Themes (QTHMIT)
-  target_state: QTHMIT Classic
-  bit: 1
-  action: 0
+  bits:
+  - bit: 1
+    action: 0
+    feature_name: QT HMI Themes (QTHMIT)
+    target_state: QTHMIT Classic
+  - bit: 0
+    action: 1
+    feature_name: QT HMI Themes (QTHMIT)
+    target_state: QTHMIT Smart Surface

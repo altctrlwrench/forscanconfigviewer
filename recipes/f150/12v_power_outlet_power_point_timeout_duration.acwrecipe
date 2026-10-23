@@ -7,10 +7,13 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
+notes: 0001=1 second, 600=10 minutes, 1800=30 minutes, 3600=1hr. Ensure Power Point
+  Timeout is not disabled.  Longer times possible (use calculator)
 steps:
 - module: BCM
   address: 726-57-01
   mask: '**** xxxx xx--'
+  notes: 0001=1 second
   type: continuous
   unit: seconds
   feature_name: Power_Point_Maxtime_Cfg (PPMC)

@@ -7,13 +7,39 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: "12v outlet power off (seconds) after AUX is off.  Affects center console power\
+  \ port as well as the one in the truck bed, but not the USB ports or 120VAC\n0 -\
+  \ disabled (target setting) = always on\n1 - enabled = use timeout duration setting.\
+  \ \nFORScan Menu: Power Point Feature (Disabled (Always on), Enabled (use timeout\
+  \ - Default))\nTrim: All [Confirmed: craigc (9/16/2024) Lariat]"
 forscan_menu: Power Point Feature (Disabled (Always on), Enabled (use timeout - Default))
 steps:
 - module: BCM
   address: 726-57-01
   mask: xxxx x*xx xx--
+  notes: '0 - disabled/always on, 1-enabled/use timeout duration above.   12v outlet
+    power off (seconds) after AUX is off.  Affects center console power port as well
+    as the one in the truck bed, but not the USB ports or 120VAC
+
+    FORScan Menu: Power Point Feature (Disabled (Always on), Enabled (use timeout
+    - Default))
+
+    Trim: All [Confirmed: craigc (9/16/2024) Lariat]'
   nibble: 5
-  feature_name: Power_Point_Timeout_Cfg (PPTC)
-  target_state: PPTC DISABLE
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: Power_Point_Timeout_Cfg (PPTC)
+    target_state: PPTC DISABLE
+  - bit: 2
+    action: 0
+    feature_name: Power_Point_Timeout_Cfg (PPTC)
+    target_state: PPTC DISABLE
+  - bit: 1
+    action: 0
+    feature_name: Power_Point_Timeout_Cfg (PPTC)
+    target_state: PPTC DISABLE
+  - bit: 0
+    action: 0
+    feature_name: Power_Point_Timeout_Cfg (PPTC)
+    target_state: PPTC DISABLE

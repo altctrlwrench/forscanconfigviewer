@@ -7,11 +7,17 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: Auto Stop Start (Enabled (Default), Disabled)
+
+  Confirmed: craigc (10/13/2024) Lariat
+
+  sloon (10/13/2024) Raptor'
 forscan_menu: Auto Stop Start (Enabled (Default), Disabled)
 steps:
 - module: IPC
   address: 720-01-01
   mask: xxxx *xxx xx--
+  notes: Bit2 (Subtract 2 to disable.  e.g. change 3 to 1)
   nibble: 4
   community_instruction: Bit2 (Subtract 2 to disable.  e.g. change 3 to 1)
   feature_name: Auto Stop Start (ASS)

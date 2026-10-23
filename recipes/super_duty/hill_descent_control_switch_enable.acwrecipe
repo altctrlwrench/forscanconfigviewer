@@ -7,13 +7,20 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: Add 2 to your value
 steps:
 - module: ABS
   address: 760-03-01
   mask: xxxx *xxx xx--
+  notes: Add 2 to your value
   nibble: 4
   hex_offset: '+2'
-  community_instruction: Add 2 to your value
-  feature_name: PATS (PATS)
-  bit: 2
-  action: 0
+  bits:
+  - bit: 2
+    action: 0
+    feature_name: PATS (PATS)
+  - bit: 1
+    action: 1
+    feature_name: HDC Only (HDCO)
+    target_state: HDCO With HDC (Hill Descent Control) MFAL FECAB (ABS - HILL DESCENT
+      CONTROL)

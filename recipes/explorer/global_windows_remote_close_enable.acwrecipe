@@ -12,24 +12,61 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2025-2026 Explorer.xlsx
+notes: "[BCM] - - Enable the following from DISABLED to ENABLED in BdyCM (easy way):\
+  \ \n-Global Close (change from Disabled to Remote)**\n-Global Close - Vehicle\n\
+  -Global Close - Initial Value\n-Global Close - Personal 1\n-Global Close - Personal\
+  \ 2\n-Global Close - Personal 3\n-Global Close - Personal 4"
 steps:
 - module: PDM
   address: 741-06-02
   mask: xxxx xxx* xx--
+  notes: "[BCM] - - Enable the following from DISABLED to ENABLED in BdyCM (easy way):\
+    \ \n-Global Close (change from Disabled to Remote)**\n-Global Close - Vehicle\n\
+    -Global Close - Initial Value\n-Global Close - Personal 1\n-Global Close - Personal\
+    \ 2\n-Global Close - Personal 3\n-Global Close - Personal 4"
   nibble: 7
   recommended_hex: '1'
-  community_instruction: '[BCM] - - Enable the following from DISABLED to ENABLED
-    in BdyCM (easy way): '
-  feature_name: Global_Close_Cfg (GCC)
-  target_state: GCC DISABLED
-  bit: 3
-  action: 0
+  community_instruction: "[BCM] - - Enable the following from DISABLED to ENABLED\
+    \ in BdyCM (easy way): \n-Global Close (change from Disabled to Remote)**\n-Global\
+    \ Close - Vehicle\n-Global Close - Initial Value\n-Global Close - Personal 1\n\
+    -Global Close - Personal 2\n-Global Close - Personal 3\n-Global Close - Personal\
+    \ 4"
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: Global_Close_Cfg (GCC)
+    target_state: GCC DISABLED
+  - bit: 2
+    action: 0
+    feature_name: Global_Close_Cfg (GCC)
+    target_state: GCC DISABLED
+  - bit: 1
+    action: 0
+    feature_name: Global_Close_Cfg (GCC)
+    target_state: GCC DISABLED
+  - bit: 0
+    action: 1
+    feature_name: Global_Close_Cfg (GCC)
+    target_state: GCC ENABLED
 - module: DDM
   address: 740-06-02
   mask: xxxx xxx* xx--
   nibble: 7
   recommended_hex: '1'
-  feature_name: Global_Close_Cfg (GCC)
-  target_state: GCC DISABLED
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: Global_Close_Cfg (GCC)
+    target_state: GCC DISABLED
+  - bit: 2
+    action: 0
+    feature_name: Global_Close_Cfg (GCC)
+    target_state: GCC DISABLED
+  - bit: 1
+    action: 0
+    feature_name: Global_Close_Cfg (GCC)
+    target_state: GCC DISABLED
+  - bit: 0
+    action: 1
+    feature_name: Global_Close_Cfg (GCC)
+    target_state: GCC ENABLED

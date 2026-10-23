@@ -7,10 +7,26 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2022 Bronco.xlsx
+notes: '* if your default value is 8C:
+
+  80=null, 84=1, 88=2, 8C=3, 90=4, 94=5, 98=6, 9C=7, A0=8, A4=9, A8=10
+
+
+  * if your default value is 0C:
+
+  00=null, 04=1, 08=2, 0C=3, 10=4, 14=5, 18=6, 1C=7, 20=8, 24=9, 28=10
+
+  Confirmed: D2dhanover'
 steps:
 - module: SCCM
   address: 724-01-01
   mask: xxxx **xx xx--
-  type: continuous
+  notes: '* if your default value is 8C:
+
+    80=null, 84=1, 88=2, 8C=3, 90=4, 94=5, 98=6, 9C=7, A0=8, A4=9, A8=10
+
+
+    * if your default value is 0C:
+
+    00=null, 04=1, 08=2, 0C=3, 10=4, 14=5, 18=6, 1C=7, 20=8, 24=9, 28=10'
   feature_name: SCMHdlpWashOnTime_Cfg (SCMHWOTC)
-  instruction: '* if your default value is 8C:'

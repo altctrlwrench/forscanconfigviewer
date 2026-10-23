@@ -7,14 +7,29 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: Change 0 to 1
 steps:
 - module: BDYCM-BCM
   address: 726-74-01
   mask: xxx* xxxx xx--
+  notes: Change 0 to 1
   nibble: 3
   recommended_hex: '1'
   community_instruction: Change 0 to 1
-  feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
-  target_state: HPAIOC AUTO
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+    target_state: HPAIOC AUTO
+  - bit: 2
+    action: 0
+    feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+    target_state: HPAIOC AUTO
+  - bit: 1
+    action: 0
+    feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+    target_state: HPAIOC AUTO
+  - bit: 0
+    action: 1
+    feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+    target_state: HPAIOC LAST_KNOWN

@@ -7,15 +7,32 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'Set on and control functions enabled
+
+  Can be changed using Forscan easy mode
+
+  FORScan Menu: Auto Relock (Disabled (Default), Enabled)
+
+  Trim: All?'
 forscan_menu: Auto Relock (Disabled (Default), Enabled)
 steps:
 - module: APIM
   address: 7D0-09-01
   mask: xx*x xxxx xx--
+  notes: Bit 2 (add 2 to enable, e.g. change 1 to 3)
   nibble: 2
   hex_offset: '+2'
   community_instruction: Bit 2 (add 2 to enable, e.g. change 1 to 3)
-  feature_name: Autolock Control Function (ACF)
-  target_state: ACF Enabled
-  bit: 3
-  action: 1
+  bits:
+  - bit: 3
+    action: 1
+    feature_name: Autolock Control Function (ACF)
+    target_state: ACF Enabled
+  - bit: 1
+    action: 1
+    feature_name: Auto Relock (AR)
+    target_state: AR Enabled
+  - bit: 0
+    action: 1
+    feature_name: Autounlock Control Function (ACF)
+    target_state: ACF Enabled

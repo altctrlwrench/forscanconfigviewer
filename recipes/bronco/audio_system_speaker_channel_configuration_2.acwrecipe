@@ -7,10 +7,16 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2022 Bronco.xlsx
+notes: '00 = EQ Off
+
+  01 = EQ On (High-pass filter on the rear pods)
+
+  Confirmed: RagnarKon'
 steps:
 - module: ACM
   address: 727-01-02
   mask: xx** xxxx xxxx
-  type: continuous
+  notes: '00 = EQ Off
+
+    01 = EQ On (High-pass filter on the rear pods)'
   feature_name: EQ Selection (EQS)
-  instruction: 00 = EQ Off

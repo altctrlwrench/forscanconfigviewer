@@ -7,12 +7,17 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: Belt Minder Chime - Row 1 Col 5 (Set to Disabled. Also can be
+  done using procedure in user manual)
+
+  Trim: All [Confirmed: craigc (7/31/24) Lariat FX4]'
 forscan_menu: Belt Minder Chime - Row 1 Col 5 (Set to Disabled. Also can be done using
   procedure in user manual)
 steps:
 - module: IPC
   address: 720-13-01
   mask: x*xx xxxx xx--
+  notes: Bit 1 (subtract 1 to disable, e.g. change 1 to 0)
   nibble: 1
   hex_offset: '-1'
   community_instruction: Bit 1 (subtract 1 to disable, e.g. change 1 to 0)

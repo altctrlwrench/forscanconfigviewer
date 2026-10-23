@@ -7,15 +7,24 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: "Enables the Auto Unlock and Auto-relock control options \nPossible to use\
+  \ FORScan easy mode\nFORScan Menu: Auto Lock Control Function (Disabled (Default),\
+  \ Enabled)\nTrim: Enable/Disable [Confirmed: craigc (9/12/2024) Lariat]"
 forscan_menu: Auto Lock Control Function (Disabled (Default), Enabled)
 steps:
 - module: APIM
   address: 7D0-09-01
   mask: xx*x xxxx xx--
+  notes: Bit 4 (Add 8 to enable, e.g. change 3 to B)
   nibble: 2
   hex_offset: '+8'
   community_instruction: Bit 4 (Add 8 to enable, e.g. change 3 to B)
-  feature_name: Autolock Control Function (ACF)
-  target_state: ACF Enabled
-  bit: 3
-  action: 1
+  bits:
+  - bit: 3
+    action: 1
+    feature_name: Autolock Control Function (ACF)
+    target_state: ACF Enabled
+  - bit: 0
+    action: 1
+    feature_name: Autounlock Control Function (ACF)
+    target_state: ACF Enabled

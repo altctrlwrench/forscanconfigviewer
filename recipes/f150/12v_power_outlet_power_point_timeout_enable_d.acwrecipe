@@ -7,22 +7,50 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
+notes: disabled (always on)
 steps:
 - module: BCM
   address: 726-57-01
   mask: xxxx **xx xx--
+  notes: disabled (always on)
   nibbles:
   - nibble: 4
     recommended_hex: '0'
-    community_instruction: disabled (always on)
-    feature_name: Power_Point_Timeout_Cfg
-    target_state: Disable
-    bit: 3
-    action: 0
+    notes: disabled (always on) | No data table.
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Power_Point_Timeout_Cfg
+      target_state: Disable
+    - bit: 2
+      action: 0
+      feature_name: Power_Point_Timeout_Cfg
+      target_state: Disable
+    - bit: 1
+      action: 0
+      feature_name: Power_Point_Timeout_Cfg
+      target_state: Disable
+    - bit: 0
+      action: 0
+      feature_name: Power_Point_Timeout_Cfg
+      target_state: Disable
   - nibble: 5
     recommended_hex: '0'
-    community_instruction: disabled (always on)
-    feature_name: Power_Point_Timeout_Cfg (PPTC)
-    target_state: PPTC DISABLE
-    bit: 3
-    action: 0
+    notes: disabled (always on)
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Power_Point_Timeout_Cfg (PPTC)
+      target_state: PPTC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Power_Point_Timeout_Cfg (PPTC)
+      target_state: PPTC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Power_Point_Timeout_Cfg (PPTC)
+      target_state: PPTC DISABLE
+    - bit: 0
+      action: 0
+      feature_name: Power_Point_Timeout_Cfg (PPTC)
+      target_state: PPTC DISABLE

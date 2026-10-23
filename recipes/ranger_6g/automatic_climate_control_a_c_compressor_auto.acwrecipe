@@ -7,12 +7,13 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: Humidity Sensor Type (Windshield Mounted (Default) -> "Not Present)'
 forscan_menu: Humidity Sensor Type (Windshield Mounted (Default) -> "Not Present)
 steps:
 - module: HVAC
   address: 733-01-02
   mask: xxxx *xxx xx--
-  type: continuous
+  notes: '* -> Bit 4 (subtract 8 to disable.  e.g. change
+
+    FORScan Menu: Humidity Sensor Type (Windshield Mounted (Default) -> "Not Present)'
   feature_name: Wide Open Throttle Purge Type (WOTPT)
-  instruction: 'FORScan Menu: Humidity Sensor Type (Windshield Mounted (Default) ->
-    "Not Present)'

@@ -13,130 +13,342 @@ steps:
   mask: xxxx x*xx xx--
   nibble: 5
   recommended_hex: E
-  feature_name: Global Window Open (GWO)
-  target_state: GWO Enabled
-  bit: 3
-  action: 1
+  bits:
+  - bit: 3
+    action: 1
+    feature_name: Global Window Open (GWO)
+    target_state: GWO Enabled
+  - bit: 2
+    action: 1
+    feature_name: Global Window Close (GWC)
+    target_state: GWC Enabled
 - module: DDM
   address: 740-06-02
   mask: xxxx xxxx **--
   nibbles:
   - nibble: 8
     recommended_hex: '0'
-    feature_name: DiagResetDelay_Cfg (DRDC)
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: DiagResetDelay_Cfg (DRDC)
+    - bit: 2
+      action: 0
+      feature_name: DiagResetDelay_Cfg (DRDC)
+    - bit: 1
+      action: 0
+      feature_name: DiagResetDelay_Cfg (DRDC)
+    - bit: 0
+      action: 0
+      feature_name: DiagResetDelay_Cfg (DRDC)
   - nibble: 9
     recommended_hex: '1'
-    feature_name: Global_Open_Cfg (GOC)
-    target_state: GOC DISABLED
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
+    - bit: 0
+      action: 1
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC ENABLED
 - module: PDM
   address: 741-06-02
   mask: xxxx xxxx **--
   nibbles:
   - nibble: 8
     recommended_hex: '0'
-    feature_name: Global Close
-    target_state: disabled,
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global Close
+      target_state: disabled,
+    - bit: 2
+      action: 0
+      feature_name: Global Close
+      target_state: disabled,
+    - bit: 1
+      action: 0
+      feature_name: Global Close
+      target_state: disabled,
+    - bit: 0
+      action: 0
+      feature_name: Global Close
+      target_state: disabled,
   - nibble: 9
     recommended_hex: '1'
-    feature_name: Global_Open_Cfg (GOC)
-    target_state: GOC DISABLED
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
+    - bit: 0
+      action: 1
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC ENABLED
 - module: DDM
   address: 740-06-03
   mask: '**xx xxxx xx--'
   nibbles:
   - nibble: 0
     recommended_hex: '0'
-    feature_name: GlassSoftStop_Cfg (GSSC)
-    target_state: GSSC DISABLED
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC DISABLED
+    - bit: 0
+      action: 0
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC DISABLED
   - nibble: 1
     recommended_hex: '1'
-    feature_name: GlassSoftStop_Cfg (GSSC)
-    target_state: GSSC DISABLED
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC DISABLED
+    - bit: 0
+      action: 1
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC ENABLED
 - module: PDM
   address: 741-06-03
   mask: '**xx xxxx xx--'
   nibbles:
   - nibble: 0
     recommended_hex: '0'
-    feature_name: Global Open
-    target_state: disabled,
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global Open
+      target_state: disabled,
+    - bit: 2
+      action: 0
+      feature_name: Global Open
+      target_state: disabled,
+    - bit: 1
+      action: 0
+      feature_name: Global Open
+      target_state: disabled,
+    - bit: 0
+      action: 0
+      feature_name: Global Open
+      target_state: disabled,
   - nibble: 1
     recommended_hex: '1'
-    feature_name: GlassSoftStop_Cfg (GSSC)
-    target_state: GSSC DISABLED
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC DISABLED
+    - bit: 0
+      action: 1
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC ENABLED
 - module: BCM
   address: 726-11-02
   mask: xx** xx** xx--
   nibbles:
   - nibble: 2
     recommended_hex: '0'
-    feature_name: GlobalClose_Cfg (GCC)
-    target_state: GCC DISABLE
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
+    - bit: 0
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
   - nibble: 3
     recommended_hex: '1'
-    feature_name: GlobalClose_Mode_Cfg (GCMC)
-    target_state: GCMC PRESS_N_HOLD
-    bit: 3
-    action: 0
+    notes: sets to press and hold
+    community_instruction: sets to press and hold
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: GlobalClose_Mode_Cfg (GCMC)
+      target_state: GCMC PRESS_N_HOLD
+    - bit: 2
+      action: 0
+      feature_name: GlobalClose_Mode_Cfg (GCMC)
+      target_state: GCMC PRESS_N_HOLD
+    - bit: 1
+      action: 0
+      feature_name: GlobalClose_Mode_Cfg (GCMC)
+      target_state: GCMC PRESS_N_HOLD
+    - bit: 0
+      action: 1
+      feature_name: GlobalClose_Mode_Cfg (GCMC)
+      target_state: GCMC SINGLE_PRESS
   - nibble: 6
     recommended_hex: '0'
-    feature_name: GlobalClose_Cfg (GCC)
-    target_state: GCC DISABLE
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
+    - bit: 0
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
   - nibble: 7
     recommended_hex: '1'
-    feature_name: GlobalClose_Cfg (GCC)
-    target_state: GCC DISABLE
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC REMOTE
 - module: BCM
   address: 726-22-01
   mask: xxxx xxxx **--
   nibbles:
   - nibble: 8
     recommended_hex: '0'
-    feature_name: Feat_Cfg [GLOBALCLOSE] [PERS_1] (GLOBALCLOSE_PERS_1)
-    target_state: GLOBALCLOSE_PERS_1 DISABLE
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [PERS_1] (GLOBALCLOSE_PERS_1)
+      target_state: GLOBALCLOSE_PERS_1 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [PERS_1] (GLOBALCLOSE_PERS_1)
+      target_state: GLOBALCLOSE_PERS_1 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [PERS_1] (GLOBALCLOSE_PERS_1)
+      target_state: GLOBALCLOSE_PERS_1 DISABLE
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [PERS_1] (GLOBALCLOSE_PERS_1)
+      target_state: GLOBALCLOSE_PERS_1 DISABLE
   - nibble: 9
     recommended_hex: '1'
-    feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
-    target_state: GLOBALCLOSE_VEHICLE DISABLE
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: GLOBALCLOSE_VEHICLE DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: GLOBALCLOSE_VEHICLE DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: GLOBALCLOSE_VEHICLE DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: GLOBALCLOSE_VEHICLE ENABLE
 - module: BCM
   address: 726-22-02
   mask: xxxx xxxx **--
   nibbles:
   - nibble: 8
     recommended_hex: '0'
-    feature_name: Feat_Cfg [GLOBALOPEN] [PERS_1] (GLOBALOPEN_PERS_1)
-    target_state: GLOBALOPEN_PERS_1 DISABLE
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [PERS_1] (GLOBALOPEN_PERS_1)
+      target_state: GLOBALOPEN_PERS_1 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [PERS_1] (GLOBALOPEN_PERS_1)
+      target_state: GLOBALOPEN_PERS_1 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [PERS_1] (GLOBALOPEN_PERS_1)
+      target_state: GLOBALOPEN_PERS_1 DISABLE
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [PERS_1] (GLOBALOPEN_PERS_1)
+      target_state: GLOBALOPEN_PERS_1 DISABLE
   - nibble: 9
     recommended_hex: '1'
-    feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
-    target_state: GLOBALOPEN_VEHICLE DISABLE
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: GLOBALOPEN_VEHICLE DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: GLOBALOPEN_VEHICLE DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: GLOBALOPEN_VEHICLE DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: GLOBALOPEN_VEHICLE ENABLE

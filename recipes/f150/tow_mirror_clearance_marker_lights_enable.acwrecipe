@@ -13,7 +13,20 @@ steps:
   mask: xxxx xxx* xx--
   nibble: 7
   recommended_hex: '1'
-  feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
-  target_state: PLBCUC NOT_USED
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
+    target_state: PLBCUC NOT_USED
+  - bit: 2
+    action: 0
+    feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
+    target_state: PLBCUC NOT_USED
+  - bit: 1
+    action: 0
+    feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
+    target_state: PLBCUC NOT_USED
+  - bit: 0
+    action: 1
+    feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
+    target_state: PLBCUC POSITION_ONLY

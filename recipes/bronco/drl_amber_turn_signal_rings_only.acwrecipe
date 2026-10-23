@@ -8,36 +8,113 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2022 Bronco.xlsx
+notes: '** NOTE 04 works during daylight, at night white and blink amber
+
+  Confirmed: D2dhanover|multi'
 steps:
 - module: BDYCM
   address: 726-43-01
   mask: '**xx xxxx xx--'
+  notes: 'LF_DRL_Lamp_Ckt_Usage_Cfg:
+
+    00=Not Used 01=DRL Only 02=DRL Position 03=Fixed DRL Position 04=Turn and DRL
+    05=Position Only 06=Stop Turn
+
+    ** NOTE 04 works during daylight, at night white and blink amber'
   nibbles:
   - nibble: 0
-    community_instruction: First Nibble always 0
-    feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
-    target_state: LFTLCUC NOT_USED
-    bit: 3
-    action: 0
+    notes: First Nibble always 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      target_state: LFTLCUC NOT_USED
+    - bit: 2
+      action: 0
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      target_state: LFTLCUC NOT_USED
+    - bit: 1
+      action: 0
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      target_state: LFTLCUC NOT_USED
+    - bit: 0
+      action: 0
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      target_state: LFTLCUC NOT_USED
   - nibble: 1
-    community_instruction: 'LF_DRL_Lamp_Ckt_Usage_Cfg:'
-    feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
-    target_state: LFTLCUC NOT_USED
-    bit: 3
-    action: 0
+    notes: "LF_DRL_Lamp_Ckt_Usage_Cfg:\n0=Not Used \n1=DRL Only \n2=DRL Position \n\
+      3=Fixed DRL Position \n4=Turn and DRL \n5=Position Only \n6=Stop Turn\n** NOTE\
+      \ 4 works during daylight, at night white and blink amber"
+    community_instruction: "LF_DRL_Lamp_Ckt_Usage_Cfg:\n0=Not Used \n1=DRL Only \n\
+      2=DRL Position \n3=Fixed DRL Position \n4=Turn and DRL \n5=Position Only \n\
+      6=Stop Turn\n** NOTE 4 works during daylight, at night white and blink amber"
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      target_state: LFTLCUC NOT_USED
+    - bit: 2
+      action: 1
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      target_state: LFTLCUC TURN_POSITION_DRL
+    - bit: 1
+      action: 0
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      target_state: LFTLCUC NOT_USED
+    - bit: 0
+      action: 0
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      target_state: LFTLCUC NOT_USED
 - module: BDYCM
   address: 726-43-01
   mask: xx** xxxx xx--
+  notes: 'RF_DRL_Lamp_Ckt_Usage_Cfg
+
+    00=Not Used 01=DRL Only 02=DRL Position 03=Fixed DRL Position 04=Turn and DRL
+    05=Position Only 06=Stop Turn
+
+    ** NOTE 04 works during daylight, at night white and blink amber'
   nibbles:
   - nibble: 2
-    community_instruction: First nibble always 0
-    feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
-    target_state: LFTLCUC NOT_USED
-    bit: 3
-    action: 0
+    notes: First nibble always 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      target_state: LFTLCUC NOT_USED
+    - bit: 2
+      action: 0
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      target_state: LFTLCUC NOT_USED
+    - bit: 1
+      action: 0
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      target_state: LFTLCUC NOT_USED
+    - bit: 0
+      action: 0
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      target_state: LFTLCUC NOT_USED
   - nibble: 3
-    community_instruction: RF_DRL_Lamp_Ckt_Usage_Cfg
-    feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
-    target_state: RFTLCUC NOT_USED
-    bit: 3
-    action: 0
+    notes: "RF_DRL_Lamp_Ckt_Usage_Cfg\n0=Not Used \n1=DRL Only \n2=DRL Position \n\
+      3=Fixed DRL Position \n4=Turn and DRL \n5=Position Only \n6=Stop Turn\n** NOTE\
+      \ 4 works during daylight, at night white and blink amber"
+    community_instruction: "RF_DRL_Lamp_Ckt_Usage_Cfg\n0=Not Used \n1=DRL Only \n\
+      2=DRL Position \n3=Fixed DRL Position \n4=Turn and DRL \n5=Position Only \n\
+      6=Stop Turn\n** NOTE 4 works during daylight, at night white and blink amber"
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      target_state: RFTLCUC NOT_USED
+    - bit: 2
+      action: 1
+      feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      target_state: RFTLCUC TURN_POSITION_DRL
+    - bit: 1
+      action: 0
+      feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      target_state: RFTLCUC NOT_USED
+    - bit: 0
+      action: 0
+      feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      target_state: RFTLCUC NOT_USED

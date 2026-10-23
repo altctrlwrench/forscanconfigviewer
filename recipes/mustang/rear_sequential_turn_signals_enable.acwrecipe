@@ -13,7 +13,20 @@ steps:
   mask: x*xx xxxx --
   nibble: 1
   recommended_hex: '1'
-  feature_name: LED Sequencing Mode (LEDSM)
-  target_state: LEDSM No sequencing
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: LED Sequencing Mode (LEDSM)
+    target_state: LEDSM No sequencing
+  - bit: 2
+    action: 0
+    feature_name: LED Sequencing Mode (LEDSM)
+    target_state: LEDSM No sequencing
+  - bit: 1
+    action: 0
+    feature_name: LED Sequencing Mode (LEDSM)
+    target_state: LEDSM No sequencing
+  - bit: 0
+    action: 1
+    feature_name: LED Sequencing Mode (LEDSM)
+    target_state: 'LEDSM Sequencing Mode #1'

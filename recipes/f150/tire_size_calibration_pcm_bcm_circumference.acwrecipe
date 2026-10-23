@@ -7,10 +7,13 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
+notes: First two digits of tire circumference in MM encoded in hex.  Check speed vs
+  GPS, then tweak to correct speedometer with GSP speed
 steps:
 - module: BCM
   address: 726-15-01
   mask: xxxx xxxx **--
+  notes: First two digits of tire circumference in MM encoded in hex
   type: continuous
   unit: mm
   feature_name: Tire Circumference (TC)
@@ -19,6 +22,7 @@ steps:
 - module: BCM
   address: 726-15-02
   mask: '**xx xx--'
+  notes: Last two digits of tire circumference in MM encoded in hex
   type: continuous
   unit: mm
   feature_name: Tire Circumference (TC)

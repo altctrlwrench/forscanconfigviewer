@@ -8,14 +8,20 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: unknown, use asbuilt (advanced)
+
+  Confirmed: craigc (9/12/2024) Lariat'
 forscan_menu: unknown, use asbuilt (advanced)
 steps:
 - module: APIM
   address: 7D0-02-02
   mask: xxx* xxxx xx--
+  notes: Bit 1 (add 1 to enable, e.g. change 2 to 3) | Specific setting not listed
+    on this sheet, using old value (untested)
   nibble: 3
   hex_offset: '+1'
-  community_instruction: Bit 1 (add 1 to enable, e.g. change 2 to 3)
+  community_instruction: Bit 1 (add 1 to enable, e.g. change 2 to 3) | Specific setting
+    not listed on this sheet, using old value (untested)
   feature_name: Powerflow Type (PT)
   bit: 0
   action: 0

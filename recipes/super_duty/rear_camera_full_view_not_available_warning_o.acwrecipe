@@ -7,15 +7,15 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: Add 1 to Current Value - Sync version must be 23151 rev 902 or higher
 prerequisites: Sync version must be 23151 rev 902 or higher
 steps:
 - module: APIM
   address: 7D0-02-02
   mask: xxx* xxxx xx--
+  notes: Add 1 to Current Value - Sync version must be 23151 rev 902 or higher
   nibble: 3
   hex_offset: '+1'
-  community_instruction: Add 1 to Current Value - Sync version must be 23151 rev 902
-    or higher
   feature_name: RCOD HMI w/o Blackbox (RCODHMIB)
   target_state: RCODHMIB Disabled
   bit: 0

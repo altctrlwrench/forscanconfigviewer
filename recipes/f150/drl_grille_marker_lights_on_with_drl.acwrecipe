@@ -7,34 +7,97 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
+notes: Daytime Running Lights (DRL) Include Parklamps Config
 steps:
 - module: BCM
   address: 726-38-01
   mask: xxxx xxxx **--
+  notes: Daytime Running Lights (DRL) Include Parklamps Config
   nibbles:
   - nibble: 8
     recommended_hex: '0'
-    community_instruction: Daytime Running Lights (DRL) Include Parklamps Config
-    feature_name: DRL_IncludeParklamps_Cfg
-    target_state: Disable
-    bit: 3
-    action: 0
+    notes: Daytime Running Lights (DRL) Include Parklamps Config
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg
+      target_state: Disable
+    - bit: 2
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg
+      target_state: Disable
+    - bit: 1
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg
+      target_state: Disable
+    - bit: 0
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg
+      target_state: Disable
   - nibble: 9
     recommended_hex: '1'
-    community_instruction: Daytime Running Lights (DRL) Include Parklamps Config
-    feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
-    target_state: DRLIPC DISABLE
-    bit: 3
-    action: 0
+    notes: Daytime Running Lights (DRL) Include Parklamps Config
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC ENABLE
 - module: BCM
   address: 726-43-02
   mask: xxxx xx** xx--
-  type: continuous
-  feature_name: OutageABM_Cfg
-  instruction: Daytime Running Lights (DRL) Include Parklamps Config
+  notes: Daytime Running Lights (DRL) On With Park Lamps On Config
+  nibble: 7
+  recommended_hex: '1'
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: DRL_OnWithParkLampsOn_Cfg (DRLOWPLOC)
+    target_state: DRLOWPLOC DISABLE
+  - bit: 2
+    action: 0
+    feature_name: DRL_OnWithParkLampsOn_Cfg (DRLOWPLOC)
+    target_state: DRLOWPLOC DISABLE
+  - bit: 1
+    action: 0
+    feature_name: DRL_OnWithParkLampsOn_Cfg (DRLOWPLOC)
+    target_state: DRLOWPLOC DISABLE
+  - bit: 0
+    action: 1
+    feature_name: DRL_OnWithParkLampsOn_Cfg (DRLOWPLOC)
+    target_state: DRLOWPLOC ENABLE
 - module: BCM
   address: 726-87-01
   mask: xx** xxxx xx--
-  type: continuous
-  feature_name: SlaveExists_OHC_Cfg
-  instruction: Daytime Running Lights (DRL) Include Parklamps Config
+  notes: Daytime Running Lights (DRL) Suppress License Config
+  nibble: 3
+  recommended_hex: '0'
+  community_instruction: Daytime Running Lights (DRL) Suppress License Config
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: DRL_SuppressLicense_Cfg (DRLSLC)
+    target_state: DRLSLC NOT_SUPPRESSED
+  - bit: 2
+    action: 0
+    feature_name: DRL_SuppressLicense_Cfg (DRLSLC)
+    target_state: DRLSLC NOT_SUPPRESSED
+  - bit: 1
+    action: 0
+    feature_name: DRL_SuppressLicense_Cfg (DRLSLC)
+    target_state: DRLSLC NOT_SUPPRESSED
+  - bit: 0
+    action: 0
+    feature_name: DRL_SuppressLicense_Cfg (DRLSLC)
+    target_state: DRLSLC NOT_SUPPRESSED

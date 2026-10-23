@@ -7,16 +7,24 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: Chimes Vehicle Running with Door open (Set to Disabled in Menu
+  driven IPC)
+
+  Trim: All [Confirmed: craigc (7/31/24) Lariat FX4]'
 forscan_menu: Chimes Vehicle Running with Door open (Set to Disabled in Menu driven
   IPC)
 steps:
 - module: IPC
   address: 720-01-02
   mask: xx*x xx--
+  notes: Engine/Ignition On Chime disabled (correct values are 0, 4, 8, or C)
   nibble: 2
-  community_instruction: Engine/Ignition On Chime disabled (correct values are 0,
-    4, 8, or C)
-  feature_name: Engine/Ignition On Chime - Message (EIOCM)
-  target_state: EIOCM Disabled
-  bit: 1
-  action: 0
+  bits:
+  - bit: 1
+    action: 0
+    feature_name: Engine/Ignition On Chime - Message (EIOCM)
+    target_state: EIOCM Disabled
+  - bit: 0
+    action: 0
+    feature_name: Engine/Ignition On Chime - Message (EIOCM)
+    target_state: EIOCM Disabled

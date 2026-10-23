@@ -53,6 +53,7 @@ def compile_catalog(recipes_dir="recipes", dist_dir="dist"):
             'trim': data.get('trim', 'All'),
             'validated': is_validated,
             'verified_by': data.get('verified_by', ''),
+            'notes': data.get('notes'),
             'forscan_menu': data.get('forscan_menu'),
             'prerequisites': data.get('prerequisites'),
             'post_procedure': data.get('post_procedure'),
@@ -78,6 +79,7 @@ def compile_catalog(recipes_dir="recipes", dist_dir="dist"):
             cf['platforms'][plat_key].append({
                 'model_years': data.get('model_years', ''),
                 'trim': data.get('trim', 'All'),
+                'notes': data.get('notes'),
                 'steps': data.get('steps', []),
                 'source_file': clean_entry['file'],
                 'forscan_menu': data.get('forscan_menu'),

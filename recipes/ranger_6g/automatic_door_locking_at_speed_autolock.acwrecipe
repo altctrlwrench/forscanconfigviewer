@@ -7,51 +7,162 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: Auto Lock - Initial Value, Personal 1-4,  and Vehicle (Enabled
+  (Default NA), Disabled)
+
+  Confirmed: raptortugal (2/17/2025)
+
+  * Bit4 (add 8 to enable)
+
+  FORScan Menu: Auto Lock Control Function (Disabled (Default NA), Enabled)
+
+  Confirmed: raptortugal (2/17/2025)
+
+  * -> Bit 3 (add 4 to enable (if currently disabled)
+
+  FORScan Menu: Locking Feedback Audible (optional) (Enabled (Default NA), Disabled)
+
+  Confirmed: raptortugal (2/17/2025)
+
+  * -> Bit 2 (add 2 to enable) (if currently disabled)
+
+  FORScan Menu: Locking Feedback Visual (optional) (Disabled (Default NA), Enabled)
+
+  Confirmed: raptortugal (2/17/2025)'
 forscan_menu: Auto Lock - Initial Value, Personal 1-4,  and Vehicle (Enabled (Default
   NA), Disabled)
 steps:
 - module: BCM
   address: 724-19-02
   mask: x*x* x*x* x*--
+  notes: '* -> set to 1 (e.g. 0101 0101 01--)
+
+    FORScan Menu: Auto Lock - Initial Value, Personal 1-4,  and Vehicle (Enabled (Default
+    NA), Disabled)
+
+    Confirmed: raptortugal (2/17/2025)'
   nibbles:
   - nibble: 1
     hex_offset: '+8'
-    community_instruction: set to 1 (e.g. 0101 0101 01--)
-    feature_name: Feat_Cfg [AUTOLOCK] [PERS_1] (AUTOLOCK_PERS_1)
-    target_state: AUTOLOCK_PERS_1 DISABLE
-    bit: 3
-    action: 0
+    notes: set to 1 (e.g. 0101 0101 01--) | No table in sheet to validate
+    community_instruction: set to 1 (e.g. 0101 0101 01--) | No table in sheet to validate
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_1] (AUTOLOCK_PERS_1)
+      target_state: AUTOLOCK_PERS_1 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_1] (AUTOLOCK_PERS_1)
+      target_state: AUTOLOCK_PERS_1 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_1] (AUTOLOCK_PERS_1)
+      target_state: AUTOLOCK_PERS_1 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_1] (AUTOLOCK_PERS_1)
+      target_state: AUTOLOCK_PERS_1 ENABLE
   - nibble: 3
     hex_offset: '+8'
-    feature_name: Feat_Cfg [AUTOLOCK] [PERS_2] (AUTOLOCK_PERS_2)
-    target_state: AUTOLOCK_PERS_2 DISABLE
-    bit: 3
-    action: 0
+    notes: No table in sheet to validate
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_2] (AUTOLOCK_PERS_2)
+      target_state: AUTOLOCK_PERS_2 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_2] (AUTOLOCK_PERS_2)
+      target_state: AUTOLOCK_PERS_2 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_2] (AUTOLOCK_PERS_2)
+      target_state: AUTOLOCK_PERS_2 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_2] (AUTOLOCK_PERS_2)
+      target_state: AUTOLOCK_PERS_2 ENABLE
   - nibble: 5
     hex_offset: '+8'
-    feature_name: Feat_Cfg [AUTOLOCK] [PERS_3] (AUTOLOCK_PERS_3)
-    target_state: AUTOLOCK_PERS_3 DISABLE
-    bit: 3
-    action: 0
+    notes: No table in sheet to validate
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_3] (AUTOLOCK_PERS_3)
+      target_state: AUTOLOCK_PERS_3 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_3] (AUTOLOCK_PERS_3)
+      target_state: AUTOLOCK_PERS_3 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_3] (AUTOLOCK_PERS_3)
+      target_state: AUTOLOCK_PERS_3 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_3] (AUTOLOCK_PERS_3)
+      target_state: AUTOLOCK_PERS_3 ENABLE
   - nibble: 7
     hex_offset: '+8'
-    feature_name: Feat_Cfg [AUTOLOCK] [PERS_4] (AUTOLOCK_PERS_4)
-    target_state: AUTOLOCK_PERS_4 DISABLE
-    bit: 3
-    action: 0
+    notes: No table in sheet to validate
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_4] (AUTOLOCK_PERS_4)
+      target_state: AUTOLOCK_PERS_4 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_4] (AUTOLOCK_PERS_4)
+      target_state: AUTOLOCK_PERS_4 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_4] (AUTOLOCK_PERS_4)
+      target_state: AUTOLOCK_PERS_4 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_4] (AUTOLOCK_PERS_4)
+      target_state: AUTOLOCK_PERS_4 ENABLE
   - nibble: 9
     hex_offset: '+8'
-    feature_name: Feat_Cfg [AUTOLOCK] [VEHICLE] (AUTOLOCK_VEHICLE)
-    target_state: AUTOLOCK_VEHICLE DISABLE
-    bit: 3
-    action: 0
+    notes: No table in sheet to validate
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUTOLOCK] [VEHICLE] (AUTOLOCK_VEHICLE)
+      target_state: AUTOLOCK_VEHICLE DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUTOLOCK] [VEHICLE] (AUTOLOCK_VEHICLE)
+      target_state: AUTOLOCK_VEHICLE DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUTOLOCK] [VEHICLE] (AUTOLOCK_VEHICLE)
+      target_state: AUTOLOCK_VEHICLE DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUTOLOCK] [VEHICLE] (AUTOLOCK_VEHICLE)
+      target_state: AUTOLOCK_VEHICLE ENABLE
 - module: APIM
   address: 7D0-09-01
   mask: xx*x xxxx xx--
+  notes: 'Enables Autolock Control Function in APIM (may already be on)
+
+    Bit4 (add 8 to enable if currently disabled (values 0-7))
+
+    FORScan Menu: Auto Lock Control Function (Disabled (Default NA), Enabled)
+
+    Confirmed: raptortugal (2/17/2025)'
   nibble: 2
   hex_offset: '+8'
-  community_instruction: Enables Autolock Control Function in APIM (may already be
+  community_instruction: 'Enables Autolock Control Function in APIM (may already be
     on)
+
+    Bit4 (add 8 to enable if currently disabled (values 0-7))
+
+    FORScan Menu: Auto Lock Control Function (Disabled (Default NA), Enabled)
+
+    Confirmed: raptortugal (2/17/2025)'
   feature_name: Autolock Control Function (ACF)
   target_state: ACF Enabled
   bit: 3
@@ -59,9 +170,22 @@ steps:
 - module: IPC
   address: 720-06-01
   mask: xxxx *xxx xx--
+  notes: 'Adds Audible locking feedback
+
+    Bit 3 (add 4 to enable (if currently disabled)
+
+    FORScan Menu: Locking Feedback Audible (optional) (Enabled (Default NA), Disabled)
+
+    Confirmed: raptortugal (2/17/2025)'
   nibble: 4
   hex_offset: '+8'
-  community_instruction: Adds Audible locking feedback
+  community_instruction: 'Adds Audible locking feedback
+
+    Bit 3 (add 4 to enable (if currently disabled)
+
+    FORScan Menu: Locking Feedback Audible (optional) (Enabled (Default NA), Disabled)
+
+    Confirmed: raptortugal (2/17/2025)'
   feature_name: Locking Feedback Audible (LFA)
   target_state: LFA enabled
   bit: 2
@@ -69,9 +193,22 @@ steps:
 - module: IPC
   address: 720-06-01
   mask: xxxx *xxx xx--
+  notes: 'Adds visual locking feedback
+
+    Bit 2 (add 2 to enable) (if currently disabled)
+
+    FORScan Menu: Locking Feedback Visual (optional) (Disabled (Default NA), Enabled)
+
+    Confirmed: raptortugal (2/17/2025)'
   nibble: 4
   hex_offset: '+8'
-  community_instruction: Adds visual locking feedback
+  community_instruction: 'Adds visual locking feedback
+
+    Bit 2 (add 2 to enable) (if currently disabled)
+
+    FORScan Menu: Locking Feedback Visual (optional) (Disabled (Default NA), Enabled)
+
+    Confirmed: raptortugal (2/17/2025)'
   feature_name: Locking Feedback Visual (LFV)
   target_state: LFV enabled
   bit: 1

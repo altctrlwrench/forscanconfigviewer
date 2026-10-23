@@ -7,6 +7,13 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
+notes: 'Requires Sync ver 22012 or higher - reset APIM in FORScan after either/both
+  changes. other screen available
+
+  No target setting provided in As Built Pro
+
+  Other options available such as 03 for Raptor, 04 for Black Label, 05 for Presidential,
+  1A for Dark Horse animation, etc.'
 prerequisites: Sync ver 22012 or higher - reset APIM in FORScan after either/both
   changes
 post_procedure: Reset APIM in FORScan or cycle ignition.
@@ -14,7 +21,6 @@ steps:
 - module: APIM
   address: 7D0-03-01
   mask: xxxx **xx xx--
-  type: continuous
+  notes: Requires Sync ver 22012 or higher - reset APIM in FORScan after either/both
+    changes
   feature_name: Splash Screen (SS)
-  instruction: Requires Sync ver 22012 or higher - reset APIM in FORScan after either/both
-    changes. other screen available

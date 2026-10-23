@@ -7,13 +7,14 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: Add 4 to current value
 steps:
 - module: IPC
   address: 720-01-01
   mask: xxxx xxxx *x--
+  notes: Add 4 to current value
   nibble: 8
   hex_offset: '+4'
-  community_instruction: Add 4 to current value
   feature_name: Compass Sync (CS)
   target_state: CS Present
   bit: 2

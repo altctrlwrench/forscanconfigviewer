@@ -7,28 +7,28 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: See Forum spreadsheet for more info
 steps:
 - module: IPC
   address: 720-13-01
   mask: '**** **** ****'
-  type: continuous
+  notes: 'Change all values to 0, be sure to save all values first (backup asbuilt).  This
+    turns off ALL notifications for seatbelts (front and back).  use at own risk -
+    unclear if this affects airbags
+
+    FORScan Menu: Multiple settings, use asbuilt (advanced)
+
+    Trim: All [Confirmed: ???]'
   feature_name: Belt Minder Chime Operator (BMCO)
-  instruction: See Forum spreadsheet for more info
 - module: IPC
   address: 720-13-02
   mask: '**** ****'
-  type: continuous
   feature_name: R4 Bench (RB)
-  instruction: See Forum spreadsheet for more info
 - module: IPC
   address: 720-14-01
   mask: '**** **** ****'
-  type: continuous
   feature_name: R2C5 Seatbelt (RCS)
-  instruction: See Forum spreadsheet for more info
 - module: IPC
   address: 720-14-02
   mask: '**** ****'
-  type: continuous
   feature_name: R4C5 Seatbelt (RCS)
-  instruction: See Forum spreadsheet for more info

@@ -7,13 +7,32 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: 0=No Outage 1=Outage - set to 0 for LED
 steps:
 - module: BDYCM-BCM
   address: 726-44-01
   mask: xxxx x*xx xx--
+  notes: 'Rear turn outage detection
+
+    0=No Outage 1=Outage - set to 0 to disable outage detectiojn'
   nibble: 5
-  community_instruction: Rear turn outage detection
-  feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-  target_state: RBTOC NO_OUTAGE
-  bit: 3
-  action: 0
+  community_instruction: 'Rear turn outage detection
+
+    0=No Outage 1=Outage - set to 0 to disable outage detectiojn'
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
+    target_state: RBTOC NO_OUTAGE
+  - bit: 2
+    action: 0
+    feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
+    target_state: RBTOC NO_OUTAGE
+  - bit: 1
+    action: 0
+    feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
+    target_state: RBTOC NO_OUTAGE
+  - bit: 0
+    action: 0
+    feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
+    target_state: RBTOC NO_OUTAGE

@@ -7,14 +7,31 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: Double Honk On Leaving Cabin (Change Enabled to Disabled)
+
+  Trim: All [Confirmed: Waffel (1/1/25) Lariat]'
 forscan_menu: Double Honk On Leaving Cabin (Change Enabled to Disabled)
 steps:
 - module: BCM
   address: 726-63-02
   mask: xxx* xxxx xx--
+  notes: 0=Disabled (target setting), 1=Enabled (Default)
   nibble: 3
   community_instruction: 0=Disabled (target setting), 1=Enabled (Default)
-  feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
-  target_state: LPKENEC DISABLED
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+    target_state: LPKENEC DISABLED
+  - bit: 2
+    action: 0
+    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+    target_state: LPKENEC DISABLED
+  - bit: 1
+    action: 0
+    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+    target_state: LPKENEC DISABLED
+  - bit: 0
+    action: 0
+    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+    target_state: LPKENEC DISABLED

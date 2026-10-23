@@ -11,28 +11,75 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'Trim: All? [Confirmed: craigc (9/11/2024) Lariat FX4]'
 steps:
 - module: BCM
   address: 726-45-01
   mask: xxxx xxxx x*--
+  notes: '* -> 0=Disabled, 1=Enabled
+
+    FORScan Menu: unknown, use asbuilt (advanced)
+
+    Trim: All? [Confirmed: craigc (9/11/2024) Lariat FX4]'
   nibble: 9
-  community_instruction: '* -> 0=Disabled, 1=Enabled'
-  feature_name: Approach_Lighting_Enable_Cfg (ALEC)
-  target_state: ALEC DISABLE
-  bit: 3
-  action: 0
+  community_instruction: '* -> 0=Disabled, 1=Enabled
+
+    FORScan Menu: unknown, use asbuilt (advanced)
+
+    Trim: All? [Confirmed: craigc (9/11/2024) Lariat FX4]'
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: Approach_Lighting_Enable_Cfg (ALEC)
+    target_state: ALEC DISABLE
+  - bit: 2
+    action: 0
+    feature_name: Approach_Lighting_Enable_Cfg (ALEC)
+    target_state: ALEC DISABLE
+  - bit: 1
+    action: 0
+    feature_name: Approach_Lighting_Enable_Cfg (ALEC)
+    target_state: ALEC DISABLE
+  - bit: 0
+    action: 1
+    feature_name: Approach_Lighting_Enable_Cfg (ALEC)
+    target_state: ALEC ENABLE
 - module: BCM
   address: 726-18-01
   mask: xxxx xxxx x*--
+  notes: '* -> 0=Disabled, 1=Enabled
+
+    FORScan Menu: unknown, use asbuilt (advanced)'
   nibble: 9
-  community_instruction: '* -> 0=Disabled, 1=Enabled'
-  feature_name: Feat_Cfg [APPROACHDETECTION] [VEHICLE] (APPROACHDETECTION_VEHICLE)
-  target_state: APPROACHDETECTION_VEHICLE DISABLE
-  bit: 3
-  action: 0
+  community_instruction: '* -> 0=Disabled, 1=Enabled
+
+    FORScan Menu: unknown, use asbuilt (advanced)'
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: Feat_Cfg [APPROACHDETECTION] [VEHICLE] (APPROACHDETECTION_VEHICLE)
+    target_state: APPROACHDETECTION_VEHICLE DISABLE
+  - bit: 2
+    action: 0
+    feature_name: Feat_Cfg [APPROACHDETECTION] [VEHICLE] (APPROACHDETECTION_VEHICLE)
+    target_state: APPROACHDETECTION_VEHICLE DISABLE
+  - bit: 1
+    action: 0
+    feature_name: Feat_Cfg [APPROACHDETECTION] [VEHICLE] (APPROACHDETECTION_VEHICLE)
+    target_state: APPROACHDETECTION_VEHICLE DISABLE
+  - bit: 0
+    action: 1
+    feature_name: Feat_Cfg [APPROACHDETECTION] [VEHICLE] (APPROACHDETECTION_VEHICLE)
+    target_state: APPROACHDETECTION_VEHICLE ENABLE
 - module: APIM
   address: 7D0-09-01
   mask: xxx* xxxx xx--
+  notes: 'suggest using non asbuilt to change this
+
+    * Bit 3 (add 4 to value to enable, e.g. change 3 to 7)
+
+    FORScan Menu: Approach Detection Control Function (Disabled to Enabled, plus it''s
+    required to also make the BdyCm Changes above)'
   nibble: 3
   feature_name: Approach Detection Control Function (ADCF)
   target_state: ADCF Enabled

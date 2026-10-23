@@ -7,10 +7,12 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: Tire Size Calculator https://docs.google.com/spreadsheets/d/1EaVYjY7QC8iYAdsiYnSeJQ9SbyMEVSTYz0Kmb0at4Ps/edit?usp=sharing
 steps:
 - module: BDYCM-BCM
   address: 726-15-01
   mask: xxxx xxxx **--
+  notes: Tire Size Calculator
   type: continuous
   unit: mm
   feature_name: Tire Circumference (TC)

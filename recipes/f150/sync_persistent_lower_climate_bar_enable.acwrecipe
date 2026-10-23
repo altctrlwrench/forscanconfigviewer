@@ -7,13 +7,16 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
+notes: use 2 for non-hybrid or 6 for hybrid - requires Unreal theme above
 steps:
 - module: APIM
   address: 7D0-02-02
   mask: xxx* xxxx xx--
+  notes: use 2 for non-hybrid or 6 for hybrid - requires Unreal theme above | No data
+    table
   nibble: 3
   community_instruction: use 2 for non-hybrid or 6 for hybrid - requires Unreal theme
-    above
+    above | No data table
   feature_name: Climate Bar (CB)
   target_state: CB Enabled
   bit: 1

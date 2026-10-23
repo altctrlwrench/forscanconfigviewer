@@ -7,10 +7,10 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
+notes: add 04 (hex) to your default value for each additional flash
 steps:
 - module: SCCM
   address: 724-01-01
   mask: xxxx **xx --
-  type: continuous
+  notes: add 04 (hex) to your default value for each additional flash
   feature_name: Lane Change Blink Number
-  instruction: add 04 (hex) to your default value for each additional flash

@@ -7,13 +7,16 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
+notes: subtract 8 from your default value (if default is F, change to 7)
 steps:
 - module: IPC
   address: 720-01-01
   mask: x*xx xxxx xx--
+  notes: subtract 8 from your default value (if default is F, change to 7) | AEIS
+    disabled (values should be 0-7)
   nibble: 1
   community_instruction: subtract 8 from your default value (if default is F, change
-    to 7)
+    to 7) | AEIS disabled (values should be 0-7)
   feature_name: AEIS With Override (AEISWO)
   target_state: AEISWO disabled
   bit: 3

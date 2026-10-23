@@ -7,13 +7,28 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: 0=No Cancel  1=Cancel
 steps:
 - module: BDYCM-BCM
   address: 726-39-02
   mask: xxxx x*xx xx--
+  notes: 0=No Cancel  1=Cancel | Set to 0 (off), set to 1 to enable.
   nibble: 5
-  community_instruction: 0=No Cancel  1=Cancel
-  feature_name: FrontFog_AutoCancel_Cfg (FFACC)
-  target_state: FFACC NO_CANCEL
-  bit: 3
-  action: 0
+  community_instruction: 0=No Cancel  1=Cancel | Set to 0 (off), set to 1 to enable.
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: FrontFog_AutoCancel_Cfg (FFACC)
+    target_state: FFACC NO_CANCEL
+  - bit: 2
+    action: 0
+    feature_name: FrontFog_AutoCancel_Cfg (FFACC)
+    target_state: FFACC NO_CANCEL
+  - bit: 1
+    action: 0
+    feature_name: FrontFog_AutoCancel_Cfg (FFACC)
+    target_state: FFACC NO_CANCEL
+  - bit: 0
+    action: 0
+    feature_name: FrontFog_AutoCancel_Cfg (FFACC)
+    target_state: FFACC NO_CANCEL

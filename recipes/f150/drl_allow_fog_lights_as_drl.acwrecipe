@@ -7,22 +7,50 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
+notes: allows fogs to be turned on with DRLs
 steps:
 - module: BCM
   address: 726-38-02
   mask: '**xx xxxx xx--'
+  notes: allows fogs to be turned on with DRLs
   nibbles:
   - nibble: 0
     recommended_hex: '0'
-    community_instruction: allows fogs to be turned on with DRLs
-    feature_name: DRL_WithFog_Cfg
-    target_state: Allow
-    bit: 3
-    action: 0
+    notes: allows fogs to be turned on with DRLs
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: DRL_WithFog_Cfg
+      target_state: Allow
+    - bit: 2
+      action: 0
+      feature_name: DRL_WithFog_Cfg
+      target_state: Allow
+    - bit: 1
+      action: 0
+      feature_name: DRL_WithFog_Cfg
+      target_state: Allow
+    - bit: 0
+      action: 0
+      feature_name: DRL_WithFog_Cfg
+      target_state: Allow
   - nibble: 1
     recommended_hex: '0'
-    community_instruction: allows fogs to be turned on with DRLs
-    feature_name: DRL_WithFog_Cfg (DRLWFC)
-    target_state: DRLWFC ALLOW
-    bit: 3
-    action: 0
+    notes: allows fogs to be turned on with DRLs
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: DRL_WithFog_Cfg (DRLWFC)
+      target_state: DRLWFC ALLOW
+    - bit: 2
+      action: 0
+      feature_name: DRL_WithFog_Cfg (DRLWFC)
+      target_state: DRLWFC ALLOW
+    - bit: 1
+      action: 0
+      feature_name: DRL_WithFog_Cfg (DRLWFC)
+      target_state: DRLWFC ALLOW
+    - bit: 0
+      action: 0
+      feature_name: DRL_WithFog_Cfg (DRLWFC)
+      target_state: DRLWFC ALLOW

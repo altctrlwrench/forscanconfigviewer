@@ -13,16 +13,42 @@ steps:
   mask: xxxx x*xx xx--
   nibble: 5
   recommended_hex: '1'
-  feature_name: Side Turn Indicator
-  target_state: disabled,
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: Side Turn Indicator
+    target_state: disabled,
+  - bit: 2
+    action: 0
+    feature_name: Side Turn Indicator
+    target_state: disabled,
+  - bit: 1
+    action: 0
+    feature_name: Side Turn Indicator
+    target_state: disabled,
+  - bit: 0
+    action: 1
+    feature_name: Side Turn Indicator
+    target_state: disabled,
 - module: PDM
   address: 741-03-04
   mask: xxxx x*xx xx--
   nibble: 5
   recommended_hex: '1'
-  feature_name: Side Turn Indicator
-  target_state: disabled,
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: Side Turn Indicator
+    target_state: disabled,
+  - bit: 2
+    action: 0
+    feature_name: Side Turn Indicator
+    target_state: disabled,
+  - bit: 1
+    action: 0
+    feature_name: Side Turn Indicator
+    target_state: disabled,
+  - bit: 0
+    action: 1
+    feature_name: Side Turn Indicator
+    target_state: disabled,

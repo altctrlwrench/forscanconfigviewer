@@ -7,12 +7,18 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: Heated Steering Wheel Temp Level (35 Celsius (Default).  24
+  deg through 39 degrees'
 forscan_menu: Heated Steering Wheel Temp Level (35 Celsius (Default).  24 deg through
   39 degrees
 steps:
 - module: SCCM
   address: 724-06-01
   mask: '*xxx xxxx --'
+  notes: '* -> B (default).   set to 0 through F for 24 degrees through 39 degrees
+
+    FORScan Menu: Heated Steering Wheel Temp Level (35 Celsius (Default).  24 deg
+    through 39 degrees)'
   type: continuous
   feature_name: HSW_Level_3_TempSetPt (HSWLTSP)
   instruction: 'FORScan Menu: Heated Steering Wheel Temp Level (35 Celsius (Default).  24

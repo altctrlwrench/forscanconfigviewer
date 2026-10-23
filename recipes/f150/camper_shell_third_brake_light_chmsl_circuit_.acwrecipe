@@ -7,14 +7,28 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
+notes: see this thread for description https://www.f150gen14.com/forum/threads/bed-cap-install-wiring-issues.7353/page-3
 steps:
 - module: BCMC
   address: 6F0-01-03
   mask: xxx* --
+  notes: see this thread for description | No data table
   nibble: 3
   recommended_hex: '1'
-  community_instruction: see this thread for description
-  feature_name: BOO_Cfg
-  target_state: Disable,
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: BOO_Cfg
+    target_state: Disable,
+  - bit: 2
+    action: 0
+    feature_name: BOO_Cfg
+    target_state: Disable,
+  - bit: 1
+    action: 0
+    feature_name: BOO_Cfg
+    target_state: Disable,
+  - bit: 0
+    action: 1
+    feature_name: BOO_Cfg
+    target_state: Enable

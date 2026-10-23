@@ -14,13 +14,39 @@ steps:
   nibbles:
   - nibble: 8
     recommended_hex: '0'
-    feature_name: Remote07_Cfg
-    target_state: No Action
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Remote07_Cfg
+      target_state: No Action
+    - bit: 2
+      action: 0
+      feature_name: Remote07_Cfg
+      target_state: No Action
+    - bit: 1
+      action: 0
+      feature_name: Remote07_Cfg
+      target_state: No Action
+    - bit: 0
+      action: 0
+      feature_name: Remote07_Cfg
+      target_state: No Action
   - nibble: 9
     recommended_hex: '0'
-    feature_name: Remote07_Cfg (RC)
-    target_state: RC NO_ACTION
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Remote07_Cfg (RC)
+      target_state: RC NO_ACTION
+    - bit: 2
+      action: 0
+      feature_name: Remote07_Cfg (RC)
+      target_state: RC NO_ACTION
+    - bit: 1
+      action: 0
+      feature_name: Remote07_Cfg (RC)
+      target_state: RC NO_ACTION
+    - bit: 0
+      action: 0
+      feature_name: Remote07_Cfg (RC)
+      target_state: RC NO_ACTION

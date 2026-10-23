@@ -8,23 +8,42 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: "Shows left or right blind spot on center screen when turn signal is used.\
+  \ \nCan be configured to only work for one side\nFORScan Menu: unknown, use asbuilt\
+  \ (advanced) (Not available - use asbuilt)\nConfirmed: craigc (10/4/2024) Lariat\n\
+  * -> Bit 4 (add 8 to enable.  e.g. change 5 to D)\nFORScan Menu: Turn Signal Views\
+  \ (Disabled (Default), Enabled)"
 forscan_menu: unknown, use asbuilt (advanced) (Not available - use asbuilt)
 steps:
 - module: IPMA
   address: 706-01-02
   mask: '*xxx xxxx xx--'
+  notes: "* -> Bits 1 and 2 (add 3 to enable both right and left.  e.g. change 0 to\
+    \ 3)  \nIf only left camera is desired, instead of adding 3, add 1, and if only\
+    \ right camera is desired, add 2\nFORScan Menu: unknown, use asbuilt (advanced)\
+    \ (Not available - use asbuilt)\nConfirmed: craigc (10/4/2024) Lariat"
   nibble: 0
   hex_offset: '+8'
-  feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
-  target_state: MFCTSV Right
-  bit: 1
-  action: 1
+  bits:
+  - bit: 1
+    action: 1
+    feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
+    target_state: MFCTSV Right
+  - bit: 0
+    action: 1
+    feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
+    target_state: MFCTSV Left
 - module: APIM
   address: 7D0-02-03
   mask: xxxx x*xx xx--
+  notes: '* -> Bit 4 (add 8 to enable.  e.g. change 5 to D)
+
+    FORScan Menu: Turn Signal Views (Disabled (Default), Enabled)'
   nibble: 5
   hex_offset: '+8'
-  community_instruction: '* -> Bit 4 (add 8 to enable.  e.g. change 5 to D)'
+  community_instruction: '* -> Bit 4 (add 8 to enable.  e.g. change 5 to D)
+
+    FORScan Menu: Turn Signal Views (Disabled (Default), Enabled)'
   feature_name: Turn Signal Views (TSV)
   target_state: TSV Present
   bit: 3

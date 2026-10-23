@@ -7,11 +7,17 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'Can use FORScan Easy Mode
+
+  FORScan Menu: Tire Temperature Display (Disabled (Default), Enabled)
+
+  Trim: All [Confirmed: jezzzza (9/12/2024) Raptor]'
 forscan_menu: Tire Temperature Display (Disabled (Default), Enabled)
 steps:
 - module: IPC
   address: 720-11-01
   mask: xxxx *xxx xx--
+  notes: Bit 4 (Add 8 to enable, e.g. change 2 to A)
   nibble: 4
   hex_offset: '+8'
   community_instruction: Bit 4 (Add 8 to enable, e.g. change 2 to A)

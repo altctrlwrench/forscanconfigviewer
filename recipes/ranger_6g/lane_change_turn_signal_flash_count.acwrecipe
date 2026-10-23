@@ -7,11 +7,22 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: '84=1, 8C=3, 90=4, 94=5, 98=6, etc.
+
+  FORScan Menu: Lane Change Cancel Blink Number (Set to # of blinks (Default is 3))
+
+  Confirmed: craigc (9/16/2024) Lariat'
 forscan_menu: 'Lane Change Cancel Blink Number (Set to # of blinks (Default is 3))'
 steps:
 - module: SCCM
   address: 724-01-01
   mask: xxxx **xx --
-  type: continuous
+  notes: 'suggest use the non asbuilt menu option
+
+    ** -> 84=1, 8C=3, 90=4, 94=5, 98=6, etc.
+
+    FORScan Menu: Lane Change Cancel Blink Number (Set to # of blinks (Default is
+    3))
+
+    Confirmed: craigc (9/16/2024) Lariat'
   feature_name: LaneChange_Cancel_Blink_Num (LCCBN)
-  instruction: 84=1, 8C=3, 90=4, 94=5, 98=6, etc.

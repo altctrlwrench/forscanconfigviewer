@@ -7,14 +7,20 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
+notes: if you have heated & cooled seats  then use A
 steps:
 - module: APIM
   address: 7D0-02-01
   mask: xxxx x*xx xx--
+  notes: subtract 4 for cooled only, add 4 for 3 level heated only.
   nibble: 5
   hex_offset: '+4'
-  community_instruction: subtract 4 for cooled only, add 4 for 3 level heated only.
-  feature_name: Heated Seats HMI (HSHMI)
-  target_state: HSHMI Heated and Cooled
-  bit: 3
-  action: 1
+  bits:
+  - bit: 3
+    action: 1
+    feature_name: Heated Seats HMI (HSHMI)
+    target_state: HSHMI Heated and Cooled
+  - bit: 2
+    action: 0
+    feature_name: Heated Seats HMI (HSHMI)
+    target_state: HSHMI None (Hard buttons or No Heated or Cooled Seats)

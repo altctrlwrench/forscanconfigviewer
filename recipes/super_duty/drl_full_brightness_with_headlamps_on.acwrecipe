@@ -14,13 +14,39 @@ steps:
   nibbles:
   - nibble: 1
     recommended_hex: '2'
-    feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
-    target_state: LFDRLLCUC NOT_USED
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      target_state: LFDRLLCUC NOT_USED
+    - bit: 2
+      action: 0
+      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      target_state: LFDRLLCUC NOT_USED
+    - bit: 1
+      action: 1
+      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      target_state: LFDRLLCUC DRL_POSITION
+    - bit: 0
+      action: 0
+      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      target_state: LFDRLLCUC NOT_USED
   - nibble: 3
     recommended_hex: '2'
-    feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
-    target_state: RFDRLLCUC NOT_USED
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      target_state: RFDRLLCUC NOT_USED
+    - bit: 2
+      action: 0
+      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      target_state: RFDRLLCUC NOT_USED
+    - bit: 1
+      action: 1
+      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      target_state: RFDRLLCUC DRL_POSITION
+    - bit: 0
+      action: 0
+      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      target_state: RFDRLLCUC NOT_USED

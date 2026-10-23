@@ -15,16 +15,22 @@ steps:
   mask: '*xxx xxxx xx--'
   nibble: 0
   recommended_hex: '3'
-  feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
-  target_state: MFCTSV Right
-  bit: 1
-  action: 1
+  notes: No data table
+  bits:
+  - bit: 1
+    action: 1
+    feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
+    target_state: MFCTSV Right
+  - bit: 0
+    action: 1
+    feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
+    target_state: MFCTSV Left
 - module: APIM
   address: 7D0-02-03
   mask: xxxx x*xx xx--
+  notes: adds Trailer Side View toggle under Driver Assistance | No data table
   nibble: 5
   recommended_hex: '8'
-  community_instruction: adds Trailer Side View toggle under Driver Assistance
   feature_name: Turn Signal Views (TSV)
   target_state: TSV Present
   bit: 3

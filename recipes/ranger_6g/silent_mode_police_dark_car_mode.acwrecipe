@@ -7,31 +7,88 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'Can be changed in FORScan Easy Mode
+
+  FORScan Menu: IMC Silent mode control function (Disabled (Default), Enabled)
+
+  Confirmed: craigc (9/12/2024) Lariat
+
+  FORScan Value: APIM Disabled (Default), Enabled
+
+  Also req force reset the APIM Module in ForScan
+
+  Confirmed: craigc (9/12/2024) Lariat'
 forscan_menu: IMC Silent mode control function (Disabled (Default), Enabled)
 steps:
 - module: IPC
   address: 720-04-01
   mask: xxx* xxxx xx--
+  notes: 'Suggest to use the non-asbuilt menu to change
+
+    * Bit 3 (Add 4 to value to enable)
+
+    FORScan Menu: Silent mode control function (Disabled (Default), Enabled)
+
+    Confirmed: craigc (9/12/2024) Lariat'
   nibbles:
   - nibble: 2
     hex_offset: '+4'
-    community_instruction: Suggest to use the non-asbuilt menu to change
+    notes: 'Suggest to use the non-asbuilt menu to change
+
+      * Bit 3 (Add 4 to value to enable)
+
+      FORScan Menu: Silent mode control function (Disabled (Default), Enabled)
+
+      Confirmed: craigc (9/12/2024) Lariat'
+    community_instruction: 'Suggest to use the non-asbuilt menu to change
+
+      * Bit 3 (Add 4 to value to enable)
+
+      FORScan Menu: Silent mode control function (Disabled (Default), Enabled)
+
+      Confirmed: craigc (9/12/2024) Lariat'
     feature_name: TPMS Placard Pressure Display (TPMSPPD)
     bit: 2
     action: 0
   - nibble: 3
     hex_offset: '+4'
-    community_instruction: Suggest to use the non-asbuilt menu to change
+    notes: 'Suggest to use the non-asbuilt menu to change
+
+      * Bit 3 (Add 4 to value to enable)
+
+      FORScan Menu: Silent mode control function (Disabled (Default), Enabled)
+
+      Confirmed: craigc (9/12/2024) Lariat'
+    community_instruction: 'Suggest to use the non-asbuilt menu to change
+
+      * Bit 3 (Add 4 to value to enable)
+
+      FORScan Menu: Silent mode control function (Disabled (Default), Enabled)
+
+      Confirmed: craigc (9/12/2024) Lariat'
     feature_name: TPMS Placard Pressure Display (TPMSPPD)
     bit: 2
     action: 1
 - module: APIM
   address: 7D0-09-02
   mask: '*xxx xxxx xx--'
+  notes: '* Bit 1 (add 1 to value to enable) (e.g. E to F) and reset APIM
+
+    FORScan Value: Disabled (Default), Enabled
+
+    Also req force reset the APIM Module in ForScan
+
+    Confirmed: craigc (9/12/2024) Lariat'
   nibble: 0
   hex_offset: '+1'
   community_instruction: '* Bit 1 (add 1 to value to enable) (e.g. E to F) and reset
-    APIM'
+    APIM
+
+    FORScan Value: Disabled (Default), Enabled
+
+    Also req force reset the APIM Module in ForScan
+
+    Confirmed: craigc (9/12/2024) Lariat'
   feature_name: Silent Mode Control Function (SMCF)
   target_state: SMCF Enabled
   bit: 0

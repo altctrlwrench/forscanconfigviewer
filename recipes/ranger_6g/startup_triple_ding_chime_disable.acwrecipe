@@ -7,14 +7,26 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: Seatbelt Warning Market (Change USA to Europe)
+
+  Trim: All [Confirmed: craigc (9/5/24) Lariat FX4]
+
+  Can use Forscan easy mode to change this
+
+  Bit 2 (add 2 to make silent, e.g. change 0 to 2)'
 forscan_menu: Seatbelt Warning Market (Change USA to Europe)
 steps:
 - module: IPC
   address: 720-01-02
   mask: xxxx x*--
+  notes: 'Can use Forscan easy mode to change this
+
+    Bit 2 (add 2 to make silent, e.g. change 0 to 2, etc)'
   nibble: 5
   hex_offset: '+2'
-  community_instruction: Can use Forscan easy mode to change this
+  community_instruction: 'Can use Forscan easy mode to change this
+
+    Bit 2 (add 2 to make silent, e.g. change 0 to 2, etc)'
   feature_name: Seatbelt Warning Market (SWM)
   target_state: SWM ECE
   bit: 1

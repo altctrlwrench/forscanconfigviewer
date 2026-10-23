@@ -13,6 +13,7 @@ steps:
   mask: x*xx xxxx xx--
   nibble: 1
   recommended_hex: '8'
+  notes: No data
   feature_name: Oil Life  (OL)
   target_state: OL Enabled
   bit: 3

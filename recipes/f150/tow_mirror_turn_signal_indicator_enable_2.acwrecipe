@@ -11,12 +11,8 @@ steps:
 - module: DDM
   address: 740-03-04
   mask: x*xx xxxx xx--
-  type: continuous
   feature_name: SideTurnInd_Cfg (STIC)
-  instruction: ''
 - module: PDM
   address: 741-03-04
   mask: x*xx xxxx xx--
-  type: continuous
   feature_name: SideTurnInd_Cfg (STIC)
-  instruction: ''

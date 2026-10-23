@@ -8,12 +8,22 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2025-2026 Explorer.xlsx
+notes: Change 6 to E
 steps:
 - module: APIM
   address: 7D0-09-01
   mask: '*xxx xxxx xx--'
   nibble: 0
-  feature_name: AEIS Without Override (AEISWO)
-  target_state: AEISWO enabled
-  bit: 3
-  action: 1
+  bits:
+  - bit: 3
+    action: 1
+    feature_name: AEIS Without Override (AEISWO)
+    target_state: AEISWO enabled
+  - bit: 2
+    action: 1
+    feature_name: AEIS With Override (AEISWO)
+    target_state: AEISWO enabled
+  - bit: 1
+    action: 1
+    feature_name: ACC Menu (ACCM)
+    target_state: ACCM enabled

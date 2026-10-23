@@ -7,22 +7,60 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2022 Bronco.xlsx
+notes: 'Start / Stop: 00=Disabled 01=Enabled, Angle Inhibit Enabled 02=Enabled, Angle
+  Inhibit Disabled
+
+  Confirmed: D2dhanover/multi'
 steps:
 - module: PSCM
   address: 730-03-01
   mask: xxxx xxxx **--
+  notes: 'Start / Stop: 00=Disabled 01=Enabled, Angle Inhibit Enabled 02=Enabled,
+    Angle Inhibit Disabled
+
+    Confirmed: D2dhanover/multi'
   nibbles:
   - nibble: 8
-    community_instruction: 'Start / Stop: 00=Disabled 01=Enabled, Angle Inhibit Enabled
-      02=Enabled, Angle Inhibit Disabled'
-    feature_name: EOL Configuration Byte (EOLCB)
-    target_state: EOLCB Not Configured
-    bit: 3
-    action: 0
+    notes: 'Start / Stop: 00=Disabled 01=Enabled, Angle Inhibit Enabled 02=Enabled,
+      Angle Inhibit Disabled
+
+      Confirmed: D2dhanover/multi'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: EOL Configuration Byte (EOLCB)
+      target_state: EOLCB Not Configured
+    - bit: 2
+      action: 0
+      feature_name: EOL Configuration Byte (EOLCB)
+      target_state: EOLCB Not Configured
+    - bit: 1
+      action: 0
+      feature_name: EOL Configuration Byte (EOLCB)
+      target_state: EOLCB Not Configured
+    - bit: 0
+      action: 0
+      feature_name: EOL Configuration Byte (EOLCB)
+      target_state: EOLCB Not Configured
   - nibble: 9
-    community_instruction: 'Start / Stop: 00=Disabled 01=Enabled, Angle Inhibit Enabled
-      02=Enabled, Angle Inhibit Disabled'
-    feature_name: Start / Stop (SS)
-    target_state: SS Start/Stop Disabled
-    bit: 3
-    action: 0
+    notes: 'Start / Stop: 00=Disabled 01=Enabled, Angle Inhibit Enabled 02=Enabled,
+      Angle Inhibit Disabled
+
+      Confirmed: D2dhanover/multi'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Start / Stop (SS)
+      target_state: SS Start/Stop Disabled
+    - bit: 2
+      action: 0
+      feature_name: Start / Stop (SS)
+      target_state: SS Start/Stop Disabled
+    - bit: 1
+      action: 0
+      feature_name: Start / Stop (SS)
+      target_state: SS Start/Stop Disabled
+    - bit: 0
+      action: 0
+      feature_name: Start / Stop (SS)
+      target_state: SS Start/Stop Disabled

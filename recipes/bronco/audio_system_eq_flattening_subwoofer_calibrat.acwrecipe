@@ -7,20 +7,49 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2022 Bronco.xlsx
+notes: '00 = EQS Flat EQ
+
+  Confirmed: ryannshit'
 steps:
 - module: ACM
   address: 727-01-02
   mask: xx** xxxx xx--
+  notes: 00 = EQS Flat EQ
   nibbles:
   - nibble: 2
-    community_instruction: First nibble always 0
-    feature_name: Enhanced Memory (EM)
-    target_state: EM Not Present
-    bit: 3
-    action: 0
+    notes: First nibble always 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Enhanced Memory (EM)
+      target_state: EM Not Present
+    - bit: 2
+      action: 0
+      feature_name: Enable Mute Radio Configuration (EMRC)
+      target_state: EMRC Disable Mute Radio Configuration
+    - bit: 1
+      action: 0
+      feature_name: Convertible (C)
+      target_state: C Non-Convertible
+    - bit: 0
+      action: 0
+      feature_name: Enhanced Memory (EM)
   - nibble: 3
-    community_instruction: 0 = Flat EQ
-    feature_name: EQ Selection (EQS)
-    target_state: EQS Flat EQ
-    bit: 3
-    action: 0
+    notes: 0 = Flat EQ
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: EQ Selection (EQS)
+      target_state: EQS Flat EQ
+    - bit: 2
+      action: 0
+      feature_name: EQ Selection (EQS)
+      target_state: EQS Flat EQ
+    - bit: 1
+      action: 0
+      feature_name: EQ Selection (EQS)
+      target_state: EQS Flat EQ
+    - bit: 0
+      action: 0
+      feature_name: EQ Selection (EQS)
+      target_state: EQS Flat EQ

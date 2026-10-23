@@ -7,10 +7,12 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: Range 24°c-39°c (1-F) ex:B=35°c
 steps:
 - module: SCCM
   address: 724-06-01
   mask: '*xxx xxxx --'
+  notes: Range 24°c-39°c (1-F) ex:B=35°c
   type: continuous
   feature_name: HSW_Level_3_TempSetPt (HSWLTSP)
   instruction: Range 24°c-39°c (1-F) ex:B=35°c

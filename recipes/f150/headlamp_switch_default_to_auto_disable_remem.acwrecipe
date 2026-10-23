@@ -7,24 +7,55 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
+notes: headlamp switch will revert to last position used on next startup
 steps:
 - module: BCM
   address: 726-74-01
   mask: xx** xxxx xx--
+  notes: headlamp switch will revert to last position used on next startup
   nibbles:
   - nibble: 2
     recommended_hex: '0'
+    notes: headlamp switch will revert to last position used on next startup | Left
+      as factory (no data table avaialble)
     community_instruction: headlamp switch will revert to last position used on next
-      startup
-    feature_name: HeadlampPosAtIgnOn_Cfg
-    target_state: Auto
-    bit: 3
-    action: 0
+      startup | Left as factory (no data table avaialble)
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg
+      target_state: Auto
+    - bit: 2
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg
+      target_state: Auto
+    - bit: 1
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg
+      target_state: Auto
+    - bit: 0
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg
+      target_state: Auto
   - nibble: 3
     recommended_hex: '1'
+    notes: headlamp switch will revert to last position used on next startup
     community_instruction: headlamp switch will revert to last position used on next
       startup
-    feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
-    target_state: HPAIOC AUTO
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: HPAIOC AUTO
+    - bit: 2
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: HPAIOC AUTO
+    - bit: 1
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: HPAIOC AUTO
+    - bit: 0
+      action: 1
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: HPAIOC LAST_KNOWN

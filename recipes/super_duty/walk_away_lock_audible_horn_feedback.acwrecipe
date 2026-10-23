@@ -7,6 +7,7 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: sounds the horn when doors are locked with the Walk Away Lock enabled
 steps:
 - module: BCM
   address: 726-89-01
@@ -14,37 +15,98 @@ steps:
   nibbles:
   - nibble: 1
     recommended_hex: '1'
-    feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_1] (AUDIBLEWALKAWAYLOCK_PERS_1)
-    bit: 3
-    action: 0
+    notes: Not found on on 23 sheet
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_1] (AUDIBLEWALKAWAYLOCK_PERS_1)
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_1] (AUDIBLEWALKAWAYLOCK_PERS_1)
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_1] (AUDIBLEWALKAWAYLOCK_PERS_1)
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_1] (AUDIBLEWALKAWAYLOCK_PERS_1)
   - nibble: 3
     recommended_hex: '1'
-    feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_2] (AUDIBLEWALKAWAYLOCK_PERS_2)
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_2] (AUDIBLEWALKAWAYLOCK_PERS_2)
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_2] (AUDIBLEWALKAWAYLOCK_PERS_2)
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_2] (AUDIBLEWALKAWAYLOCK_PERS_2)
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_2] (AUDIBLEWALKAWAYLOCK_PERS_2)
   - nibble: 5
     recommended_hex: '1'
-    feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_3] (AUDIBLEWALKAWAYLOCK_PERS_3)
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_3] (AUDIBLEWALKAWAYLOCK_PERS_3)
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_3] (AUDIBLEWALKAWAYLOCK_PERS_3)
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_3] (AUDIBLEWALKAWAYLOCK_PERS_3)
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_3] (AUDIBLEWALKAWAYLOCK_PERS_3)
   - nibble: 7
     recommended_hex: '1'
-    feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_4] (AUDIBLEWALKAWAYLOCK_PERS_4)
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_4] (AUDIBLEWALKAWAYLOCK_PERS_4)
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_4] (AUDIBLEWALKAWAYLOCK_PERS_4)
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_4] (AUDIBLEWALKAWAYLOCK_PERS_4)
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_4] (AUDIBLEWALKAWAYLOCK_PERS_4)
   - nibble: 9
     recommended_hex: '1'
-    feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [VEHICLE] (AUDIBLEWALKAWAYLOCK_VEHICLE)
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [VEHICLE] (AUDIBLEWALKAWAYLOCK_VEHICLE)
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [VEHICLE] (AUDIBLEWALKAWAYLOCK_VEHICLE)
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [VEHICLE] (AUDIBLEWALKAWAYLOCK_VEHICLE)
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [VEHICLE] (AUDIBLEWALKAWAYLOCK_VEHICLE)
 - module: BCM
   address: 726-90-01
   mask: x*xx xxxx xx--
   nibble: 1
   recommended_hex: '1'
-  feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK] (AUDIBLEWALKAWAYLOCK)
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK] (AUDIBLEWALKAWAYLOCK)
+  - bit: 2
+    action: 0
+    feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK] (AUDIBLEWALKAWAYLOCK)
+  - bit: 1
+    action: 0
+    feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK] (AUDIBLEWALKAWAYLOCK)
+  - bit: 0
+    action: 1
+    feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK] (AUDIBLEWALKAWAYLOCK)
 - module: APIM
   address: 7D0-09-05
   mask: xxxx *xxx xx--

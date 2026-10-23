@@ -7,13 +7,26 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: Add 2 to current value
 steps:
 - module: ABS
   address: 760-04-03
   mask: xxxx xxx* xx--
+  notes: Add 2 to current value
   nibble: 7
   hex_offset: '+2'
-  community_instruction: Add 2 to current value
-  feature_name: EOL_SDM_Generic_Mode12 (EOLSDMGM)
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: EOL_SDM_Generic_Mode12 (EOLSDMGM)
+  - bit: 2
+    action: 0
+    feature_name: EOL_SDM_Generic_Mode12 (EOLSDMGM)
+  - bit: 1
+    action: 1
+    feature_name: EOL_SDM_Generic_Mode10 (EOLSDMGM)
+    target_state: EOLSDMGM Enabled (Rock Crawl) MFAL ABFAL (EXTERIOR APPEARANCE -
+      LEVEL 2)
+  - bit: 0
+    action: 0
+    feature_name: EOL_SDM_Generic_Mode12 (EOLSDMGM)

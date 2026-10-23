@@ -7,10 +7,15 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2022 Bronco.xlsx
+notes: 'Calculator: https://docs.google.com/spreadsheets/d/15RmCgd740T10K0PnG44p42FCod9BSG3f6yrUc0X5qxw/edit?usp=sharing
+
+  0001 for 1 second, 001E for 30 seconds, 003C for 1 minute, 012C for 5 minutes, 0258
+  for 10 minutes, 0708 for 30 minutes, and 0E10 for 1 hour'
 steps:
 - module: BDYCM
   address: 726-57-01
   mask: '**** xxxx xx--'
+  notes: DeltaNu1142's power point timeout calculator
   type: continuous
   unit: seconds
   feature_name: Power_Point_Maxtime_Cfg (PPMC)

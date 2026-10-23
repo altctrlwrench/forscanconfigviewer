@@ -7,14 +7,15 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: Change current value to 2
 steps:
 - module: APIM
   address: 7D0-02-02
   mask: xxx* xxxx xx--
+  notes: Add 2 to current value
   nibble: 3
   recommended_hex: '2'
   hex_offset: '+2'
-  community_instruction: Add 2 to current value
   feature_name: Climate Bar (CB)
   target_state: CB Enabled
   bit: 1

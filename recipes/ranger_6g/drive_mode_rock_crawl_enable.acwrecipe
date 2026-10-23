@@ -7,11 +7,17 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: SDM - Mode 10 (Rock/Crawl?) (Disabled (Default), Enabled)
+
+  Trim: 4x4 [Confirmed: craigc (9/12/2024) Lariat]'
 forscan_menu: SDM - Mode 10 (Rock/Crawl?) (Disabled (Default), Enabled)
 steps:
 - module: ABS
   address: 760-04-03
   mask: xxxx xxx* xx--
-  type: continuous
+  notes: '* -> 3=Enabled
+
+    FORScan Menu: SDM - Mode 10 (Rock/Crawl?) (Disabled (Default), Enabled)
+
+    Trim: 4x4 [Confirmed: craigc (9/12/2024) Lariat]'
   feature_name: SDM_GENERIC_MODE12 (SDMGENERICMODE)
-  instruction: 'FORScan Menu: SDM - Mode 10 (Rock/Crawl?) (Disabled (Default), Enabled)'

@@ -7,14 +7,31 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: unknown, use asbuilt (advanced)
+
+  Trim: All [Confirmed: wawy (1/22/25)]'
 forscan_menu: unknown, use asbuilt (advanced)
 steps:
 - module: BCM
   address: 726-39-02
   mask: xxxx x*xx xx--
+  notes: 0=Enabled (target setting), 1=Disabled (Default)
   nibble: 5
   community_instruction: 0=Enabled (target setting), 1=Disabled (Default)
-  feature_name: FrontFog_AutoCancel_Cfg (FFACC)
-  target_state: FFACC NO_CANCEL
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: FrontFog_AutoCancel_Cfg (FFACC)
+    target_state: FFACC NO_CANCEL
+  - bit: 2
+    action: 0
+    feature_name: FrontFog_AutoCancel_Cfg (FFACC)
+    target_state: FFACC NO_CANCEL
+  - bit: 1
+    action: 0
+    feature_name: FrontFog_AutoCancel_Cfg (FFACC)
+    target_state: FFACC NO_CANCEL
+  - bit: 0
+    action: 0
+    feature_name: FrontFog_AutoCancel_Cfg (FFACC)
+    target_state: FFACC NO_CANCEL

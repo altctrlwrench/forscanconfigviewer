@@ -7,142 +7,379 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2022 Bronco.xlsx
+notes: 'To roll down windows press unlock button on fob and then press again and hold
+
+  To roll up windows press lock button on fob and then press again and hold
+
+  Confirmed: Bigmoose/multi
+
+  Optional: E - Add Global Window Open/Close to Sybc 4 settings menu'
 steps:
 - module: DDM
   address: 740-06-02
   mask: xxxx xxxx **--
+  notes: 'To roll down windows press unlock button on fob and then press again and
+    hold
+
+    To roll up windows press lock button on fob and then press again and hold'
   nibbles:
   - nibble: 8
     recommended_hex: '0'
-    community_instruction: To roll down windows press unlock button on fob and then
+    notes: 'To roll down windows press unlock button on fob and then press again and
+      hold
+
+      To roll up windows press lock button on fob and then press again and hold'
+    community_instruction: 'To roll down windows press unlock button on fob and then
       press again and hold
-    feature_name: DebugCANmessages_Cfg (DCANC)
-    target_state: DCANC NOT_AVAILABLE
-    bit: 3
-    action: 0
+
+      To roll up windows press lock button on fob and then press again and hold'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: DebugCANmessages_Cfg (DCANC)
+      target_state: DCANC NOT_AVAILABLE
+    - bit: 2
+      action: 0
+      feature_name: DebugCANmessages_Cfg (DCANC)
+      target_state: DCANC NOT_AVAILABLE
+    - bit: 1
+      action: 0
+      feature_name: DebugCANmessages_Cfg (DCANC)
+      target_state: DCANC NOT_AVAILABLE
+    - bit: 0
+      action: 0
+      feature_name: DebugCANmessages_Cfg (DCANC)
+      target_state: DCANC NOT_AVAILABLE
   - nibble: 9
     recommended_hex: '1'
-    community_instruction: To roll down windows press unlock button on fob and then
+    notes: 'To roll down windows press unlock button on fob and then press again and
+      hold
+
+      To roll up windows press lock button on fob and then press again and hold'
+    community_instruction: 'To roll down windows press unlock button on fob and then
       press again and hold
-    feature_name: Global_Close_Cfg (GCC)
-    target_state: GCC DISABLED
-    bit: 3
-    action: 0
+
+      To roll up windows press lock button on fob and then press again and hold'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global_Close_Cfg (GCC)
+      target_state: GCC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: Global_Close_Cfg (GCC)
+      target_state: GCC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: Global_Close_Cfg (GCC)
+      target_state: GCC DISABLED
+    - bit: 0
+      action: 1
+      feature_name: Global_Close_Cfg (GCC)
+      target_state: GCC ENABLED
 - module: PDM
   address: 741-06-02
   mask: xxxx xxxx **--
   nibbles:
   - nibble: 8
     recommended_hex: '0'
-    feature_name: Global Close
-    target_state: disabled,
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global Close
+      target_state: disabled,
+    - bit: 2
+      action: 0
+      feature_name: Global Close
+      target_state: disabled,
+    - bit: 1
+      action: 0
+      feature_name: Global Close
+      target_state: disabled,
+    - bit: 0
+      action: 0
+      feature_name: Global Close
+      target_state: disabled,
   - nibble: 9
     recommended_hex: '1'
-    feature_name: Global_Open_Cfg (GOC)
-    target_state: GOC DISABLED
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
+    - bit: 0
+      action: 1
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC ENABLED
 - module: DDM
   address: 740-06-03
   mask: '**xx xxxx xx--'
   nibbles:
   - nibble: 0
     recommended_hex: '0'
-    feature_name: Global_Open_Cfg (GOC)
-    target_state: GOC DISABLED
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
+    - bit: 0
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
   - nibble: 1
     recommended_hex: '1'
-    feature_name: Global_Open_Cfg (GOC)
-    target_state: GOC DISABLED
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC DISABLED
+    - bit: 0
+      action: 1
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC ENABLED
 - module: PDM
   address: 741-06-03
   mask: '**xx xxxx xx--'
   nibbles:
   - nibble: 0
     recommended_hex: '0'
-    feature_name: Global Open
-    target_state: disabled,
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global Open
+      target_state: disabled,
+    - bit: 2
+      action: 0
+      feature_name: Global Open
+      target_state: disabled,
+    - bit: 1
+      action: 0
+      feature_name: Global Open
+      target_state: disabled,
+    - bit: 0
+      action: 0
+      feature_name: Global Open
+      target_state: disabled,
   - nibble: 1
     recommended_hex: '1'
-    feature_name: GlassSoftStop_Cfg (GSSC)
-    target_state: GSSC DISABLED
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC DISABLED
+    - bit: 0
+      action: 1
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC ENABLED
 - module: BDYCM
   address: 726-11-02
   mask: xx** xx** xx--
   nibbles:
   - nibble: 2
     recommended_hex: '0'
-    feature_name: ParkBrakeType_Cfg (PBTC)
-    target_state: PBTC ELEC
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: PBTC ELEC
+    - bit: 2
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: PBTC ELEC
+    - bit: 1
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: PBTC ELEC
+    - bit: 0
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: PBTC ELEC
   - nibble: 3
     recommended_hex: '1'
-    feature_name: GlobalClose_Cfg (GCC)
-    target_state: GCC DISABLE
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC REMOTE
   - nibble: 6
     recommended_hex: '0'
-    feature_name: ParkBrakeType_Cfg (PBTC)
-    target_state: PBTC ELEC
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: PBTC ELEC
+    - bit: 2
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: PBTC ELEC
+    - bit: 1
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: PBTC ELEC
+    - bit: 0
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: PBTC ELEC
   - nibble: 7
     recommended_hex: '1'
-    feature_name: GlobalOpen_Cfg (GOC)
-    target_state: GOC DISABLE
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: GlobalOpen_Cfg (GOC)
+      target_state: GOC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: GlobalOpen_Cfg (GOC)
+      target_state: GOC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: GlobalOpen_Cfg (GOC)
+      target_state: GOC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: GlobalOpen_Cfg (GOC)
+      target_state: GOC REMOTE
 - module: BDYCM
   address: 726-22-01
   mask: xxxx xxxx **--
   nibbles:
   - nibble: 8
     recommended_hex: '0'
-    feature_name: Feat_Cfg [GLOBALCLOSE] [PERS_1] (GLOBALCLOSE_PERS_1)
-    target_state: GLOBALCLOSE_PERS_1 DISABLE
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [PERS_1] (GLOBALCLOSE_PERS_1)
+      target_state: GLOBALCLOSE_PERS_1 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [PERS_1] (GLOBALCLOSE_PERS_1)
+      target_state: GLOBALCLOSE_PERS_1 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [PERS_1] (GLOBALCLOSE_PERS_1)
+      target_state: GLOBALCLOSE_PERS_1 DISABLE
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [PERS_1] (GLOBALCLOSE_PERS_1)
+      target_state: GLOBALCLOSE_PERS_1 DISABLE
   - nibble: 9
     recommended_hex: '1'
-    feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
-    target_state: GLOBALCLOSE_VEHICLE DISABLE
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: GLOBALCLOSE_VEHICLE DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: GLOBALCLOSE_VEHICLE DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: GLOBALCLOSE_VEHICLE DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: GLOBALCLOSE_VEHICLE ENABLE
 - module: BDYCM
   address: 726-22-02
   mask: xxxx xxxx **--
   nibbles:
   - nibble: 8
     recommended_hex: '0'
-    feature_name: Feat_Cfg [GLOBALOPEN] [PERS_1] (GLOBALOPEN_PERS_1)
-    target_state: GLOBALOPEN_PERS_1 DISABLE
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [PERS_1] (GLOBALOPEN_PERS_1)
+      target_state: GLOBALOPEN_PERS_1 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [PERS_1] (GLOBALOPEN_PERS_1)
+      target_state: GLOBALOPEN_PERS_1 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [PERS_1] (GLOBALOPEN_PERS_1)
+      target_state: GLOBALOPEN_PERS_1 DISABLE
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [PERS_1] (GLOBALOPEN_PERS_1)
+      target_state: GLOBALOPEN_PERS_1 DISABLE
   - nibble: 9
     recommended_hex: '1'
-    feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
-    target_state: GLOBALOPEN_VEHICLE DISABLE
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: GLOBALOPEN_VEHICLE DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: GLOBALOPEN_VEHICLE DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: GLOBALOPEN_VEHICLE DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: GLOBALOPEN_VEHICLE ENABLE
 - module: APIM
   address: 7D0-09-01
   mask: xxxx x*xx xx--
+  notes: 'Optional: E - Add Global Window Open/Close to Sybc 4 settings menu'
   nibble: 5
   community_instruction: 'Optional: E - Add Global Window Open/Close to Sybc 4 settings
     menu'
-  feature_name: Global Window Open (GWO)
-  target_state: GWO Enabled
-  bit: 3
-  action: 1
+  bits:
+  - bit: 3
+    action: 1
+    feature_name: Global Window Open (GWO)
+    target_state: GWO Enabled
+  - bit: 2
+    action: 1
+    feature_name: Global Window Close (GWC)
+    target_state: GWC Enabled

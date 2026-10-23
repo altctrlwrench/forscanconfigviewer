@@ -7,14 +7,33 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: Using Front Fog With High Beam (Allowed, Inhibited (Default))
+
+  Trim: All [Confirmed: pablo94sc (9/9/24)]
+
+  OBS: Brazilian RRaptor is enabled by default'
 forscan_menu: Using Front Fog With High Beam (Allowed, Inhibited (Default))
 steps:
 - module: BCM
   address: 726-39-02
   mask: xxx* xxxx xx--
+  notes: 0=Allowed (target setting), 1=Inhibited (Default)
   nibble: 3
   community_instruction: 0=Allowed (target setting), 1=Inhibited (Default)
-  feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
-  target_state: FFWHBC ALLOW
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
+    target_state: FFWHBC ALLOW
+  - bit: 2
+    action: 0
+    feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
+    target_state: FFWHBC ALLOW
+  - bit: 1
+    action: 0
+    feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
+    target_state: FFWHBC ALLOW
+  - bit: 0
+    action: 0
+    feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
+    target_state: FFWHBC ALLOW

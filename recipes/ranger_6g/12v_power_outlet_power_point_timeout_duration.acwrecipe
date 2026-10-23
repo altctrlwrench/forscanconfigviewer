@@ -7,12 +7,28 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: '0001=1 second.  convert decimal value to hex.   For example 3600 seconds equates
+  to 0E10, and 1800 seconds is 0708
+
+  FORScan Menu: Power Point Timeout, s (Set to # of seconds desired (e.g. 1800 for
+  30 minutes))
+
+  Trim: All [Confirmed: craigc (9/16/2024) Lariat]
+
+  DeltaNu1142''s power point timeout calculator'
 forscan_menu: 'Power Point Timeout, s (Set to # of seconds desired (e.g. 1800 for
   30 minutes))'
 steps:
 - module: BCM
   address: 726-57-01
   mask: '**** xxxx xx--'
+  notes: '0001=1 second.  convert decimal value to hex.   For example 3600 seconds
+    equates to 0E10, and 1800 seconds is 0708
+
+    FORScan Menu: Power Point Timeout, s (Set to # of seconds desired (e.g. 1800 for
+    30 minutes))
+
+    Trim: All [Confirmed: craigc (9/16/2024) Lariat]'
   type: continuous
   unit: seconds
   feature_name: Power_Point_Maxtime_Cfg (PPMC)

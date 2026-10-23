@@ -7,20 +7,49 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2023 Super Duty.xlsx
+notes: 0=Disable  1=Enable
 steps:
 - module: BDYCM-BCM
   address: 726-24-02
   mask: xxxx xxxx **--
+  notes: 0=Disable  1=Enable
   nibbles:
   - nibble: 8
-    community_instruction: First nibble = 0
-    feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [PERS_1] (AUDIBLELOCKFEEDBACK_PERS_1)
-    target_state: AUDIBLELOCKFEEDBACK_PERS_1 DISABLE
-    bit: 3
-    action: 0
+    notes: First nibble = 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [PERS_1] (AUDIBLELOCKFEEDBACK_PERS_1)
+      target_state: AUDIBLELOCKFEEDBACK_PERS_1 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [PERS_1] (AUDIBLELOCKFEEDBACK_PERS_1)
+      target_state: AUDIBLELOCKFEEDBACK_PERS_1 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [PERS_1] (AUDIBLELOCKFEEDBACK_PERS_1)
+      target_state: AUDIBLELOCKFEEDBACK_PERS_1 DISABLE
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [PERS_1] (AUDIBLELOCKFEEDBACK_PERS_1)
+      target_state: AUDIBLELOCKFEEDBACK_PERS_1 DISABLE
   - nibble: 9
+    notes: Set to 1 to enable lock feedback
     community_instruction: Set to 1 to enable lock feedback
-    feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
-    target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      target_state: AUDIBLELOCKFEEDBACK_VEHICLE ENABLE

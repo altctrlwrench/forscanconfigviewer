@@ -7,10 +7,104 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2022 Bronco.xlsx
+notes: 'xx*x-xxxx-xxxx - Driver Front Kick Panel/Dash Speakers
+
+  0 - Speaker
+
+  1 - Tweeter
+
+  2 - Speaker & Tweeter
+
+  3 - No Speaker (ACM disable)
+
+  xxx*-xxxx-xxxx - Passenger Front Kick Panel/Dash Speakers
+
+  3 - Speaker
+
+  7 - Tweeter
+
+  B - Speaker & Tweeter
+
+  F - No Speaker
+
+  xxxx-*xxx-xxxx - Passenger Rear Pod Speaker
+
+  0 - Speaker
+
+  1 - Tweeter
+
+  2 - Speaker & Tweeter
+
+  3 - No Speaker
+
+  xxxx-x*xx-xxxx - Driver Rear Pod Speaker & Subwoofer
+
+  0 - Speaker
+
+  2 - Speaker & Sub
+
+  4 - Tweeter
+
+  6 - Tweeter & Sub
+
+  8 - Speaker & Tweeter
+
+  A - Speaker, Tweeter, & Sub
+
+  C - No speaker
+
+  E - Sub only
+
+  Confirmed: RagnarKon'
 steps:
 - module: ACM
   address: 727-01-01
   mask: xx** **xx xxxx
-  type: continuous
+  notes: 'xx*x-xxxx-xxxx - Driver Front Kick Panel/Dash Speakers
+
+    0 - Speaker
+
+    1 - Tweeter
+
+    2 - Speaker & Tweeter
+
+    3 - No Speaker (ACM disable)
+
+    xxx*-xxxx-xxxx - Passenger Front Kick Panel/Dash Speakers
+
+    3 - Speaker
+
+    7 - Tweeter
+
+    B - Speaker & Tweeter
+
+    F - No Speaker
+
+    xxxx-*xxx-xxxx - Passenger Rear Pod Speaker
+
+    0 - Speaker
+
+    1 - Tweeter
+
+    2 - Speaker & Tweeter
+
+    3 - No Speaker
+
+    xxxx-x*xx-xxxx - Driver Rear Pod Speaker & Subwoofer
+
+    0 - Speaker
+
+    2 - Speaker & Sub
+
+    4 - Tweeter
+
+    6 - Tweeter & Sub
+
+    8 - Speaker & Tweeter
+
+    A - Speaker, Tweeter, & Sub
+
+    C - No speaker
+
+    E - Sub only'
   feature_name: Front Satellite Speakers (FSS)
-  instruction: xx*x-xxxx-xxxx - Driver Front Kick Panel/Dash Speakers

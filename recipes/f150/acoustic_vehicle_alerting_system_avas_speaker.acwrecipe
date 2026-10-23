@@ -7,10 +7,14 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
+notes: 'If your default is 4 change to 0, if default is 5 change to 1 AND disconnect
+  PACM under the glove box according to this video: https://youtu.be/0K9M7hZQTec'
 steps:
 - module: IPC
   address: 720-09-02
   mask: x*xx xx--
+  notes: 'If your default is 4 change to 0, if default is 5 change to 1 AND disconnect
+    PACM under the glove box according to this video: https://youtu.be/0K9M7hZQTec'
   nibble: 1
   community_instruction: 'If your default is 4 change to 0, if default is 5 change
     to 1 AND disconnect PACM under the glove box according to this video: https://youtu.be/0K9M7hZQTec'

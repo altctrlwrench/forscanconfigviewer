@@ -7,6 +7,7 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: 2025-2026 Explorer.xlsx
+notes: Headlamp will revert to last position at startup
 steps:
 - module: BCM
   address: 726-74-01
@@ -14,13 +15,39 @@ steps:
   nibbles:
   - nibble: 2
     recommended_hex: '0'
-    feature_name: BSI_OpenDTC_Cfg (BSIODTCC)
-    target_state: BSIODTCC NOT_USED
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: BSI_OpenDTC_Cfg (BSIODTCC)
+      target_state: BSIODTCC NOT_USED
+    - bit: 2
+      action: 0
+      feature_name: BSI_OpenDTC_Cfg (BSIODTCC)
+      target_state: BSIODTCC NOT_USED
+    - bit: 1
+      action: 0
+      feature_name: BSI_OpenDTC_Cfg (BSIODTCC)
+      target_state: BSIODTCC NOT_USED
+    - bit: 0
+      action: 0
+      feature_name: BSI_OpenDTC_Cfg (BSIODTCC)
+      target_state: BSIODTCC NOT_USED
   - nibble: 3
     recommended_hex: '1'
-    feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
-    target_state: HPAIOC AUTO
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: HPAIOC AUTO
+    - bit: 2
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: HPAIOC AUTO
+    - bit: 1
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: HPAIOC AUTO
+    - bit: 0
+      action: 1
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: HPAIOC LAST_KNOWN

@@ -7,15 +7,33 @@ trim: All
 validated: true
 verified_by: Kyle / AsBuiltPro
 source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: Audible Lock Feedback - Vehicle (Disabled, Enabled (Default))
+
+  Trim: All? [Confirmed: craigc (9/10/2024) Lariat FX4]'
 forscan_menu: Audible Lock Feedback - Vehicle (Disabled, Enabled (Default))
 steps:
 - module: BCM
   address: 726-24-02
   mask: xxxx xxxx x*--
+  notes: 1=enabled (default), 0=disabled (target setting). Forscan not needed - Sync
+    setting exists by default
   nibble: 9
   community_instruction: 1=enabled (default), 0=disabled (target setting). Forscan
     not needed - Sync setting exists by default
-  feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
-  target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
-  bit: 3
-  action: 0
+  bits:
+  - bit: 3
+    action: 0
+    feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+    target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+  - bit: 2
+    action: 0
+    feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+    target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+  - bit: 1
+    action: 0
+    feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+    target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+  - bit: 0
+    action: 0
+    feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+    target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE

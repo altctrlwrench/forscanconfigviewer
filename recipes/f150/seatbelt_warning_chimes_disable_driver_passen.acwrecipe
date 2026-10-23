@@ -13,7 +13,17 @@ steps:
   mask: xxxx xx*x xx--
   nibble: 6
   recommended_hex: '0'
-  feature_name: Driver Beltminder (DB)
-  target_state: DB disabled
-  bit: 2
-  action: 0
+  notes: Driver, Pass, and Mid seatbelt minder disabled.
+  bits:
+  - bit: 2
+    action: 0
+    feature_name: Driver Beltminder (DB)
+    target_state: DB disabled
+  - bit: 1
+    action: 0
+    feature_name: Pass BeltMinder (PBM)
+    target_state: PBM disabled
+  - bit: 0
+    action: 0
+    feature_name: Mid Pass Beltminder (MPB)
+    target_state: MPB disabled

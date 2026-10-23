@@ -15,13 +15,31 @@ steps:
   nibbles:
   - nibble: 6
     recommended_hex: '5'
-    feature_name: Eng Temp Dig (ETD)
-    target_state: ETD Always Off
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Eng Temp Dig (ETD)
+      target_state: ETD Always Off
+    - bit: 2
+      action: 1
+      feature_name: Eng Temp Dig (ETD)
+      target_state: ETD Always On
+    - bit: 1
+      action: 0
+      feature_name: Trans Temp Dig (TTD)
+      target_state: TTD Always Off
+    - bit: 0
+      action: 1
+      feature_name: Trans Temp Dig (TTD)
+      target_state: TTD Always On
   - nibble: 7
     recommended_hex: '4'
-    feature_name: Eng Oil Dig (EOD)
-    target_state: EOD Always Off
-    bit: 3
-    action: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Eng Oil Dig (EOD)
+      target_state: EOD Always Off
+    - bit: 2
+      action: 1
+      feature_name: Eng Oil Dig (EOD)
+      target_state: EOD Always On
