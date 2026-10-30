@@ -25,21 +25,30 @@ steps:
     - Default))
 
     Trim: All [Confirmed: craigc (9/16/2024) Lariat]'
-  nibble: 5
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: Power_Point_Timeout_Cfg (PPTC)
-    target_state: PPTC DISABLE
-  - bit: 2
-    action: 0
-    feature_name: Power_Point_Timeout_Cfg (PPTC)
-    target_state: PPTC DISABLE
-  - bit: 1
-    action: 0
-    feature_name: Power_Point_Timeout_Cfg (PPTC)
-    target_state: PPTC DISABLE
-  - bit: 0
-    action: 0
-    feature_name: Power_Point_Timeout_Cfg (PPTC)
-    target_state: PPTC DISABLE
+  nibbles:
+  - nibble: 5
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Power_Point_Timeout_Cfg (PPTC)
+      target_state: PPTC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Power_Point_Timeout_Cfg (PPTC)
+      target_state: PPTC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Power_Point_Timeout_Cfg (PPTC)
+      target_state: PPTC DISABLE
+    - bit: 0
+      action: 0
+      feature_name: Power_Point_Timeout_Cfg (PPTC)
+      target_state: PPTC DISABLE
+    notes: '0 - disabled/always on, 1-enabled/use timeout duration above.   12v outlet
+      power off (seconds) after AUX is off.  Affects center console power port as
+      well as the one in the truck bed, but not the USB ports or 120VAC
+
+      FORScan Menu: Power Point Feature (Disabled (Always on), Enabled (use timeout
+      - Default))
+
+      Trim: All [Confirmed: craigc (9/16/2024) Lariat]'

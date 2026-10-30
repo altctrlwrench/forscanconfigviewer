@@ -31,114 +31,124 @@ steps:
   address: 720-02-02
   mask: xxxx *xxx xx--
   notes: Remote Start Climate, Drivers Seat, Feature, Passenger Seat
-  nibble: 4
-  recommended_hex: F
-  bits:
-  - bit: 3
-    action: 1
-    feature_name: Remote Start - Climate Settings (RSCS)
-    target_state: RSCS enabled
-  - bit: 2
-    action: 1
-    feature_name: Remote Start - Driver Seat (RSDS)
-    target_state: RSDS enabled
-  - bit: 1
-    action: 1
-    feature_name: Remote Start - Feature (RSF)
-    target_state: RSF enabled
-  - bit: 0
-    action: 1
-    feature_name: Remote Start - Passenger Seat (RSPS)
-    target_state: RSPS enabled
+  nibbles:
+  - nibble: 4
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Remote Start - Climate Settings (RSCS)
+      target_state: RSCS enabled
+    - bit: 2
+      action: 1
+      feature_name: Remote Start - Driver Seat (RSDS)
+      target_state: RSDS enabled
+    - bit: 1
+      action: 1
+      feature_name: Remote Start - Feature (RSF)
+      target_state: RSF enabled
+    - bit: 0
+      action: 1
+      feature_name: Remote Start - Passenger Seat (RSPS)
+      target_state: RSPS enabled
+    recommended_hex: F
+    notes: Remote Start Climate, Drivers Seat, Feature, Passenger Seat
 - module: BCM
   address: 726-30-01
   mask: xxxx xxx* xx--
   notes: Remote Start Enable
-  nibble: 7
-  recommended_hex: '1'
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: Remote_Start_Enable_Cfg (RSEC)
-    target_state: RSEC DISABLED
-  - bit: 2
-    action: 0
-    feature_name: Remote_Start_Enable_Cfg (RSEC)
-    target_state: RSEC DISABLED
-  - bit: 1
-    action: 0
-    feature_name: Remote_Start_Enable_Cfg (RSEC)
-    target_state: RSEC DISABLED
-  - bit: 0
-    action: 1
-    feature_name: Remote_Start_Enable_Cfg (RSEC)
-    target_state: RSEC ENABLED
+  nibbles:
+  - nibble: 7
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Remote_Start_Enable_Cfg (RSEC)
+      target_state: RSEC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: Remote_Start_Enable_Cfg (RSEC)
+      target_state: RSEC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: Remote_Start_Enable_Cfg (RSEC)
+      target_state: RSEC DISABLED
+    - bit: 0
+      action: 1
+      feature_name: Remote_Start_Enable_Cfg (RSEC)
+      target_state: RSEC ENABLED
+    recommended_hex: '1'
+    notes: Remote Start Enable
 - module: BCM
   address: 726-63-02
   mask: xxxx xxx* xx--
   notes: Remote Start Lightning Enable
-  nibble: 7
-  recommended_hex: '1'
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: RStart_Lighting_Enable_Cfg (RSLEC)
-    target_state: RSLEC DISABLE
-  - bit: 2
-    action: 0
-    feature_name: RStart_Lighting_Enable_Cfg (RSLEC)
-    target_state: RSLEC DISABLE
-  - bit: 1
-    action: 0
-    feature_name: RStart_Lighting_Enable_Cfg (RSLEC)
-    target_state: RSLEC DISABLE
-  - bit: 0
-    action: 1
-    feature_name: RStart_Lighting_Enable_Cfg (RSLEC)
-    target_state: RSLEC ENABLE
+  nibbles:
+  - nibble: 7
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: RStart_Lighting_Enable_Cfg (RSLEC)
+      target_state: RSLEC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: RStart_Lighting_Enable_Cfg (RSLEC)
+      target_state: RSLEC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: RStart_Lighting_Enable_Cfg (RSLEC)
+      target_state: RSLEC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: RStart_Lighting_Enable_Cfg (RSLEC)
+      target_state: RSLEC ENABLE
+    recommended_hex: '1'
+    notes: Remote Start Lightning Enable
 - module: BCM
   address: 726-66-01
   mask: xxxx xxx* xx--
   notes: Two-way Remote Keyless Entry Enable
-  nibble: 7
-  recommended_hex: '1'
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: TwoWayRKE_Enable_Cfg (TWRKEEC)
-    target_state: TWRKEEC DISABLE
-  - bit: 2
-    action: 0
-    feature_name: TwoWayRKE_Enable_Cfg (TWRKEEC)
-    target_state: TWRKEEC DISABLE
-  - bit: 1
-    action: 0
-    feature_name: TwoWayRKE_Enable_Cfg (TWRKEEC)
-    target_state: TWRKEEC DISABLE
-  - bit: 0
-    action: 1
-    feature_name: TwoWayRKE_Enable_Cfg (TWRKEEC)
-    target_state: TWRKEEC ENABLE
+  nibbles:
+  - nibble: 7
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: TwoWayRKE_Enable_Cfg (TWRKEEC)
+      target_state: TWRKEEC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: TwoWayRKE_Enable_Cfg (TWRKEEC)
+      target_state: TWRKEEC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: TwoWayRKE_Enable_Cfg (TWRKEEC)
+      target_state: TWRKEEC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: TwoWayRKE_Enable_Cfg (TWRKEEC)
+      target_state: TWRKEEC ENABLE
+    recommended_hex: '1'
+    notes: Two-way Remote Keyless Entry Enable
 - module: APIM
   address: 7D0-09-01
   mask: xxxx xxxx *x--
   notes: Enables toggles in APIM for Feature, Climate, and Drivers/Passenger seat.
-  nibble: 8
-  recommended_hex: F
-  bits:
-  - bit: 3
-    action: 1
-    feature_name: Remote Start Climate Settings (RSCS)
-    target_state: RSCS Enabled
-  - bit: 2
-    action: 1
-    feature_name: Remote Start Driver Seat (RSDS)
-    target_state: RSDS Enabled
-  - bit: 1
-    action: 1
-    feature_name: Remote Start - Feature (RSF)
-    target_state: RSF Enabled
-  - bit: 0
-    action: 1
-    feature_name: Remote Start Passenger Seat (RSPS)
-    target_state: RSPS Enabled
+  nibbles:
+  - nibble: 8
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Remote Start Climate Settings (RSCS)
+      target_state: RSCS Enabled
+    - bit: 2
+      action: 1
+      feature_name: Remote Start Driver Seat (RSDS)
+      target_state: RSDS Enabled
+    - bit: 1
+      action: 1
+      feature_name: Remote Start - Feature (RSF)
+      target_state: RSF Enabled
+    - bit: 0
+      action: 1
+      feature_name: Remote Start Passenger Seat (RSPS)
+      target_state: RSPS Enabled
+    recommended_hex: F
+    notes: Enables toggles in APIM for Feature, Climate, and Drivers/Passenger seat.

@@ -60,51 +60,8 @@ steps:
 - module: ACM
   address: 727-01-01
   mask: xx** **xx xxxx
-  notes: 'xx*x-xxxx-xxxx - Driver Front Kick Panel/Dash Speakers
-
-    0 - Speaker
-
-    1 - Tweeter
-
-    2 - Speaker & Tweeter
-
-    3 - No Speaker (ACM disable)
-
-    xxx*-xxxx-xxxx - Passenger Front Kick Panel/Dash Speakers
-
-    3 - Speaker
-
-    7 - Tweeter
-
-    B - Speaker & Tweeter
-
-    F - No Speaker
-
-    xxxx-*xxx-xxxx - Passenger Rear Pod Speaker
-
-    0 - Speaker
-
-    1 - Tweeter
-
-    2 - Speaker & Tweeter
-
-    3 - No Speaker
-
-    xxxx-x*xx-xxxx - Driver Rear Pod Speaker & Subwoofer
-
-    0 - Speaker
-
-    2 - Speaker & Sub
-
-    4 - Tweeter
-
-    6 - Tweeter & Sub
-
-    8 - Speaker & Tweeter
-
-    A - Speaker, Tweeter, & Sub
-
-    C - No speaker
-
-    E - Sub only'
+  notes: 'User input required: Enter custom speaker channel configuration per vehicle
+    speaker setup.'
   feature_name: Front Satellite Speakers (FSS)
+  type: continuous
+  user_input: required

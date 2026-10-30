@@ -1,0 +1,187 @@
+title: BlueCruise 1.4 Feature Set (Lane Biasing & Curve Speed)
+raw_community_title: Enable BlueCruise 1.4
+category: Cameras and ADAS
+platform: F-150 Lightning
+model_years: 2022-2024
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: 'Enables BC 1.4 features. IPMA must be updated to ACJ or later (mid 2024 update).
+  Note: ''E'' at 7D0-09-05 is specific to Lightning; do not use ''4''.'
+steps:
+- module: APIM
+  address: 7D0-09-05
+  mask: xxxx xx*x *x--
+  nibbles:
+  - nibble: 6
+    recommended_hex: E
+    community_instruction: '''E'' is specific to Lightning, do not use ''4'''
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Frunk Restricted Determination (FRD)
+      target_state: Enabled
+    - bit: 2
+      action: 1
+      feature_name: Lane Biasing (LB)
+      target_state: Enabled
+    - bit: 1
+      action: 1
+      feature_name: Key Detection Alert  (KDA)
+      target_state: Enabled
+    - bit: 0
+      action: 0
+      feature_name: Running Board Control Function v2 (RBCF)
+      target_state: Disabled
+  - nibble: 8
+    recommended_hex: '2'
+    community_instruction: Set to 2
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Vehicle Locks (VL)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Vehicle Locks (VL)
+      target_state: Disabled
+    - bit: 1
+      action: 1
+      feature_name: Vehicle Locks (VL)
+      target_state: Enabled
+    - bit: 0
+      action: 0
+      feature_name: Vehicle Locks (VL)
+      target_state: Disabled
+- module: APIM
+  address: 7D0-10-02
+  mask: xxxx xxxx *x--
+  nibbles:
+  - nibble: 8
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Average Speed configure Cluster Trip 2 view (ASCT)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Average Fuel configure Cluster Trip 2 view (AFCT)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Instantaneous Fuel configure Cluster Trip 2 view (IFCT)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Classic View Cluster Speedo view Cluster Menu (CVCSCM)
+      target_state: Enabled
+- module: IPMA
+  address: 706-01-01
+  mask: x*xx xxxx xx--
+  nibbles:
+  - nibble: 1
+    recommended_hex: E
+    community_instruction: Set to E
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: ModuleFeatureCfg_LKS (MFCLKS)
+      target_state: Enabled
+    - bit: 2
+      action: 1
+      feature_name: ModuleFeatureCfg_DAS (MFCDAS)
+      target_state: Enabled
+    - bit: 1
+      action: 1
+      feature_name: Unused_1 (U)
+      target_state: Enabled
+    - bit: 0
+      action: 0
+      feature_name: Unused_1 (U)
+      target_state: Disabled
+- module: IPMA
+  address: 706-01-02
+  mask: x*xx xxxx xx--
+  nibbles:
+  - nibble: 1
+    recommended_hex: '5'
+    community_instruction: Set to 5
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: ModuleFeatureCfg_MDVVC (MFCMDVVC)
+      target_state: Disabled
+    - bit: 2
+      action: 1
+      feature_name: ModuleFeatureCfg_ALB (MFCALB)
+      target_state: Enabled
+    - bit: 1
+      action: 0
+      feature_name: ModuleFeatureCfg_CTASplitView (MFCCTASV)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: ModuleFeatureCfg_ALC (MFCALC)
+      target_state: Enabled
+- module: IPMA
+  address: 706-02-02
+  mask: xxxx xxxx x*--
+  nibbles:
+  - nibble: 9
+    recommended_hex: '2'
+    feature_name: FeatureCfg_IACCMode (FCIACCM)
+    target_state: Preview + CurveControl
+    bits:
+    - bit: 1
+      action: 1
+      feature_name: FeatureCfg_IACCMode (FCIACCM)
+      target_state: Preview + CurveControl
+  notes: FeatureCfg_IACCMode (FCIACCM) FCIACCM Preview+CurveControl
+- module: IPMA
+  address: 706-38-01
+  mask: x*x* xxxx xx--
+  nibbles:
+  - nibble: 1
+    recommended_hex: '8'
+    community_instruction: Set to 8
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: CustomerSetting_ALBSelected_Vehicle (CSALBSV)
+      target_state: Enabled
+    - bit: 2
+      action: 0
+      feature_name: CustomerSetting_ALBSelected_Vehicle (CSALBSV)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: CustomerSetting_ALBSelected_Vehicle (CSALBSV)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: CustomerSetting_ALBSelected_Vehicle (CSALBSV)
+      target_state: Disabled
+  - nibble: 3
+    recommended_hex: '8'
+    community_instruction: Set to 8
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: CustomerSetting_ALCSelected_Vehicle (CSALCSV)
+      target_state: Enabled
+    - bit: 2
+      action: 0
+      feature_name: CustomerSetting_ALCSelected_Vehicle (CSALCSV)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: CustomerSetting_ALCSelected_Vehicle (CSALCSV)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: CustomerSetting_ALCSelected_Vehicle (CSALCSV)
+      target_state: Disabled
+validation_status: validated

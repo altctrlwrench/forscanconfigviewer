@@ -1,0 +1,37 @@
+title: Lane Change Turn Signal Flash Count
+raw_community_title: Turn Signal Flashes (2021-26)
+category: Lighting
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: add 04 (hex) to your default value for each additional flash
+steps:
+- module: SCCM
+  address: 724-01-01
+  mask: xxxx **xx --
+  notes: 'Sets lane change turn signal count. User preference variable (recommended
+    default: 5 flashes / 94 hex).'
+  type: multi_choice
+  recommended_hex: '94'
+  target_state: 5 Flashes
+  options:
+    '80': Null / Disabled
+    '84': 1 Flash
+    '88': 2 Flashes
+    8C: 3 Flashes (Factory Default)
+    '90': 4 Flashes
+    '94': 5 Flashes (Recommended Default)
+    '98': 6 Flashes
+    9C: 7 Flashes
+    A0: 8 Flashes
+    A4: 9 Flashes
+    A8: 10 Flashes
+  nibbles:
+  - nibble: 4
+    recommended_hex: '9'
+  - nibble: 5
+    recommended_hex: '4'
+validation_status: validated

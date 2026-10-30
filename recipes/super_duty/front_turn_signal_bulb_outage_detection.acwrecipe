@@ -15,24 +15,28 @@ steps:
   notes: 'Disable Front Turn Bulb Outage Detection
 
     0=No Outage 1=Outage - set to 0 to disable'
-  nibble: 1
   community_instruction: 'Disable Front Turn Bulb Outage Detection
 
     0=No Outage 1=Outage - set to 0 to disable'
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
-    target_state: FBTOC NO_OUTAGE
-  - bit: 2
-    action: 0
-    feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
-    target_state: FBTOC NO_OUTAGE
-  - bit: 1
-    action: 0
-    feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
-    target_state: FBTOC NO_OUTAGE
-  - bit: 0
-    action: 0
-    feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
-    target_state: FBTOC NO_OUTAGE
+  nibbles:
+  - nibble: 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
+      target_state: FBTOC NO_OUTAGE
+    - bit: 2
+      action: 0
+      feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
+      target_state: FBTOC NO_OUTAGE
+    - bit: 1
+      action: 0
+      feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
+      target_state: FBTOC NO_OUTAGE
+    - bit: 0
+      action: 0
+      feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
+      target_state: FBTOC NO_OUTAGE
+    notes: 'Disable Front Turn Bulb Outage Detection
+
+      0=No Outage 1=Outage - set to 0 to disable'

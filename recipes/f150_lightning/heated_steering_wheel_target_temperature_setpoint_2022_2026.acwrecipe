@@ -1,0 +1,39 @@
+title: Heated Steering Wheel Target Temperature Setpoint
+raw_community_title: Heated Steering Wheel Temperature Setpoint
+category: Sync and Infotainment
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: "Default is B (35\xB0C / 95\xB0F). Values: 0=24\xB0C, 1=25\xB0C, 2=26\xB0C,\
+  \ 3=27\xB0C, 4=28\xB0C, 5=29\xB0C, 6=30\xB0C, 7=31\xB0C, 8=32\xB0C, 9=33\xB0C, A=34\xB0\
+  C, B=35\xB0C, C=36\xB0C, D=37\xB0C, E=38\xB0C, F=39\xB0C."
+steps:
+- module: SCCM
+  address: 724-06-01
+  mask: '*xxx xxxx xx--'
+  nibbles:
+  - nibble: 0
+    recommended_hex: B
+    community_instruction: "Select 0 through F for target temperature (factory default\
+      \ is B / 35\xB0C)"
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: HSW_Level_3_TempSetPt (HSWLTSP)
+      target_state: Enabled
+    - bit: 2
+      action: 0
+      feature_name: HSW_Level_3_TempSetPt (HSWLTSP)
+      target_state: Disabled
+    - bit: 1
+      action: 1
+      feature_name: HSW_Level_3_TempSetPt (HSWLTSP)
+      target_state: Enabled
+    - bit: 0
+      action: 1
+      feature_name: HSW_Level_3_TempSetPt (HSWLTSP)
+      target_state: Enabled
+validation_status: validated

@@ -1,0 +1,63 @@
+title: Pro Power Onboard with Vehicle Off
+raw_community_title: Enable Pro Power Onboard with truck off (2022-2023 only. Standard
+  on 2024+)
+category: Powertrain and Drivetrain
+platform: F-150 Lightning
+model_years: 2022-2023
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: Creates a Sync toggle in the Pro Power settings screen. Requires a 2025 or
+  later PCM update (via FDRS) or early 2026 Charge Port OTAs (PT-25.13.12 or PT-25.8.5
+  depending on model year).
+steps:
+- module: APIM
+  address: 7D0-10-03
+  mask: xxxx xx*x xx--
+  nibbles:
+  - nibble: 6
+    recommended_hex: '2'
+    community_instruction: Set to 2
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Extended Play Time Override (EPTO)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Digital Owner's Manual  (DOM)
+      target_state: Disabled
+    - bit: 1
+      action: 1
+      feature_name: Digital Owner's Manual  (DOM)
+      target_state: Enabled
+    - bit: 0
+      action: 0
+      feature_name: Digital Owner's Manual  (DOM)
+      target_state: Disabled
+- module: APIM
+  address: 7D0-10-04
+  mask: xxx* xxxx xx--
+  nibbles:
+  - nibble: 3
+    community_instruction: If 0, change to 8. If 4, change to C. If 6, change to E.
+      If you enabled the Advanced Charging Screen, you likely have a 6.
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: PPO Utility Idle (PPOUI)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Record Feedback (RF)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Record Feedback (RF)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Record Feedback (RF)
+      target_state: Enabled
+validation_status: validated

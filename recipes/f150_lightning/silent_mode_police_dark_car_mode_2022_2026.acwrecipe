@@ -1,0 +1,285 @@
+title: Silent Mode / Police Dark Car Mode
+raw_community_title: Enable Silent Mode (AKA campground / dark mode)
+category: Lighting
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: Creates a SYNC toggle to turn on/off Silent Mode. Silent Mode turns off cluster
+  lighting, welcome lighting, courtesy lights, and SYNC screen when opening doors;
+  also silences the horn when locking doors.
+steps:
+- module: BCM
+  address: 726-25-02
+  mask: '**** **** **--'
+  nibbles:
+  - nibble: 0
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+  - nibble: 1
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Enabled
+  - nibble: 2
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+  - nibble: 3
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_2] (SILENTMODE_PERS_2)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_2] (SILENTMODE_PERS_2)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_2] (SILENTMODE_PERS_2)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_2] (SILENTMODE_PERS_2)
+      target_state: Enabled
+  - nibble: 4
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+  - nibble: 5
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_3] (SILENTMODE_PERS_3)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_3] (SILENTMODE_PERS_3)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_3] (SILENTMODE_PERS_3)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_3] (SILENTMODE_PERS_3)
+      target_state: Enabled
+  - nibble: 6
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+  - nibble: 7
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_4] (SILENTMODE_PERS_4)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_4] (SILENTMODE_PERS_4)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_4] (SILENTMODE_PERS_4)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_4] (SILENTMODE_PERS_4)
+      target_state: Enabled
+  - nibble: 8
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [PERS_1] (SILENTMODE_PERS_1)
+      target_state: Disabled
+  - nibble: 9
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [VEHICLE] (SILENTMODE_VEHICLE)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [VEHICLE] (SILENTMODE_VEHICLE)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [SILENTMODE] [VEHICLE] (SILENTMODE_VEHICLE)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [SILENTMODE] [VEHICLE] (SILENTMODE_VEHICLE)
+      target_state: Enabled
+- module: BCM
+  address: 726-28-02
+  mask: '**xx xxxx xx--'
+  nibbles:
+  - nibble: 0
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [SILENTMODE] (SILENTMODE)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [SILENTMODE] (SILENTMODE)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [SILENTMODE] (SILENTMODE)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [SILENTMODE] (SILENTMODE)
+      target_state: Disabled
+  - nibble: 1
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [SILENTMODE] (SILENTMODE)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [SILENTMODE] (SILENTMODE)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [SILENTMODE] (SILENTMODE)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: FeatLst_to_BCM_Feature_InitVal [SILENTMODE] (SILENTMODE)
+      target_state: Enabled
+- module: APIM
+  address: 7D0-09-02
+  mask: '*xxx xxxx xx--'
+  nibbles:
+  - nibble: 0
+    community_instruction: if C, change to D. If E, change to F.
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Trailer Sway (TS)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Front Collision Warning On Menu  (FCWOM)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Intelligent Access Menu (IAM)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Silent Mode Control Function (SMCF)
+      target_state: Enabled
+validation_status: validated

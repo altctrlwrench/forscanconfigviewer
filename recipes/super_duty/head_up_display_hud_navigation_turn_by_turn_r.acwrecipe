@@ -13,14 +13,16 @@ steps:
   address: 7D0-05-01
   mask: x*xx xxxx xx--
   notes: If 1 (Gas) change to 2, If 5 (PSD) change to 6
-  nibble: 1
   community_instruction: If 1 (Gas) change to 2, If 5 (PSD) change to 6
-  bits:
-  - bit: 1
-    action: 1
-    feature_name: NAV Repeater Conformance (NAVRC)
-    target_state: NAVRC HUD Support
-  - bit: 0
-    action: 0
-    feature_name: NAV Repeater Conformance (NAVRC)
-    target_state: NAVRC Off
+  nibbles:
+  - nibble: 1
+    bits:
+    - bit: 1
+      action: 1
+      feature_name: NAV Repeater Conformance (NAVRC)
+      target_state: NAVRC HUD Support
+    - bit: 0
+      action: 0
+      feature_name: NAV Repeater Conformance (NAVRC)
+      target_state: NAVRC Off
+    notes: If 1 (Gas) change to 2, If 5 (PSD) change to 6

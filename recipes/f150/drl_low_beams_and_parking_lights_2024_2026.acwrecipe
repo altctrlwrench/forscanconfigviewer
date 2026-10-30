@@ -1,0 +1,158 @@
+title: DRL - Low Beams and Parking Lights
+raw_community_title: Low Beams & Parking Lamps as DRL (2024-2026) - see this post
+  for pics
+category: Lighting
+platform: F-150
+model_years: 2024-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: DRL_IncludeParklamps_Cfg https://www.f150forum.com/f129/forscan-14th-gen-f150s-481816/index330/#post7599368
+steps:
+- module: BCM
+  address: 726-38-01
+  mask: xxxx xxxx x*--
+  notes: DRL_IncludeParklamps_Cfg
+  nibbles:
+  - nibble: 9
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC ENABLE
+    recommended_hex: '1'
+    notes: DRL_IncludeParklamps_Cfg
+- module: BCM
+  address: 726-38-02
+  mask: xxx* xxxx xx--
+  notes: DRL_WithTurn_Cfg
+  nibbles:
+  - nibble: 3
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: DRL_WithTurn_Cfg (DRLWTC)
+      target_state: DRLWTC ALLOW
+    - bit: 2
+      action: 0
+      feature_name: DRL_WithTurn_Cfg (DRLWTC)
+      target_state: DRLWTC ALLOW
+    - bit: 1
+      action: 0
+      feature_name: DRL_WithTurn_Cfg (DRLWTC)
+      target_state: DRLWTC ALLOW
+    - bit: 0
+      action: 0
+      feature_name: DRL_WithTurn_Cfg (DRLWTC)
+      target_state: DRLWTC ALLOW
+    recommended_hex: '0'
+    notes: DRL_WithTurn_Cfg
+- module: BCM
+  address: 726-41-02
+  mask: xxx* xxxx xx--
+  notes: LowBeam_Cfg
+  nibbles:
+  - nibble: 3
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: LowBeam_Cfg (LBC)
+      target_state: LBC LOWBEAM_ONLY
+    - bit: 2
+      action: 0
+      feature_name: LowBeam_Cfg (LBC)
+      target_state: LBC LOWBEAM_ONLY
+    - bit: 1
+      action: 0
+      feature_name: LowBeam_Cfg (LBC)
+      target_state: LBC LOWBEAM_ONLY
+    - bit: 0
+      action: 1
+      feature_name: LowBeam_Cfg (LBC)
+      target_state: LBC LOWBEAM_WITH_DRL
+    recommended_hex: '1'
+    notes: LowBeam_Cfg
+- module: BCM
+  address: 726-42-02
+  mask: xxx* x*xx xx--
+  notes: LF/RF_Low_Beam_Ckt_Usage_Cfg
+  nibbles:
+  - nibble: 3
+    recommended_hex: '1'
+    notes: LF/RF_Low_Beam_Ckt_Usage_Cfg
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: LF_Low_Beam_Ckt_Usage_Cfg (LFLBCUC)
+      target_state: LFLBCUC NOT_USED
+    - bit: 2
+      action: 0
+      feature_name: LF_Low_Beam_Ckt_Usage_Cfg (LFLBCUC)
+      target_state: LFLBCUC NOT_USED
+    - bit: 1
+      action: 0
+      feature_name: LF_Low_Beam_Ckt_Usage_Cfg (LFLBCUC)
+      target_state: LFLBCUC NOT_USED
+    - bit: 0
+      action: 1
+      feature_name: LF_Low_Beam_Ckt_Usage_Cfg (LFLBCUC)
+      target_state: LFLBCUC LOW_DRL
+  - nibble: 5
+    recommended_hex: '1'
+    notes: LF/RF_Low_Beam_Ckt_Usage_Cfg
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: RF_Low_Beam_Ckt_Usage_Cfg (RFLBCUC)
+      target_state: RFLBCUC NOT_USED
+    - bit: 2
+      action: 0
+      feature_name: RF_Low_Beam_Ckt_Usage_Cfg (RFLBCUC)
+      target_state: RFLBCUC NOT_USED
+    - bit: 1
+      action: 0
+      feature_name: RF_Low_Beam_Ckt_Usage_Cfg (RFLBCUC)
+      target_state: RFLBCUC NOT_USED
+    - bit: 0
+      action: 1
+      feature_name: RF_Low_Beam_Ckt_Usage_Cfg (RFLBCUC)
+      target_state: RFLBCUC LOW_DRL
+- module: BCM
+  address: 726-43-02
+  mask: xxxx xxx* xx--
+  notes: DRL_OnWithParkLampsOn_Cfg
+  nibbles:
+  - nibble: 7
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: DRL_OnWithParkLampsOn_Cfg (DRLOWPLOC)
+      target_state: DRLOWPLOC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: DRL_OnWithParkLampsOn_Cfg (DRLOWPLOC)
+      target_state: DRLOWPLOC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: DRL_OnWithParkLampsOn_Cfg (DRLOWPLOC)
+      target_state: DRLOWPLOC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: DRL_OnWithParkLampsOn_Cfg (DRLOWPLOC)
+      target_state: DRLOWPLOC ENABLE
+    recommended_hex: '1'
+    notes: DRL_OnWithParkLampsOn_Cfg
+validation_status: validated

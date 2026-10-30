@@ -1,0 +1,62 @@
+title: Headlamp Switch Default to Auto Disable (Remember Last Position)
+raw_community_title: Prevent headlamp switch from defaulting to Auto position (2021-2026)
+category: Lighting
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: headlamp switch will revert to last position used on next startup
+steps:
+- module: BCM
+  address: 726-74-01
+  mask: xx** xxxx xx--
+  notes: headlamp switch will revert to last position used on next startup
+  nibbles:
+  - nibble: 2
+    recommended_hex: '0'
+    notes: headlamp switch will revert to last position used on next startup | Left
+      as factory (no data table avaialble)
+    community_instruction: headlamp switch will revert to last position used on next
+      startup | Left as factory (no data table avaialble)
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg
+      target_state: Auto
+    - bit: 2
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg
+      target_state: Auto
+    - bit: 1
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg
+      target_state: Auto
+    - bit: 0
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg
+      target_state: Auto
+  - nibble: 3
+    recommended_hex: '1'
+    notes: headlamp switch will revert to last position used on next startup
+    community_instruction: headlamp switch will revert to last position used on next
+      startup
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: HPAIOC AUTO
+    - bit: 2
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: HPAIOC AUTO
+    - bit: 1
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: HPAIOC AUTO
+    - bit: 0
+      action: 1
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: HPAIOC LAST_KNOWN
+validation_status: validated

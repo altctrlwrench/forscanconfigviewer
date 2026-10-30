@@ -1,0 +1,54 @@
+title: Engine Sound Enhancement (ESE) / Fake Engine Sound Disable
+raw_community_title: 'Remove fake engine noise (STILL IN PROGRESS)
+
+
+  NOTE: If you have the Technology package with 14 speaker B&O system, use code 2
+  in the ACM, and Leave DSP as code D'
+category: Audio and Entertainment
+platform: Explorer
+model_years: 2025-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2025-2026 Explorer.xlsx
+notes: If first digit is 1, change to 0, this  will turn off ANC (active noise cancellation).
+  use 2 to keep ANC enabled.
+steps:
+- module: ACM
+  address: 727-01-01
+  mask: xxxx xxxx *xxx
+  nibbles:
+  - nibble: 8
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Third Row Speaker Left Output  (TRSLO)
+      target_state: TRSLO Main Speaker Only
+    - bit: 2
+      action: 0
+      feature_name: Third Row Speaker Left Output  (TRSLO)
+      target_state: TRSLO Main Speaker Only
+    - bit: 1
+      action: 0
+      feature_name: Third Row Speaker Left Output  (TRSLO)
+      target_state: TRSLO Main Speaker Only
+    - bit: 0
+      action: 0
+      feature_name: Third Row Speaker Left Output  (TRSLO)
+      target_state: TRSLO Main Speaker Only
+    recommended_hex: '0'
+- module: DSP
+  address: 783-01-01
+  mask: '*xxx xxxx xx'
+  notes: Change 1st digit to C. Note:if your AS BUILT Is a D, leave it selected to
+    keep ANC enabled.
+  nibbles:
+  - nibble: 0
+    bits:
+    - bit: 0
+      action: 0
+      feature_name: ANC/Propulsion Sound (ANCPS)
+      target_state: ANCPS ANC not present
+    recommended_hex: C
+    notes: Change 1st digit to C. Note:if your AS BUILT Is a D, leave it selected
+      to keep ANC enabled.

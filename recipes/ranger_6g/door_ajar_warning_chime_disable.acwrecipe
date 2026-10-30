@@ -18,13 +18,15 @@ steps:
   address: 720-01-02
   mask: xx*x xx--
   notes: Engine/Ignition On Chime disabled (correct values are 0, 4, 8, or C)
-  nibble: 2
-  bits:
-  - bit: 1
-    action: 0
-    feature_name: Engine/Ignition On Chime - Message (EIOCM)
-    target_state: EIOCM Disabled
-  - bit: 0
-    action: 0
-    feature_name: Engine/Ignition On Chime - Message (EIOCM)
-    target_state: EIOCM Disabled
+  nibbles:
+  - nibble: 2
+    bits:
+    - bit: 1
+      action: 0
+      feature_name: Engine/Ignition On Chime - Message (EIOCM)
+      target_state: EIOCM Disabled
+    - bit: 0
+      action: 0
+      feature_name: Engine/Ignition On Chime - Message (EIOCM)
+      target_state: EIOCM Disabled
+    notes: Engine/Ignition On Chime disabled (correct values are 0, 4, 8, or C)

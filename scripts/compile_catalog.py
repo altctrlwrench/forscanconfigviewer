@@ -12,7 +12,18 @@ import glob
 from collections import defaultdict
 import yaml
 
-def compile_catalog(recipes_dir="recipes", dist_dir="dist"):
+try:
+    from validate_recipes import validate_catalog
+except ImportError:
+    from scripts.validate_recipes import validate_catalog
+
+def compile_catalog(recipes_dir="recipes", dist_dir="dist", skip_validation=False):
+    if not skip_validation:
+        print("Running recipe schema validation...")
+        if not validate_catalog(recipes_dir):
+            print("Catalog compilation aborted due to schema validation failures.", file=sys.stderr)
+            sys.exit(1)
+            
     os.makedirs(dist_dir, exist_ok=True)
     
     recipe_files = glob.glob(os.path.join(recipes_dir, "**", "*.acwrecipe"), recursive=True) + glob.glob(os.path.join(recipes_dir, "**", "*.yaml"), recursive=True)
@@ -52,6 +63,9 @@ def compile_catalog(recipes_dir="recipes", dist_dir="dist"):
             'model_years': data.get('model_years', ''),
             'trim': data.get('trim', 'All'),
             'validated': is_validated,
+            'validation_status': data.get('validation_status', 'validated' if is_validated else 'candidate'),
+            'confidence': data.get('confidence'),
+            'unsupported_platforms': data.get('unsupported_platforms', []),
             'verified_by': data.get('verified_by', ''),
             'notes': data.get('notes'),
             'forscan_menu': data.get('forscan_menu'),
@@ -72,6 +86,14 @@ def compile_catalog(recipes_dir="recipes", dist_dir="dist"):
             cf['title'] = title
             cf['category'] = category
             
+            # Record unsupported platforms on canonical feature if present
+            if 'unsupported_platforms' in data and data['unsupported_platforms']:
+                if 'unsupported_platforms' not in cf:
+                    cf['unsupported_platforms'] = []
+                for up in data['unsupported_platforms']:
+                    if up not in cf['unsupported_platforms']:
+                        cf['unsupported_platforms'].append(up)
+            
             plat_key = platform
             if plat_key not in cf['platforms']:
                 cf['platforms'][plat_key] = []
@@ -79,6 +101,9 @@ def compile_catalog(recipes_dir="recipes", dist_dir="dist"):
             cf['platforms'][plat_key].append({
                 'model_years': data.get('model_years', ''),
                 'trim': data.get('trim', 'All'),
+                'validation_status': data.get('validation_status', 'validated' if is_validated else 'candidate'),
+                'confidence': data.get('confidence'),
+                'unsupported_platforms': data.get('unsupported_platforms', []),
                 'notes': data.get('notes'),
                 'steps': data.get('steps', []),
                 'source_file': clean_entry['file'],

@@ -1,0 +1,27 @@
+title: Sync Splash Screen - F-150 Lightning Animation
+raw_community_title: Enable Lightning F150 Splash Screen
+category: Sync and Infotainment
+platform: F-150 Lightning
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: 2021-2026 F150.xlsx
+notes: No target setting in As Built Pro. Use 1F for Lightning
+steps:
+- module: APIM
+  address: 7D0-03-01
+  mask: xxxx **xx xx--
+  notes: 'Target hex: 1F (F-150 Lightning animation).'
+  recommended_hex: 1F
+  target_state: F-150 Lightning Splash Screen
+  nibbles:
+  - nibble: 4
+    recommended_hex: '1'
+    feature_name: Visual Design Variants (VDV) / Splash Animation Brand
+    target_state: Lightning (High Nibble)
+  - nibble: 5
+    recommended_hex: F
+    feature_name: Visual Design Variants (VDV) / Splash Animation Brand
+    target_state: Lightning (Low Nibble)
+validation_status: validated

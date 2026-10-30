@@ -1,0 +1,64 @@
+title: DRL - Full Brightness with Headlamps On
+raw_community_title: DRL Brightness Adjustment
+category: Lighting
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: Affects the DRL lamp between the top and bottom headlamps (not the grille light
+  bar on XLT and above).
+steps:
+- module: BCM
+  address: 726-42-01
+  mask: x*x* xxxx xx--
+  nibbles:
+  - nibble: 1
+    recommended_hex: '2'
+    community_instruction: Set to 2
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      target_state: Disabled
+    - bit: 1
+      action: 1
+      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      target_state: Enabled
+    - bit: 0
+      action: 0
+      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      target_state: Disabled
+  - nibble: 3
+    recommended_hex: '2'
+    community_instruction: Set to 2
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      target_state: Disabled
+    - bit: 1
+      action: 1
+      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      target_state: Enabled
+    - bit: 0
+      action: 0
+      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      target_state: Disabled
+- module: BCM
+  address: 726-38-01
+  mask: xxxx **xx xx--
+  type: continuous
+  user_input: required
+  notes: 'User input required: Enter desired PWM duty cycle hex (e.g. 3C=60%, 4B=75%,
+    64=100%). No default brightness level is recommended.'
+validation_status: validated

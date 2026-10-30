@@ -1,0 +1,60 @@
+title: AM Radio Tuner Enable
+raw_community_title: Enable AM radio (2023 only)
+category: Sync and Infotainment
+platform: F-150 Lightning
+model_years: '2023'
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: Restores AM radio functionality and Sync audio source toggle.
+steps:
+- module: ACM
+  address: 727-01-02
+  mask: xxxx x*xx xx--
+  nibbles:
+  - nibble: 5
+    recommended_hex: '0'
+    community_instruction: change from 1 (disabled) to 0 (enabled)
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: TCU Chime Monitoring (TCUCM)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Center Channel Parallel Mid Ranges (CCPMR)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: AM Tuner (AMT)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: AM Tuner (AMT)
+      target_state: Disabled
+- module: APIM
+  address: 7D0-01-01
+  mask: xxxx x*xx xx--
+  nibbles:
+  - nibble: 5
+    recommended_hex: '2'
+    community_instruction: change from A to 2
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: X40 Radio Present (XRP)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Sound Immersion (SI)
+      target_state: Disabled
+    - bit: 1
+      action: 1
+      feature_name: USB1 Self Test Detection (USBSTD)
+      target_state: Enabled
+    - bit: 0
+      action: 0
+      feature_name: Soft Camera/Parking Key (SCPK)
+      target_state: Disabled
+validation_status: validated

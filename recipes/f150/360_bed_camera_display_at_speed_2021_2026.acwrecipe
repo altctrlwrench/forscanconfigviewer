@@ -1,0 +1,118 @@
+title: 360 & Bed Camera Display at Speed
+raw_community_title: Enable Cameras at Speed
+category: Cameras and ADAS
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: IPMA
+  address: 706-02-02
+  mask: xxx* **xx xx--
+  nibbles:
+  - nibble: 3
+    recommended_hex: F
+    notes: Sets view at speed for Hitch, Aux, Bed, and Rear Cam on demand
+    community_instruction: Sets view at speed for Hitch, Aux, Bed, and Rear Cam on
+      demand
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_Hitch (FCDPACVCASH)
+      target_state: FCDPACVCASH Enabled
+    - bit: 2
+      action: 1
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_Aux (FCDPACVCASA)
+      target_state: FCDPACVCASA Enabled
+    - bit: 1
+      action: 1
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_CHMSL (FCDPACVCASCHMSL)
+      target_state: FCDPACVCASCHMSL Enabled
+    - bit: 0
+      action: 1
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_RCOD (FCDPACVCASRCOD)
+      target_state: FCDPACVCASRCOD Enabled
+  - nibble: 4
+    recommended_hex: C
+    notes: Sets hitch View and Aux
+    community_instruction: Sets hitch View and Aux
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: FeatureCfg_TBA_HitchView (FCTBAHV)
+      target_state: FCTBAHV Enabled
+    - bit: 2
+      action: 1
+      feature_name: FeatureCfg_TBA_AuxTRG_PiP (FCTBAATRGPP)
+      target_state: FCTBAATRGPP Enabled
+  - nibble: 5
+    recommended_hex: E
+    notes: Alt camera at speed
+    feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed (FCDPACVCAS)
+    target_state: FCDPACVCAS Enabled
+    bit: 1
+    action: 1
+- module: APIM
+  address: 7D0-01-01
+  mask: xxxx xxxx **--
+  notes: Rear camera present, does NOT change front, split, or 360.
+  community_instruction: Rear camera present, does NOT change front, split, or 360.
+  nibbles:
+  - nibble: 8
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Rear Camera (RC)
+      target_state: RC Rear Camera Present
+    recommended_hex: F
+    notes: Rear camera present, does NOT change front, split, or 360.
+- module: APIM
+  address: 7D0-01-04
+  mask: xxxx **xx xx--
+  notes: use FF if you have 1-pedal drive
+  nibbles:
+  - nibble: 4
+    recommended_hex: F
+    notes: use FF if you have 1-pedal drive | Also enables Rear Camera On Demand and
+      Hitch View. Sets Bed cam and Aux view at speed
+    community_instruction: use FF if you have 1-pedal drive | Also enables Rear Camera
+      On Demand and Hitch View. Sets Bed cam and Aux view at speed
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: RCOD View (RCODV)
+      target_state: RCODV Enabled
+    - bit: 2
+      action: 1
+      feature_name: Hitch View (HV)
+      target_state: HV Enabled
+    - bit: 1
+      action: 1
+      feature_name: CHMSL View at Speed (CHMSLVS)
+      target_state: CHMSLVS Enabled
+    - bit: 0
+      action: 1
+      feature_name: Aux View at Speed (AVS)
+      target_state: AVS Enabled
+  - nibble: 5
+    recommended_hex: D
+    notes: use FF if you have 1-pedal drive | Enables Rear cam on demand, hitch view,
+      and off road. Does NOT adjust 1pd drive bit
+    community_instruction: use FF if you have 1-pedal drive | Enables Rear cam on
+      demand, hitch view, and off road. Does NOT adjust 1pd drive bit
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: RCOD View at Speed (RCODVS)
+      target_state: RCODVS Enabled
+    - bit: 2
+      action: 1
+      feature_name: Hitch View at Speed (HVS)
+      target_state: HVS Enabled
+    - bit: 0
+      action: 1
+      feature_name: Off road Views at Speed (OVS)
+      target_state: OVS Enabled
+validation_status: validated

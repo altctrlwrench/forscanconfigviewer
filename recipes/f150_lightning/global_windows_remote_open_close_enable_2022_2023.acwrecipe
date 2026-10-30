@@ -1,0 +1,368 @@
+title: Global Windows Remote Open/Close Enable
+raw_community_title: Global window open/close using keyfob
+category: Windows and Mirrors
+platform: F-150 Lightning
+model_years: 2022-2023
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: 'Only works on the front windows because one-touch is not enabled in the back
+  windows. After changes, go into Sync (Settings > Vehicle > Windows) and enable Remote
+  Open and/or Remote Close. Open: press and hold unlock on fob for 3+ seconds. Close:
+  press and hold lock for 3+ seconds. Cancel: press lock or unlock again.'
+steps:
+- module: DDM
+  address: 740-06-02
+  mask: xxxx xxxx **--
+  nibbles:
+  - nibble: 8
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+  - nibble: 9
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Global Close
+      target_state: Enabled
+- module: PDM
+  address: 741-06-02
+  mask: xxxx xxx* **--
+  nibbles:
+  - nibble: 8
+    recommended_hex: '0'
+    feature_name: Global Close
+    target_state: Disabled
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+- module: DDM
+  address: 740-06-03
+  mask: '**xx xxxx xx--'
+  nibbles:
+  - nibble: 0
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global Open
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Global Open
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Global Open
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Global Open
+      target_state: Disabled
+  - nibble: 1
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global Open
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Global Open
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Global Open
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Global Open
+      target_state: Enabled
+- module: PDM
+  address: 741-06-03
+  mask: '**xx xxxx xx--'
+  nibbles:
+  - nibble: 0
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global Open
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Global Open
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Global Open
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Global Open
+      target_state: Disabled
+  - nibble: 1
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global Open
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Global Open
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Global Open
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Global Open
+      target_state: Enabled
+- module: BCM
+  address: 726-11-02
+  mask: xx** xx** xx--
+  nibbles:
+  - nibble: 2
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: Disabled
+  - nibble: 3
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: Enabled
+  - nibble: 6
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: ParkBrakeType_Cfg (PBTC)
+      target_state: Disabled
+  - nibble: 7
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: GlobalOpen_Cfg (GOC)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: GlobalOpen_Cfg (GOC)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: GlobalOpen_Cfg (GOC)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: GlobalOpen_Cfg (GOC)
+      target_state: Enabled
+- module: BCM
+  address: 726-22-01
+  mask: xxxx xxxx **--
+  nibbles:
+  - nibble: 8
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [PERS_1] (GLOBALCLOSE_PERS_1)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [PERS_1] (GLOBALCLOSE_PERS_1)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [PERS_1] (GLOBALCLOSE_PERS_1)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [PERS_1] (GLOBALCLOSE_PERS_1)
+      target_state: Disabled
+  - nibble: 9
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: Enabled
+- module: BCM
+  address: 726-22-02
+  mask: xxxx xxxx **--
+  nibbles:
+  - nibble: 8
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [PERS_1] (GLOBALOPEN_PERS_1)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [PERS_1] (GLOBALOPEN_PERS_1)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [PERS_1] (GLOBALOPEN_PERS_1)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [PERS_1] (GLOBALOPEN_PERS_1)
+      target_state: Disabled
+  - nibble: 9
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: Enabled
+- module: APIM
+  address: 7D0-09-01
+  mask: xxxx x*xx xx--
+  nibbles:
+  - nibble: 5
+    recommended_hex: E
+    community_instruction: Set to E
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Global Window Open (GWO)
+      target_state: Enabled
+    - bit: 2
+      action: 1
+      feature_name: Global Window Close (GWC)
+      target_state: Enabled
+    - bit: 1
+      action: 1
+      feature_name: Daytime Running Lamps Control Function (DRLCF)
+      target_state: Enabled
+    - bit: 0
+      action: 0
+      feature_name: Temporary Mobility Kit (TMK)
+      target_state: Disabled
+validation_status: validated

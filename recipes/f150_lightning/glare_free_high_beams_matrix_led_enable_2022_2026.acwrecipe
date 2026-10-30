@@ -1,0 +1,351 @@
+title: Glare-Free High Beams (Matrix LED Enable)
+raw_community_title: Glare-free headlights
+category: Lighting
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: Enhances Auto High Beam behavior to provide localized dimming of brights based
+  on surrounding traffic. Dynamic bending lights continue to work. May take a couple
+  of restarts to take effect. Specific to Lightnings. Ensure no checksum DTCs are
+  set for the HCM.
+steps:
+- module: APIM
+  address: 7D0-09-01
+  mask: x*xx xxxx xx--
+  nibbles:
+  - nibble: 1
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Adjustable Speed Limiter Device  (ASLD)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: AdvanceTrac Control Function (ATCF)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Auto High Beam Control Function (AHBCF)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Autolamp Delay (AD)
+      target_state: Enabled
+- module: APIM
+  address: 7D0-09-03
+  mask: xx*x xxxx xx--
+  nibbles:
+  - nibble: 2
+    recommended_hex: C
+    community_instruction: Set to C
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Auto High Beam Menu (AHBM)
+      target_state: Enabled
+    - bit: 2
+      action: 1
+      feature_name: Air Suspension SUMA Control Function (ASSUMACF)
+      target_state: Enabled
+    - bit: 1
+      action: 0
+      feature_name: Air Suspension Auto Height SUMA (ASAHSUMA)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Air Suspension Auto Height SUMA (ASAHSUMA)
+      target_state: Disabled
+- module: IPMA
+  address: 706-01-01
+  mask: xxxx xxx* xx--
+  nibbles:
+  - nibble: 7
+    recommended_hex: '9'
+    community_instruction: Set to 9
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: ModuleFeatureCfg_HighBeam (MFCHB)
+      target_state: Enabled
+    - bit: 2
+      action: 0
+      feature_name: ModuleFeatureCfg_RBA (MFCRBA)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: ModuleFeatureCfg_RBA (MFCRBA)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: ModuleFeatureCfg_RBA (MFCRBA)
+      target_state: Enabled
+- module: SCCM
+  address: 724-04-01
+  mask: xxx* xxxx xx--
+  nibbles:
+  - nibble: 3
+    recommended_hex: '4'
+    community_instruction: Set to 4
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: AHB_Feature (AHBF)
+      target_state: Disabled
+    - bit: 2
+      action: 1
+      feature_name: AHB_Feature (AHBF)
+      target_state: Enabled
+    - bit: 1
+      action: 0
+      feature_name: AHB_Feature (AHBF)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: AHB_Feature (AHBF)
+      target_state: Disabled
+- module: IPC
+  address: 720-01-01
+  mask: xx*x xxxx xx--
+  nibbles:
+  - nibble: 2
+    recommended_hex: '8'
+    community_instruction: Set to 8
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Adaptive Head Lamps Control Function (AHLCF)
+      target_state: Enabled
+    - bit: 2
+      action: 0
+      feature_name: ASLD (ASLD)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: AdvanceTrac Control Function (ATCF)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: AFE Metric Display Type (AFEMDT)
+      target_state: Disabled
+- module: IPC
+  address: 720-10-01
+  mask: xxxx xxx* xx--
+  nibbles:
+  - nibble: 7
+    recommended_hex: '3'
+    community_instruction: Set to 3
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: One/Two Stage Unlocking Passenger/Commercial (OTSUPC)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Oil Minder Distance/Time (OMDT)
+      target_state: Disabled
+    - bit: 1
+      action: 1
+      feature_name: AutoHighBeam Menu (AHBM)
+      target_state: Enabled
+    - bit: 0
+      action: 1
+      feature_name: AutoHighBeam Menu (AHBM)
+      target_state: Enabled
+- module: HCM
+  address: 734-01-02
+  mask: xxxx x*xx xx--
+  nibbles:
+  - nibble: 5
+    recommended_hex: '2'
+    community_instruction: Set to 2
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Config_AhbFeature (CAF)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Config_AhbFeature (CAF)
+      target_state: Disabled
+    - bit: 1
+      action: 1
+      feature_name: Config_AhbFeature (CAF)
+      target_state: Enabled
+    - bit: 0
+      action: 0
+      feature_name: Config_AhbFeature (CAF)
+      target_state: Disabled
+- module: HCM
+  address: 734-03-02
+  mask: xxxx xxx* x*--
+  nibbles:
+  - nibble: 7
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: m2_Zone_Lighting (ZL)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: m2_Zone_Lighting (ZL)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: m2_Zone_Lighting (ZL)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: m2_Zone_Lighting (ZL)
+      target_state: Enabled
+  - nibble: 9
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: m2_ADB_DBL_combine (ADBDBL)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: m2_ADB_DBL_combine (ADBDBL)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: m2_ADB_DBL_combine (ADBDBL)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: m2_ADB_DBL_combine (ADBDBL)
+      target_state: Enabled
+- module: HCM
+  address: 734-11-01
+  mask: '**** **--'
+  nibbles:
+  - nibble: 0
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: CRC_LOW_BYTE (CRCLOWBYTE)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: CRC_LOW_BYTE (CRCLOWBYTE)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: CRC_LOW_BYTE (CRCLOWBYTE)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: CRC_LOW_BYTE (CRCLOWBYTE)
+      target_state: Disabled
+  - nibble: 1
+    recommended_hex: '7'
+    community_instruction: Set to 7
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: CRC_LOW_BYTE (CRCLOWBYTE)
+      target_state: Disabled
+    - bit: 2
+      action: 1
+      feature_name: CRC_LOW_BYTE (CRCLOWBYTE)
+      target_state: Enabled
+    - bit: 1
+      action: 1
+      feature_name: CRC_LOW_BYTE (CRCLOWBYTE)
+      target_state: Enabled
+    - bit: 0
+      action: 1
+      feature_name: CRC_LOW_BYTE (CRCLOWBYTE)
+      target_state: Enabled
+  - nibble: 2
+    recommended_hex: '3'
+    community_instruction: Set to 3
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Disabled
+    - bit: 1
+      action: 1
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Enabled
+    - bit: 0
+      action: 1
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Enabled
+  - nibble: 3
+    recommended_hex: '5'
+    community_instruction: Set to 5
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Disabled
+    - bit: 2
+      action: 1
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Enabled
+    - bit: 1
+      action: 0
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Enabled
+  - nibble: 4
+    recommended_hex: '8'
+    community_instruction: Set to 8
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Enabled
+    - bit: 2
+      action: 0
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Disabled
+  - nibble: 5
+    recommended_hex: '9'
+    community_instruction: Set to 9
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Enabled
+    - bit: 2
+      action: 0
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Enabled
+validation_status: validated

@@ -13,9 +13,12 @@ steps:
   address: 7D0-01-01
   mask: '*xxx xxxx xx--'
   notes: If * is A change to 8, if 2 change to 0. (Back 2)
-  nibble: 0
   community_instruction: If * is A change to 8, if 2 change to 0. (Back 2)
-  feature_name: SDARS (SDARS)
-  target_state: SDARS SDARS HMI and DTCs Disabled
-  bit: 1
-  action: 0
+  nibbles:
+  - nibble: 0
+    bits:
+    - bit: 1
+      action: 0
+      feature_name: SDARS (SDARS)
+      target_state: SDARS SDARS HMI and DTCs Disabled
+    notes: If * is A change to 8, if 2 change to 0. (Back 2)

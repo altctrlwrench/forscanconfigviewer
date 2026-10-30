@@ -11,9 +11,11 @@ steps:
 - module: IPC
   address: 720-01-02
   mask: xxxx x*--
-  nibble: 5
-  recommended_hex: '2'
-  feature_name: Seatbelt Warning Market (SWM)
-  target_state: SWM ECE
-  bit: 1
-  action: 1
+  nibbles:
+  - nibble: 5
+    bits:
+    - bit: 1
+      action: 1
+      feature_name: Seatbelt Warning Market (SWM)
+      target_state: SWM ECE
+    recommended_hex: '2'

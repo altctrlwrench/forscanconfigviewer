@@ -18,10 +18,15 @@ steps:
   mask: xxx* xxxx xx--
   notes: Bit 1 (add 1 to enable, e.g. change 2 to 3) | Specific setting not listed
     on this sheet, using old value (untested)
-  nibble: 3
-  hex_offset: '+1'
   community_instruction: Bit 1 (add 1 to enable, e.g. change 2 to 3) | Specific setting
     not listed on this sheet, using old value (untested)
-  feature_name: Powerflow Type (PT)
-  bit: 0
-  action: 0
+  nibbles:
+  - nibble: 3
+    bits:
+    - bit: 0
+      action: 0
+      feature_name: Powerflow Type (PT)
+      target_state: Disabled
+    hex_offset: '+1'
+    notes: Bit 1 (add 1 to enable, e.g. change 2 to 3) | Specific setting not listed
+      on this sheet, using old value (untested)

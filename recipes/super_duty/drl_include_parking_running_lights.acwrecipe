@@ -13,21 +13,23 @@ steps:
   address: 726-38-01
   mask: xxxx xxxx x*--
   notes: 0=Disabled  1 Enabled
-  nibble: 9
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
-    target_state: DRLIPC DISABLE
-  - bit: 2
-    action: 0
-    feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
-    target_state: DRLIPC DISABLE
-  - bit: 1
-    action: 0
-    feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
-    target_state: DRLIPC DISABLE
-  - bit: 0
-    action: 1
-    feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
-    target_state: DRLIPC ENABLE
+  nibbles:
+  - nibble: 9
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC ENABLE
+    notes: 0=Disabled  1 Enabled

@@ -1,0 +1,101 @@
+title: Lincoln Style Autofold Mirrors
+raw_community_title: Lincoln Folding Mirrors Setting
+category: Windows and Mirrors
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: 'Folds when locked, but unfolds only when driver door closes instead of when
+  unlocked. Known issue: puddle lights get disabled.'
+steps:
+- module: DDM
+  address: 740-03-16
+  mask: xxxx xxxx **--
+  nibbles:
+  - nibble: 8
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Mirror_Folding_Cfg
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Mirror_Folding_Cfg
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Mirror_Folding_Cfg
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Mirror_Folding_Cfg
+      target_state: Disabled
+  - nibble: 9
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Mirror_Folding_Cfg
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Mirror_Folding_Cfg
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Mirror_Folding_Cfg
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Mirror_Folding_Cfg
+      target_state: Enabled
+- module: PDM
+  address: 741-03-16
+  mask: xxxx xxxx **--
+  nibbles:
+  - nibble: 8
+    recommended_hex: '0'
+    community_instruction: Set to 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Mirror_Folding_Cfg
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Mirror_Folding_Cfg
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Mirror_Folding_Cfg
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Mirror_Folding_Cfg
+      target_state: Disabled
+  - nibble: 9
+    recommended_hex: '1'
+    community_instruction: Set to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Mirror_Folding_Cfg
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Mirror_Folding_Cfg
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Mirror_Folding_Cfg
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Mirror_Folding_Cfg
+      target_state: Enabled
+validation_status: validated

@@ -1,0 +1,55 @@
+title: Keyfob Car Finder (Double-Lock Horn Chirp)
+raw_community_title: Keyfob Car Finder - (clicking lock twice honks horn) (2021-2026)
+category: Locks and Security
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: 1=enabled, 0=disabled (target setting)
+steps:
+- module: BCM
+  address: 726-24-02
+  mask: xxxx xxxx **--
+  notes: 1=enabled, 0=disabled
+  nibbles:
+  - nibble: 8
+    notes: 1=enabled, 0=disabled | Left factory (not data table)
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE]
+      target_state: Disable
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE]
+      target_state: Disable
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE]
+      target_state: Disable
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE]
+      target_state: Disable
+  - nibble: 9
+    notes: 1=enabled, 0=disabled
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+validation_status: validated

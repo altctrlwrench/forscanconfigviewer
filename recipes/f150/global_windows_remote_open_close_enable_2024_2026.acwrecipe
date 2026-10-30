@@ -1,0 +1,170 @@
+title: Global Windows Remote Open/Close Enable
+raw_community_title: "(2024-2026)  Global Windows Open/Close \n(driver/pass windows\
+  \ only)"
+category: Windows and Mirrors
+platform: F-150
+model_years: 2024-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: 'Optional: to add Global Open/Close to Sync 4 Settings menu set this in APIM:
+  7D0-09-01- xxxx xExx xx--'''
+steps:
+- module: DDM
+  address: 740-06-02
+  mask: xxxx xxx* **--
+  notes: 'Optional: to add Global Open/Close to Sync 4 Settings menu set this in APIM:
+    7D0-09-01- xxxx xExx xx--'
+  community_instruction: 'Optional: to add Global Open/Close to Sync 4 Settings menu
+    set this in APIM: 7D0-09-01- xxxx xExx xx--'
+  nibbles:
+  - nibble: 8
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global Close
+      target_state: disabled,
+    - bit: 2
+      action: 0
+      feature_name: Global Close
+      target_state: disabled,
+    - bit: 1
+      action: 0
+      feature_name: Global Close
+      target_state: disabled,
+    - bit: 0
+      action: 0
+      feature_name: Global Close
+      target_state: disabled,
+    recommended_hex: '0'
+    notes: 'Optional: to add Global Open/Close to Sync 4 Settings menu set this in
+      APIM: 7D0-09-01- xxxx xExx xx--'
+- module: PDM
+  address: 741-06-02
+  mask: xxxx xxx* **--
+  nibbles:
+  - nibble: 8
+    recommended_hex: '0'
+    feature_name: Global Close
+    target_state: Disabled
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+- module: BCM
+  address: 726-11-02
+  mask: x*xx x*xx xx--
+  notes: To roll down windows press unlock button on fob and then press again and
+    hold
+  nibbles:
+  - nibble: 1
+    recommended_hex: '1'
+    notes: To roll down windows press unlock button on fob and then press again and
+      hold
+    community_instruction: To roll down windows press unlock button on fob and then
+      press again and hold
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: GlobalClose_Cfg (GCC)
+      target_state: GCC REMOTE
+  - nibble: 5
+    recommended_hex: '1'
+    notes: To roll down windows press unlock button on fob and then press again and
+      hold
+    community_instruction: To roll down windows press unlock button on fob and then
+      press again and hold
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: GlobalOpen_Cfg (GOC)
+      target_state: GOC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: GlobalOpen_Cfg (GOC)
+      target_state: GOC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: GlobalOpen_Cfg (GOC)
+      target_state: GOC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: GlobalOpen_Cfg (GOC)
+      target_state: GOC REMOTE
+- module: BCM
+  address: 726-22-01
+  mask: xxxx xxxx **--
+  notes: To roll up windows press lock button on fob and then press again and hold
+  community_instruction: To roll up windows press lock button on fob and then press
+    again and hold
+  nibbles:
+  - nibble: 9
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: GLOBALCLOSE_VEHICLE DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: GLOBALCLOSE_VEHICLE DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: GLOBALCLOSE_VEHICLE DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      target_state: GLOBALCLOSE_VEHICLE ENABLE
+    recommended_hex: '1'
+    notes: To roll up windows press lock button on fob and then press again and hold
+- module: BCM
+  address: 726-22-02
+  mask: xxxx xxxx **--
+  nibbles:
+  - nibble: 9
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: GLOBALOPEN_VEHICLE DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: GLOBALOPEN_VEHICLE DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: GLOBALOPEN_VEHICLE DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      target_state: GLOBALOPEN_VEHICLE ENABLE
+    recommended_hex: '1'
+validation_status: validated

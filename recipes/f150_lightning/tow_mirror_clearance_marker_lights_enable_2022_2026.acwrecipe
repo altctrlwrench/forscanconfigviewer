@@ -1,0 +1,37 @@
+title: Tow Mirror Clearance Marker Lights Enable
+raw_community_title: 2021-26 Enabling marker lights on tow mirrors upgrade
+category: Lighting
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: BCM
+  address: 726-40-01
+  mask: xxxx xxx* xx--
+  nibbles:
+  - nibble: 7
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
+      target_state: PLBCUC NOT_USED
+    - bit: 2
+      action: 0
+      feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
+      target_state: PLBCUC NOT_USED
+    - bit: 1
+      action: 0
+      feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
+      target_state: PLBCUC NOT_USED
+    - bit: 0
+      action: 1
+      feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
+      target_state: PLBCUC POSITION_ONLY
+    recommended_hex: '1'
+validation_status: candidate
+confidence: high
+notes: 'Note: Shares identical BCM/APIM Group A engineering table with ICE F-150;
+  pending physical field test on EV.'

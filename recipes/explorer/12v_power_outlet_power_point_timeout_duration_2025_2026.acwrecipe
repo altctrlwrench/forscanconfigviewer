@@ -1,0 +1,21 @@
+title: 12V Power Outlet (Power Point) Timeout Duration
+raw_community_title: Powerpoint Timeout Duration (1 second)
+category: Convenience and Electrical
+platform: Explorer
+model_years: 2025-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2025-2026 Explorer.xlsx
+notes: 'turns off power point to 1 second after vehicle shuts off. Range: 1 - 64800.
+  0001 for 1 second, 001E for 30 seconds, 003C for 1 minute, 012C for 5 minutes, 0258
+  for 10 minutes, 0708 for 30 minutes, and 0E10 for 1 hour. FD20 for 18 hours'
+steps:
+- module: BCM
+  address: 726-57-01
+  mask: '**** xxxx xx--'
+  type: continuous
+  user_input: required
+  notes: 'User input required: Enter timeout duration in seconds converted to hex
+    (e.g. 0E10 = 3600s / 1hr; factory default is 1194 = 4500s / 75 min). Keep factory
+    value unless customizing.'

@@ -1,0 +1,37 @@
+title: Headlamp Switch Default to Auto Disable (Remember Last Position)
+raw_community_title: Prevent headlamp switch from defaulting to Auto position
+category: Lighting
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: Headlamp switch retains the last position used across key cycles instead of
+  resetting to Auto on startup.
+steps:
+- module: BCM
+  address: 726-74-01
+  mask: xxx* xxxx xx--
+  nibbles:
+  - nibble: 3
+    recommended_hex: '1'
+    community_instruction: change 0 to 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      target_state: Enabled
+validation_status: validated

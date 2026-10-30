@@ -1,0 +1,60 @@
+title: Trailer Side View Camera on Turn Signal
+raw_community_title: Trailer Side View
+category: Cameras and ADAS
+platform: F-150 Lightning
+model_years: 2022-2023
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: Shows corresponding camera view alongside vehicle when turn signal is applied
+  with trailer connected. Standard on 2024+. Requires 12/23 IPMA update.
+steps:
+- module: IPMA
+  address: 706-01-02
+  mask: '*xxx xxxx xx--'
+  nibbles:
+  - nibble: 0
+    community_instruction: if 0 change to 3, if 7 then no change (2024's)
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: ModuleFeatureCfg_CEA (MFCCEA)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
+      target_state: Disabled
+- module: APIM
+  address: 7D0-02-03
+  mask: xxxx x*xx xx--
+  nibbles:
+  - nibble: 5
+    community_instruction: if 0 change to 8, if 4 change to C, adds Trailer Side View
+      toggle under Driver Assistance
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Turn Signal Views (TSV)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Controls Tab (CT)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: TTLM  Gen1 (TTLMG)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: TTLM  Gen2 (TTLMG)
+      target_state: Disabled
+validation_status: validated

@@ -13,22 +13,24 @@ steps:
   address: 726-39-02
   mask: xxx* xxxx xx--
   notes: 0=Enabled  1=Disabled
-  nibble: 3
-  recommended_hex: '0'
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
-    target_state: FFWHBC ALLOW
-  - bit: 2
-    action: 0
-    feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
-    target_state: FFWHBC ALLOW
-  - bit: 1
-    action: 0
-    feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
-    target_state: FFWHBC ALLOW
-  - bit: 0
-    action: 0
-    feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
-    target_state: FFWHBC ALLOW
+  nibbles:
+  - nibble: 3
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
+      target_state: FFWHBC ALLOW
+    - bit: 2
+      action: 0
+      feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
+      target_state: FFWHBC ALLOW
+    - bit: 1
+      action: 0
+      feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
+      target_state: FFWHBC ALLOW
+    - bit: 0
+      action: 0
+      feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
+      target_state: FFWHBC ALLOW
+    recommended_hex: '0'
+    notes: 0=Enabled  1=Disabled

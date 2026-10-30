@@ -1,0 +1,37 @@
+title: Camper Shell Third Brake Light (CHMSL) Circuit Enable
+raw_community_title: Enable Extra Brake Light Wire Circuit for Camper Shell (2021-23)
+category: Lighting
+platform: F-150
+model_years: 2021-2023
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: see this thread for description https://www.f150gen14.com/forum/threads/bed-cap-install-wiring-issues.7353/page-3
+steps:
+- module: BCMC
+  address: 6F0-01-03
+  mask: xxx* --
+  notes: see this thread for description | No data table
+  nibbles:
+  - nibble: 3
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: BOO_Cfg
+      target_state: Disable,
+    - bit: 2
+      action: 0
+      feature_name: BOO_Cfg
+      target_state: Disable,
+    - bit: 1
+      action: 0
+      feature_name: BOO_Cfg
+      target_state: Disable,
+    - bit: 0
+      action: 1
+      feature_name: BOO_Cfg
+      target_state: Enable
+    recommended_hex: '1'
+    notes: see this thread for description | No data table
+validation_status: validated

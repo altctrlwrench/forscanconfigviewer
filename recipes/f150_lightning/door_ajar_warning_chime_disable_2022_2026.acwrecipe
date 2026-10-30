@@ -1,0 +1,30 @@
+title: Door Ajar Warning Chime Disable
+raw_community_title: Disables door ajar chime
+category: Chimes and Horn
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: 'see IPC spreadsheet to disable EIOCM Note: Shares identical BCM/APIM Group
+  A engineering table with ICE F-150; pending physical field test on EV.'
+steps:
+- module: IPC
+  address: 720-01-02
+  mask: xx*x xx--
+  notes: see IPC spreadsheet to disable EIOCM | Engine/Ignition On chime disabled
+  nibbles:
+  - nibble: 2
+    bits:
+    - bit: 1
+      action: 0
+      feature_name: Engine/Ignition On Chime - Message (EIOCM)
+      target_state: EIOCM Disabled
+    - bit: 0
+      action: 0
+      feature_name: Engine/Ignition On Chime - Message (EIOCM)
+      target_state: EIOCM Disabled
+    notes: see IPC spreadsheet to disable EIOCM | Engine/Ignition On chime disabled
+validation_status: candidate
+confidence: high

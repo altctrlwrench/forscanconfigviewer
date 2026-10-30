@@ -13,4 +13,18 @@ steps:
   address: 7D0-04-01
   mask: xxxx xx** xx--
   notes: 2D=Raptor  0E=F150  0F=F250  10=F350  11=F450
-  feature_name: Stop Mode Timer (SMT)
+  type: multi_choice
+  recommended_hex: '0F'
+  target_state: F-250 (Default)
+  user_input: optional
+  options:
+    2D: Raptor
+    0E: F-150
+    0F: F-250 (Default)
+    '10': F-350
+    '11': F-450
+  nibbles:
+  - nibble: 6
+    recommended_hex: '0'
+  - nibble: 7
+    recommended_hex: F

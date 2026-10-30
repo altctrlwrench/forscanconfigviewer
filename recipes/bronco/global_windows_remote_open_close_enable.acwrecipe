@@ -79,46 +79,29 @@ steps:
       target_state: GCC ENABLED
 - module: PDM
   address: 741-06-02
-  mask: xxxx xxxx **--
+  mask: xxxx xxx* **--
   nibbles:
   - nibble: 8
     recommended_hex: '0'
+    feature_name: Global Close
+    target_state: Disabled
     bits:
     - bit: 3
       action: 0
       feature_name: Global Close
-      target_state: disabled,
+      target_state: Disabled
     - bit: 2
       action: 0
       feature_name: Global Close
-      target_state: disabled,
+      target_state: Disabled
     - bit: 1
       action: 0
       feature_name: Global Close
-      target_state: disabled,
+      target_state: Disabled
     - bit: 0
       action: 0
       feature_name: Global Close
-      target_state: disabled,
-  - nibble: 9
-    recommended_hex: '1'
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Global_Open_Cfg (GOC)
-      target_state: GOC DISABLED
-    - bit: 2
-      action: 0
-      feature_name: Global_Open_Cfg (GOC)
-      target_state: GOC DISABLED
-    - bit: 1
-      action: 0
-      feature_name: Global_Open_Cfg (GOC)
-      target_state: GOC DISABLED
-    - bit: 0
-      action: 1
-      feature_name: Global_Open_Cfg (GOC)
-      target_state: GOC ENABLED
+      target_state: Disabled
 - module: DDM
   address: 740-06-03
   mask: '**xx xxxx xx--'
@@ -371,15 +354,17 @@ steps:
   address: 7D0-09-01
   mask: xxxx x*xx xx--
   notes: 'Optional: E - Add Global Window Open/Close to Sybc 4 settings menu'
-  nibble: 5
   community_instruction: 'Optional: E - Add Global Window Open/Close to Sybc 4 settings
     menu'
-  bits:
-  - bit: 3
-    action: 1
-    feature_name: Global Window Open (GWO)
-    target_state: GWO Enabled
-  - bit: 2
-    action: 1
-    feature_name: Global Window Close (GWC)
-    target_state: GWC Enabled
+  nibbles:
+  - nibble: 5
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Global Window Open (GWO)
+      target_state: GWO Enabled
+    - bit: 2
+      action: 1
+      feature_name: Global Window Close (GWC)
+      target_state: GWC Enabled
+    notes: 'Optional: E - Add Global Window Open/Close to Sybc 4 settings menu'

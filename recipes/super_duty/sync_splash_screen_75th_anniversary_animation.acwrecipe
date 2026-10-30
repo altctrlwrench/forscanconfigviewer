@@ -15,4 +15,16 @@ steps:
 - module: APIM
   address: 7D0-03-01
   mask: xxxx **xx xx--
-  feature_name: Splash Screen (SS)
+  notes: 'Target hex: 24 (75th Anniversary animation). Requires Sync ver 22012 or
+    higher.'
+  recommended_hex: '24'
+  target_state: 75th Anniversary Splash Screen
+  nibbles:
+  - nibble: 4
+    recommended_hex: '2'
+    feature_name: Visual Design Variants (VDV) / Splash Animation Brand
+    target_state: 75th Anniversary (High Nibble)
+  - nibble: 5
+    recommended_hex: '4'
+    feature_name: Visual Design Variants (VDV) / Splash Animation Brand
+    target_state: 75th Anniversary (Low Nibble)

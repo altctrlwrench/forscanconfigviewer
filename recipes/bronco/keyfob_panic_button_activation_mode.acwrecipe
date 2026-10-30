@@ -15,22 +15,24 @@ steps:
   address: 726-62-01
   mask: x*xx xxxx xx--
   notes: set to 2 clicks
-  nibble: 1
   community_instruction: set to 2 clicks
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: PanicActivate_Cfg (PAC)
-    target_state: PAC DISABLE
-  - bit: 2
-    action: 0
-    feature_name: PanicActivate_Cfg (PAC)
-    target_state: PAC DISABLE
-  - bit: 1
-    action: 0
-    feature_name: PanicActivate_Cfg (PAC)
-    target_state: PAC DISABLE
-  - bit: 0
-    action: 1
-    feature_name: PanicActivate_Cfg (PAC)
-    target_state: PAC DOUBLE
+  nibbles:
+  - nibble: 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: PanicActivate_Cfg (PAC)
+      target_state: PAC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: PanicActivate_Cfg (PAC)
+      target_state: PAC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: PanicActivate_Cfg (PAC)
+      target_state: PAC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: PanicActivate_Cfg (PAC)
+      target_state: PAC DOUBLE
+    notes: set to 2 clicks

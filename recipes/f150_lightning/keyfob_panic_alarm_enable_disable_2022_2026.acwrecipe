@@ -1,0 +1,39 @@
+title: Keyfob Panic Alarm Enable/Disable
+raw_community_title: Keyfob Panic Alarm (2021-2026)
+category: Locks and Security
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: '0=lights & horn (default) 1=lights only (target setting) Note: Shares identical
+  BCM/APIM Group A engineering table with ICE F-150; pending physical field test on
+  EV.'
+steps:
+- module: BCM
+  address: 726-01-02
+  mask: xxxx xxx* xx--
+  notes: 0=lights & horn (default) 1=lights only
+  nibbles:
+  - nibble: 7
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: PanicAlarm_Cfg (PAC)
+      target_state: PAC BOTH
+    - bit: 2
+      action: 0
+      feature_name: PanicAlarm_Cfg (PAC)
+      target_state: PAC BOTH
+    - bit: 1
+      action: 0
+      feature_name: PanicAlarm_Cfg (PAC)
+      target_state: PAC BOTH
+    - bit: 0
+      action: 1
+      feature_name: PanicAlarm_Cfg (PAC)
+      target_state: PAC LIGHTS_ONLY
+    notes: 0=lights & horn (default) 1=lights only
+validation_status: candidate
+confidence: high

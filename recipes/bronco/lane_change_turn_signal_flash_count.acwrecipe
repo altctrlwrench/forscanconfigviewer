@@ -21,12 +21,25 @@ steps:
 - module: SCCM
   address: 724-01-01
   mask: xxxx **xx xx--
-  notes: '* if your default value is 8C:
-
-    80=null, 84=1, 88=2, 8C=3, 90=4, 94=5, 98=6, 9C=7, A0=8, A4=9, A8=10
-
-
-    * if your default value is 0C:
-
-    00=null, 04=1, 08=2, 0C=3, 10=4, 14=5, 18=6, 1C=7, 20=8, 24=9, 28=10'
-  feature_name: SCMHdlpWashOnTime_Cfg (SCMHWOTC)
+  notes: 'Sets lane change turn signal count. User preference variable (recommended
+    default: 5 flashes / 94 hex).'
+  type: multi_choice
+  recommended_hex: '94'
+  target_state: 5 Flashes
+  options:
+    '80': Null / Disabled
+    '84': 1 Flash
+    '88': 2 Flashes
+    8C: 3 Flashes (Factory Default)
+    '90': 4 Flashes
+    '94': 5 Flashes (Recommended Default)
+    '98': 6 Flashes
+    9C: 7 Flashes
+    A0: 8 Flashes
+    A4: 9 Flashes
+    A8: 10 Flashes
+  nibbles:
+  - nibble: 4
+    recommended_hex: '9'
+  - nibble: 5
+    recommended_hex: '4'

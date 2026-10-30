@@ -16,4 +16,12 @@ steps:
   notes: '* -> Bit 4 (subtract 8 to disable.  e.g. change
 
     FORScan Menu: Humidity Sensor Type (Windshield Mounted (Default) -> "Not Present)'
-  feature_name: Wide Open Throttle Purge Type (WOTPT)
+  nibbles:
+  - nibble: 4
+    feature_name: Humidity Sensor Type / Auto A/C Compressor
+    target_state: Not Present (Disabled)
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Humidity Sensor Type / Auto A/C Compressor
+      target_state: Not Present (Disabled)

@@ -1,0 +1,27 @@
+title: Key-in-Ignition Warning Chime Disable
+raw_community_title: Disable key-in ignition chime
+category: Chimes and Horn
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: 'subtract 8 from current value (if E change to 6) Note: Shares identical BCM/APIM
+  Group A engineering table with ICE F-150; pending physical field test on EV.'
+steps:
+- module: IPC
+  address: 720-02-01
+  mask: xx*x xxxx xx--
+  notes: subtract 8 from current value (if E change to 6)
+  community_instruction: subtract 8 from current value (if E change to 6)
+  nibbles:
+  - nibble: 2
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Key In Ignition Warning Chime (KIIWC)
+      target_state: KIIWC disabled
+    notes: subtract 8 from current value (if E change to 6)
+validation_status: candidate
+confidence: high

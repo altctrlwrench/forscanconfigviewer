@@ -16,44 +16,50 @@ steps:
   mask: xxxx x*xx xx--
   notes: 0=Disabled  1 Enabled  Folding Mirror at door close.  Does not open at unlock.
     (Disables Puddle Lights)
-  nibble: 5
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: Mirror_Folding_Cfg (MFC)
-    target_state: MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
-  - bit: 2
-    action: 0
-    feature_name: Mirror_Folding_Cfg (MFC)
-    target_state: MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
-  - bit: 1
-    action: 0
-    feature_name: Mirror_Folding_Cfg (MFC)
-    target_state: MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
-  - bit: 0
-    action: 1
-    feature_name: Mirror_Folding_Cfg (MFC)
-    target_state: MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
+  nibbles:
+  - nibble: 5
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Mirror_Folding_Cfg (MFC)
+      target_state: MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
+    - bit: 2
+      action: 0
+      feature_name: Mirror_Folding_Cfg (MFC)
+      target_state: MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
+    - bit: 1
+      action: 0
+      feature_name: Mirror_Folding_Cfg (MFC)
+      target_state: MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
+    - bit: 0
+      action: 1
+      feature_name: Mirror_Folding_Cfg (MFC)
+      target_state: MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
+    notes: 0=Disabled  1 Enabled  Folding Mirror at door close.  Does not open at
+      unlock. (Disables Puddle Lights)
 - module: PDM
   address: 741-03-16
   mask: xxxx x*xx xx--
   notes: 0=Disabled  1 Enabled  Folding Mirror at door close.  Does not open at unlock.
     (Disables Puddle Lights)
-  nibble: 5
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: Mirror_Folding_Cfg (MFC)
-    target_state: MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
-  - bit: 2
-    action: 0
-    feature_name: Mirror_Folding_Cfg (MFC)
-    target_state: MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
-  - bit: 1
-    action: 0
-    feature_name: Mirror_Folding_Cfg (MFC)
-    target_state: MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
-  - bit: 0
-    action: 1
-    feature_name: Mirror_Folding_Cfg (MFC)
-    target_state: MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
+  nibbles:
+  - nibble: 5
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Mirror_Folding_Cfg (MFC)
+      target_state: MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
+    - bit: 2
+      action: 0
+      feature_name: Mirror_Folding_Cfg (MFC)
+      target_state: MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
+    - bit: 1
+      action: 0
+      feature_name: Mirror_Folding_Cfg (MFC)
+      target_state: MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
+    - bit: 0
+      action: 1
+      feature_name: Mirror_Folding_Cfg (MFC)
+      target_state: MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
+    notes: 0=Disabled  1 Enabled  Folding Mirror at door close.  Does not open at
+      unlock. (Disables Puddle Lights)

@@ -16,8 +16,11 @@ steps:
   address: 720-07-01
   mask: xxxx *xxx xx--
   notes: 8=Enabled
-  nibble: 4
-  feature_name: PWR_D Gauge Feature (PWRDGF)
-  target_state: PWRDGF enabled
-  bit: 3
-  action: 1
+  nibbles:
+  - nibble: 4
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: PWR_D Gauge Feature (PWRDGF)
+      target_state: PWRDGF enabled
+    notes: 8=Enabled

@@ -11,25 +11,26 @@ steps:
 - module: BCM
   address: 726-91-01
   mask: xxxx xxx* xx--
-  nibble: 7
-  recommended_hex: '1'
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK]  (AUDIBLEWALKAWAYLOCK)
-    target_state: AUDIBLEWALKAWAYLOCK DISABLE
-  - bit: 2
-    action: 0
-    feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK]  (AUDIBLEWALKAWAYLOCK)
-    target_state: AUDIBLEWALKAWAYLOCK DISABLE
-  - bit: 1
-    action: 0
-    feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK]  (AUDIBLEWALKAWAYLOCK)
-    target_state: AUDIBLEWALKAWAYLOCK DISABLE
-  - bit: 0
-    action: 1
-    feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK]  (AUDIBLEWALKAWAYLOCK)
-    target_state: AUDIBLEWALKAWAYLOCK ENABLE
+  nibbles:
+  - nibble: 7
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK]  (AUDIBLEWALKAWAYLOCK)
+      target_state: AUDIBLEWALKAWAYLOCK DISABLE
+    - bit: 2
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK]  (AUDIBLEWALKAWAYLOCK)
+      target_state: AUDIBLEWALKAWAYLOCK DISABLE
+    - bit: 1
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK]  (AUDIBLEWALKAWAYLOCK)
+      target_state: AUDIBLEWALKAWAYLOCK DISABLE
+    - bit: 0
+      action: 1
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK]  (AUDIBLEWALKAWAYLOCK)
+      target_state: AUDIBLEWALKAWAYLOCK ENABLE
+    recommended_hex: '1'
 - module: BCM
   address: 726-97-01
   mask: x*x* x*x* x*--
@@ -132,9 +133,11 @@ steps:
 - module: APIM
   address: 7D0-09-05
   mask: xxxx *xxx xx--
-  nibble: 4
-  recommended_hex: C
-  feature_name: Walk Away Lock Feedback (WALF)
-  target_state: WALF Enabled
-  bit: 2
-  action: 1
+  nibbles:
+  - nibble: 4
+    bits:
+    - bit: 2
+      action: 1
+      feature_name: Walk Away Lock Feedback (WALF)
+      target_state: WALF Enabled
+    recommended_hex: C

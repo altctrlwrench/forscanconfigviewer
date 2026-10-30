@@ -18,9 +18,12 @@ steps:
   address: 720-01-01
   mask: xxxx *xxx xx--
   notes: Bit2 (Subtract 2 to disable.  e.g. change 3 to 1)
-  nibble: 4
   community_instruction: Bit2 (Subtract 2 to disable.  e.g. change 3 to 1)
-  feature_name: Auto Stop Start (ASS)
-  target_state: ASS disabled
-  bit: 1
-  action: 0
+  nibbles:
+  - nibble: 4
+    bits:
+    - bit: 1
+      action: 0
+      feature_name: Auto Stop Start (ASS)
+      target_state: ASS disabled
+    notes: Bit2 (Subtract 2 to disable.  e.g. change 3 to 1)

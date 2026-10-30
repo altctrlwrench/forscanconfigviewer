@@ -1,0 +1,37 @@
+title: Front Camera Auto Pop-Up on Proximity Sensor Activation
+raw_community_title: Fix front camera not popping up on screen when front sensor activated
+category: Cameras and ADAS
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: Forces front camera to pop up on screen when forward sensor is triggered. Applicable
+  to trucks without Park Assist and BlueCruise.
+steps:
+- module: IPMA
+  address: 706-16-01
+  mask: xxx* xxxx xx--
+  nibbles:
+  - nibble: 3
+    community_instruction: if old value 0-7 then add 8 (hex) to get new value (e.g.
+      3=>B). If current value is 8-F, then this is not for you.
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: VehicleCfg_APAInterface (VCAPAI)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: VehicleCfg_PCAType (VCPCAT)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: VehicleCfg_PCAType (VCPCAT)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: VehicleCfg_PCAType (VCPCAT)
+      target_state: Disabled
+validation_status: validated

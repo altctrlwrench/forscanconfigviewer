@@ -17,23 +17,26 @@ steps:
   mask: x*xx xxxx --
   notes: 0 = No shutoff timer (default, target setting), 1-10 min, 2-15 min, 3-20
     min, 4-30 min, 5-40 min, 6-50 min, 7-60 min
-  nibble: 1
   community_instruction: 0 = No shutoff timer (default, target setting), 1-10 min,
     2-15 min, 3-20 min, 4-30 min, 5-40 min, 6-50 min, 7-60 min
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: HSW_AutoShutOffTime (HSWASOT)
-    target_state: HSWASOT Off (No AutoShutOff)
-  - bit: 2
-    action: 0
-    feature_name: HSW_AutoShutOffTime (HSWASOT)
-    target_state: HSWASOT Off (No AutoShutOff)
-  - bit: 1
-    action: 0
-    feature_name: HSW_AutoShutOffTime (HSWASOT)
-    target_state: HSWASOT Off (No AutoShutOff)
-  - bit: 0
-    action: 0
-    feature_name: HSW_AutoShutOffTime (HSWASOT)
-    target_state: HSWASOT Off (No AutoShutOff)
+  nibbles:
+  - nibble: 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: HSW_AutoShutOffTime (HSWASOT)
+      target_state: HSWASOT Off (No AutoShutOff)
+    - bit: 2
+      action: 0
+      feature_name: HSW_AutoShutOffTime (HSWASOT)
+      target_state: HSWASOT Off (No AutoShutOff)
+    - bit: 1
+      action: 0
+      feature_name: HSW_AutoShutOffTime (HSWASOT)
+      target_state: HSWASOT Off (No AutoShutOff)
+    - bit: 0
+      action: 0
+      feature_name: HSW_AutoShutOffTime (HSWASOT)
+      target_state: HSWASOT Off (No AutoShutOff)
+    notes: 0 = No shutoff timer (default, target setting), 1-10 min, 2-15 min, 3-20
+      min, 4-30 min, 5-40 min, 6-50 min, 7-60 min

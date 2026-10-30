@@ -1,0 +1,38 @@
+title: Rear Camera 'Full View Not Available' Warning Overlay Removal
+raw_community_title: Remove "Full view not available" message on Sync camera screen
+  while in motion
+category: Cameras and ADAS
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: Removes motion warning message overlay on Sync camera screen. Reboot APIM after
+  applying.
+steps:
+- module: APIM
+  address: 7D0-02-02
+  mask: xxx* xxxx xx--
+  nibbles:
+  - nibble: 3
+    community_instruction: If 0 change to 1, if 2 change to 3, if 4 change to 5, if
+      6 change to 7.
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Powerflow Type (PT)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Climate Bar (CB)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Climate Bar (CB)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Climate Bar (CB)
+      target_state: Disabled
+validation_status: validated

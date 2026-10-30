@@ -11,22 +11,23 @@ steps:
 - module: BCMB
   address: 7B7-03-01
   mask: x*xx xxxx --
-  nibble: 1
-  recommended_hex: '1'
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: LED Sequencing Mode (LEDSM)
-    target_state: LEDSM No sequencing
-  - bit: 2
-    action: 0
-    feature_name: LED Sequencing Mode (LEDSM)
-    target_state: LEDSM No sequencing
-  - bit: 1
-    action: 0
-    feature_name: LED Sequencing Mode (LEDSM)
-    target_state: LEDSM No sequencing
-  - bit: 0
-    action: 1
-    feature_name: LED Sequencing Mode (LEDSM)
-    target_state: 'LEDSM Sequencing Mode #1'
+  nibbles:
+  - nibble: 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: LED Sequencing Mode (LEDSM)
+      target_state: LEDSM No sequencing
+    - bit: 2
+      action: 0
+      feature_name: LED Sequencing Mode (LEDSM)
+      target_state: LEDSM No sequencing
+    - bit: 1
+      action: 0
+      feature_name: LED Sequencing Mode (LEDSM)
+      target_state: LEDSM No sequencing
+    - bit: 0
+      action: 1
+      feature_name: LED Sequencing Mode (LEDSM)
+      target_state: 'LEDSM Sequencing Mode #1'
+    recommended_hex: '1'

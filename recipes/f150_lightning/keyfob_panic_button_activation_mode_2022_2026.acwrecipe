@@ -1,0 +1,39 @@
+title: Keyfob Panic Button Activation Mode
+raw_community_title: Keyfob Panic Button (2021-2026)
+category: Locks and Security
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: '0=disabled, 1=2 clicks (target setting), 2=one click (default) Note: Shares
+  identical BCM/APIM Group A engineering table with ICE F-150; pending physical field
+  test on EV.'
+steps:
+- module: BCM
+  address: 726-62-01
+  mask: x*xx xxxx xx--
+  notes: 0=disabled, 1=2 clicks, 2=one click (default)
+  nibbles:
+  - nibble: 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: PanicActivate_Cfg (PAC)
+      target_state: PAC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: PanicActivate_Cfg (PAC)
+      target_state: PAC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: PanicActivate_Cfg (PAC)
+      target_state: PAC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: PanicActivate_Cfg (PAC)
+      target_state: PAC DOUBLE
+    notes: 0=disabled, 1=2 clicks, 2=one click (default)
+validation_status: candidate
+confidence: high

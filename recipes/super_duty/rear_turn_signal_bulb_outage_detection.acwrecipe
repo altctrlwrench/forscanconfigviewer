@@ -15,24 +15,28 @@ steps:
   notes: 'Rear turn outage detection
 
     0=No Outage 1=Outage - set to 0 to disable outage detectiojn'
-  nibble: 5
   community_instruction: 'Rear turn outage detection
 
     0=No Outage 1=Outage - set to 0 to disable outage detectiojn'
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-    target_state: RBTOC NO_OUTAGE
-  - bit: 2
-    action: 0
-    feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-    target_state: RBTOC NO_OUTAGE
-  - bit: 1
-    action: 0
-    feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-    target_state: RBTOC NO_OUTAGE
-  - bit: 0
-    action: 0
-    feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-    target_state: RBTOC NO_OUTAGE
+  nibbles:
+  - nibble: 5
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
+      target_state: RBTOC NO_OUTAGE
+    - bit: 2
+      action: 0
+      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
+      target_state: RBTOC NO_OUTAGE
+    - bit: 1
+      action: 0
+      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
+      target_state: RBTOC NO_OUTAGE
+    - bit: 0
+      action: 0
+      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
+      target_state: RBTOC NO_OUTAGE
+    notes: 'Rear turn outage detection
+
+      0=No Outage 1=Outage - set to 0 to disable outage detectiojn'

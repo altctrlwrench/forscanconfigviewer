@@ -15,8 +15,11 @@ steps:
 - module: BDYCM
   address: 726-57-01
   mask: '**** xxxx xx--'
-  notes: DeltaNu1142's power point timeout calculator
+  notes: 'User input required: Enter timeout duration in seconds converted to hex
+    (e.g. 0E10 = 3600s / 1hr; factory default is 1194 = 4500s / 75 min). Keep factory
+    value unless customizing.'
   type: continuous
   unit: seconds
   feature_name: Power_Point_Maxtime_Cfg (PPMC)
   instruction: 'Calculator: https://docs.google.com/spreadsheets/d/15RmCgd740T10K0PnG44p42FCod9BSG3f6yrUc0X5qxw/edit?usp=sharing'
+  user_input: required

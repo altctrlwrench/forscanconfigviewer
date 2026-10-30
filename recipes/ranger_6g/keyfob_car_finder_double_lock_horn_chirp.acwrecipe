@@ -17,23 +17,26 @@ steps:
   mask: xxxx xxxx x*--
   notes: 1=enabled (default), 0=disabled (target setting). Forscan not needed - Sync
     setting exists by default
-  nibble: 9
   community_instruction: 1=enabled (default), 0=disabled (target setting). Forscan
     not needed - Sync setting exists by default
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
-    target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
-  - bit: 2
-    action: 0
-    feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
-    target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
-  - bit: 1
-    action: 0
-    feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
-    target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
-  - bit: 0
-    action: 0
-    feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
-    target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+  nibbles:
+  - nibble: 9
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+    notes: 1=enabled (default), 0=disabled (target setting). Forscan not needed -
+      Sync setting exists by default

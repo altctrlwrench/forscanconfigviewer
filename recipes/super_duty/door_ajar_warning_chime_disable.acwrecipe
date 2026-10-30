@@ -13,13 +13,15 @@ steps:
   address: 720-01-02
   mask: xx*x xxxx xx--
   notes: Subtract 4 to current value
-  nibble: 2
-  bits:
-  - bit: 1
-    action: 0
-    feature_name: Engine/Ignition On Chime - Message (EIOCM)
-    target_state: EIOCM Disabled
-  - bit: 0
-    action: 0
-    feature_name: Engine/Ignition On Chime - Message (EIOCM)
-    target_state: EIOCM Disabled
+  nibbles:
+  - nibble: 2
+    bits:
+    - bit: 1
+      action: 0
+      feature_name: Engine/Ignition On Chime - Message (EIOCM)
+      target_state: EIOCM Disabled
+    - bit: 0
+      action: 0
+      feature_name: Engine/Ignition On Chime - Message (EIOCM)
+      target_state: EIOCM Disabled
+    notes: Subtract 4 to current value

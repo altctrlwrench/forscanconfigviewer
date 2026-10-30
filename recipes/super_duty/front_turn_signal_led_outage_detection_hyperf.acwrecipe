@@ -15,24 +15,28 @@ steps:
   notes: 'Front bulg outage detection
 
     0=No Outage 1=Outage Set to 0 to disable outage detectionn'
-  nibble: 3
   community_instruction: 'Front bulg outage detection
 
     0=No Outage 1=Outage Set to 0 to disable outage detectionn'
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: Front_LED_Turn_Outage_Cfg (FLEDTOC)
-    target_state: FLEDTOC NO_OUTAGE
-  - bit: 2
-    action: 0
-    feature_name: Front_LED_Turn_Outage_Cfg (FLEDTOC)
-    target_state: FLEDTOC NO_OUTAGE
-  - bit: 1
-    action: 0
-    feature_name: Front_LED_Turn_Outage_Cfg (FLEDTOC)
-    target_state: FLEDTOC NO_OUTAGE
-  - bit: 0
-    action: 0
-    feature_name: Front_LED_Turn_Outage_Cfg (FLEDTOC)
-    target_state: FLEDTOC NO_OUTAGE
+  nibbles:
+  - nibble: 3
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Front_LED_Turn_Outage_Cfg (FLEDTOC)
+      target_state: FLEDTOC NO_OUTAGE
+    - bit: 2
+      action: 0
+      feature_name: Front_LED_Turn_Outage_Cfg (FLEDTOC)
+      target_state: FLEDTOC NO_OUTAGE
+    - bit: 1
+      action: 0
+      feature_name: Front_LED_Turn_Outage_Cfg (FLEDTOC)
+      target_state: FLEDTOC NO_OUTAGE
+    - bit: 0
+      action: 0
+      feature_name: Front_LED_Turn_Outage_Cfg (FLEDTOC)
+      target_state: FLEDTOC NO_OUTAGE
+    notes: 'Front bulg outage detection
+
+      0=No Outage 1=Outage Set to 0 to disable outage detectionn'

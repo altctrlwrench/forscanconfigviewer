@@ -19,21 +19,27 @@ steps:
     LPKENEC DISABLED
 
     Confirmed: D2dhanover/multi'
-  nibble: 3
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
-    target_state: LPKENEC DISABLED
-  - bit: 2
-    action: 0
-    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
-    target_state: LPKENEC DISABLED
-  - bit: 1
-    action: 0
-    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
-    target_state: LPKENEC DISABLED
-  - bit: 0
-    action: 0
-    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
-    target_state: LPKENEC DISABLED
+  nibbles:
+  - nibble: 3
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+      target_state: LPKENEC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+      target_state: LPKENEC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+      target_state: LPKENEC DISABLED
+    - bit: 0
+      action: 0
+      feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+      target_state: LPKENEC DISABLED
+    notes: '0 = disables double honk when exiting running vehicle
+
+      LPKENEC DISABLED
+
+      Confirmed: D2dhanover/multi'

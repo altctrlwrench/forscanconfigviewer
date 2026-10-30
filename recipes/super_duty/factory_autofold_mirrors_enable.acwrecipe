@@ -13,43 +13,47 @@ steps:
   address: 740-03-03
   mask: xxxx xxxx x*--
   notes: 0=Disabled  1 Enabled Factory Folding Mirror Enabled
-  nibble: 9
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: TrailerTowFold_Cfg (TTFC)
-    target_state: TTFC DISABLED
-  - bit: 2
-    action: 0
-    feature_name: TrailerTowFold_Cfg (TTFC)
-    target_state: TTFC DISABLED
-  - bit: 1
-    action: 0
-    feature_name: TrailerTowFold_Cfg (TTFC)
-    target_state: TTFC DISABLED
-  - bit: 0
-    action: 1
-    feature_name: TrailerTowFold_Cfg (TTFC)
-    target_state: TTFC ENABLED
+  nibbles:
+  - nibble: 9
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: TrailerTowFold_Cfg (TTFC)
+      target_state: TTFC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: TrailerTowFold_Cfg (TTFC)
+      target_state: TTFC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: TrailerTowFold_Cfg (TTFC)
+      target_state: TTFC DISABLED
+    - bit: 0
+      action: 1
+      feature_name: TrailerTowFold_Cfg (TTFC)
+      target_state: TTFC ENABLED
+    notes: 0=Disabled  1 Enabled Factory Folding Mirror Enabled
 - module: PDM
   address: 741-03-03
   mask: xxxx xxxx x*--
   notes: 0=Disabled  1 Enabled Factory Folding Mirror Enabled
-  nibble: 9
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: TrailerTowFold_Cfg (TTFC)
-    target_state: TTFC DISABLED
-  - bit: 2
-    action: 0
-    feature_name: TrailerTowFold_Cfg (TTFC)
-    target_state: TTFC DISABLED
-  - bit: 1
-    action: 0
-    feature_name: TrailerTowFold_Cfg (TTFC)
-    target_state: TTFC DISABLED
-  - bit: 0
-    action: 1
-    feature_name: TrailerTowFold_Cfg (TTFC)
-    target_state: TTFC ENABLED
+  nibbles:
+  - nibble: 9
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: TrailerTowFold_Cfg (TTFC)
+      target_state: TTFC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: TrailerTowFold_Cfg (TTFC)
+      target_state: TTFC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: TrailerTowFold_Cfg (TTFC)
+      target_state: TTFC DISABLED
+    - bit: 0
+      action: 1
+      feature_name: TrailerTowFold_Cfg (TTFC)
+      target_state: TTFC ENABLED
+    notes: 0=Disabled  1 Enabled Factory Folding Mirror Enabled

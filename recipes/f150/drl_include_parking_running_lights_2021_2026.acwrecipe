@@ -1,0 +1,57 @@
+title: DRL - Include Parking / Running Lights
+raw_community_title: DRLs - include parking lights (2021-26)
+category: Lighting
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: will turn on rear tails with DRLs
+steps:
+- module: BCM
+  address: 726-38-01
+  mask: xxxx xxxx **--
+  notes: will turn on rear tails with DRLs
+  nibbles:
+  - nibble: 8
+    recommended_hex: '0'
+    notes: will turn on rear tails with DRLs
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg
+      target_state: Disable
+    - bit: 2
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg
+      target_state: Disable
+    - bit: 1
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg
+      target_state: Disable
+    - bit: 0
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg
+      target_state: Disable
+  - nibble: 9
+    recommended_hex: '1'
+    notes: will turn on rear tails with DRLs
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      target_state: DRLIPC ENABLE
+validation_status: validated

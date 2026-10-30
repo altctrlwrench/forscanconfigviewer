@@ -1,0 +1,43 @@
+title: Trailer Side View Camera on Turn Signal
+raw_community_title: 'Trailer Side View - shows corresponding camera view alongside
+  of vehicle when turn signal is applied with trailer connected Note: requires newest
+  12/23 ipma update (2021-2025)'
+category: Cameras and ADAS
+platform: F-150
+model_years: 2021-2025
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: IPMA
+  address: 706-01-02
+  mask: '*xxx xxxx xx--'
+  notes: No data table
+  nibbles:
+  - nibble: 0
+    bits:
+    - bit: 1
+      action: 1
+      feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
+      target_state: MFCTSV Right
+    - bit: 0
+      action: 1
+      feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
+      target_state: MFCTSV Left
+    recommended_hex: '3'
+    notes: No data table
+- module: APIM
+  address: 7D0-02-03
+  mask: xxxx x*xx xx--
+  notes: adds Trailer Side View toggle under Driver Assistance | No data table
+  nibbles:
+  - nibble: 5
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Turn Signal Views (TSV)
+      target_state: TSV Present
+    recommended_hex: '8'
+    notes: adds Trailer Side View toggle under Driver Assistance | No data table
+validation_status: validated

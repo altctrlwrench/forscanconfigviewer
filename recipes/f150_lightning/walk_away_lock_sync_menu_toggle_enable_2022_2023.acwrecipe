@@ -1,0 +1,37 @@
+title: Walk Away Lock Sync Menu Toggle Enable
+raw_community_title: Walk-away Lock (WAL)
+category: Locks and Security
+platform: F-150 Lightning
+model_years: 2022-2023
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: Enables toggles on Sync screen for WAL and WAL Feedback (horn honk). Standard
+  on 2024+. Actual functionality requires updated BCM software from dealer or OTA.
+steps:
+- module: APIM
+  address: 7D0-09-05
+  mask: xxxx *xxx xx--
+  nibbles:
+  - nibble: 4
+    recommended_hex: C
+    community_instruction: Set to C
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Walk Away Lock (WAL)
+      target_state: Enabled
+    - bit: 2
+      action: 1
+      feature_name: Walk Away Lock Feedback (WALF)
+      target_state: Enabled
+    - bit: 1
+      action: 0
+      feature_name: Double Lock Reminder (DLR)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Steering Gear Ratio (SGR)
+      target_state: Disabled
+validation_status: validated

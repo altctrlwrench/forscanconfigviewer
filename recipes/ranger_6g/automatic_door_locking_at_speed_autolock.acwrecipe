@@ -153,8 +153,6 @@ steps:
     FORScan Menu: Auto Lock Control Function (Disabled (Default NA), Enabled)
 
     Confirmed: raptortugal (2/17/2025)'
-  nibble: 2
-  hex_offset: '+8'
   community_instruction: 'Enables Autolock Control Function in APIM (may already be
     on)
 
@@ -163,10 +161,21 @@ steps:
     FORScan Menu: Auto Lock Control Function (Disabled (Default NA), Enabled)
 
     Confirmed: raptortugal (2/17/2025)'
-  feature_name: Autolock Control Function (ACF)
-  target_state: ACF Enabled
-  bit: 3
-  action: 1
+  nibbles:
+  - nibble: 2
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Autolock Control Function (ACF)
+      target_state: ACF Enabled
+    hex_offset: '+8'
+    notes: 'Enables Autolock Control Function in APIM (may already be on)
+
+      Bit4 (add 8 to enable if currently disabled (values 0-7))
+
+      FORScan Menu: Auto Lock Control Function (Disabled (Default NA), Enabled)
+
+      Confirmed: raptortugal (2/17/2025)'
 - module: IPC
   address: 720-06-01
   mask: xxxx *xxx xx--
@@ -177,8 +186,6 @@ steps:
     FORScan Menu: Locking Feedback Audible (optional) (Enabled (Default NA), Disabled)
 
     Confirmed: raptortugal (2/17/2025)'
-  nibble: 4
-  hex_offset: '+8'
   community_instruction: 'Adds Audible locking feedback
 
     Bit 3 (add 4 to enable (if currently disabled)
@@ -186,10 +193,21 @@ steps:
     FORScan Menu: Locking Feedback Audible (optional) (Enabled (Default NA), Disabled)
 
     Confirmed: raptortugal (2/17/2025)'
-  feature_name: Locking Feedback Audible (LFA)
-  target_state: LFA enabled
-  bit: 2
-  action: 1
+  nibbles:
+  - nibble: 4
+    bits:
+    - bit: 2
+      action: 1
+      feature_name: Locking Feedback Audible (LFA)
+      target_state: LFA enabled
+    hex_offset: '+8'
+    notes: 'Adds Audible locking feedback
+
+      Bit 3 (add 4 to enable (if currently disabled)
+
+      FORScan Menu: Locking Feedback Audible (optional) (Enabled (Default NA), Disabled)
+
+      Confirmed: raptortugal (2/17/2025)'
 - module: IPC
   address: 720-06-01
   mask: xxxx *xxx xx--
@@ -200,8 +218,6 @@ steps:
     FORScan Menu: Locking Feedback Visual (optional) (Disabled (Default NA), Enabled)
 
     Confirmed: raptortugal (2/17/2025)'
-  nibble: 4
-  hex_offset: '+8'
   community_instruction: 'Adds visual locking feedback
 
     Bit 2 (add 2 to enable) (if currently disabled)
@@ -209,7 +225,18 @@ steps:
     FORScan Menu: Locking Feedback Visual (optional) (Disabled (Default NA), Enabled)
 
     Confirmed: raptortugal (2/17/2025)'
-  feature_name: Locking Feedback Visual (LFV)
-  target_state: LFV enabled
-  bit: 1
-  action: 1
+  nibbles:
+  - nibble: 4
+    bits:
+    - bit: 1
+      action: 1
+      feature_name: Locking Feedback Visual (LFV)
+      target_state: LFV enabled
+    hex_offset: '+8'
+    notes: 'Adds visual locking feedback
+
+      Bit 2 (add 2 to enable) (if currently disabled)
+
+      FORScan Menu: Locking Feedback Visual (optional) (Disabled (Default NA), Enabled)
+
+      Confirmed: raptortugal (2/17/2025)'

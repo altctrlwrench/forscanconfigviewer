@@ -12,41 +12,44 @@ steps:
 - module: PSCM
   address: 730-03-01
   mask: xxxx xxxx x*--
-  nibble: 9
-  recommended_hex: '0'
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: StartStop (SS)
-    target_state: SS Start/Stop Disabled (Default)
-  - bit: 2
-    action: 0
-    feature_name: StartStop (SS)
-    target_state: SS Start/Stop Disabled (Default)
-  - bit: 1
-    action: 0
-    feature_name: StartStop (SS)
-    target_state: SS Start/Stop Disabled (Default)
-  - bit: 0
-    action: 0
-    feature_name: StartStop (SS)
-    target_state: SS Start/Stop Disabled (Default)
+  nibbles:
+  - nibble: 9
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: StartStop (SS)
+      target_state: SS Start/Stop Disabled (Default)
+    - bit: 2
+      action: 0
+      feature_name: StartStop (SS)
+      target_state: SS Start/Stop Disabled (Default)
+    - bit: 1
+      action: 0
+      feature_name: StartStop (SS)
+      target_state: SS Start/Stop Disabled (Default)
+    - bit: 0
+      action: 0
+      feature_name: StartStop (SS)
+      target_state: SS Start/Stop Disabled (Default)
+    recommended_hex: '0'
 - module: HVAC
   address: 733-01-05
   mask: xxxx x*xx xx--
   notes: Disables Auto Stop/Start switch from illuminating
-  nibble: 5
-  recommended_hex: '0'
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: Front Left Heated Seat High Setting (FLHSHS)
-  - bit: 2
-    action: 0
-    feature_name: Front Left Heated Seat High Setting (FLHSHS)
-  - bit: 1
-    action: 0
-    feature_name: Front Left Heated Seat High Setting (FLHSHS)
-  - bit: 0
-    action: 0
-    feature_name: Front Left Heated Seat High Setting (FLHSHS)
+  nibbles:
+  - nibble: 5
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Front Left Heated Seat High Setting (FLHSHS)
+    - bit: 2
+      action: 0
+      feature_name: Front Left Heated Seat High Setting (FLHSHS)
+    - bit: 1
+      action: 0
+      feature_name: Front Left Heated Seat High Setting (FLHSHS)
+    - bit: 0
+      action: 0
+      feature_name: Front Left Heated Seat High Setting (FLHSHS)
+    recommended_hex: '0'
+    notes: Disables Auto Stop/Start switch from illuminating

@@ -19,17 +19,19 @@ steps:
   address: 7D0-03-01
   mask: xxxx xxxx **--
   notes: Leave 0
-  nibble: 8
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: First Letter of Country Code (FLCC)
-  - bit: 2
-    action: 0
-    feature_name: First Letter of Country Code (FLCC)
-  - bit: 1
-    action: 0
-    feature_name: First Letter of Country Code (FLCC)
-  - bit: 0
-    action: 0
-    feature_name: First Letter of Country Code (FLCC)
+  nibbles:
+  - nibble: 8
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: First Letter of Country Code (FLCC)
+    - bit: 2
+      action: 0
+      feature_name: First Letter of Country Code (FLCC)
+    - bit: 1
+      action: 0
+      feature_name: First Letter of Country Code (FLCC)
+    - bit: 0
+      action: 0
+      feature_name: First Letter of Country Code (FLCC)
+    notes: Leave 0

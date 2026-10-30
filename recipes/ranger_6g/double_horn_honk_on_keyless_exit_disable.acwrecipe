@@ -16,22 +16,24 @@ steps:
   address: 726-63-02
   mask: xxx* xxxx xx--
   notes: 0=Disabled (target setting), 1=Enabled (Default)
-  nibble: 3
   community_instruction: 0=Disabled (target setting), 1=Enabled (Default)
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
-    target_state: LPKENEC DISABLED
-  - bit: 2
-    action: 0
-    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
-    target_state: LPKENEC DISABLED
-  - bit: 1
-    action: 0
-    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
-    target_state: LPKENEC DISABLED
-  - bit: 0
-    action: 0
-    feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
-    target_state: LPKENEC DISABLED
+  nibbles:
+  - nibble: 3
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+      target_state: LPKENEC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+      target_state: LPKENEC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+      target_state: LPKENEC DISABLED
+    - bit: 0
+      action: 0
+      feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+      target_state: LPKENEC DISABLED
+    notes: 0=Disabled (target setting), 1=Enabled (Default)

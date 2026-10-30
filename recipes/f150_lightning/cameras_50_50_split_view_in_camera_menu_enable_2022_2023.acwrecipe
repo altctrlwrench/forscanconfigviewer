@@ -1,0 +1,59 @@
+title: Cameras - 50/50 Split View in Camera Menu Enable
+raw_community_title: Enable 50/50 view in camera menu
+category: Cameras and ADAS
+platform: F-150 Lightning
+model_years: 2022-2023
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: Adds a button to Sync camera selection screen that shows a 50/50 view of the
+  two side cameras. Standard on 2024+.
+steps:
+- module: APIM
+  address: 7D0-01-01
+  mask: xxxx *xxx xx--
+  nibbles:
+  - nibble: 4
+    community_instruction: if 1 change to 3
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Brazil Frequency (BF)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Cross Traffic Braking (CTB)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: 50/50 Views (V)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Locking Differential (LD)
+      target_state: Disabled
+- module: APIM
+  address: 7D0-01-04
+  mask: xxxx xxxx x*--
+  nibbles:
+  - nibble: 9
+    community_instruction: if 0 change to 1, if 8 change to 9
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Smart Hitch (SH)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Cross Traffic/Emergency Braking with Split View (CTEBSV)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Zone Lighting - Power Roller Shutter (ZLPRS)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: 50/50 View at Speed (VS)
+      target_state: Disabled
+validation_status: validated

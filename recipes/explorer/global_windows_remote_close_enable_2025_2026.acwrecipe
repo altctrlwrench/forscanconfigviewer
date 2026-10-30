@@ -1,0 +1,76 @@
+title: Global Windows Remote Close Enable
+raw_community_title: 'Enable Global Windows Close
+
+
+  https://www.explorerst.org/threads/global-windows
+
+  -close-enable-2025-explorer.9064/'
+category: Windows and Mirrors
+platform: Explorer
+model_years: 2025-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2025-2026 Explorer.xlsx
+notes: "[BCM] - - Enable the following from DISABLED to ENABLED in BdyCM (easy way):\
+  \ \n-Global Close (change from Disabled to Remote)**\n-Global Close - Vehicle\n\
+  -Global Close - Initial Value\n-Global Close - Personal 1\n-Global Close - Personal\
+  \ 2\n-Global Close - Personal 3\n-Global Close - Personal 4"
+steps:
+- module: PDM
+  address: 741-06-02
+  mask: xxxx xxx* **--
+  notes: "[BCM] - - Enable the following from DISABLED to ENABLED in BdyCM (easy way):\
+    \ \n-Global Close (change from Disabled to Remote)**\n-Global Close - Vehicle\n\
+    -Global Close - Initial Value\n-Global Close - Personal 1\n-Global Close - Personal\
+    \ 2\n-Global Close - Personal 3\n-Global Close - Personal 4"
+  community_instruction: "[BCM] - - Enable the following from DISABLED to ENABLED\
+    \ in BdyCM (easy way): \n-Global Close (change from Disabled to Remote)**\n-Global\
+    \ Close - Vehicle\n-Global Close - Initial Value\n-Global Close - Personal 1\n\
+    -Global Close - Personal 2\n-Global Close - Personal 3\n-Global Close - Personal\
+    \ 4"
+  nibbles:
+  - nibble: 8
+    recommended_hex: '0'
+    feature_name: Global Close
+    target_state: Disabled
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Global Close
+      target_state: Disabled
+- module: DDM
+  address: 740-06-02
+  mask: xxxx xxx* xx--
+  nibbles:
+  - nibble: 7
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Global_Close_Cfg (GCC)
+      target_state: GCC DISABLED
+    - bit: 2
+      action: 0
+      feature_name: Global_Close_Cfg (GCC)
+      target_state: GCC DISABLED
+    - bit: 1
+      action: 0
+      feature_name: Global_Close_Cfg (GCC)
+      target_state: GCC DISABLED
+    - bit: 0
+      action: 1
+      feature_name: Global_Close_Cfg (GCC)
+      target_state: GCC ENABLED
+    recommended_hex: '1'

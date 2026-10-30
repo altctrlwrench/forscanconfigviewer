@@ -14,53 +14,61 @@ steps:
   notes: Target value sets Engine and Transmission Temp display to On.  Subtract 1
     from target value to disable transmission temp only. Subtract 4 from target value
     to disable engine temp only.
-  nibble: 6
-  hex_offset: '-1'
   community_instruction: Target value sets Engine and Transmission Temp display to
     On.  Subtract 1 from target value to disable transmission temp only. Subtract
     4 from target value to disable engine temp only.
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: Eng Temp Dig (ETD)
-    target_state: ETD Always Off
-  - bit: 2
-    action: 1
-    feature_name: Eng Temp Dig (ETD)
-    target_state: ETD Always On
-  - bit: 1
-    action: 0
-    feature_name: Trans Temp Dig (TTD)
-    target_state: TTD Always Off
-  - bit: 0
-    action: 1
-    feature_name: Trans Temp Dig (TTD)
-    target_state: TTD Always On
+  nibbles:
+  - nibble: 6
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Eng Temp Dig (ETD)
+      target_state: ETD Always Off
+    - bit: 2
+      action: 1
+      feature_name: Eng Temp Dig (ETD)
+      target_state: ETD Always On
+    - bit: 1
+      action: 0
+      feature_name: Trans Temp Dig (TTD)
+      target_state: TTD Always Off
+    - bit: 0
+      action: 1
+      feature_name: Trans Temp Dig (TTD)
+      target_state: TTD Always On
+    hex_offset: '-1'
+    notes: Target value sets Engine and Transmission Temp display to On.  Subtract
+      1 from target value to disable transmission temp only. Subtract 4 from target
+      value to disable engine temp only.
 - module: IPC
   address: 720-07-01
   mask: xxxx xx*x xx--
   notes: Target value sets Engine and Transmission Temp display to On.  Subtract 1
     from target value to disable transmission temp only. Subtract 4 from target value
     to disable engine temp only.
-  nibble: 6
-  hex_offset: '-1'
   community_instruction: Target value sets Engine and Transmission Temp display to
     On.  Subtract 1 from target value to disable transmission temp only. Subtract
     4 from target value to disable engine temp only.
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: Eng Temp Dig (ETD)
-    target_state: ETD Always Off
-  - bit: 2
-    action: 1
-    feature_name: Eng Temp Dig (ETD)
-    target_state: ETD Always On
-  - bit: 1
-    action: 0
-    feature_name: Trans Temp Dig (TTD)
-    target_state: TTD Always Off
-  - bit: 0
-    action: 1
-    feature_name: Trans Temp Dig (TTD)
-    target_state: TTD Always On
+  nibbles:
+  - nibble: 6
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Eng Temp Dig (ETD)
+      target_state: ETD Always Off
+    - bit: 2
+      action: 1
+      feature_name: Eng Temp Dig (ETD)
+      target_state: ETD Always On
+    - bit: 1
+      action: 0
+      feature_name: Trans Temp Dig (TTD)
+      target_state: TTD Always Off
+    - bit: 0
+      action: 1
+      feature_name: Trans Temp Dig (TTD)
+      target_state: TTD Always On
+    hex_offset: '-1'
+    notes: Target value sets Engine and Transmission Temp display to On.  Subtract
+      1 from target value to disable transmission temp only. Subtract 4 from target
+      value to disable engine temp only.

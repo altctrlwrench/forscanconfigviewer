@@ -1,0 +1,38 @@
+title: 24-Hour Clock Persistence & Door Ajar Chime
+raw_community_title: 24-Hour Clock Persistence / Disable Door Ajar Chime
+category: Chimes and Horn
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: 'Configures 24-hour clock persistence and door ajar chime. Note: for startup
+  seat belt chime, European strategy sets IPC 720-01-02 byte to wait until in motion.'
+steps:
+- module: IPC
+  address: 720-01-02
+  mask: xx*x xx--
+  nibbles:
+  - nibble: 2
+    community_instruction: 0 = 12-hour clock, Door ajar chime disabled; 2 = 12-hour
+      clock, Door ajar chime enabled (default); 4 = 24-hour clock, Door ajar chime
+      disabled; 6 = 24-hour clock, Door ajar chime enabled
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: DTE Rate of Change (DTERC)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Global Clock 12 or 24 (GC)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Engine/Ignition On Chime - Message (EIOCM)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Engine/Ignition On Chime - Message (EIOCM)
+      target_state: Enabled
+validation_status: validated

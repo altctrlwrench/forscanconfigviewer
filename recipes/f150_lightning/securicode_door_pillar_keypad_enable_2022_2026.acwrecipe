@@ -1,0 +1,78 @@
+title: SecuriCode Door Pillar Keypad Enable
+raw_community_title: Keypad Enable (wired keypad)
+category: Locks and Security
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: 'See this post if you don''t know the factory code https://www.f150forum.com/f129/forscan-14th-gen-f150s-481816/index67/#post6964982
+  Note: Shares identical BCM/APIM Group A engineering table with ICE F-150; pending
+  physical field test on EV.'
+steps:
+- module: BCM
+  address: 726-31-01
+  mask: xxxx xx** xx--
+  notes: See this post if you don't know the factory code
+  nibbles:
+  - nibble: 6
+    recommended_hex: '0'
+    notes: See this post if you don't know the factory code
+    community_instruction: See this post if you don't know the factory code
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: KeyPad_Enable_Cfg
+      target_state: Disable
+    - bit: 2
+      action: 0
+      feature_name: KeyPad_Enable_Cfg
+      target_state: Disable
+    - bit: 1
+      action: 0
+      feature_name: KeyPad_Enable_Cfg
+      target_state: Disable
+    - bit: 0
+      action: 0
+      feature_name: KeyPad_Enable_Cfg
+      target_state: Disable
+  - nibble: 7
+    recommended_hex: '1'
+    notes: See this post if you don't know the factory code
+    community_instruction: See this post if you don't know the factory code
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: KeyPad_Enable_Cfg (KPEC)
+      target_state: KPEC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: KeyPad_Enable_Cfg (KPEC)
+      target_state: KPEC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: KeyPad_Enable_Cfg (KPEC)
+      target_state: KPEC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: KeyPad_Enable_Cfg (KPEC)
+      target_state: KPEC HW_INPUT
+- module: APIM
+  address: 7D0-01-02
+  mask: xxxx x*xx xx--
+  notes: optional - adds door keypad code to Sync settings use 6 if you have ambient
+    lighting or 2 if you don't
+  community_instruction: optional - adds door keypad code to Sync settings use 6 if
+    you have ambient lighting or 2 if you don't
+  nibbles:
+  - nibble: 5
+    bits:
+    - bit: 1
+      action: 1
+      feature_name: Door Keypad Code (DKC)
+      target_state: DKC Available (Door Keypad menu button shall be displayed)
+    notes: optional - adds door keypad code to Sync settings use 6 if you have ambient
+      lighting or 2 if you don't
+validation_status: candidate
+confidence: high

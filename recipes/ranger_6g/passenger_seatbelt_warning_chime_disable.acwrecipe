@@ -17,11 +17,11 @@ steps:
 - module: IPC
   address: 720-13-01
   mask: x*xx xxxx xx--
-  notes: Bit 1 (subtract 1 to disable, e.g. change 1 to 0)
-  nibble: 1
+  notes: Set all masked nibbles to 0 to disable seatbelt chimes and warning notifications.
   hex_offset: '-1'
   community_instruction: Bit 1 (subtract 1 to disable, e.g. change 1 to 0)
-  feature_name: R1C5 Belt Minder Chime (RCBMC)
-  target_state: RCBMC Disabled
-  bit: 0
-  action: 0
+  target_state: All Seatbelt Warnings Disabled
+  type: all_zeros
+  nibbles:
+  - nibble: 1
+    recommended_hex: '0'

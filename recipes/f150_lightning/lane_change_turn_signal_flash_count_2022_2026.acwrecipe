@@ -1,0 +1,37 @@
+title: Lane Change Turn Signal Flash Count
+raw_community_title: Change Number of Blinks for Turn Signal Tap
+category: Lighting
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: Confirm your current value matches the 3 blink Default value before changing.
+steps:
+- module: SCCM
+  address: 724-01-01
+  mask: xxxx **xx xx--
+  nibbles:
+  - nibble: 4
+    recommended_hex: '9'
+  - nibble: 5
+    recommended_hex: '4'
+  type: multi_choice
+  notes: 'Sets lane change turn signal count. User preference variable (recommended
+    default: 5 flashes / 94 hex).'
+  recommended_hex: '94'
+  target_state: 5 Flashes
+  options:
+    '80': Null / Disabled
+    '84': 1 Flash
+    '88': 2 Flashes
+    8C: 3 Flashes (Factory Default)
+    '90': 4 Flashes
+    '94': 5 Flashes (Recommended Default)
+    '98': 6 Flashes
+    9C: 7 Flashes
+    A0: 8 Flashes
+    A4: 9 Flashes
+    A8: 10 Flashes
+validation_status: validated

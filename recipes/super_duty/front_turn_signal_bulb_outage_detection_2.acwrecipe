@@ -13,22 +13,24 @@ steps:
   address: 726-40-02
   mask: x*xx xxxx xx--
   notes: 0=No Outage 1=Outage - set to 0 for LED
-  nibble: 1
   community_instruction: 0=No Outage 1=Outage - set to 0 for LED
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
-    target_state: FBTOC NO_OUTAGE
-  - bit: 2
-    action: 0
-    feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
-    target_state: FBTOC NO_OUTAGE
-  - bit: 1
-    action: 0
-    feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
-    target_state: FBTOC NO_OUTAGE
-  - bit: 0
-    action: 0
-    feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
-    target_state: FBTOC NO_OUTAGE
+  nibbles:
+  - nibble: 1
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
+      target_state: FBTOC NO_OUTAGE
+    - bit: 2
+      action: 0
+      feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
+      target_state: FBTOC NO_OUTAGE
+    - bit: 1
+      action: 0
+      feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
+      target_state: FBTOC NO_OUTAGE
+    - bit: 0
+      action: 0
+      feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
+      target_state: FBTOC NO_OUTAGE
+    notes: 0=No Outage 1=Outage - set to 0 for LED

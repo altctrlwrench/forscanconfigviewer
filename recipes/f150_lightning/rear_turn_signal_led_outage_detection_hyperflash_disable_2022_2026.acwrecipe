@@ -1,0 +1,57 @@
+title: Rear Turn Signal LED Outage Detection (Hyperflash Disable)
+raw_community_title: Rear Turn LED Outage Detection (2021-2026)
+category: Lighting
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: '00=No Outage 01=Outage Note: Shares identical BCM/APIM Group A engineering
+  table with ICE F-150; pending physical field test on EV.'
+steps:
+- module: BCM
+  address: 726-40-02
+  mask: xxxx **xx xx--
+  notes: 00=No Outage 01=Outage
+  nibbles:
+  - nibble: 4
+    notes: 00=No Outage 01=Outage | Left as factory (no data table)
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Rear_LED_Turn_Outage_Cfg
+      target_state: No Outage
+    - bit: 2
+      action: 0
+      feature_name: Rear_LED_Turn_Outage_Cfg
+      target_state: No Outage
+    - bit: 1
+      action: 0
+      feature_name: Rear_LED_Turn_Outage_Cfg
+      target_state: No Outage
+    - bit: 0
+      action: 0
+      feature_name: Rear_LED_Turn_Outage_Cfg
+      target_state: No Outage
+  - nibble: 5
+    notes: 00=No Outage 01=Outage
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Rear_LED_Turn_Outage_Cfg (RLEDTOC)
+      target_state: RLEDTOC NO_OUTAGE
+    - bit: 2
+      action: 0
+      feature_name: Rear_LED_Turn_Outage_Cfg (RLEDTOC)
+      target_state: RLEDTOC NO_OUTAGE
+    - bit: 1
+      action: 0
+      feature_name: Rear_LED_Turn_Outage_Cfg (RLEDTOC)
+      target_state: RLEDTOC NO_OUTAGE
+    - bit: 0
+      action: 0
+      feature_name: Rear_LED_Turn_Outage_Cfg (RLEDTOC)
+      target_state: RLEDTOC NO_OUTAGE
+validation_status: candidate
+confidence: high

@@ -19,13 +19,15 @@ steps:
   address: 720-07-01
   mask: xxxx x*xx xx--
   notes: E-Turbo/Brake Controller
-  nibble: 5
-  bits:
-  - bit: 2
-    action: 1
-    feature_name: Turbo Boost (TB)
-    target_state: TB Yes
-  - bit: 1
-    action: 1
-    feature_name: Digital Gauge Interface (DGI)
-    target_state: DGI enabled
+  nibbles:
+  - nibble: 5
+    bits:
+    - bit: 2
+      action: 1
+      feature_name: Turbo Boost (TB)
+      target_state: TB Yes
+    - bit: 1
+      action: 1
+      feature_name: Digital Gauge Interface (DGI)
+      target_state: DGI enabled
+    notes: E-Turbo/Brake Controller

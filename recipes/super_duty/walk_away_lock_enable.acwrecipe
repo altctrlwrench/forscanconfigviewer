@@ -110,37 +110,40 @@ steps:
 - module: BDYCM-BCM
   address: 726-90-01
   mask: xxx* xxxx xx--
-  nibble: 3
-  recommended_hex: '1'
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
-    target_state: WALKAWAYLOCK DISABLE
-  - bit: 2
-    action: 0
-    feature_name: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
-    target_state: WALKAWAYLOCK DISABLE
-  - bit: 1
-    action: 0
-    feature_name: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
-    target_state: WALKAWAYLOCK DISABLE
-  - bit: 0
-    action: 1
-    feature_name: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
-    target_state: WALKAWAYLOCK ENABLE
+  nibbles:
+  - nibble: 3
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
+      target_state: WALKAWAYLOCK DISABLE
+    - bit: 2
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
+      target_state: WALKAWAYLOCK DISABLE
+    - bit: 1
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
+      target_state: WALKAWAYLOCK DISABLE
+    - bit: 0
+      action: 1
+      feature_name: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
+      target_state: WALKAWAYLOCK ENABLE
+    recommended_hex: '1'
 - module: APIM
   address: 7D0-09-05
   mask: xxxx *xxx xx--
-  nibble: 4
-  recommended_hex: '8'
   notes: Enables walk away lock plus walk away lock feedback
-  bits:
-  - bit: 3
-    action: 1
-    feature_name: Walk Away Lock (WAL)
-    target_state: WAL Enabled
-  - bit: 2
-    action: 1
-    feature_name: Walk Away Lock Feedback (WALF)
-    target_state: WALF Enabled
+  nibbles:
+  - nibble: 4
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Walk Away Lock (WAL)
+      target_state: WAL Enabled
+    - bit: 2
+      action: 1
+      feature_name: Walk Away Lock Feedback (WALF)
+      target_state: WALF Enabled
+    recommended_hex: '8'
+    notes: Enables walk away lock plus walk away lock feedback

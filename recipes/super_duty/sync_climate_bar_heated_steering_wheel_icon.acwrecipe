@@ -13,9 +13,12 @@ steps:
   address: 7D0-02-01
   mask: xxxx *xxx xx--
   notes: Add 4 to current value
-  nibble: 4
-  hex_offset: '+4'
-  feature_name: Heated Steering Wheel (HSW)
-  target_state: HSW Available
-  bit: 0
-  action: 1
+  nibbles:
+  - nibble: 4
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: Heated Steering Wheel (HSW)
+      target_state: HSW Available
+    hex_offset: '+4'
+    notes: Add 4 to current value

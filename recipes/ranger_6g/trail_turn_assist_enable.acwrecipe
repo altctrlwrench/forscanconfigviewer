@@ -24,16 +24,24 @@ steps:
     FORScan Menu: unknown, use asbuilt (advanced) (Not available - use asbuilt)
 
     Confirmed: DIYPSCM (1/28/25) Lariat'
-  nibble: 4
-  hex_offset: '+8'
   community_instruction: 'Bit 4 (add 8 to enable)
 
     FORScan Menu: unknown, use asbuilt (advanced) (Not available - use asbuilt)
 
     Confirmed: DIYPSCM (1/28/25) Lariat'
-  feature_name: TTA (TTA)
-  bit: 3
-  action: 1
+  nibbles:
+  - nibble: 4
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: TTA (TTA)
+      target_state: Enabled
+    hex_offset: '+8'
+    notes: 'Bit 4 (add 8 to enable)
+
+      FORScan Menu: unknown, use asbuilt (advanced) (Not available - use asbuilt)
+
+      Confirmed: DIYPSCM (1/28/25) Lariat'
 - module: APIM
   address: 7D0-02-01
   mask: xxx* xxxx xx--
@@ -42,21 +50,33 @@ steps:
     FORScan Menu: Trail Turn assist (Disabled (Default), Enabled)
 
     Confirmed: BigMeatsBronco (1/28/25) Raptor'
-  nibble: 3
-  hex_offset: '+1'
-  feature_name: Trail Turn Assist (TTA)
-  target_state: TTA Enabled
-  bit: 0
-  action: 1
+  nibbles:
+  - nibble: 3
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: Trail Turn Assist (TTA)
+      target_state: TTA Enabled
+    hex_offset: '+1'
+    notes: 'Bit 1 (add 1 to enable)
+
+      FORScan Menu: Trail Turn assist (Disabled (Default), Enabled)
+
+      Confirmed: BigMeatsBronco (1/28/25) Raptor'
 - module: APIM
   address: 7D0-10-02
   mask: xxxx xxx* xx--
   notes: 'Bit 3 (add 4 to enable)
 
     FORScan Menu: Off-road Menu - Trail turn Assist (Disabled (Default), Enabled)'
-  nibble: 7
-  hex_offset: '+4'
-  feature_name: Offroad Menu Trail Turn Assist (OMTTA)
-  target_state: OMTTA Present
-  bit: 2
-  action: 1
+  nibbles:
+  - nibble: 7
+    bits:
+    - bit: 2
+      action: 1
+      feature_name: Offroad Menu Trail Turn Assist (OMTTA)
+      target_state: OMTTA Present
+    hex_offset: '+4'
+    notes: 'Bit 3 (add 4 to enable)
+
+      FORScan Menu: Off-road Menu - Trail turn Assist (Disabled (Default), Enabled)'

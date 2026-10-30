@@ -1,0 +1,178 @@
+title: Auto Relock on Unopened Door Enable
+raw_community_title: Auto Relock - if you hit the unlock button on the fob and do
+  not open a door within the timer it will lock the Explorer
+category: Locks and Security
+platform: Explorer
+model_years: 2025-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2025-2026 Explorer.xlsx
+notes: Sets for all 4 profiles
+steps:
+- module: BCM
+  address: 726-20-01
+  mask: x*x* x*x* x*--
+  nibbles:
+  - nibble: 1
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)
+      target_state: AUTORELOCK_PERS_1 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)
+      target_state: AUTORELOCK_PERS_1 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)
+      target_state: AUTORELOCK_PERS_1 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)
+      target_state: AUTORELOCK_PERS_1 ENABLE
+  - nibble: 3
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)
+      target_state: AUTORELOCK_PERS_2 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)
+      target_state: AUTORELOCK_PERS_2 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)
+      target_state: AUTORELOCK_PERS_2 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)
+      target_state: AUTORELOCK_PERS_2 ENABLE
+  - nibble: 5
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)
+      target_state: AUTORELOCK_PERS_3 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)
+      target_state: AUTORELOCK_PERS_3 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)
+      target_state: AUTORELOCK_PERS_3 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)
+      target_state: AUTORELOCK_PERS_3 ENABLE
+  - nibble: 7
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)
+      target_state: AUTORELOCK_PERS_4 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)
+      target_state: AUTORELOCK_PERS_4 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)
+      target_state: AUTORELOCK_PERS_4 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)
+      target_state: AUTORELOCK_PERS_4 ENABLE
+  - nibble: 9
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)
+      target_state: AUTORELOCK_VEHICLE DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)
+      target_state: AUTORELOCK_VEHICLE DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)
+      target_state: AUTORELOCK_VEHICLE DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)
+      target_state: AUTORELOCK_VEHICLE ENABLE
+- module: BCM
+  address: 726-27-01
+  mask: xxxx xxxx x*--
+  nibbles:
+  - nibble: 9
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)
+      target_state: AUTORELOCK DISABLE
+    - bit: 2
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)
+      target_state: AUTORELOCK DISABLE
+    - bit: 1
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)
+      target_state: AUTORELOCK DISABLE
+    - bit: 0
+      action: 1
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)
+      target_state: AUTORELOCK ENABLE
+    recommended_hex: '1'
+- module: BCM
+  address: 726-58-02
+  mask: x*xx xxxx xx--
+  notes: 'Auto relock duration: 1 = 30 seconds (recommended default), 2 = 45 seconds.'
+  nibbles:
+  - nibble: 1
+    recommended_hex: '1'
+    target_state: 30 Seconds
+    feature_name: AutoRelock_Timeduration_Cfg (ARTC)
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: AutoRelock_Timeduration_Cfg (ARTC)
+      target_state: 30 Seconds
+    - bit: 2
+      action: 0
+      feature_name: AutoRelock_Timeduration_Cfg (ARTC)
+      target_state: 30 Seconds
+    - bit: 1
+      action: 0
+      feature_name: AutoRelock_Timeduration_Cfg (ARTC)
+      target_state: 30 Seconds
+    - bit: 0
+      action: 1
+      feature_name: AutoRelock_Timeduration_Cfg (ARTC)
+      target_state: 30 Seconds
+- module: APIM
+  address: 7D0-09-01
+  mask: xx*x xxxx xx--
+  notes: optional - adds Autorelock to settings, vehicle, locks
+  community_instruction: optional - adds Autorelock to settings, vehicle, locks
+  nibbles:
+  - nibble: 2
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Autolock Control Function (ACF)
+      target_state: ACF enabled
+    - bit: 1
+      action: 1
+      feature_name: Auto Relock (AR)
+      target_state: AR enabled
+    recommended_hex: '3'
+    notes: optional - adds Autorelock to settings, vehicle, locks

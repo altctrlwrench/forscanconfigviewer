@@ -1,0 +1,272 @@
+title: Walk Away Lock Audible Horn Feedback
+raw_community_title: 'Enable Walk Away Lock (Audible)
+
+
+  https://www.explorerst.org/threads/adding-walk-
+
+  away-lock-feature-for-2025-ford-explorers-with-
+
+  audible-feedback.9073/'
+category: Locks and Security
+platform: Explorer
+model_years: 2025-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2025-2026 Explorer.xlsx
+steps:
+- module: BCM
+  address: 726-89-01
+  mask: x*x* x*x* x*--
+  nibbles:
+  - nibble: 1
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_1] (AUDIBLEWALKAWAYLOCK_PERS_1)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_1 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_1] (AUDIBLEWALKAWAYLOCK_PERS_1)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_1 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_1] (AUDIBLEWALKAWAYLOCK_PERS_1)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_1 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_1] (AUDIBLEWALKAWAYLOCK_PERS_1)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_1 ENABLE
+  - nibble: 3
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_2] (AUDIBLEWALKAWAYLOCK_PERS_2)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_2 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_2] (AUDIBLEWALKAWAYLOCK_PERS_2)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_2 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_2] (AUDIBLEWALKAWAYLOCK_PERS_2)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_2 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_2] (AUDIBLEWALKAWAYLOCK_PERS_2)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_2 ENABLE
+  - nibble: 5
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_3] (AUDIBLEWALKAWAYLOCK_PERS_3)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_3 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_3] (AUDIBLEWALKAWAYLOCK_PERS_3)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_3 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_3] (AUDIBLEWALKAWAYLOCK_PERS_3)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_3 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_3] (AUDIBLEWALKAWAYLOCK_PERS_3)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_3 ENABLE
+  - nibble: 7
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_4] (AUDIBLEWALKAWAYLOCK_PERS_4)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_4 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_4] (AUDIBLEWALKAWAYLOCK_PERS_4)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_4 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_4] (AUDIBLEWALKAWAYLOCK_PERS_4)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_4 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_4] (AUDIBLEWALKAWAYLOCK_PERS_4)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_4 ENABLE
+  - nibble: 9
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [VEHICLE] (AUDIBLEWALKAWAYLOCK_VEHICLE)
+      target_state: AUDIBLEWALKAWAYLOCK_VEHICLE DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [VEHICLE] (AUDIBLEWALKAWAYLOCK_VEHICLE)
+      target_state: AUDIBLEWALKAWAYLOCK_VEHICLE DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [VEHICLE] (AUDIBLEWALKAWAYLOCK_VEHICLE)
+      target_state: AUDIBLEWALKAWAYLOCK_VEHICLE DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [VEHICLE] (AUDIBLEWALKAWAYLOCK_VEHICLE)
+      target_state: AUDIBLEWALKAWAYLOCK_VEHICLE ENABLE
+- module: BCM
+  address: 726-89-02
+  mask: x*x* x*x* x*--
+  nibbles:
+  - nibble: 1
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_1] (WALKAWAYLOCK_PERS_1)
+      target_state: WALKAWAYLOCK_PERS_1 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_1] (WALKAWAYLOCK_PERS_1)
+      target_state: WALKAWAYLOCK_PERS_1 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_1] (WALKAWAYLOCK_PERS_1)
+      target_state: WALKAWAYLOCK_PERS_1 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_1] (WALKAWAYLOCK_PERS_1)
+      target_state: WALKAWAYLOCK_PERS_1 ENABLE
+  - nibble: 3
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_2] (WALKAWAYLOCK_PERS_2)
+      target_state: WALKAWAYLOCK_PERS_2 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_2] (WALKAWAYLOCK_PERS_2)
+      target_state: WALKAWAYLOCK_PERS_2 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_2] (WALKAWAYLOCK_PERS_2)
+      target_state: WALKAWAYLOCK_PERS_2 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_2] (WALKAWAYLOCK_PERS_2)
+      target_state: WALKAWAYLOCK_PERS_2 ENABLE
+  - nibble: 5
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_3] (WALKAWAYLOCK_PERS_3)
+      target_state: WALKAWAYLOCK_PERS_3 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_3] (WALKAWAYLOCK_PERS_3)
+      target_state: WALKAWAYLOCK_PERS_3 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_3] (WALKAWAYLOCK_PERS_3)
+      target_state: WALKAWAYLOCK_PERS_3 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_3] (WALKAWAYLOCK_PERS_3)
+      target_state: WALKAWAYLOCK_PERS_3 ENABLE
+  - nibble: 7
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_4] (WALKAWAYLOCK_PERS_4)
+      target_state: WALKAWAYLOCK_PERS_4 DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_4] (WALKAWAYLOCK_PERS_4)
+      target_state: WALKAWAYLOCK_PERS_4 DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_4] (WALKAWAYLOCK_PERS_4)
+      target_state: WALKAWAYLOCK_PERS_4 DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [PERS_4] (WALKAWAYLOCK_PERS_4)
+      target_state: WALKAWAYLOCK_PERS_4 ENABLE
+  - nibble: 9
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [VEHICLE] (WALKAWAYLOCK_VEHICLE)
+      target_state: WALKAWAYLOCK_VEHICLE DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [VEHICLE] (WALKAWAYLOCK_VEHICLE)
+      target_state: WALKAWAYLOCK_VEHICLE DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [VEHICLE] (WALKAWAYLOCK_VEHICLE)
+      target_state: WALKAWAYLOCK_VEHICLE DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [WALKAWAYLOCK] [VEHICLE] (WALKAWAYLOCK_VEHICLE)
+      target_state: WALKAWAYLOCK_VEHICLE ENABLE
+- module: BCM
+  address: 726-90-01
+  mask: x*x* xxxx xx--
+  nibbles:
+  - nibble: 1
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK] (AUDIBLEWALKAWAYLOCK)
+      target_state: AUDIBLEWALKAWAYLOCK DISABLE
+    - bit: 2
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK] (AUDIBLEWALKAWAYLOCK)
+      target_state: AUDIBLEWALKAWAYLOCK DISABLE
+    - bit: 1
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK] (AUDIBLEWALKAWAYLOCK)
+      target_state: AUDIBLEWALKAWAYLOCK DISABLE
+    - bit: 0
+      action: 1
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK] (AUDIBLEWALKAWAYLOCK)
+      target_state: AUDIBLEWALKAWAYLOCK ENABLE
+  - nibble: 3
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
+      target_state: WALKAWAYLOCK DISABLE
+    - bit: 2
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
+      target_state: WALKAWAYLOCK DISABLE
+    - bit: 1
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
+      target_state: WALKAWAYLOCK DISABLE
+    - bit: 0
+      action: 1
+      feature_name: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
+      target_state: WALKAWAYLOCK ENABLE
+- module: APIM
+  address: 7D0-09-05
+  mask: xxxx *xxx xx--
+  nibbles:
+  - nibble: 4
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Walk Away Lock (WAL)
+      target_state: WAL Enabled
+    - bit: 2
+      action: 1
+      feature_name: Walk Away Lock Feedback (WALF)
+      target_state: WALF Enabled
+    recommended_hex: C

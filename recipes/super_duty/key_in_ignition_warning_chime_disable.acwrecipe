@@ -13,8 +13,11 @@ steps:
   address: 720-02-01
   mask: xx*x xxxx xx--
   notes: Subtract 8 from current value (Hex)
-  nibble: 2
-  feature_name: REGULATORY FMVSS CHIME  (REGULATORYFMVSSCHIME)
-  target_state: REGULATORYFMVSSCHIME disabled
-  bit: 3
-  action: 0
+  nibbles:
+  - nibble: 2
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: REGULATORY FMVSS CHIME  (REGULATORYFMVSSCHIME)
+      target_state: REGULATORYFMVSSCHIME disabled
+    notes: Subtract 8 from current value (Hex)

@@ -22,12 +22,17 @@ steps:
   notes: 'Can use Forscan easy mode to change this
 
     Bit 2 (add 2 to make silent, e.g. change 0 to 2, etc)'
-  nibble: 5
-  hex_offset: '+2'
   community_instruction: 'Can use Forscan easy mode to change this
 
     Bit 2 (add 2 to make silent, e.g. change 0 to 2, etc)'
-  feature_name: Seatbelt Warning Market (SWM)
-  target_state: SWM ECE
-  bit: 1
-  action: 1
+  nibbles:
+  - nibble: 5
+    bits:
+    - bit: 1
+      action: 1
+      feature_name: Seatbelt Warning Market (SWM)
+      target_state: SWM ECE
+    hex_offset: '+2'
+    notes: 'Can use Forscan easy mode to change this
+
+      Bit 2 (add 2 to make silent, e.g. change 0 to 2, etc)'

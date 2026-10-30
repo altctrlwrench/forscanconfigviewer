@@ -12,11 +12,13 @@ steps:
 - module: BDYCM-BCM
   address: 726-15-01
   mask: xxxx xxxx **--
-  notes: Tire Size Calculator
+  notes: 'User input required: Enter tire circumference in MM encoded in hex. Keep
+    factory value unless calibrating new tire size.'
   type: continuous
   unit: mm
   feature_name: Tire Circumference (TC)
   instruction: Tire Size Calculator https://docs.google.com/spreadsheets/d/1EaVYjY7QC8iYAdsiYnSeJQ9SbyMEVSTYz0Kmb0at4Ps/edit?usp=sharing
+  user_input: required
 - module: ''
   address: 726-15-02
   mask: '**xx xx--'
@@ -24,3 +26,6 @@ steps:
   unit: mm
   feature_name: Tire Circumference (TC)
   instruction: Tire Size Calculator https://docs.google.com/spreadsheets/d/1EaVYjY7QC8iYAdsiYnSeJQ9SbyMEVSTYz0Kmb0at4Ps/edit?usp=sharing
+  user_input: required
+  notes: 'User input required: Enter tire circumference in MM encoded in hex. Keep
+    factory value unless calibrating new tire size.'

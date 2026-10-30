@@ -1,0 +1,32 @@
+title: Audio System Base EQ Configuration
+raw_community_title: Base EQ configuration (non-LUX)
+category: Audio and Entertainment
+platform: Bronco
+model_years: 2021-2024
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2022 Bronco.xlsx
+notes: '00 = EQ Off
+
+  01 = EQ On (High-pass filter on the rear pods)
+
+  Confirmed: RagnarKon'
+steps:
+- module: ACM
+  address: 727-01-02
+  mask: xx** xxxx xxxx
+  notes: '00 = EQ Off
+
+    01 = EQ On (High-pass filter on the rear pods)'
+  type: multi_choice
+  recommended_hex: '00'
+  target_state: EQ Off
+  options:
+    '00': EQ Off (Removes high-pass filter on rear pods)
+    '01': EQ On (Factory default high-pass filter)
+  nibbles:
+  - nibble: 2
+    recommended_hex: '0'
+  - nibble: 3
+    recommended_hex: '0'

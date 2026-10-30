@@ -1,0 +1,50 @@
+title: Welcome & Approach Detection Lighting
+raw_community_title: 'Enable Approach Lighting
+
+
+  https://www.explorerst.org/threads/enabling-
+
+  approach-welcome-lighting.9062/'
+category: Lighting
+platform: Explorer
+model_years: 2025-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2025-2026 Explorer.xlsx
+notes: "[BCM] - - Enable the following from DISABLED to ENABLED in BdyCM (easy way):\
+  \ \n-Approach Detection - Personal 1\n-Approach Detection - Personal 2\n-Approach\
+  \ Detection - Personal 3\n-Approach Detection - Personal 4\n-Approach Detection\
+  \ - Vehicle\n-Approach Detection - Initial Value"
+steps:
+- module: BCM
+  address: 726-45-01
+  mask: xxxx xxx* xx--
+  notes: "[BCM] - - Enable the following from DISABLED to ENABLED in BdyCM (forscan\
+    \ easy way): \n-Approach Detection - Personal 1\n-Approach Detection - Personal\
+    \ 2\n-Approach Detection - Personal 3\n-Approach Detection - Personal 4\n-Approach\
+    \ Detection - Vehicle\n-Approach Detection - Initial Value"
+  nibbles:
+  - nibble: 7
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Approach_Lighting_Enable_Cfg (ALEC)
+      target_state: ALEC DISABLE
+    - bit: 2
+      action: 0
+      feature_name: Approach_Lighting_Enable_Cfg (ALEC)
+      target_state: ALEC DISABLE
+    - bit: 1
+      action: 0
+      feature_name: Approach_Lighting_Enable_Cfg (ALEC)
+      target_state: ALEC DISABLE
+    - bit: 0
+      action: 1
+      feature_name: Approach_Lighting_Enable_Cfg (ALEC)
+      target_state: ALEC ENABLE
+    recommended_hex: '1'
+    notes: "[BCM] - - Enable the following from DISABLED to ENABLED in BdyCM (forscan\
+      \ easy way): \n-Approach Detection - Personal 1\n-Approach Detection - Personal\
+      \ 2\n-Approach Detection - Personal 3\n-Approach Detection - Personal 4\n-Approach\
+      \ Detection - Vehicle\n-Approach Detection - Initial Value"

@@ -1,0 +1,37 @@
+title: Bambi Mode (High Beams with Fog Lights)
+raw_community_title: Fogs on when high beams are on (aka Bambi Mode) (2021-2026)
+category: Lighting
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: 'Sets front fog allowed with high beams Note: Shares identical BCM/APIM Group
+  A engineering table with ICE F-150; pending physical field test on EV.'
+steps:
+- module: BCM
+  address: 726-39-02
+  mask: xxx* xxxx xx--
+  nibbles:
+  - nibble: 3
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
+      target_state: FFWHBC ALLOW
+    - bit: 2
+      action: 0
+      feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
+      target_state: FFWHBC ALLOW
+    - bit: 1
+      action: 0
+      feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
+      target_state: FFWHBC ALLOW
+    - bit: 0
+      action: 0
+      feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
+      target_state: FFWHBC ALLOW
+    recommended_hex: '0'
+validation_status: candidate
+confidence: high

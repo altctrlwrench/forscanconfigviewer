@@ -13,20 +13,18 @@ steps:
   address: 760-04-03
   mask: xxxx xxx* xx--
   notes: Add 2 to current value
-  nibble: 7
   hex_offset: '+2'
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: EOL_SDM_Generic_Mode12 (EOLSDMGM)
-  - bit: 2
-    action: 0
-    feature_name: EOL_SDM_Generic_Mode12 (EOLSDMGM)
-  - bit: 1
-    action: 1
-    feature_name: EOL_SDM_Generic_Mode10 (EOLSDMGM)
-    target_state: EOLSDMGM Enabled (Rock Crawl) MFAL ABFAL (EXTERIOR APPEARANCE -
-      LEVEL 2)
-  - bit: 0
-    action: 0
-    feature_name: EOL_SDM_Generic_Mode12 (EOLSDMGM)
+  nibbles:
+  - nibble: 7
+    recommended_hex: '3'
+    feature_name: Drive Mode - Rock/Crawl (SDM Mode 10)
+    target_state: Enabled
+    bits:
+    - bit: 1
+      action: 1
+      feature_name: Drive Mode - Rock/Crawl (SDM Mode 10)
+      target_state: Enabled
+    - bit: 0
+      action: 1
+      feature_name: Drive Mode - Rock/Crawl (SDM Mode 10)
+      target_state: Enabled

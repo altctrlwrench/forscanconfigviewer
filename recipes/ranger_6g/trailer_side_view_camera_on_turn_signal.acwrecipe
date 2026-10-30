@@ -22,29 +22,39 @@ steps:
     \ 3)  \nIf only left camera is desired, instead of adding 3, add 1, and if only\
     \ right camera is desired, add 2\nFORScan Menu: unknown, use asbuilt (advanced)\
     \ (Not available - use asbuilt)\nConfirmed: craigc (10/4/2024) Lariat"
-  nibble: 0
-  hex_offset: '+8'
-  bits:
-  - bit: 1
-    action: 1
-    feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
-    target_state: MFCTSV Right
-  - bit: 0
-    action: 1
-    feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
-    target_state: MFCTSV Left
+  nibbles:
+  - nibble: 0
+    bits:
+    - bit: 1
+      action: 1
+      feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
+      target_state: MFCTSV Right
+    - bit: 0
+      action: 1
+      feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
+      target_state: MFCTSV Left
+    hex_offset: '+8'
+    notes: "* -> Bits 1 and 2 (add 3 to enable both right and left.  e.g. change 0\
+      \ to 3)  \nIf only left camera is desired, instead of adding 3, add 1, and if\
+      \ only right camera is desired, add 2\nFORScan Menu: unknown, use asbuilt (advanced)\
+      \ (Not available - use asbuilt)\nConfirmed: craigc (10/4/2024) Lariat"
 - module: APIM
   address: 7D0-02-03
   mask: xxxx x*xx xx--
   notes: '* -> Bit 4 (add 8 to enable.  e.g. change 5 to D)
 
     FORScan Menu: Turn Signal Views (Disabled (Default), Enabled)'
-  nibble: 5
-  hex_offset: '+8'
   community_instruction: '* -> Bit 4 (add 8 to enable.  e.g. change 5 to D)
 
     FORScan Menu: Turn Signal Views (Disabled (Default), Enabled)'
-  feature_name: Turn Signal Views (TSV)
-  target_state: TSV Present
-  bit: 3
-  action: 1
+  nibbles:
+  - nibble: 5
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Turn Signal Views (TSV)
+      target_state: TSV Present
+    hex_offset: '+8'
+    notes: '* -> Bit 4 (add 8 to enable.  e.g. change 5 to D)
+
+      FORScan Menu: Turn Signal Views (Disabled (Default), Enabled)'

@@ -14,9 +14,12 @@ steps:
   address: 7D0-02-02
   mask: xxx* xxxx xx--
   notes: Add 1 to Current Value - Sync version must be 23151 rev 902 or higher
-  nibble: 3
-  hex_offset: '+1'
-  feature_name: RCOD HMI w/o Blackbox (RCODHMIB)
-  target_state: RCODHMIB Disabled
-  bit: 0
-  action: 0
+  nibbles:
+  - nibble: 3
+    bits:
+    - bit: 0
+      action: 0
+      feature_name: RCOD HMI w/o Blackbox (RCODHMIB)
+      target_state: RCODHMIB Disabled
+    hex_offset: '+1'
+    notes: Add 1 to Current Value - Sync version must be 23151 rev 902 or higher

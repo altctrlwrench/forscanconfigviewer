@@ -18,10 +18,13 @@ steps:
   address: 720-11-01
   mask: xxxx *xxx xx--
   notes: Bit 4 (Add 8 to enable, e.g. change 2 to A)
-  nibble: 4
-  hex_offset: '+8'
   community_instruction: Bit 4 (Add 8 to enable, e.g. change 2 to A)
-  feature_name: Tire Temperature Display (TTD)
-  target_state: TTD Enabled
-  bit: 3
-  action: 1
+  nibbles:
+  - nibble: 4
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Tire Temperature Display (TTD)
+      target_state: TTD Enabled
+    hex_offset: '+8'
+    notes: Bit 4 (Add 8 to enable, e.g. change 2 to A)

@@ -16,15 +16,17 @@ steps:
   address: 7D0-09-01
   mask: xx*x xxxx xx--
   notes: Bit 4 (Add 8 to enable, e.g. change 3 to B)
-  nibble: 2
-  hex_offset: '+8'
   community_instruction: Bit 4 (Add 8 to enable, e.g. change 3 to B)
-  bits:
-  - bit: 3
-    action: 1
-    feature_name: Autolock Control Function (ACF)
-    target_state: ACF Enabled
-  - bit: 0
-    action: 1
-    feature_name: Autounlock Control Function (ACF)
-    target_state: ACF Enabled
+  nibbles:
+  - nibble: 2
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Autolock Control Function (ACF)
+      target_state: ACF Enabled
+    - bit: 0
+      action: 1
+      feature_name: Autounlock Control Function (ACF)
+      target_state: ACF Enabled
+    hex_offset: '+8'
+    notes: Bit 4 (Add 8 to enable, e.g. change 3 to B)

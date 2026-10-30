@@ -17,12 +17,25 @@ steps:
 - module: SCCM
   address: 724-01-01
   mask: xxxx **xx --
-  notes: 'suggest use the non asbuilt menu option
-
-    ** -> 84=1, 8C=3, 90=4, 94=5, 98=6, etc.
-
-    FORScan Menu: Lane Change Cancel Blink Number (Set to # of blinks (Default is
-    3))
-
-    Confirmed: craigc (9/16/2024) Lariat'
-  feature_name: LaneChange_Cancel_Blink_Num (LCCBN)
+  notes: 'Sets lane change turn signal count. User preference variable (recommended
+    default: 5 flashes / 94 hex).'
+  type: multi_choice
+  recommended_hex: '94'
+  target_state: 5 Flashes
+  options:
+    '80': Null / Disabled
+    '84': 1 Flash
+    '88': 2 Flashes
+    8C: 3 Flashes (Factory Default)
+    '90': 4 Flashes
+    '94': 5 Flashes (Recommended Default)
+    '98': 6 Flashes
+    9C: 7 Flashes
+    A0: 8 Flashes
+    A4: 9 Flashes
+    A8: 10 Flashes
+  nibbles:
+  - nibble: 4
+    recommended_hex: '9'
+  - nibble: 5
+    recommended_hex: '4'

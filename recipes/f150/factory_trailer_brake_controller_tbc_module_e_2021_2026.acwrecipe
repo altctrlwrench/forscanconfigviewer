@@ -1,0 +1,113 @@
+title: Factory Trailer Brake Controller (TBC) Module Enable
+raw_community_title: 2021-26 - Adding OEM Trailer Brake Controller
+category: Powertrain and Drivetrain
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: use E for a turbo engine, use A for a 5.0L
+steps:
+- module: IPC
+  address: 720-07-01
+  mask: xxxx x*xx xx--
+  notes: use E for a turbo engine, use A for a 5.0L
+  community_instruction: use E for a turbo engine, use A for a 5.0L
+  nibbles:
+  - nibble: 5
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Trailer Brake Controller (TBC)
+      target_state: TBC enabled
+    notes: use E for a turbo engine, use A for a 5.0L
+- module: BCM
+  address: 726-69-02
+  mask: xxxx x*xx x*--
+  nibbles:
+  - nibble: 5
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: TBM_Available_Cfg (TBMAC)
+      target_state: TBMAC ABSENT
+    - bit: 2
+      action: 0
+      feature_name: TBM_Available_Cfg (TBMAC)
+      target_state: TBMAC ABSENT
+    - bit: 1
+      action: 0
+      feature_name: TBM_Available_Cfg (TBMAC)
+      target_state: TBMAC ABSENT
+    - bit: 0
+      action: 1
+      feature_name: TBM_Available_Cfg (TBMAC)
+      target_state: TBMAC PRESENT
+  - nibble: 9
+    recommended_hex: '1'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: TRM_Available_Cfg (TRMAC)
+      target_state: TRMAC ABSENT
+    - bit: 2
+      action: 0
+      feature_name: TRM_Available_Cfg (TRMAC)
+      target_state: TRMAC ABSENT
+    - bit: 1
+      action: 0
+      feature_name: TRM_Available_Cfg (TRMAC)
+      target_state: TRMAC ABSENT
+    - bit: 0
+      action: 1
+      feature_name: TRM_Available_Cfg (TRMAC)
+      target_state: TRMAC PRESENT
+- module: TRM
+  address: 791-01-02
+  mask: xxxx x*--
+  notes: add 1 to current value (if 4 make 5, if 2 make 3)
+  community_instruction: add 1 to current value (if 4 make 5, if 2 make 3)
+  nibbles:
+  - nibble: 5
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: TBM_Cfg (TBMC)
+      target_state: TBMC PRESENT
+    hex_offset: '+1'
+    notes: add 1 to current value (if 4 make 5, if 2 make 3)
+- module: APIM
+  address: 7D0-09-03
+  mask: xxxx xxx* xx--
+  nibbles:
+  - nibble: 7
+    bits:
+    - bit: 2
+      action: 1
+      feature_name: Trailer Brake Controller (TBC)
+      target_state: TBC Enabled
+    recommended_hex: '4'
+- module: IPMA
+  address: 706-18-01
+  mask: xxxx xxx* xx--
+  nibbles:
+  - nibble: 7
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: VehicleInfo_TrailerLightModule (VITLM)
+      target_state: VITLM Present
+    - bit: 2
+      action: 1
+      feature_name: VehicleInfo_TrailerBrakeModule (VITBM)
+      target_state: VITBM Present
+    - bit: 1
+      action: 0
+      feature_name: VehicleInfo_TrailerLightModule (VITLM)
+    - bit: 0
+      action: 0
+      feature_name: VehicleInfo_TrailerLightModule (VITLM)
+    recommended_hex: C
+validation_status: validated

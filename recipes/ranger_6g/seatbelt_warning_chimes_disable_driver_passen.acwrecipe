@@ -12,23 +12,108 @@ steps:
 - module: IPC
   address: 720-13-01
   mask: '**** **** ****'
-  notes: 'Change all values to 0, be sure to save all values first (backup asbuilt).  This
-    turns off ALL notifications for seatbelts (front and back).  use at own risk -
-    unclear if this affects airbags
-
-    FORScan Menu: Multiple settings, use asbuilt (advanced)
-
-    Trim: All [Confirmed: ???]'
-  feature_name: Belt Minder Chime Operator (BMCO)
+  notes: Set all masked nibbles to 0 to disable seatbelt chimes and warning notifications.
+  type: all_zeros
+  target_state: All Seatbelt Warnings Disabled
+  nibbles:
+  - nibble: 0
+    recommended_hex: '0'
+  - nibble: 1
+    recommended_hex: '0'
+  - nibble: 2
+    recommended_hex: '0'
+  - nibble: 3
+    recommended_hex: '0'
+  - nibble: 4
+    recommended_hex: '0'
+  - nibble: 5
+    recommended_hex: '0'
+  - nibble: 6
+    recommended_hex: '0'
+  - nibble: 7
+    recommended_hex: '0'
+  - nibble: 8
+    recommended_hex: '0'
+  - nibble: 9
+    recommended_hex: '0'
+  - nibble: 10
+    recommended_hex: '0'
+  - nibble: 11
+    recommended_hex: '0'
 - module: IPC
   address: 720-13-02
   mask: '**** ****'
-  feature_name: R4 Bench (RB)
+  type: all_zeros
+  target_state: All Seatbelt Warnings Disabled
+  notes: Set all masked nibbles to 0 to disable seatbelt chimes and warning notifications.
+  nibbles:
+  - nibble: 0
+    recommended_hex: '0'
+  - nibble: 1
+    recommended_hex: '0'
+  - nibble: 2
+    recommended_hex: '0'
+  - nibble: 3
+    recommended_hex: '0'
+  - nibble: 4
+    recommended_hex: '0'
+  - nibble: 5
+    recommended_hex: '0'
+  - nibble: 6
+    recommended_hex: '0'
+  - nibble: 7
+    recommended_hex: '0'
 - module: IPC
   address: 720-14-01
   mask: '**** **** ****'
-  feature_name: R2C5 Seatbelt (RCS)
+  type: all_zeros
+  target_state: All Seatbelt Warnings Disabled
+  notes: Set all masked nibbles to 0 to disable seatbelt chimes and warning notifications.
+  nibbles:
+  - nibble: 0
+    recommended_hex: '0'
+  - nibble: 1
+    recommended_hex: '0'
+  - nibble: 2
+    recommended_hex: '0'
+  - nibble: 3
+    recommended_hex: '0'
+  - nibble: 4
+    recommended_hex: '0'
+  - nibble: 5
+    recommended_hex: '0'
+  - nibble: 6
+    recommended_hex: '0'
+  - nibble: 7
+    recommended_hex: '0'
+  - nibble: 8
+    recommended_hex: '0'
+  - nibble: 9
+    recommended_hex: '0'
+  - nibble: 10
+    recommended_hex: '0'
+  - nibble: 11
+    recommended_hex: '0'
 - module: IPC
   address: 720-14-02
   mask: '**** ****'
-  feature_name: R4C5 Seatbelt (RCS)
+  type: all_zeros
+  target_state: All Seatbelt Warnings Disabled
+  notes: Set all masked nibbles to 0 to disable seatbelt chimes and warning notifications.
+  nibbles:
+  - nibble: 0
+    recommended_hex: '0'
+  - nibble: 1
+    recommended_hex: '0'
+  - nibble: 2
+    recommended_hex: '0'
+  - nibble: 3
+    recommended_hex: '0'
+  - nibble: 4
+    recommended_hex: '0'
+  - nibble: 5
+    recommended_hex: '0'
+  - nibble: 6
+    recommended_hex: '0'
+  - nibble: 7
+    recommended_hex: '0'

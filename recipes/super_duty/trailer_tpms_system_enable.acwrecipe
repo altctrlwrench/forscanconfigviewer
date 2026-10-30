@@ -13,9 +13,12 @@ steps:
   address: 720-09-01
   mask: xx*x xxxx xx--
   notes: Add 2 to current value
-  nibble: 2
-  hex_offset: '+2'
-  feature_name: Down shift Indicator (DI)
-  target_state: DI enabled
-  bit: 0
-  action: 1
+  nibbles:
+  - nibble: 2
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: Down shift Indicator (DI)
+      target_state: DI enabled
+    hex_offset: '+2'
+    notes: Add 2 to current value

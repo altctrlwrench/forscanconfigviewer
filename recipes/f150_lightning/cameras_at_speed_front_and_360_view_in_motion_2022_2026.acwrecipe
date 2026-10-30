@@ -1,0 +1,100 @@
+title: Cameras at Speed (Front & 360 View in Motion)
+raw_community_title: Enable cameras while moving
+category: Cameras and ADAS
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: Restores camera views while moving if reset by an update. If you have a PRO
+  without 360 view (w/o Tow Technology), do not use these IPMA settings.
+steps:
+- module: APIM
+  address: 7D0-02-02
+  mask: xxx* xxxx xx--
+  nibbles:
+  - nibble: 3
+    community_instruction: If 0 change to 1, if 2 change to 3, if 4 change to 5, if
+      6 change to 7.
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Powerflow Type (PT)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Climate Bar (CB)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Climate Bar (CB)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Climate Bar (CB)
+      target_state: Disabled
+- module: IPMA
+  address: 706-02-02
+  mask: xxx* **xx xx--
+  nibbles:
+  - nibble: 3
+    recommended_hex: F
+    community_instruction: Set to F
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_Hitch (FCDPACVCASH)
+      target_state: Enabled
+    - bit: 2
+      action: 1
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_Aux (FCDPACVCASA)
+      target_state: Enabled
+    - bit: 1
+      action: 1
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_CHMSL (FCDPACVCASCHMSL)
+      target_state: Enabled
+    - bit: 0
+      action: 1
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_RCOD (FCDPACVCASRCOD)
+      target_state: Enabled
+  - nibble: 4
+    recommended_hex: C
+    community_instruction: Set to C
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: FeatureCfg_TBA_HitchView (FCTBAHV)
+      target_state: Enabled
+    - bit: 2
+      action: 1
+      feature_name: FeatureCfg_TBA_AuxTRG_PiP (FCTBAATRGPP)
+      target_state: Enabled
+    - bit: 1
+      action: 0
+      feature_name: FeatureCfg_DPAC_FrontRockCrawl (FCDPACFRC)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: FeatureCfg_DPAC_RearRockCrawl (FCDPACRRC)
+      target_state: Disabled
+  - nibble: 5
+    community_instruction: for 22-23's change to 'E', for 24-25's change to 'A'
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: FeatureCfg_DPAC_OffsetOverlay (FCDPACOO)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: FeatureCfg_DPAC_OffRoadOverlay (FCDPACORO)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed (FCDPACVCAS)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: FeatureCfg_DPAC_OffRoadCameraMenu (FCDPACORCM)
+      target_state: Disabled
+validation_status: validated

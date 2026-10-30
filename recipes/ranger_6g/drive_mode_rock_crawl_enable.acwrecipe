@@ -20,4 +20,17 @@ steps:
     FORScan Menu: SDM - Mode 10 (Rock/Crawl?) (Disabled (Default), Enabled)
 
     Trim: 4x4 [Confirmed: craigc (9/12/2024) Lariat]'
-  feature_name: SDM_GENERIC_MODE12 (SDMGENERICMODE)
+  nibbles:
+  - nibble: 7
+    recommended_hex: '3'
+    feature_name: Drive Mode - Rock/Crawl (SDM Mode 10)
+    target_state: Enabled
+    bits:
+    - bit: 1
+      action: 1
+      feature_name: Drive Mode - Rock/Crawl (SDM Mode 10)
+      target_state: Enabled
+    - bit: 0
+      action: 1
+      feature_name: Drive Mode - Rock/Crawl (SDM Mode 10)
+      target_state: Enabled

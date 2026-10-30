@@ -1,0 +1,24 @@
+title: Sync Climate Bar - Heated Steering Wheel Icon
+raw_community_title: Enable Heated Steering Wheel on climate bar above
+category: Sync and Infotainment
+platform: F-150
+model_years: 2021-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro
+source_sheet: 2021-2026 F150.xlsx
+notes: see APIM spreadsheet for your value
+steps:
+- module: APIM
+  address: 7D0-02-01
+  mask: xxxx *xxx xx--
+  notes: see APIM spreadsheet for your value
+  nibbles:
+  - nibble: 4
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: Heated Steering Wheel (HSW)
+      target_state: HSW Available
+    notes: see APIM spreadsheet for your value
+validation_status: validated

@@ -14,5 +14,6 @@ steps:
   mask: '*xxx xxxx --'
   notes: Range 24°c-39°c (1-F) ex:B=35°c
   type: continuous
+  user_input: required
   feature_name: HSW_Level_3_TempSetPt (HSWLTSP)
   instruction: Range 24°c-39°c (1-F) ex:B=35°c

@@ -13,10 +13,13 @@ steps:
   address: 7D0-02-02
   mask: xxx* xxxx xx--
   notes: Add 2 to current value
-  nibble: 3
-  recommended_hex: '2'
-  hex_offset: '+2'
-  feature_name: Climate Bar (CB)
-  target_state: CB Enabled
-  bit: 1
-  action: 1
+  nibbles:
+  - nibble: 3
+    bits:
+    - bit: 1
+      action: 1
+      feature_name: Climate Bar (CB)
+      target_state: CB Enabled
+    recommended_hex: '2'
+    hex_offset: '+2'
+    notes: Add 2 to current value

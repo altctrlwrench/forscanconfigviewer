@@ -20,6 +20,7 @@ steps:
     FORScan Menu: Heated Steering Wheel Temp Level (35 Celsius (Default).  24 deg
     through 39 degrees)'
   type: continuous
+  user_input: required
   feature_name: HSW_Level_3_TempSetPt (HSWLTSP)
   instruction: 'FORScan Menu: Heated Steering Wheel Temp Level (35 Celsius (Default).  24
     deg through 39 degrees'

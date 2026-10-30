@@ -15,36 +15,44 @@ steps:
   address: 760-03-01
   mask: '*xxx xxxx xx--'
   notes: Add 1 to current value
-  nibble: 0
-  hex_offset: '+4'
-  bits:
-  - bit: 3
-    action: 0
-    feature_name: Reserved  (R)
-  - bit: 2
-    action: 0
-    feature_name: Reserved  (R)
-  - bit: 0
-    action: 1
-    feature_name: Autohold  (A)
-    target_state: A With Autohold [Standard Equipment]
+  nibbles:
+  - nibble: 0
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Reserved  (R)
+    - bit: 2
+      action: 0
+      feature_name: Reserved  (R)
+    - bit: 0
+      action: 1
+      feature_name: Autohold  (A)
+      target_state: A With Autohold [Standard Equipment]
+    hex_offset: '+4'
+    notes: Add 1 to current value
 - module: APIM
   address: 7D0-01-03
   mask: xx*x xxxx xx--
   notes: Add 4 to current value
-  nibble: 2
-  hex_offset: '+4'
-  feature_name: Auto Hold (AH)
-  target_state: AH Enabled
-  bit: 2
-  action: 1
+  nibbles:
+  - nibble: 2
+    bits:
+    - bit: 2
+      action: 1
+      feature_name: Auto Hold (AH)
+      target_state: AH Enabled
+    hex_offset: '+4'
+    notes: Add 4 to current value
 - module: IPC
   address: 720-02-01
   mask: xxxx x*xx xx--
   notes: Add 1 to current value
-  nibble: 5
-  hex_offset: '+4'
-  feature_name: AutoHold (AH)
-  target_state: AH enabled
-  bit: 0
-  action: 1
+  nibbles:
+  - nibble: 5
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: AutoHold (AH)
+      target_state: AH enabled
+    hex_offset: '+4'
+    notes: Add 1 to current value

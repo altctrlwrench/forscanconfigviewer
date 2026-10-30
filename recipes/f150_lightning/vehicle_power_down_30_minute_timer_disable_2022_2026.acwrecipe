@@ -1,0 +1,36 @@
+title: Vehicle Power Down 30-Minute Timer Disable
+raw_community_title: Disable Vehicle Power Down Timer at Start
+category: Convenience and Body
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: Defaults the 30-minute idle shutdown timer to off at startup. 2022-2024 Lightnings
+  with ACC will have 'F'; trucks without ACC will have 'C'.
+steps:
+- module: IPC
+  address: 720-01-01
+  mask: x*xx xxxx xx--
+  nibbles:
+  - nibble: 1
+    community_instruction: if F then change to 7, if C change to 4.
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: AEIS With Override (AEISWO)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: ABS Configuration (ABSC)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: ACC_Menu_Cfg (ACCMC)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Adaptive Cruise (AC)
+      target_state: Disabled
+validation_status: validated

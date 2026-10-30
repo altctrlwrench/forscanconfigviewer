@@ -13,14 +13,16 @@ steps:
   address: 760-03-01
   mask: xxxx *xxx xx--
   notes: Add 2 to your value
-  nibble: 4
-  hex_offset: '+2'
-  bits:
-  - bit: 2
-    action: 0
-    feature_name: PATS (PATS)
-  - bit: 1
-    action: 1
-    feature_name: HDC Only (HDCO)
-    target_state: HDCO With HDC (Hill Descent Control) MFAL FECAB (ABS - HILL DESCENT
-      CONTROL)
+  nibbles:
+  - nibble: 4
+    bits:
+    - bit: 2
+      action: 0
+      feature_name: PATS (PATS)
+    - bit: 1
+      action: 1
+      feature_name: HDC Only (HDCO)
+      target_state: HDCO With HDC (Hill Descent Control) MFAL FECAB (ABS - HILL DESCENT
+        CONTROL)
+    hex_offset: '+2'
+    notes: Add 2 to your value

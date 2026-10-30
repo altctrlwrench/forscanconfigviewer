@@ -1,0 +1,287 @@
+title: Welcome & Approach Detection Lighting
+raw_community_title: Enable Approach/Welcome Lighting on 2025 Job 2 Flash
+category: Lighting
+platform: F-150 Lightning
+model_years: 2024-2026
+trim: All
+validated: true
+verified_by: Kyle / AsBuiltPro & Lightning Community
+source_sheet: F-150 Lightning FORScan Thread
+notes: Enables approach and welcome lighting sequence on 2025 Job 2 Flash.
+steps:
+- module: BCM
+  address: 726-18-01
+  mask: '**** **** **--'
+  nibbles:
+  - nibble: 0
+    recommended_hex: '0'
+    community_instruction: change 0000 0000 00 to 0101 0101 01
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+  - nibble: 1
+    recommended_hex: '1'
+    community_instruction: change 0000 0000 00 to 0101 0101 01
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Enabled
+  - nibble: 2
+    recommended_hex: '0'
+    community_instruction: change 0000 0000 00 to 0101 0101 01
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+  - nibble: 3
+    recommended_hex: '1'
+    community_instruction: change 0000 0000 00 to 0101 0101 01
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_2] (APPROACHDETECTION_PERS_2)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_2] (APPROACHDETECTION_PERS_2)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_2] (APPROACHDETECTION_PERS_2)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_2] (APPROACHDETECTION_PERS_2)
+      target_state: Enabled
+  - nibble: 4
+    recommended_hex: '0'
+    community_instruction: change 0000 0000 00 to 0101 0101 01
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+  - nibble: 5
+    recommended_hex: '1'
+    community_instruction: change 0000 0000 00 to 0101 0101 01
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_3] (APPROACHDETECTION_PERS_3)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_3] (APPROACHDETECTION_PERS_3)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_3] (APPROACHDETECTION_PERS_3)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_3] (APPROACHDETECTION_PERS_3)
+      target_state: Enabled
+  - nibble: 6
+    recommended_hex: '0'
+    community_instruction: change 0000 0000 00 to 0101 0101 01
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+  - nibble: 7
+    recommended_hex: '1'
+    community_instruction: change 0000 0000 00 to 0101 0101 01
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_4] (APPROACHDETECTION_PERS_4)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_4] (APPROACHDETECTION_PERS_4)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_4] (APPROACHDETECTION_PERS_4)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_4] (APPROACHDETECTION_PERS_4)
+      target_state: Enabled
+  - nibble: 8
+    recommended_hex: '0'
+    community_instruction: change 0000 0000 00 to 0101 0101 01
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+      target_state: Disabled
+  - nibble: 9
+    recommended_hex: '1'
+    community_instruction: change 0000 0000 00 to 0101 0101 01
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [VEHICLE] (APPROACHDETECTION_VEHICLE)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [VEHICLE] (APPROACHDETECTION_VEHICLE)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Feat_Cfg [APPROACHDETECTION] [VEHICLE] (APPROACHDETECTION_VEHICLE)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [APPROACHDETECTION] [VEHICLE] (APPROACHDETECTION_VEHICLE)
+      target_state: Enabled
+- module: BCM
+  address: 726-27-01
+  mask: x*xx xxxx xx--
+  nibbles:
+  - nibble: 1
+    recommended_hex: '1'
+    community_instruction: e.g., change 0001 1401 00 to 0101 1401 00
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [APPROACHDETECTION] (APPROACHDETECTION)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [APPROACHDETECTION] (APPROACHDETECTION)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: FeatLst_to_BCM_Feature_InitVal [APPROACHDETECTION] (APPROACHDETECTION)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: FeatLst_to_BCM_Feature_InitVal [APPROACHDETECTION] (APPROACHDETECTION)
+      target_state: Enabled
+- module: BCM
+  address: 726-45-01
+  mask: xxxx xxxx x*--
+  nibbles:
+  - nibble: 9
+    recommended_hex: '1'
+    community_instruction: e.g., change 0101 F401 00 to 0101 F401 01
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: Approach_Lighting_Enable_Cfg (ALEC)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Approach_Lighting_Enable_Cfg (ALEC)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Approach_Lighting_Enable_Cfg (ALEC)
+      target_state: Disabled
+    - bit: 0
+      action: 1
+      feature_name: Approach_Lighting_Enable_Cfg (ALEC)
+      target_state: Enabled
+- module: APIM
+  address: 7D0-09-01
+  mask: xxx* xxxx xx--
+  nibbles:
+  - nibble: 3
+    community_instruction: add 4 (e.g. change 6113 4A28 FE to 6117 4A28 FE)
+    bits:
+    - bit: 3
+      action: 0
+      feature_name: City Safety (CS)
+      target_state: Disabled
+    - bit: 2
+      action: 0
+      feature_name: Approach Detection Control Function (ADCF)
+      target_state: Disabled
+    - bit: 1
+      action: 0
+      feature_name: Courtesy Wipe After Wash (CWAW)
+      target_state: Disabled
+    - bit: 0
+      action: 0
+      feature_name: Driver Alert System (DAS)
+      target_state: Disabled
+validation_status: validated

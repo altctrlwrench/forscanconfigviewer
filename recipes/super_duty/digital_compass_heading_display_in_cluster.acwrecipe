@@ -13,9 +13,12 @@ steps:
   address: 720-01-01
   mask: xxxx xxxx *x--
   notes: Add 4 to current value
-  nibble: 8
-  hex_offset: '+4'
-  feature_name: Compass Sync (CS)
-  target_state: CS Present
-  bit: 2
-  action: 1
+  nibbles:
+  - nibble: 8
+    bits:
+    - bit: 2
+      action: 1
+      feature_name: Compass Sync (CS)
+      target_state: CS Present
+    hex_offset: '+4'
+    notes: Add 4 to current value
