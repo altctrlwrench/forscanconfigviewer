@@ -1,64 +1,48 @@
 title: DRL - Full Brightness with Headlamps On
-raw_community_title: DRL Brightness Adjustment
+raw_community_title: ⚡ [Lightning] DRL - Full Brightness with Headlamps On
 category: Lighting
 platform: F-150 Lightning
 model_years: 2022-2026
 trim: All
-validated: true
-verified_by: Kyle / AsBuiltPro & Lightning Community
-source_sheet: F-150 Lightning FORScan Thread
-notes: Affects the DRL lamp between the top and bottom headlamps (not the grille light
+source_sheet: 2021-2026 F150.xlsx
+notes: '[Category: Lighting] [Years: 2022-2026] [Original Title: DRL Brightness Adjustment]
+
+  Affects the DRL lamp between the top and bottom headlamps (not the grille light
   bar on XLT and above).
+
+  example values are 64 =100%, 4B =75%, 32 = 50%, 19 = 25%, 0A =10% (default).'
 steps:
 - module: BCM
   address: 726-42-01
-  mask: x*x* xxxx xx--
-  nibbles:
-  - nibble: 1
-    recommended_hex: '2'
-    community_instruction: Set to 2
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '2'
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
-      target_state: Disabled
     - bit: 2
       action: 0
-      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
-      target_state: Disabled
+      feature: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
     - bit: 1
       action: 1
-      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
-      target_state: Enabled
+      feature: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
     - bit: 0
       action: 0
-      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
-      target_state: Disabled
-  - nibble: 3
-    recommended_hex: '2'
-    community_instruction: Set to 2
+      feature: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+  - mask: xxx* xxxx xx--
+    community_hex: '2'
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
-      target_state: Disabled
     - bit: 2
       action: 0
-      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
-      target_state: Disabled
+      feature: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
     - bit: 1
       action: 1
-      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
-      target_state: Enabled
+      feature: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
     - bit: 0
       action: 0
-      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
-      target_state: Disabled
-- module: BCM
-  address: 726-38-01
-  mask: xxxx **xx xx--
-  type: continuous
-  user_input: required
-  notes: 'User input required: Enter desired PWM duty cycle hex (e.g. 3C=60%, 4B=75%,
-    64=100%). No default brightness level is recommended.'
-validation_status: validated
+      feature: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+recipe_version: '1.1'

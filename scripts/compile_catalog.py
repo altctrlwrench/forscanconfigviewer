@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Compile AsBuiltPro Recipe Catalog
-Scans recipes/**/*.yaml, validates structure, filters for validated items,
-and produces dist/master_recipes.json.
+Compile AsBuiltPro Recipe Catalog (v1.1)
+Scans recipes/**/*.acwrecipe, validates v1.1 structure,
+and produces a lean, pure dist/master_recipes.json for AsBuiltPro runtime.
 """
 
 import os
@@ -19,19 +19,19 @@ except ImportError:
 
 def compile_catalog(recipes_dir="recipes", dist_dir="dist", skip_validation=False):
     if not skip_validation:
-        print("Running recipe schema validation...")
+        print(f"Running v1.1 recipe schema validation on '{recipes_dir}'...")
         if not validate_catalog(recipes_dir):
             print("Catalog compilation aborted due to schema validation failures.", file=sys.stderr)
             sys.exit(1)
             
     os.makedirs(dist_dir, exist_ok=True)
     
-    recipe_files = glob.glob(os.path.join(recipes_dir, "**", "*.acwrecipe"), recursive=True) + glob.glob(os.path.join(recipes_dir, "**", "*.yaml"), recursive=True)
+    recipe_files = glob.glob(os.path.join(recipes_dir, "**", "*.acwrecipe"), recursive=True) + \
+                   glob.glob(os.path.join(recipes_dir, "**", "*.yaml"), recursive=True)
     recipe_files = sorted(list(set(recipe_files)))
-    print(f"Found {len(recipe_files)} recipe files in {recipes_dir}/")
+    print(f"\nCompiling {len(recipe_files)} recipe files from {recipes_dir}/...")
     
     validated_recipes = []
-    unvalidated_recipes = []
     canonical_features = defaultdict(lambda: {
         'title': '',
         'category': '',
@@ -49,80 +49,46 @@ def compile_catalog(recipes_dir="recipes", dist_dir="dist", skip_validation=Fals
         if not isinstance(data, dict):
             continue
             
+        rel_path = os.path.relpath(yf, recipes_dir).replace('\\', '/')
         title = data.get('title', 'Unknown')
         platform = data.get('platform', 'Unknown')
         category = data.get('category', 'General')
-        is_validated = data.get('validated', False)
         
-        entry = {
-            'file': os.path.relpath(yf, recipes_dir).replace('\\', '/'),
+        # 1:1 recipe object matching the pure .acwrecipe schema
+        clean_recipe = {
+            'file': rel_path,
             'title': title,
             'raw_community_title': data.get('raw_community_title', ''),
             'category': category,
             'platform': platform,
-            'model_years': data.get('model_years', ''),
+            'model_years': str(data.get('model_years', '')),
             'trim': data.get('trim', 'All'),
-            'validated': is_validated,
-            'validation_status': data.get('validation_status', 'validated' if is_validated else 'candidate'),
-            'confidence': data.get('confidence'),
-            'unsupported_platforms': data.get('unsupported_platforms', []),
-            'verified_by': data.get('verified_by', ''),
+            'source_sheet': data.get('source_sheet', ''),
             'notes': data.get('notes'),
-            'forscan_menu': data.get('forscan_menu'),
-            'prerequisites': data.get('prerequisites'),
-            'post_procedure': data.get('post_procedure'),
-            'warnings': data.get('warnings'),
-            'steps': data.get('steps', [])
+            'steps': data.get('steps', []),
+            'recipe_version': data.get('recipe_version', '1.1')
         }
         
-        # Clean None fields
-        clean_entry = {k: v for k, v in entry.items() if v is not None}
+        # Omit None fields
+        clean_recipe = {k: v for k, v in clean_recipe.items() if v is not None}
+        validated_recipes.append(clean_recipe)
         
-        if is_validated:
-            validated_recipes.append(clean_entry)
+        # Group into canonical feature map for AsBuiltPro UI
+        cf = canonical_features[title]
+        cf['title'] = title
+        cf['category'] = category
+        
+        if platform not in cf['platforms']:
+            cf['platforms'][platform] = []
             
-            # Group into canonical feature map for As Built Pro
-            cf = canonical_features[title]
-            cf['title'] = title
-            cf['category'] = category
-            
-            # Record unsupported platforms on canonical feature if present
-            if 'unsupported_platforms' in data and data['unsupported_platforms']:
-                if 'unsupported_platforms' not in cf:
-                    cf['unsupported_platforms'] = []
-                for up in data['unsupported_platforms']:
-                    if up not in cf['unsupported_platforms']:
-                        cf['unsupported_platforms'].append(up)
-            
-            plat_key = platform
-            if plat_key not in cf['platforms']:
-                cf['platforms'][plat_key] = []
-                
-            cf['platforms'][plat_key].append({
-                'model_years': data.get('model_years', ''),
-                'trim': data.get('trim', 'All'),
-                'validation_status': data.get('validation_status', 'validated' if is_validated else 'candidate'),
-                'confidence': data.get('confidence'),
-                'unsupported_platforms': data.get('unsupported_platforms', []),
-                'notes': data.get('notes'),
-                'steps': data.get('steps', []),
-                'source_file': clean_entry['file'],
-                'forscan_menu': data.get('forscan_menu'),
-                'prerequisites': data.get('prerequisites'),
-                'post_procedure': data.get('post_procedure'),
-                'warnings': data.get('warnings')
-            })
-        else:
-            unvalidated_recipes.append(clean_entry)
-            
-    # Structure final release payload
+        cf['platforms'][platform].append(clean_recipe)
+        
     catalog = {
-        'version': '1.0.0',
+        'version': '1.1.0',
         'generated_at': None,
         'summary': {
             'total_files': len(recipe_files),
             'validated_recipes': len(validated_recipes),
-            'pending_recipes': len(unvalidated_recipes),
             'unique_canonical_features': len(canonical_features),
             'supported_platforms': sorted(list(set(r['platform'] for r in validated_recipes)))
         },
@@ -130,12 +96,11 @@ def compile_catalog(recipes_dir="recipes", dist_dir="dist", skip_validation=Fals
         'recipes': validated_recipes
     }
     
-    # Write master JSON
     json_path = os.path.join(dist_dir, "master_recipes.json")
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(catalog, f, indent=2)
         
-    print(f"Compiled {len(validated_recipes)} validated recipes ({len(canonical_features)} unique features).")
+    print(f"Successfully compiled {len(validated_recipes)} recipes across {len(canonical_features)} unique canonical features.")
     print(f"Output saved to: {json_path} ({os.path.getsize(json_path):,} bytes)")
 
 if __name__ == '__main__':

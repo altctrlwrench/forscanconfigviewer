@@ -1,0 +1,29 @@
+title: 24-Hour Clock Persistence & Door Ajar Chime
+raw_community_title: ⚡ [Lightning] 24-Hour Clock Persistence & Door Ajar Chime
+category: Cluster and Displays
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+notes: '[Category: Cluster and Displays] [Years: 2022-2026] [Original Title: 24-Hour
+  Clock Persistence / Disable Door Ajar Chime]
+
+  Configures 24-hour clock persistence and door ajar chime. Note: for startup seat
+  belt chime, European strategy sets IPC 720-01-02 byte to wait until in motion.'
+steps:
+- module: IPC
+  address: 720-01-02
+  targets:
+  - mask: xx*x xxxx xx--
+    type: discrete
+    bits:
+    - bit: 2
+      action: 1
+      feature: Global Clock 12 or 24 (GC)
+    - bit: 1
+      action: 0
+      feature: Engine/Ignition On Chime - Message (EIOCM)
+    - bit: 0
+      action: 0
+      feature: Engine/Ignition On Chime - Message (EIOCM)
+recipe_version: '1.1'

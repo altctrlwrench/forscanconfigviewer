@@ -1,0 +1,149 @@
+title: Remove all seatbelt warnings and chimes (including OK button)
+raw_community_title: Remove all seatbelt warnings and chimes (including OK button)
+category: General
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+source_sheet: (2024+) 6G Ranger.xlsx
+notes: See Forum spreadsheet for more info
+steps:
+- module: IPC
+  address: 720-13-01
+  notes: 'Change all values to 0, be sure to save all values first (backup asbuilt).  This
+    turns off ALL notifications for seatbelts (front and back).  use at own risk -
+    unclear if this affects airbags
+
+    FORScan Menu: Multiple settings, use asbuilt (advanced)
+
+    Trim: All [Confirmed: ???]'
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: '0'
+    type: discrete
+  - mask: x*xx xxxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xx*x xxxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxx* xxxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx *xxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx x*xx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xx*x xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxx* xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxxx x*--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxxx xx--
+    community_hex: '0'
+    type: discrete
+- module: IPC
+  address: 720-13-02
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: '0'
+    type: discrete
+  - mask: x*xx xxxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xx*x xxxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxx* xxxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx *xxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx x*xx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xx*x xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxx* xx--
+    community_hex: '0'
+    type: discrete
+- module: IPC
+  address: 720-14-01
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: '0'
+    type: discrete
+  - mask: x*xx xxxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xx*x xxxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxx* xxxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx *xxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx x*xx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xx*x xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxx* xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxxx x*--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxxx xx--
+    community_hex: '0'
+    type: discrete
+- module: IPC
+  address: 720-14-02
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: '0'
+    type: discrete
+  - mask: x*xx xxxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xx*x xxxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxx* xxxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx *xxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx x*xx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xx*x xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxx* xx--
+    community_hex: '0'
+    type: discrete
+recipe_version: '1.1'

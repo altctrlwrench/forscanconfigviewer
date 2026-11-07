@@ -1,0 +1,30 @@
+title: Seatbelt Warning Chimes Disable (Driver & Passenger)
+raw_community_title: Disable driver & passenger seatbelt minder
+category: Chimes and Horn
+platform: Bronco
+model_years: 2021+
+trim: Raptor / Digital Cluster
+source_sheet: 2021+ Bronco Common Items.xlsx
+notes: '0 = Disable both; 2 = Disable drivers; 4 = disable passenger
+
+  Confirmed: LagoCJ/multi'
+steps:
+- module: IPC
+  address: 720-01-01
+  notes: '0 = Disable both; 2 = Disable drivers; 4 = disable passenger
+
+    Confirmed: LagoCJ/multi'
+  targets:
+  - mask: xxxx xx*x xx--
+    type: discrete
+    bits:
+    - bit: 2
+      action: 0
+      feature: Driver Beltminder (DB)
+    - bit: 1
+      action: 0
+      feature: Pass BeltMinder (PBM)
+    - bit: 0
+      action: 0
+      feature: Mid Pass Beltminder (MPB)
+recipe_version: '1.1'

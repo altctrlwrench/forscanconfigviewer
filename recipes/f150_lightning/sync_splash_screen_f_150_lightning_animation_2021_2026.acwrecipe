@@ -1,27 +1,49 @@
 title: Sync Splash Screen - F-150 Lightning Animation
-raw_community_title: Enable Lightning F150 Splash Screen
+raw_community_title: ⚡ [Lightning] Sync Splash Screen - F-150 Lightning Animation
 category: Sync and Infotainment
 platform: F-150 Lightning
 model_years: 2021-2026
 trim: All
-validated: true
-verified_by: Kyle / AsBuiltPro & Lightning Community
 source_sheet: 2021-2026 F150.xlsx
-notes: No target setting in As Built Pro. Use 1F for Lightning
+notes: '[Category: Sync and Infotainment] [Years: 2021-2026] [Original Title: Enable
+  Lightning F150 Splash Screen]
+
+  No target setting in As Built Pro. Use 1F for Lightning. 38 other options available
+  (Anniversary, Black Label, Presidential, etc), check sheets for variants.'
 steps:
 - module: APIM
   address: 7D0-03-01
-  mask: xxxx **xx xx--
-  notes: 'Target hex: 1F (F-150 Lightning animation).'
-  recommended_hex: 1F
-  target_state: F-150 Lightning Splash Screen
-  nibbles:
-  - nibble: 4
-    recommended_hex: '1'
-    feature_name: Visual Design Variants (VDV) / Splash Animation Brand
-    target_state: Lightning (High Nibble)
-  - nibble: 5
-    recommended_hex: F
-    feature_name: Visual Design Variants (VDV) / Splash Animation Brand
-    target_state: Lightning (Low Nibble)
-validation_status: validated
+  targets:
+  - mask: xxxx *xxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: Splash Screen (SS)
+    - bit: 2
+      action: 0
+      feature: Splash Screen (SS)
+    - bit: 1
+      action: 0
+      feature: Splash Screen (SS)
+    - bit: 0
+      action: 1
+      feature: Splash Screen (SS)
+  - mask: xxxx x*xx xx--
+    community_hex: F
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: Splash Screen (SS)
+    - bit: 2
+      action: 1
+      feature: Splash Screen (SS)
+    - bit: 1
+      action: 1
+      feature: Splash Screen (SS)
+    - bit: 0
+      action: 1
+      feature: Splash Screen (SS)
+recipe_version: '1.1'

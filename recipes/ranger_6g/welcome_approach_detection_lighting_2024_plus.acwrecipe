@@ -1,0 +1,67 @@
+title: Welcome & Approach Detection Lighting
+raw_community_title: 'Welcome lights (approach detection)
+
+
+  ** WARNING ** enabling this some have commented that the keyless touch entry is
+  less sensitive to locking/unlocking the door'
+category: General
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'Trim: All? [Confirmed: craigc (9/11/2024) Lariat FX4]'
+steps:
+- module: BCM
+  address: 726-45-01
+  notes: '* -> 0=Disabled, 1=Enabled
+
+    FORScan Menu: unknown, use asbuilt (advanced)
+
+    Trim: All? [Confirmed: craigc (9/11/2024) Lariat FX4]'
+  targets:
+  - mask: xxxx xxxx x*--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Approach_Lighting_Enable_Cfg (ALEC)
+- module: BCM
+  address: 726-18-01
+  notes: '* -> 0=Disabled, 1=Enabled
+
+    FORScan Menu: unknown, use asbuilt (advanced)'
+  targets:
+  - mask: xxxx xxxx x*--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [APPROACHDETECTION] [VEHICLE] (APPROACHDETECTION_VEHICLE)
+- module: APIM
+  address: 7D0-09-01
+  notes: 'suggest using non asbuilt to change this
+
+    * Bit 3 (add 4 to value to enable, e.g. change 3 to 7)
+
+    FORScan Menu: Approach Detection Control Function (Disabled to Enabled, plus it''s
+    required to also make the BdyCm Changes above)'
+  targets:
+  - mask: xxx* xxxx xx--
+    type: discrete
+    bits:
+    - bit: 2
+      action: 1
+      feature: Approach Detection Control Function (ADCF)
+recipe_version: '1.1'

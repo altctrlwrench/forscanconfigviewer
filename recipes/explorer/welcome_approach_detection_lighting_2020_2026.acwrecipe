@@ -1,0 +1,38 @@
+title: Welcome & Approach Detection Lighting
+raw_community_title: 'Enable Approach Lighting
+
+
+  https://www.explorerst.org/threads/enabling-
+
+  approach-welcome-lighting.9062/'
+category: General
+platform: Explorer
+model_years: 2020-2026
+trim: All
+source_sheet: 2020-2024 Explorer.xlsx
+notes: "[BCM] - - Enable the following from DISABLED to ENABLED in BdyCM (easy way):\
+  \ \n-Approach Detection - Personal 1\n-Approach Detection - Personal 2\n-Approach\
+  \ Detection - Personal 3\n-Approach Detection - Personal 4\n-Approach Detection\
+  \ - Vehicle\n-Approach Detection - Initial Value\n\nSource Reference: https://www.explorerst.org/threads/enabling-"
+steps:
+- module: BCM
+  address: 726-45-01
+  notes: "[BCM] - - Enable the following from DISABLED to ENABLED in BdyCM (easy way):\
+    \ \n-Approach Detection - Personal 1\n-Approach Detection - Personal 2\n-Approach\
+    \ Detection - Personal 3\n-Approach Detection - Personal 4\n-Approach Detection\
+    \ - Vehicle\n-Approach Detection - Initial Value"
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Approach_Lighting_Enable_Cfg (ALEC)
+recipe_version: '1.1'

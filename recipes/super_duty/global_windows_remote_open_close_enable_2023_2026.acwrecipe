@@ -1,0 +1,233 @@
+title: Global Windows Remote Open/Close Enable
+raw_community_title: Global Open/Close
+category: Windows and Mirrors
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+source_sheet: 2023-2026 Super Duty Common Items.xlsx
+steps:
+- module: APIM
+  address: 7D0-09-01
+  targets:
+  - mask: xxxx x*xx xx--
+    community_hex: E
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: Global Window Open (GWO)
+- module: DDM
+  address: 740-06-02
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Global_Open_Cfg (GOC)
+- module: PDM
+  address: 741-06-02
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Global_Open_Cfg (GOC)
+- module: DDM
+  address: 740-06-03
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: GlassSoftStop_Cfg (GSSC)
+- module: PDM
+  address: 741-06-03
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: GlassSoftStop_Cfg (GSSC)
+- module: BCM
+  address: 726-11-02
+  targets:
+  - mask: xx*x xxxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxx* xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 0
+      feature: GlobalClose_Mode_Cfg (GCMC)
+  - mask: xxxx xx*x xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+- module: BCM
+  address: 726-22-01
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+- module: BCM
+  address: 726-22-02
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+recipe_version: '1.1'

@@ -1,0 +1,28 @@
+title: Seatbelt Warning Chimes Disable (Driver & Passenger)
+raw_community_title: Disable Driver and Passenger seatbelt reminder (2020-2024 only)
+category: General
+platform: F-150
+model_years: 2020-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+notes: disables constant driver and passenger seatbelt reminder (beeping while in
+  drive)
+steps:
+- module: IPC
+  address: 720-01-01
+  notes: disables constant driver and passenger seatbelt reminder (beeping while in
+    drive)
+  targets:
+  - mask: xxxx xx*x xx--
+    type: discrete
+    bits:
+    - bit: 2
+      action: 0
+      feature: '*Driver Beltminder (DB)'
+    - bit: 1
+      action: 0
+      feature: '*Pass BeltMinder (PBM)'
+    - bit: 0
+      action: 0
+      feature: '*Mid Pass Beltminder (MPB)'
+recipe_version: '1.1'

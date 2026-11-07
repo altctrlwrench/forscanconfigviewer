@@ -1,0 +1,319 @@
+title: Seatbelt Warning Chimes Disable (Driver & Passenger)
+raw_community_title: Seatbelt Chimes-Disables All
+category: Chimes and Horn
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+source_sheet: 2023-2026 Super Duty Common Items.xlsx
+notes: Tells the truck there are no seatbelts nor belt minders installed
+steps:
+- module: IPC
+  address: 720-13-01
+  notes: Tells the truck there are no seatbelts nor belt minders installed
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: Belt_Minder_Chime_Operator_Cfg (BMCOC)
+    - bit: 2
+      action: 0
+      feature: Belt_Monitor_Chime_Cfg (BMCC)
+    - bit: 1
+      action: 0
+      feature: Belt_Monitor_Chime_Operator_Cfg (BMCOC)
+    - bit: 0
+      action: 0
+      feature: R1C1_Belt_Minder_Chime_Cfg (RCBMCC)
+  - mask: x*xx xxxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: R1C2_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 2
+      action: 0
+      feature: R1C3_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 1
+      action: 0
+      feature: R1C4_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 0
+      action: 0
+      feature: R1C5_Belt_Minder_Chime_Cfg (RCBMCC)
+  - mask: xx*x xxxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: R2C1_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 2
+      action: 0
+      feature: R2C2_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 1
+      action: 0
+      feature: R2C3_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 0
+      action: 0
+      feature: R2C4_Belt_Minder_Chime_Cfg (RCBMCC)
+  - mask: xxx* xxxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: R2C5_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 2
+      action: 0
+      feature: R3C1_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 1
+      action: 0
+      feature: R3C2_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 0
+      action: 0
+      feature: R3C3_Belt_Minder_Chime_Cfg (RCBMCC)
+  - mask: xxxx *xxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: R3C4_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 2
+      action: 0
+      feature: R3C5_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 1
+      action: 0
+      feature: R4C1_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 0
+      action: 0
+      feature: R4C2_Belt_Minder_Chime_Cfg (RCBMCC)
+  - mask: xxxx x*xx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: R4C3_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 2
+      action: 0
+      feature: R4C4_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 1
+      action: 0
+      feature: R4C5_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 0
+      action: 0
+      feature: R5C1_Belt_Minder_Chime_Cfg (RCBMCC)
+  - mask: xxxx xx*x xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: R5C2_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 2
+      action: 0
+      feature: R5C3_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 1
+      action: 0
+      feature: R5C4_Belt_Minder_Chime_Cfg (RCBMCC)
+    - bit: 0
+      action: 0
+      feature: R5C5_Belt_Minder_Chime_Cfg (RCBMCC)
+  - mask: xxxx xxx* xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: R1_Bench (RB)
+    - bit: 2
+      action: 0
+      feature: R1C1_Seatbelt_Cfg (RCSC)
+    - bit: 1
+      action: 0
+      feature: R1C1_Seatbelt_Cfg (RCSC)
+    - bit: 0
+      action: 0
+      feature: R1C1_Seatbelt_Cfg (RCSC)
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: R2_Bench (RB)
+    - bit: 2
+      action: 0
+      feature: R1C2_Seatbelt_Cfg (RCSC)
+    - bit: 1
+      action: 0
+      feature: R1C2_Seatbelt_Cfg (RCSC)
+    - bit: 0
+      action: 0
+      feature: R1C2_Seatbelt_Cfg (RCSC)
+  - mask: xxxx xxxx x*--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: R3_Bench (RB)
+    - bit: 2
+      action: 0
+      feature: R1C3_Seatbelt_Cfg (RCSC)
+    - bit: 1
+      action: 0
+      feature: R1C3_Seatbelt_Cfg (RCSC)
+    - bit: 0
+      action: 0
+      feature: R1C3_Seatbelt_Cfg (RCSC)
+- module: IPC
+  address: 720-13-02
+  notes: Tells the truck there are no seatbelts nor belt minders installed
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: R4_Bench (RB)
+    - bit: 2
+      action: 0
+      feature: R1C4_Seatbelt_Cfg (RCSC)
+    - bit: 1
+      action: 0
+      feature: R1C4_Seatbelt_Cfg (RCSC)
+    - bit: 0
+      action: 0
+      feature: R1C4_Seatbelt_Cfg (RCSC)
+  - mask: x*xx xxxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: R5_Bench (RB)
+    - bit: 2
+      action: 0
+      feature: R1C5_Seatbelt_Cfg (RCSC)
+    - bit: 1
+      action: 0
+      feature: R1C5_Seatbelt_Cfg (RCSC)
+    - bit: 0
+      action: 0
+      feature: R1C5_Seatbelt_Cfg (RCSC)
+  - mask: xx*x xxxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: R6_Bench (RB)
+    - bit: 2
+      action: 0
+      feature: R2C1_Seatbelt_Cfg (RCSC)
+    - bit: 1
+      action: 0
+      feature: R2C1_Seatbelt_Cfg (RCSC)
+    - bit: 0
+      action: 0
+      feature: R2C1_Seatbelt_Cfg (RCSC)
+  - mask: xxx* xxxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+      feature: R2C2_Seatbelt_Cfg (RCSC)
+    - bit: 1
+      action: 0
+      feature: R2C2_Seatbelt_Cfg (RCSC)
+    - bit: 0
+      action: 0
+      feature: R2C2_Seatbelt_Cfg (RCSC)
+  - mask: xxxx *xxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+      feature: R2C3_Seatbelt_Cfg (RCSC)
+    - bit: 1
+      action: 0
+      feature: R2C3_Seatbelt_Cfg (RCSC)
+    - bit: 0
+      action: 0
+      feature: R2C3_Seatbelt_Cfg (RCSC)
+  - mask: xxxx x*xx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+      feature: R2C4_Seatbelt_Cfg (RCSC)
+    - bit: 1
+      action: 0
+      feature: R2C4_Seatbelt_Cfg (RCSC)
+    - bit: 0
+      action: 0
+      feature: R2C4_Seatbelt_Cfg (RCSC)
+  - mask: xxxx xx*x xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxx* xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxxx x*--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+recipe_version: '1.1'

@@ -1,0 +1,183 @@
+title: Welcome & Approach Detection Lighting
+raw_community_title: ⚡ [Lightning] Welcome & Approach Detection Lighting
+category: Lighting
+platform: F-150 Lightning
+model_years: 2024-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+notes: '[Category: Lighting] [Years: 2024-2026] [Original Title: Enable Approach/Welcome
+  Lighting on 2025 Job 2 Flash]
+
+  Enables approach and welcome lighting sequence on 2025 Job 2 Flash.'
+steps:
+- module: BCM
+  address: 726-18-01
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [APPROACHDETECTION] [PERS_1] (APPROACHDETECTION_PERS_1)
+  - mask: xx*x xxxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxx* xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [APPROACHDETECTION] [PERS_2] (APPROACHDETECTION_PERS_2)
+  - mask: xxxx *xxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx x*xx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [APPROACHDETECTION] [PERS_3] (APPROACHDETECTION_PERS_3)
+  - mask: xxxx xx*x xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [APPROACHDETECTION] [PERS_4] (APPROACHDETECTION_PERS_4)
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [APPROACHDETECTION] [VEHICLE] (APPROACHDETECTION_VEHICLE)
+- module: BCM
+  address: 726-27-01
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: FeatLst_to_BCM_Feature_InitVal [APPROACHDETECTION] (APPROACHDETECTION)
+- module: BCM
+  address: 726-45-01
+  targets:
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Approach_Lighting_Enable_Cfg (ALEC)
+- module: APIM
+  address: 7D0-09-01
+  targets:
+  - mask: xxx* xxxx xx--
+    offset_hint: '+4'
+    type: discrete
+    bits:
+    - bit: 2
+      action: 1
+      feature: Approach Detection Control Function (ADCF)
+recipe_version: '1.1'

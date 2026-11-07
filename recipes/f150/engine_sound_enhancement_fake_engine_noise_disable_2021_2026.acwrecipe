@@ -1,0 +1,19 @@
+title: Engine Sound Enhancement (Fake Engine Noise) Disable
+raw_community_title: Disable Fake Engine Noise
+category: Lighting
+platform: F-150
+model_years: 2021-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: ACM
+  address: 727-01-01
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 0
+      feature: Software ESE/EV-ESE (SESEEVESE)
+recipe_version: '1.1'

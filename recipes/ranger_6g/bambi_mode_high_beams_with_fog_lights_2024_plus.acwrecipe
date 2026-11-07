@@ -1,0 +1,36 @@
+title: Bambi Mode (High Beams with Fog Lights)
+raw_community_title: Leave fogs on when high beams are on (aka Bambi Mode)
+category: Lighting
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'FORScan Menu: Using Front Fog With High Beam (Allowed, Inhibited (Default))
+
+  Trim: All [Confirmed: pablo94sc (9/9/24)]
+
+  OBS: Brazilian RRaptor is enabled by default'
+steps:
+- module: BCM
+  address: 726-39-02
+  notes: '* -> 0=Allowed, 1=Inhibited (Default)
+
+    FORScan Menu: Using Front Fog With High Beam (Allowed, Inhibited (Default))
+
+    Trim: All [Confirmed: pablo94sc (9/9/24)]
+
+    OBS: Brazilian RRaptor is enabled by default'
+  targets:
+  - mask: xxx* xxxx xx--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+      feature: FrontFog_WithHighBeams_Cfg (FFWHBC)
+recipe_version: '1.1'

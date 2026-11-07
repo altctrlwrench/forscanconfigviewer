@@ -1,0 +1,42 @@
+title: Audio System EQ Flattening & Subwoofer Calibration
+raw_community_title: Equalizer - assist with rear speakers and subwoofer
+category: Lighting
+platform: Bronco
+model_years: 2021+
+trim: All
+source_sheet: 2021+ Bronco Common Items.xlsx
+notes: '00 = EQS Flat EQ
+
+  Confirmed: ryannshit'
+steps:
+- module: ACM
+  address: 727-01-02
+  notes: 00 = EQS Flat EQ
+  targets:
+  - mask: xx*x xxxx xx--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxx* xxxx xx--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: EQ Selection (EQS)
+    - bit: 2
+      action: 0
+      feature: EQ Selection (EQS)
+    - bit: 1
+      action: 0
+      feature: EQ Selection (EQS)
+    - bit: 0
+      action: 0
+      feature: EQ Selection (EQS)
+recipe_version: '1.1'

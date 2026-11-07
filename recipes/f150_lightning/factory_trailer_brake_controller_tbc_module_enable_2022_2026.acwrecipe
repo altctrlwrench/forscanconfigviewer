@@ -1,102 +1,66 @@
 title: Factory Trailer Brake Controller (TBC) Module Enable
-raw_community_title: 2021-26 - Adding OEM Trailer Brake Controller (Lightning)
+raw_community_title: ⚡ [Lightning] Factory Trailer Brake Controller (TBC) Module Enable
 category: Powertrain and Drivetrain
 platform: F-150 Lightning
 model_years: 2022-2026
 trim: All
-validated: true
-validation_status: validated
-verified_by: Kyle / AsBuiltPro
-source_sheet: 2021-2026 F150.xlsx (IPMA 24 Lightning)
-notes: Enables the factory Trailer Brake Controller (TBC) module on F-150 Lightning
-  using Group C IPMA definitions. Tailored for EV powertrain.
+source_sheet: 2021-2026 F150.xlsx
+notes: '[Category: Powertrain and Drivetrain] [Years: 2022-2026] [Original Title:
+  2021-26 - Adding OEM Trailer Brake Controller (Lightning)]
+
+  Enables the factory Trailer Brake Controller (TBC) module on F-150 Lightning using
+  Group C IPMA definitions. Tailored for EV powertrain.'
 steps:
 - module: BCM
   address: 726-69-02
-  mask: xxxx x*xx x*--
-  nibbles:
-  - nibble: 5
-    recommended_hex: '1'
+  targets:
+  - mask: xxxx x*xx xx--
+    community_hex: '1'
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: TBM_Available_Cfg (TBMAC)
-      target_state: TBMAC ABSENT
     - bit: 2
       action: 0
-      feature_name: TBM_Available_Cfg (TBMAC)
-      target_state: TBMAC ABSENT
     - bit: 1
       action: 0
-      feature_name: TBM_Available_Cfg (TBMAC)
-      target_state: TBMAC ABSENT
     - bit: 0
       action: 1
-      feature_name: TBM_Available_Cfg (TBMAC)
-      target_state: TBMAC PRESENT
-  - nibble: 9
-    recommended_hex: '1'
+      feature: TBM_Available_Cfg (TBMAC)
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: TBM_Cfg (TBMC)
-      target_state: TBMC ABSENT
     - bit: 2
       action: 0
-      feature_name: TBM_Cfg (TBMC)
-      target_state: TBMC ABSENT
     - bit: 1
       action: 0
-      feature_name: TBM_Cfg (TBMC)
-      target_state: TBMC ABSENT
     - bit: 0
       action: 1
-      feature_name: TBM_Cfg (TBMC)
-      target_state: TBMC PRESENT
+      feature: TRM_Available_Cfg (TRMAC)
 - module: APIM
   address: 7D0-09-03
-  mask: xxxx xxx* xx--
-  nibbles:
-  - nibble: 7
-    recommended_hex: '4'
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: '4'
+    type: discrete
     bits:
-    - bit: 3
-      action: 0
-      feature_name: Trailer Brake Controller (TBC)
-      target_state: Disabled
     - bit: 2
       action: 1
-      feature_name: Trailer Brake Controller (TBC)
-      target_state: Enabled
-    - bit: 1
-      action: 0
-      feature_name: Trailer Brake Controller (TBC)
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Trailer Brake Controller (TBC)
-      target_state: Disabled
+      feature: Trailer Brake Controller (TBC)
 - module: IPMA
   address: 706-18-01
-  mask: xxxx xxx* xx--
-  nibbles:
-  - nibble: 7
-    recommended_hex: C
-    notes: Group C IPMA (24 Lightning)
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: C
+    type: discrete
     bits:
     - bit: 3
       action: 1
-      feature_name: VehicleInfo_TrailerLightModule (VITLM)
-      target_state: VITLM Present
+      feature: VehicleInfo_TrailerLightModule (VITLM)
     - bit: 2
       action: 1
-      feature_name: VehicleInfo_TrailerBrakeModule (VITBM)
-      target_state: VITBM Present
-    - bit: 1
-      action: 0
-      feature_name: VehicleInfo_TrailerLightModule (VITLM)
-      target_state: VITLM Not Present
-    - bit: 0
-      action: 0
-      feature_name: VehicleInfo_TrailerLightModule (VITLM)
-      target_state: VITLM Not Present
+      feature: VehicleInfo_TrailerBrakeModule (VITBM)
+recipe_version: '1.1'

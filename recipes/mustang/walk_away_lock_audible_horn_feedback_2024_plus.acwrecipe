@@ -1,0 +1,106 @@
+title: Walk Away Lock Audible Horn Feedback
+raw_community_title: Walk Away Lock Feedback (horn sounds)
+category: Locks and Security
+platform: Mustang
+model_years: 2024+
+trim: All
+source_sheet: 2024 Mustang Darkhorse (public).xlsx
+steps:
+- module: BCM
+  address: 726-91-01
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK]  (AUDIBLEWALKAWAYLOCK)
+- module: BCM
+  address: 726-97-01
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_1] (AUDIBLEWALKAWAYLOCK_PERS_1)
+  - mask: xxx* xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_2] (AUDIBLEWALKAWAYLOCK_PERS_2)
+  - mask: xxxx x*xx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_3] (AUDIBLEWALKAWAYLOCK_PERS_3)
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_4] (AUDIBLEWALKAWAYLOCK_PERS_4)
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [VEHICLE] (AUDIBLEWALKAWAYLOCK_VEHICLE)
+- module: APIM
+  address: 7D0-09-05
+  targets:
+  - mask: xxxx *xxx xx--
+    community_hex: C
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: Walk Away Lock (WAL)
+    - bit: 2
+      action: 1
+      feature: Walk Away Lock Feedback (WALF)
+recipe_version: '1.1'

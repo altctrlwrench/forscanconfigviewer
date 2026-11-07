@@ -1,0 +1,39 @@
+title: Digital Gauge Numeric Temperatures Display (Raptor Cluster)
+raw_community_title: Raptor Cluster - displays engine, oil, transmission digital temps
+  on top gauges
+category: Cluster and Displays
+platform: F-150
+model_years: 2021-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: IPC
+  address: 720-07-01
+  targets:
+  - mask: xxxx xx*x xx--
+    community_hex: '5'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: Eng Temp Dig (ETD)
+    - bit: 2
+      action: 1
+      feature: Eng Temp Dig (ETD)
+    - bit: 1
+      action: 0
+      feature: Trans Temp Dig (TTD)
+    - bit: 0
+      action: 1
+      feature: Trans Temp Dig (TTD)
+  - mask: xxxx xxx* xx--
+    community_hex: '4'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: Eng Oil Dig (EOD)
+    - bit: 2
+      action: 1
+      feature: Eng Oil Dig (EOD)
+recipe_version: '1.1'

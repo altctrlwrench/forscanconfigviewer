@@ -1,0 +1,41 @@
+title: Headlamp Switch Default to Auto Disable (Remember Last Position)
+raw_community_title: Auto Headlight
+category: Lighting
+platform: Bronco
+model_years: 2021+
+trim: All
+source_sheet: 2021+ Bronco Common Items.xlsx
+notes: 'HeadlampPosAtIgnOn_Cfg: 00=Auto 01=Last Known
+
+  Confirmed: D2dhanover'
+steps:
+- module: BdyCM
+  address: 726-74-01
+  notes: 'HeadlampPosAtIgnOn_Cfg: 00=Auto 01=Last Known
+
+    Confirmed: D2dhanover'
+  targets:
+  - mask: xx*x xxxx xx--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxx* xxxx xx--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+recipe_version: '1.1'

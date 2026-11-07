@@ -1,101 +1,72 @@
 title: Lincoln Style Autofold Mirrors
-raw_community_title: Lincoln Folding Mirrors Setting
+raw_community_title: ⚡ [Lightning] Lincoln Style Autofold Mirrors
 category: Windows and Mirrors
 platform: F-150 Lightning
 model_years: 2022-2026
 trim: All
-validated: true
-verified_by: Kyle / AsBuiltPro & Lightning Community
-source_sheet: F-150 Lightning FORScan Thread
-notes: 'Folds when locked, but unfolds only when driver door closes instead of when
-  unlocked. Known issue: puddle lights get disabled.'
+source_sheet: 2021-2026 F150.xlsx
+notes: '[Category: Windows and Mirrors] [Years: 2022-2023] [Original Title: Lincoln
+  Folding Mirrors Setting]
+
+  Folds when locked, but unfolds only when driver door closes instead of when unlocked.
+  Known issue: puddle lights get disabled.'
 steps:
 - module: DDM
   address: 740-03-16
-  mask: xxxx xxxx **--
-  nibbles:
-  - nibble: 8
-    recommended_hex: '0'
-    community_instruction: Set to 0
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: Mirror_Folding_Cfg
-      target_state: Disabled
     - bit: 2
       action: 0
-      feature_name: Mirror_Folding_Cfg
-      target_state: Disabled
     - bit: 1
       action: 0
-      feature_name: Mirror_Folding_Cfg
-      target_state: Disabled
     - bit: 0
       action: 0
-      feature_name: Mirror_Folding_Cfg
-      target_state: Disabled
-  - nibble: 9
-    recommended_hex: '1'
-    community_instruction: Set to 1
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: Mirror_Folding_Cfg
-      target_state: Disabled
     - bit: 2
       action: 0
-      feature_name: Mirror_Folding_Cfg
-      target_state: Disabled
     - bit: 1
       action: 0
-      feature_name: Mirror_Folding_Cfg
-      target_state: Disabled
+      feature: Mirror_Folding_Cfg
     - bit: 0
       action: 1
-      feature_name: Mirror_Folding_Cfg
-      target_state: Enabled
+      feature: Mirror_Folding_Cfg
 - module: PDM
   address: 741-03-16
-  mask: xxxx xxxx **--
-  nibbles:
-  - nibble: 8
-    recommended_hex: '0'
-    community_instruction: Set to 0
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: Mirror_Folding_Cfg
-      target_state: Disabled
     - bit: 2
       action: 0
-      feature_name: Mirror_Folding_Cfg
-      target_state: Disabled
     - bit: 1
       action: 0
-      feature_name: Mirror_Folding_Cfg
-      target_state: Disabled
     - bit: 0
       action: 0
-      feature_name: Mirror_Folding_Cfg
-      target_state: Disabled
-  - nibble: 9
-    recommended_hex: '1'
-    community_instruction: Set to 1
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: Mirror_Folding_Cfg
-      target_state: Disabled
     - bit: 2
       action: 0
-      feature_name: Mirror_Folding_Cfg
-      target_state: Disabled
     - bit: 1
       action: 0
-      feature_name: Mirror_Folding_Cfg
-      target_state: Disabled
+      feature: Mirror_Folding_Cfg
     - bit: 0
       action: 1
-      feature_name: Mirror_Folding_Cfg
-      target_state: Enabled
-validation_status: validated
+      feature: Mirror_Folding_Cfg
+recipe_version: '1.1'

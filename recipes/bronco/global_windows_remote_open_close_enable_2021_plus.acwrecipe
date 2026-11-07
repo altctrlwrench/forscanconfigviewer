@@ -1,0 +1,252 @@
+title: Global Windows Remote Open/Close Enable
+raw_community_title: Global Windows Open/Close
+category: Windows and Mirrors
+platform: Bronco
+model_years: 2021+
+trim: All
+source_sheet: 2021+ Bronco Common Items.xlsx
+notes: 'To roll down windows press unlock button on fob and then press again and hold
+
+  To roll up windows press lock button on fob and then press again and hold
+
+  Confirmed: Bigmoose/multi
+
+  Optional: E - Add Global Window Open/Close to Sybc 4 settings menu'
+steps:
+- module: DDM
+  address: 740-06-02
+  notes: 'To roll down windows press unlock button on fob and then press again and
+    hold
+
+    To roll up windows press lock button on fob and then press again and hold'
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Global_Close_Cfg (GCC)
+- module: PDM
+  address: 741-06-02
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+- module: DDM
+  address: 740-06-03
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Global_Open_Cfg (GOC)
+- module: PDM
+  address: 741-06-03
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+- module: BdyCM
+  address: 726-11-02
+  targets:
+  - mask: xx*x xxxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxx* xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: GlobalClose_Cfg (GCC)
+  - mask: xxxx xx*x xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: GlobalOpen_Cfg (GOC)
+- module: BdyCM
+  address: 726-22-01
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+- module: BdyCM
+  address: 726-22-02
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+- module: APIM
+  address: 7D0-09-01
+  notes: 'Optional: E - Add Global Window Open/Close to Sybc 4 settings menu'
+  targets:
+  - mask: xxxx x*xx xx--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: Global Window Open (GWO)
+    - bit: 2
+      action: 1
+      feature: Global Window Close (GWC)
+recipe_version: '1.1'

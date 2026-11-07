@@ -1,0 +1,44 @@
+title: Auto Start/Stop System Disable
+raw_community_title: Disable Auto Start-Stop
+category: Powertrain and Drivetrain
+platform: Bronco
+model_years: 2021+
+trim: All
+source_sheet: 2021+ Bronco Common Items.xlsx
+notes: 'Start / Stop: 00=Disabled 01=Enabled, Angle Inhibit Enabled 02=Enabled, Angle
+  Inhibit Disabled
+
+  Confirmed: D2dhanover/multi'
+steps:
+- module: PSCM
+  address: 730-03-01
+  notes: 'Start / Stop: 00=Disabled 01=Enabled, Angle Inhibit Enabled 02=Enabled,
+    Angle Inhibit Disabled
+
+    Confirmed: D2dhanover/multi'
+  targets:
+  - mask: xxxx xxxx *x--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxxx x*--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+      feature: Start / Stop (SS)
+    - bit: 0
+      action: 0
+      feature: Start / Stop (SS)
+recipe_version: '1.1'

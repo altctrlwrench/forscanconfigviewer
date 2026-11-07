@@ -1,0 +1,57 @@
+title: Cameras at Speed (Front & 360 View in Motion)
+raw_community_title: ⚡ [Lightning] Cameras at Speed (Front & 360 View in Motion)
+category: Cameras and ADAS
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+notes: '[Category: Cameras and ADAS] [Years: 2022-2026] [Original Title: Enable cameras
+  while moving]
+
+  Restores camera views while moving if reset by an update. If you have a PRO without
+  360 view (w/o Tow Technology), do not use these IPMA settings.
+
+  Also ensures black box on camera feed. Does not enable off road views'
+steps:
+- module: APIM
+  address: 7D0-02-02
+  targets:
+  - mask: xxx* xxxx xx--
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature: RCOD HMI w/o Blackbox (RCODHMIB)
+- module: IPMA
+  address: 706-02-02
+  targets:
+  - mask: xxx* xxxx xx--
+    community_hex: F
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_Hitch (FCDPACVCASH)
+    - bit: 2
+      action: 1
+      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_Aux (FCDPACVCASA)
+    - bit: 1
+      action: 1
+      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_CHMSL (FCDPACVCASCHMSL)
+    - bit: 0
+      action: 1
+      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_RCOD (FCDPACVCASRCOD)
+  - mask: xxxx *xxx xx--
+    community_hex: C
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: FeatureCfg_TBA_HitchView (FCTBAHV)
+  - mask: xxxx x*xx xx--
+    type: discrete
+    bits:
+    - bit: 1
+      action: 1
+      feature: FeatureCfg_DPAC_ViewCtlAtSpeed (FCDPACVCAS)
+recipe_version: '1.1'

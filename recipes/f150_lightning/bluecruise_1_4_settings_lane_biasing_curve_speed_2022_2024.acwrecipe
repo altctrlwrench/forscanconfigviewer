@@ -1,0 +1,112 @@
+title: BlueCruise 1.4 Settings (Lane Biasing & Curve Speed)
+raw_community_title: ⚡ [Lightning] BlueCruise 1.4 Feature Set (Lane Biasing & Curve
+  Speed)
+category: Cameras and ADAS
+platform: F-150 Lightning
+model_years: 2022-2024
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+notes: '[Category: Cameras and ADAS] [Years: 2022-2024] [Original Title: Enable BlueCruise
+  1.4]
+
+  Enables BC 1.4 features. IPMA must be updated to ACJ or later (mid 2024 update).
+  Note: ''E'' at 7D0-09-05 is specific to Lightning; do not use ''4''.'
+steps:
+- module: APIM
+  address: 7D0-09-05
+  targets:
+  - mask: xxxx xx*x xx--
+    community_hex: E
+    type: discrete
+    bits:
+    - bit: 2
+      action: 1
+      feature: Lane Biasing (LB)
+    - bit: 1
+      action: 1
+      feature: Key Detection Alert  (KDA)
+  - mask: xxxx xxxx *x--
+    community_hex: '2'
+    type: discrete
+    bits:
+    - bit: 2
+      action: 0
+      feature: Curve Speed Control Menu (CSCM)
+    - bit: 1
+      action: 1
+      feature: Predictive Speed Assist (PSA)
+- module: APIM
+  address: 7D0-10-02
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature: Assisted Lane Change  (ALC)
+- module: IPMA
+  address: 706-01-01
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: E
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: ModuleFeatureCfg_LKS (MFCLKS)
+    - bit: 2
+      action: 1
+      feature: ModuleFeatureCfg_LKS (MFCLKS)
+    - bit: 1
+      action: 1
+      feature: ModuleFeatureCfg_DAS (MFCDAS)
+- module: IPMA
+  address: 706-01-02
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '5'
+    type: discrete
+    bits:
+    - bit: 2
+      action: 1
+      feature: ModuleFeatureCfg_ALB (MFCALB)
+    - bit: 0
+      action: 1
+      feature: ModuleFeatureCfg_ALC (MFCALC)
+- module: IPMA
+  address: 706-02-02
+  targets:
+  - mask: xxxx xxxx x*--
+    community_hex: '2'
+    type: discrete
+- module: IPMA
+  address: 706-38-01
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '8'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: CustomerSetting_ALBSelected_Vehicle (CSALBSV)
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxx* xxxx xx--
+    community_hex: '8'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: CustomerSetting_ALCSelected_Vehicle (CSALCSV)
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+recipe_version: '1.1'

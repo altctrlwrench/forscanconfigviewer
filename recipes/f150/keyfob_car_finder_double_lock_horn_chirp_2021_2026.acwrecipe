@@ -4,52 +4,35 @@ category: Locks and Security
 platform: F-150
 model_years: 2021-2026
 trim: All
-validated: true
-verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
 notes: 1=enabled, 0=disabled (target setting)
 steps:
 - module: BCM
   address: 726-24-02
-  mask: xxxx xxxx **--
   notes: 1=enabled, 0=disabled
-  nibbles:
-  - nibble: 8
-    notes: 1=enabled, 0=disabled | Left factory (not data table)
+  targets:
+  - mask: xxxx xxxx *x--
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE]
-      target_state: Disable
     - bit: 2
       action: 0
-      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE]
-      target_state: Disable
     - bit: 1
       action: 0
-      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE]
-      target_state: Disable
     - bit: 0
       action: 0
-      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE]
-      target_state: Disable
-  - nibble: 9
-    notes: 1=enabled, 0=disabled
+  - mask: xxxx xxxx x*--
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
-      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
     - bit: 2
       action: 0
-      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
-      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
     - bit: 1
       action: 0
-      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
-      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+      feature: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
     - bit: 0
       action: 0
-      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
-      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
-validation_status: validated
+      feature: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+recipe_version: '1.1'

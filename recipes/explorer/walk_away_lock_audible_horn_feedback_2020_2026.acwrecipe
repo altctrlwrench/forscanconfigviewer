@@ -1,0 +1,195 @@
+title: Walk Away Lock Audible Horn Feedback
+raw_community_title: 'Enable Walk Away Lock (Audible)
+
+
+  https://www.explorerst.org/threads/adding-walk-
+
+  away-lock-feature-for-2025-ford-explorers-with-
+
+  audible-feedback.9073/'
+category: General
+platform: Explorer
+model_years: 2020-2026
+trim: All
+source_sheet: 2020-2024 Explorer.xlsx
+notes: 'Source Reference: https://www.explorerst.org/threads/adding-walk-'
+steps:
+- module: BCM
+  address: 726-89-01
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_1] (AUDIBLEWALKAWAYLOCK_PERS_1)
+  - mask: xxx* xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_2] (AUDIBLEWALKAWAYLOCK_PERS_2)
+  - mask: xxxx x*xx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_3] (AUDIBLEWALKAWAYLOCK_PERS_3)
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_4] (AUDIBLEWALKAWAYLOCK_PERS_4)
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [VEHICLE] (AUDIBLEWALKAWAYLOCK_VEHICLE)
+- module: BCM
+  address: 726-89-02
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [WALKAWAYLOCK] [PERS_1] (WALKAWAYLOCK_PERS_1)
+  - mask: xxx* xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [WALKAWAYLOCK] [PERS_2] (WALKAWAYLOCK_PERS_2)
+  - mask: xxxx x*xx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [WALKAWAYLOCK] [PERS_3] (WALKAWAYLOCK_PERS_3)
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [WALKAWAYLOCK] [PERS_4] (WALKAWAYLOCK_PERS_4)
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [WALKAWAYLOCK] [VEHICLE] (WALKAWAYLOCK_VEHICLE)
+- module: BCM
+  address: 726-90-01
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK] (AUDIBLEWALKAWAYLOCK)
+  - mask: xxx* xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
+- module: APIM
+  address: 7D0-09-05
+  targets:
+  - mask: xxxx *xxx xx--
+    community_hex: C
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: Walk Away Lock (WAL)
+    - bit: 2
+      action: 1
+      feature: Walk Away Lock Feedback (WALF)
+recipe_version: '1.1'

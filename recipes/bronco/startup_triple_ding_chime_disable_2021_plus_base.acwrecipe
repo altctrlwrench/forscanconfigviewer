@@ -1,0 +1,20 @@
+title: Startup Triple Ding Chime Disable
+raw_community_title: Disables Triple Ding at Start up (Doo, doo, doo)
+category: Chimes and Horn
+platform: Bronco
+model_years: 2021+
+trim: Base (Standard Cluster)
+source_sheet: 2021+ Bronco Common Items.xlsx
+notes: 'Confirmed: mrjking200'
+steps:
+- module: IPC
+  address: 720-01-02
+  targets:
+  - mask: xxxx x*xx xx--
+    community_hex: '2'
+    type: discrete
+    bits:
+    - bit: 1
+      action: 1
+      feature: Seatbelt Warning Market (SWM)
+recipe_version: '1.1'

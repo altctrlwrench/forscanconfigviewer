@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
 """
-AsBuiltPro Recipe Schema Validator & Linter
+AsBuiltPro Recipe Schema Validator & Linter (v1.1)
 Validates that all .acwrecipe files adhere strictly to:
-1. Format 1: Hierarchical Nibbles & Bits for all discrete steps.
-2. No trailing colons in step dictionary keys (e.g. 'mask:').
-3. No discrete steps with omitted targets (every discrete step must have recommended_hex or bit actions).
-4. Continuous / Variable parameters (Tire size, 12V timeout, DRL brightness) must be tagged
-   type: continuous with user_input: required, and have NO forced default overrides.
-5. Multi-choice parameters (Turn signal flash count, audio EQ) must provide an options map.
-6. Elimination of phantom nibble 4 on 12V Power Outlet Enable (726-57-01).
-7. Platform & Trim integrity (e.g. F-150 vs F-150 Lightning separation, Super Duty diesel trims).
+1. v1.1 Specification: Atomic single-nibble targets grouped under module & address.
+2. Root Metadata: title, platform, model_years, category, source_sheet, and recipe_version ('1.1').
+3. No trailing colons in dictionary keys.
+4. Discrete steps: valid visual mask (e.g. 'xxx* xxxx xx--'), type: discrete, and active bit actions or community_hex.
+5. Continuous parameters: type: continuous with user_input: required, no hardcoded default overrides.
+6. Platform & Trim integrity (e.g. Super Duty diesel trims).
 """
 
 import sys
@@ -28,7 +26,8 @@ def validate_catalog(recipes_dir="recipes"):
     errors = []
     warnings = []
     total_steps = 0
-    format_counts = {'format_1_hierarchical': 0, 'continuous': 0, 'multi_choice': 0, 'all_zeros': 0}
+    total_targets = 0
+    format_counts = {'discrete_targets': 0, 'continuous_targets': 0}
 
     for rf in recipe_files:
         rel_path = os.path.relpath(rf, recipes_dir).replace('\\', '/')
@@ -47,86 +46,73 @@ def validate_catalog(recipes_dir="recipes"):
         plat = data.get('platform', '')
         trim = data.get('trim', 'All')
         steps = data.get('steps', [])
+        version = data.get('recipe_version', '')
 
         if not title:
             errors.append(f"[{rel_path}] Missing 'title'.")
         if not plat:
             errors.append(f"[{rel_path}] Missing 'platform'.")
+        if not steps:
+            errors.append(f"[{rel_path}] Missing or empty 'steps'.")
+        if version != '1.1':
+            errors.append(f"[{rel_path}] Expected recipe_version: '1.1', found: '{version}'.")
 
         # Trim validation
-        if plat == 'Super Duty' and any(k in title.lower() for k in ['diesel exhaust auto regen', 'soot percentage']):
+        if plat == 'Super Duty' and any(k in title.lower() for k in ['diesel exhaust auto regen', 'soot percentage', 'dpf']):
             if trim != 'Diesel (6.7L Powerstroke)':
                 errors.append(f"[{rel_path}] Super Duty diesel recipe must have trim: 'Diesel (6.7L Powerstroke)', found: '{trim}'")
 
         for s_idx, step in enumerate(steps):
             total_steps += 1
+            mod = step.get('module')
             addr = step.get('address', f"step_{s_idx}")
 
-            # 1. Check for key typos (e.g. 'mask:')
+            if not mod:
+                errors.append(f"[{rel_path}] Step {addr} missing 'module'.")
+
+            # Check for key typos (e.g. trailing colons)
             for k in step.keys():
                 if k.endswith(':'):
                     errors.append(f"[{rel_path}] Step {addr} has key with trailing colon: '{k}'. Must be '{k[:-1]}'.")
 
-            # 2. Check for phantom nibble 4 on 12V enable
-            if addr == '726-57-01' and 'enable' in title.lower():
-                for n in step.get('nibbles', []):
-                    if n.get('nibble') == 4:
-                        errors.append(f"[{rel_path}] Step {addr} contains phantom Nibble 4. Only authentic Nibble 5 (PPTC DISABLE) should be present.")
-
-            # 3. Format & Schema check
-            stype = step.get('type')
-            
-            if stype == 'continuous':
-                format_counts['continuous'] += 1
-                if step.get('user_input') != 'required':
-                    errors.append(f"[{rel_path}] Continuous step {addr} must specify 'user_input: required'.")
-                if 'recommended_hex' in step:
-                    errors.append(f"[{rel_path}] Continuous step {addr} has forced 'recommended_hex: {step['recommended_hex']}'. Continuous parameters must be left for user input.")
+            targets = step.get('targets', [])
+            if not isinstance(targets, list) or len(targets) == 0:
+                errors.append(f"[{rel_path}] Step {addr} missing or empty 'targets' list.")
                 continue
 
-            if stype == 'multi_choice':
-                format_counts['multi_choice'] += 1
-                if 'options' not in step or not isinstance(step['options'], (dict, str)):
-                    errors.append(f"[{rel_path}] Multi-choice step {addr} missing 'options' mapping.")
-                continue
+            for t_idx, target in enumerate(targets):
+                total_targets += 1
+                mask = target.get('mask')
+                t_type = target.get('type')
 
-            if stype == 'all_zeros':
-                format_counts['all_zeros'] += 1
-                continue
+                if not mask:
+                    errors.append(f"[{rel_path}] Step {addr} target {t_idx} missing 'mask'.")
+                if t_type not in ('discrete', 'continuous'):
+                    errors.append(f"[{rel_path}] Step {addr} target {t_idx} invalid type: '{t_type}'. Must be 'discrete' or 'continuous'.")
 
-            # Reject Flat Formats
-            if 'bits' in step:
-                errors.append(f"[{rel_path}] Step {addr} uses legacy flat 'bits' format. Must use Format 1 (hierarchical 'nibbles' list).")
-                continue
-            if 'bit' in step:
-                errors.append(f"[{rel_path}] Step {addr} uses legacy flat 'bit' format. Must use Format 1 (hierarchical 'nibbles' list).")
-                continue
+                if t_type == 'continuous':
+                    format_counts['continuous_targets'] += 1
+                    if target.get('user_input') != 'required':
+                        errors.append(f"[{rel_path}] Continuous target {addr} must specify 'user_input: required'.")
+                    if 'community_hex' in target:
+                        errors.append(f"[{rel_path}] Continuous target {addr} has forced 'community_hex: {target['community_hex']}'. Continuous parameters must be left for user input.")
+                elif t_type == 'discrete':
+                    format_counts['discrete_targets'] += 1
+                    bits = target.get('bits', [])
+                    chex = target.get('community_hex')
+                    if not bits and not chex:
+                        errors.append(f"[{rel_path}] Discrete target {addr} must specify either 'bits' or 'community_hex'.")
+                    for b in bits:
+                        if 'bit' not in b or 'action' not in b:
+                            errors.append(f"[{rel_path}] Bit entry in {addr} missing 'bit' or 'action'.")
+                        elif b.get('bit') not in (0, 1, 2, 3):
+                            errors.append(f"[{rel_path}] Bit index in {addr} must be 0, 1, 2, or 3. Found: {b.get('bit')}")
+                        elif b.get('action') not in (0, 1):
+                            errors.append(f"[{rel_path}] Bit action in {addr} must be 0 or 1. Found: {b.get('action')}")
 
-            if 'nibbles' in step and step['nibbles']:
-                format_counts['format_1_hierarchical'] += 1
-                # Validate nibbles structure
-                for n in step['nibbles']:
-                    if not isinstance(n, dict):
-                        errors.append(f"[{rel_path}] Step {addr} nibble entry must be a dictionary.")
-                        continue
-                    if 'nibble' not in n:
-                        errors.append(f"[{rel_path}] Step {addr} nibble entry missing 'nibble' index.")
-
-                    # Ensure discrete targets exist
-                    has_action = False
-                    if n.get('recommended_hex') or n.get('target_state') or n.get('hex_offset'):
-                        has_action = True
-                    for b in n.get('bits', []):
-                        if 'action' in b or b.get('target_state'):
-                            has_action = True
-                    if not has_action and not step.get('recommended_hex') and not step.get('target_state'):
-                        errors.append(f"[{rel_path}] Step {addr} Nibble {n.get('nibble')} has no recommended_hex, target_state, or bit actions.")
-            else:
-                errors.append(f"[{rel_path}] Step {addr} missing 'nibbles' list or valid step type ('continuous', 'multi_choice', 'all_zeros').")
-
-    print(f"--- AsBuiltPro Recipe Validation Report ---")
-    print(f"Scanned {len(recipe_files)} recipes ({total_steps} total steps across all platforms).")
-    print(f"Format Breakdown: {format_counts}")
+    print(f"--- AsBuiltPro Recipe Validation Report (v1.1) ---")
+    print(f"Scanned {len(recipe_files)} recipes ({total_steps} total module steps, {total_targets} atomic targets).")
+    print(f"Target Breakdown: {format_counts}")
     
     if warnings:
         print(f"\nWarnings ({len(warnings)}):")
@@ -135,11 +121,13 @@ def validate_catalog(recipes_dir="recipes"):
 
     if errors:
         print(f"\nFAILED: {len(errors)} schema errors detected:", file=sys.stderr)
-        for e in errors:
+        for e in errors[:15]:
             print(f"  [ERROR] {e}", file=sys.stderr)
+        if len(errors) > 15:
+            print(f"  ... and {len(errors) - 15} more errors.", file=sys.stderr)
         return False
 
-    print("\nSUCCESS: All recipes adhere strictly to AsBuiltPro Format 1 schema and standards.")
+    print("\nSUCCESS: All recipes adhere strictly to AsBuiltPro v1.1 schema and standards.")
     return True
 
 if __name__ == '__main__':

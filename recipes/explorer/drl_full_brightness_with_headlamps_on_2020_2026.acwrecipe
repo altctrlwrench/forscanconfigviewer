@@ -1,0 +1,53 @@
+title: DRL - Full Brightness with Headlamps On
+raw_community_title: DRLs - full brightness
+category: Lighting
+platform: Explorer
+model_years: 2020-2026
+trim: All
+source_sheet: 2020-2024 Explorer.xlsx
+steps:
+- module: BCM
+  address: 726-42-01
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '2'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+      feature: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+    - bit: 1
+      action: 1
+      feature: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+    - bit: 0
+      action: 0
+      feature: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+  - mask: xxx* xxxx xx--
+    community_hex: '2'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+      feature: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+    - bit: 1
+      action: 1
+      feature: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+    - bit: 0
+      action: 0
+      feature: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+- module: BCM
+  address: 726-38-01
+  notes: 'set at about 60% brightness (3C hex) thru 75% brightness (4B hex) use lowest
+    value you can before flickering appears.
+
+
+    64 =100%, 5A = 90%, 4B =75%, 32 = 50%, 19 = 25%, 0A =10%'
+  targets:
+  - mask: xxxx **xx xx--
+    type: continuous
+    user_input: required
+recipe_version: '1.1'

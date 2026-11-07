@@ -1,0 +1,83 @@
+title: Factory Trailer Brake Controller (TBC) Module Enable
+raw_community_title: 2021-26 - Adding OEM Trailer Brake Controller
+category: Powertrain and Drivetrain
+platform: F-150
+model_years: 2021-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+notes: use E for a turbo engine, use A for a 5.0L
+steps:
+- module: IPC
+  address: 720-07-01
+  notes: use E for a turbo engine, use A for a 5.0L
+  targets:
+  - mask: xxxx x*xx xx--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: Trailer Brake Controller (TBC)
+- module: BCM
+  address: 726-69-02
+  targets:
+  - mask: xxxx x*xx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: TBM_Available_Cfg (TBMAC)
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: TRM_Available_Cfg (TRMAC)
+- module: TRM
+  address: 791-01-02
+  notes: add 1 to current value (if 4 make 5, if 2 make 3)
+  targets:
+  - mask: xxxx x*xx xx--
+    offset_hint: '+1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature: TBM_Cfg (TBMC)
+- module: APIM
+  address: 7D0-09-03
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: '4'
+    type: discrete
+    bits:
+    - bit: 2
+      action: 1
+      feature: Trailer Brake Controller (TBC)
+- module: IPMA
+  address: 706-18-01
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: C
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: VehicleInfo_TrailerLightModule (VITLM)
+    - bit: 2
+      action: 1
+      feature: VehicleInfo_TrailerBrakeModule (VITBM)
+recipe_version: '1.1'

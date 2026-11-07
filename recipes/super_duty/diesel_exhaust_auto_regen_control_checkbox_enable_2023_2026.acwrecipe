@@ -1,0 +1,38 @@
+title: Diesel Exhaust Auto Regen Control Checkbox Enable
+raw_community_title: Auto Regen Checkbox
+category: Powertrain and Drivetrain
+platform: Super Duty
+model_years: 2023-2026
+trim: Diesel (6.7L Powerstroke)
+source_sheet: 2023-2026 Super Duty Common Items.xlsx
+notes: '[PCM] Plain English - Select option 3 under manual regen
+
+  Add 8 to current value
+
+  Add 2 to current value'
+steps:
+- module: IPC
+  address: 720-07-02
+  notes: '[PCM] Plain English - Select option 3 under manual regen
+
+    Add 8 to current value'
+  targets:
+  - mask: xxx* xxxx xx--
+    offset_hint: '+8'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: Auto Regen Control (ARC)
+- module: APIM
+  address: 7D0-09-03
+  notes: Add 2 to current value
+  targets:
+  - mask: xxxx x*xx xx--
+    offset_hint: '+2'
+    type: discrete
+    bits:
+    - bit: 1
+      action: 1
+      feature: Auto Regen Control (ARC)
+recipe_version: '1.1'

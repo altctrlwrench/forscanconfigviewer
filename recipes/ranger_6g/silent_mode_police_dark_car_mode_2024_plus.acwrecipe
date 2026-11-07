@@ -1,0 +1,54 @@
+title: Silent Mode / Police Dark Car Mode
+raw_community_title: Silent/Dark mode control
+category: Convenience and Electrical
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'Can be changed in FORScan Easy Mode
+
+  FORScan Menu: IMC Silent mode control function (Disabled (Default), Enabled)
+
+  Confirmed: craigc (9/12/2024) Lariat
+
+  FORScan Value: APIM Disabled (Default), Enabled
+
+  Also req force reset the APIM Module in ForScan
+
+  Confirmed: craigc (9/12/2024) Lariat'
+steps:
+- module: IPC
+  address: 720-04-01
+  notes: 'Suggest to use the non-asbuilt menu to change
+
+    * Bit 3 (Add 4 to value to enable)
+
+    FORScan Menu: Silent mode control function (Disabled (Default), Enabled)
+
+    Confirmed: craigc (9/12/2024) Lariat'
+  targets:
+  - mask: xxx* xxxx xx--
+    offset_hint: '+4'
+    type: discrete
+    bits:
+    - bit: 2
+      action: 1
+      feature: Silent Mode Control Function (SMCF)
+- module: APIM
+  address: 7D0-09-02
+  notes: '* Bit 1 (add 1 to value to enable) (e.g. E to F) and reset APIM
+
+    FORScan Value: Disabled (Default), Enabled
+
+    Also req force reset the APIM Module in ForScan
+
+    Confirmed: craigc (9/12/2024) Lariat'
+  targets:
+  - mask: '*xxx xxxx xx--'
+    offset_hint: '+1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature: Silent Mode Control Function (SMCF)
+recipe_version: '1.1'

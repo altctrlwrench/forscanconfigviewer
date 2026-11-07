@@ -1,0 +1,21 @@
+title: Diesel Particulate Filter (DPF) Soot Percentage Screen
+raw_community_title: DPF% on screen (may already be enabled)
+category: Cluster and Displays
+platform: Super Duty
+model_years: 2023-2026
+trim: Diesel (6.7L Powerstroke)
+source_sheet: 2023-2026 Super Duty Common Items.xlsx
+notes: (Check Diesel Measurements Screen before changing) Add 8 to current value
+steps:
+- module: IPC
+  address: 720-07-02
+  notes: (Check Diesel Measurements Screen before changing) Add 8 to current value
+  targets:
+  - mask: x*xx xxxx xx--
+    offset_hint: '+8'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: ManRegen (MR)
+recipe_version: '1.1'

@@ -5,50 +5,35 @@ category: Cameras and ADAS
 platform: F-150
 model_years: 2021-2026
 trim: All
-validated: true
-verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
 steps:
 - module: IPMA
   address: 706-02-02
-  mask: xxxx xx** xx--
-  nibbles:
-  - nibble: 6
-    recommended_hex: '0'
+  targets:
+  - mask: xxxx xx*x xx--
+    community_hex: '0'
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: FeatureCfg_DPAC_OffRoadVersion
-      target_state: Disabled
     - bit: 2
       action: 0
-      feature_name: FeatureCfg_DPAC_OffRoadVersion
-      target_state: Disabled
     - bit: 1
       action: 0
-      feature_name: FeatureCfg_DPAC_OffRoadVersion
-      target_state: Disabled
     - bit: 0
       action: 0
-      feature_name: FeatureCfg_DPAC_OffRoadVersion
-      target_state: Disabled
-  - nibble: 7
-    recommended_hex: '3'
+  - mask: xxxx xxx* xx--
+    community_hex: '3'
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: FeatureCfg_DPAC_OffRoadVersion
-      target_state: Disabled
     - bit: 2
       action: 0
-      feature_name: FeatureCfg_DPAC_OffRoadVersion
-      target_state: Disabled
     - bit: 1
       action: 1
-      feature_name: FeatureCfg_DPAC_OffRoadVersion
-      target_state: Disabled
+      feature: FeatureCfg_DPAC_OffRoadVersion
     - bit: 0
       action: 1
-      feature_name: FeatureCfg_DPAC_OffRoadVersion
-      target_state: Disabled
-validation_status: validated
+      feature: FeatureCfg_DPAC_OffRoadVersion
+recipe_version: '1.1'

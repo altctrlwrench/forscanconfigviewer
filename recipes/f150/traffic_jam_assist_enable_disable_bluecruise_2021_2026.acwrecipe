@@ -1,0 +1,32 @@
+title: Traffic Jam Assist Enable (Disable BlueCruise)
+raw_community_title: 'ADAS - Advanced Driver Assist Systems
+
+  Disable BlueCruise and enable Traffic Jam Assist
+
+  (settings for normal Adaptive Cruise Control) (2021-2026)'
+category: General
+platform: F-150
+model_years: 2021-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+notes: enables Traffic Jam Assist & disables Highway Assist
+steps:
+- module: IPMA
+  address: 706-01-01
+  notes: enables Traffic Jam Assist & disables Highway Assist
+  targets:
+  - mask: xxx* xxxx xx--
+    community_hex: '8'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: ModuleFeatureCfg_TJA (MFCTJA)
+  - mask: xxxx xxxx *x--
+    community_hex: '8'
+    type: discrete
+    bits:
+    - bit: 1
+      action: 1
+      feature: ModuleFeatureCfg_HwyAssist (MFCHA)
+recipe_version: '1.1'

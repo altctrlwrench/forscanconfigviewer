@@ -1,0 +1,200 @@
+title: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+raw_community_title: ⚡ [Lightning] Glare-Free High Beams (Matrix LED Enable)
+category: Lighting
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+notes: '[Category: Lighting] [Years: 2022-2026] [Original Title: Glare-free headlights]
+
+  Enhances Auto High Beam behavior to provide localized dimming of brights based on
+  surrounding traffic. Dynamic bending lights continue to work. May take a couple
+  of restarts to take effect. Specific to Lightnings. Ensure no checksum DTCs are
+  set for the HCM.'
+steps:
+- module: APIM
+  address: 7D0-09-01
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature: Autolamp Delay (AD)
+- module: APIM
+  address: 7D0-09-03
+  targets:
+  - mask: xx*x xxxx xx--
+    community_hex: C
+    type: discrete
+    bits:
+    - bit: 1
+      action: 0
+      feature: Air Suspension SUMA Control Function (ASSUMACF)
+    - bit: 0
+      action: 0
+      feature: Air Suspension Auto Height SUMA (ASAHSUMA)
+- module: IPMA
+  address: 706-01-01
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: '9'
+    type: discrete
+    bits:
+    - bit: 1
+      action: 0
+      feature: ModuleFeatureCfg_RBA (MFCRBA)
+    - bit: 0
+      action: 1
+      feature: ModuleFeatureCfg_RBA (MFCRBA)
+- module: SCCM
+  address: 724-04-01
+  targets:
+  - mask: xxx* xxxx xx--
+    community_hex: '4'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 1
+      feature: AHB_Feature (AHBF)
+    - bit: 1
+      action: 0
+      feature: AHB_Feature (AHBF)
+    - bit: 0
+      action: 0
+      feature: AHB_Feature (AHBF)
+- module: IPC
+  address: 720-01-01
+  targets:
+  - mask: xx*x xxxx xx--
+    community_hex: '8'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: Adaptive Head Lamps Control Function (AHLCF)
+- module: IPC
+  address: 720-10-01
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: '3'
+    type: discrete
+    bits:
+    - bit: 1
+      action: 1
+      feature: AutoHighBeam Menu (AHBM)
+    - bit: 0
+      action: 1
+      feature: AutoHighBeam Menu (AHBM)
+- module: HCM
+  address: 734-01-02
+  targets:
+  - mask: xxxx x*xx xx--
+    community_hex: '2'
+    type: discrete
+- module: HCM
+  address: 734-03-02
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: m2_ADB_DBL_combine (ADBDBL)
+- module: HCM
+  address: 734-11-01
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: x*xx xxxx xx--
+    community_hex: '7'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 1
+    - bit: 1
+      action: 1
+    - bit: 0
+      action: 1
+  - mask: xx*x xxxx xx--
+    community_hex: '3'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 1
+    - bit: 0
+      action: 1
+  - mask: xxx* xxxx xx--
+    community_hex: '5'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 1
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+  - mask: xxxx *xxx xx--
+    community_hex: '8'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+    - bit: 2
+      action: 0
+      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+    - bit: 1
+      action: 0
+      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+    - bit: 0
+      action: 0
+      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+  - mask: xxxx x*xx xx--
+    community_hex: '9'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+    - bit: 2
+      action: 0
+      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+    - bit: 1
+      action: 0
+      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+    - bit: 0
+      action: 1
+      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+recipe_version: '1.1'

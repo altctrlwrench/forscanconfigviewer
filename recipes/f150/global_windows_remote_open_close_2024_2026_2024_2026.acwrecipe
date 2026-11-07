@@ -1,0 +1,117 @@
+title: Global Windows Remote Open/Close (2024-2026)
+raw_community_title: "(2024-2026)  Global Windows Open/Close \n(driver/pass windows\
+  \ only)"
+category: General
+platform: F-150
+model_years: 2024-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+notes: 'Optional: to add Global Open/Close to Sync 4 Settings menu set this in APIM:
+  7D0-09-01- xxxx xExx xx--'''
+steps:
+- module: DDM
+  address: 740-06-02
+  notes: 'Optional: to add Global Open/Close to Sync 4 Settings menu set this in APIM:
+    7D0-09-01- xxxx xExx xx--'
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+- module: PDM
+  address: 741-06-02
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+- module: BCM
+  address: 726-11-02
+  notes: To roll down windows press unlock button on fob and then press again and
+    hold
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: GlobalClose_Cfg (GCC)
+  - mask: xxxx x*xx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: GlobalOpen_Cfg (GOC)
+- module: BCM
+  address: 726-22-01
+  notes: To roll up windows press lock button on fob and then press again and hold
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+- module: BCM
+  address: 726-22-02
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+recipe_version: '1.1'

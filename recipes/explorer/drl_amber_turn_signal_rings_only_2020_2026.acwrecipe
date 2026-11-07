@@ -1,0 +1,82 @@
+title: DRL - Amber Turn Signal Rings Only
+raw_community_title: Sets DRL to amber turrns only (DRL in amber LED bars)
+category: Lighting
+platform: Explorer
+model_years: 2020-2026
+trim: All
+source_sheet: 2020-2024 Explorer.xlsx
+notes: 'Sets the White DRL to fixed position (off when the car is in normal drive
+  mode during daytime)
+
+  Sets Turn to Turn and DRL'
+steps:
+- module: BCM
+  address: 726-42-01
+  notes: Sets the White DRL to fixed position (off when the car is in normal drive
+    mode during daytime)
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '4'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 1
+      feature: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+    - bit: 1
+      action: 0
+      feature: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+    - bit: 0
+      action: 0
+      feature: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+  - mask: xxx* xxxx xx--
+    community_hex: '4'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 1
+      feature: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+    - bit: 1
+      action: 0
+      feature: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+    - bit: 0
+      action: 0
+      feature: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+- module: BCM
+  address: 726-43-01
+  notes: Sets Turn to Turn and DRL
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+      feature: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+    - bit: 1
+      action: 0
+      feature: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+    - bit: 0
+      action: 1
+      feature: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+  - mask: xxx* xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+      feature: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+    - bit: 1
+      action: 0
+      feature: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+    - bit: 0
+      action: 1
+      feature: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+recipe_version: '1.1'

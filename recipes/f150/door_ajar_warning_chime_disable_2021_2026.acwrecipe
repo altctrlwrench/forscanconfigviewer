@@ -4,25 +4,20 @@ category: Chimes and Horn
 platform: F-150
 model_years: 2021-2026
 trim: All
-validated: true
-verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
 notes: see IPC spreadsheet to disable EIOCM
 steps:
 - module: IPC
   address: 720-01-02
-  mask: xx*x xx--
-  notes: see IPC spreadsheet to disable EIOCM | Engine/Ignition On chime disabled
-  nibbles:
-  - nibble: 2
+  notes: see IPC spreadsheet to disable EIOCM
+  targets:
+  - mask: xx*x xxxx xx--
+    type: discrete
     bits:
     - bit: 1
       action: 0
-      feature_name: Engine/Ignition On Chime - Message (EIOCM)
-      target_state: EIOCM Disabled
+      feature: Engine/Ignition On Chime - Message (EIOCM)
     - bit: 0
       action: 0
-      feature_name: Engine/Ignition On Chime - Message (EIOCM)
-      target_state: EIOCM Disabled
-    notes: see IPC spreadsheet to disable EIOCM | Engine/Ignition On chime disabled
-validation_status: validated
+      feature: Engine/Ignition On Chime - Message (EIOCM)
+recipe_version: '1.1'

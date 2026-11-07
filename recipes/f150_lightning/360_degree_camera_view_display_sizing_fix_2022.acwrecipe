@@ -1,36 +1,26 @@
 title: 360 Degree Camera View Display Sizing Fix
-raw_community_title: Fix Small 360 degree camera view
+raw_community_title: ⚡ [Lightning] 360 Degree Camera View Display Sizing Fix
 category: Cameras and ADAS
 platform: F-150 Lightning
 model_years: '2022'
 trim: All
-validated: true
-verified_by: Kyle / AsBuiltPro & Lightning Community
-source_sheet: F-150 Lightning FORScan Thread
-notes: Resolves aspect ratio display issue seen on some 2022 models after IPMA updates.
+source_sheet: 2021-2026 F150.xlsx
+notes: '[Category: Cameras and ADAS] [Years: 2022] [Original Title: Fix Small 360
+  degree camera view]
+
+  Resolves aspect ratio display issue seen on some 2022 models after IPMA updates.'
 steps:
 - module: APIM
   address: 7D0-01-04
-  mask: xxxx xxx* xx--
-  nibbles:
-  - nibble: 7
-    recommended_hex: '3'
-    community_instruction: change from 2 to 3
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: '3'
+    type: discrete
     bits:
-    - bit: 3
-      action: 0
-      feature_name: Number of Bladders Continued (NBC)
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: 360 Camera View Format (CVF)
-      target_state: Disabled
     - bit: 1
       action: 1
-      feature_name: 360 Camera View Format (CVF)
-      target_state: Enabled
+      feature: 360 Camera View Format (CVF)
     - bit: 0
       action: 1
-      feature_name: 360 Camera View Format (CVF)
-      target_state: Enabled
-validation_status: validated
+      feature: 360 Camera View Format (CVF)
+recipe_version: '1.1'

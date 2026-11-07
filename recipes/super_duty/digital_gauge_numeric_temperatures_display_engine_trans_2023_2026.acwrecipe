@@ -1,0 +1,26 @@
+title: Digital Gauge Numeric Temperatures Display (Engine & Trans)
+raw_community_title: Temps on Gauges 12" Cluster only
+category: Cluster and Displays
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+source_sheet: 2023-2026 Super Duty Common Items.xlsx
+notes: 'E-Turbo/Brake Controller
+
+  5-Turbo/No Brake Controller
+
+  A-Non Turbo/Brake Controller
+
+  2-Non Turbo/No Brake Controller'
+steps:
+- module: IPC
+  address: 720-07-01
+  notes: E-Turbo/Brake Controller
+  targets:
+  - mask: xxxx x*xx xx--
+    type: discrete
+    bits:
+    - bit: 1
+      action: 1
+      feature: Digital Gauge Interface (DGI)
+recipe_version: '1.1'

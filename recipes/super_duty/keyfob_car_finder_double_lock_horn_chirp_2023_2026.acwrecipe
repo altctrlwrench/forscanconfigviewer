@@ -1,0 +1,27 @@
+title: Keyfob Car Finder (Double-Lock Horn Chirp)
+raw_community_title: Car Finder (2x Click Horn)
+category: Locks and Security
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+source_sheet: 2023-2026 Super Duty Common Items.xlsx
+notes: 0=Disable  1=Enable
+steps:
+- module: BdyCm-BCM
+  address: 726-24-02
+  notes: 0=Disable  1=Enable
+  targets:
+  - mask: xxxx xxxx x*--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+      feature: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+recipe_version: '1.1'

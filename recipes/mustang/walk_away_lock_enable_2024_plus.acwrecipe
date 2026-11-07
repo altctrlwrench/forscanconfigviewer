@@ -1,0 +1,94 @@
+title: Walk Away Lock Enable
+raw_community_title: Walk Away Lock (Job2 Mustang or Job1 that had a BCM update)
+category: Locks and Security
+platform: Mustang
+model_years: 2024+
+trim: All
+source_sheet: 2024 Mustang Darkhorse (public).xlsx
+notes: No data tables for Job 1, unverified.
+steps:
+- module: BCM
+  address: 726-91-01
+  targets:
+  - mask: xxxx x*xx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: FeatLst_to_BCM_Feature_InitVal [WALKAWAYLOCK] (WALKAWAYLOCK)
+- module: BCM
+  address: 726-97-02
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [WALKAWAYLOCK] [PERS_1] (WALKAWAYLOCK_PERS_1)
+  - mask: xxx* xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [WALKAWAYLOCK] [PERS_2] (WALKAWAYLOCK_PERS_2)
+  - mask: xxxx x*xx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [WALKAWAYLOCK] [PERS_3] (WALKAWAYLOCK_PERS_3)
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [WALKAWAYLOCK] [PERS_4] (WALKAWAYLOCK_PERS_4)
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [WALKAWAYLOCK] [VEHICLE] (WALKAWAYLOCK_VEHICLE)
+recipe_version: '1.1'

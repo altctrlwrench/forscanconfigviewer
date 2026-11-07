@@ -1,0 +1,63 @@
+title: Trail Turn Assist Enable
+raw_community_title: Enables Trail Turn Assist
+category: Powertrain and Drivetrain
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'Confirmed: DIYPSCM (1/28/25) Lariat
+
+  FORScan Menu: Trail Turn assist (Disabled (Default), Enabled)
+
+  Confirmed: BigMeatsBronco (1/28/25) Raptor
+
+  FORScan Menu: Off-road Menu - Trail turn Assist (Disabled (Default), Enabled)'
+steps:
+- module: ABS
+  address: 760-03-01
+  notes: '* -> Bit 4 (add 8 to enable)
+
+    FORScan Menu: unknown, use asbuilt (advanced) (Not available - use asbuilt)
+
+    Confirmed: DIYPSCM (1/28/25) Lariat'
+  targets:
+  - mask: xxxx *xxx xx--
+    offset_hint: '+8'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: TTA (TTA)
+  - mask: xxxx x*xx xx--
+    community_hex: x
+    offset_hint: '+8'
+    type: discrete
+- module: APIM
+  address: 7D0-02-01
+  notes: '* -> Bit 1 (add 1 to enable)
+
+    FORScan Menu: Trail Turn assist (Disabled (Default), Enabled)
+
+    Confirmed: BigMeatsBronco (1/28/25) Raptor'
+  targets:
+  - mask: xxx* xxxx xx--
+    offset_hint: '+1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature: Trail Turn Assist (TTA)
+- module: APIM
+  address: 7D0-10-02
+  notes: '* -> Bit 3 (add 4 to enable)
+
+    FORScan Menu: Off-road Menu - Trail turn Assist (Disabled (Default), Enabled)'
+  targets:
+  - mask: xxxx xxx* xx--
+    offset_hint: '+4'
+    type: discrete
+    bits:
+    - bit: 2
+      action: 1
+      feature: Offroad Menu Trail Turn Assist (OMTTA)
+recipe_version: '1.1'

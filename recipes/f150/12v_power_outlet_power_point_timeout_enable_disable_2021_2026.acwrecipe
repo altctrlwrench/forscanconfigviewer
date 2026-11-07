@@ -1,0 +1,39 @@
+title: 12V Power Outlet (Power Point) Timeout Enable/Disable
+raw_community_title: Power Point Timeout Configuration (2021-2026)
+category: Convenience and Electrical
+platform: F-150
+model_years: 2021-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+notes: disabled (always on)
+steps:
+- module: BCM
+  address: 726-57-01
+  notes: disabled (always on)
+  targets:
+  - mask: xxxx *xxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx x*xx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+      feature: Power_Point_Timeout_Cfg (PPTC)
+recipe_version: '1.1'

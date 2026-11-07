@@ -1,0 +1,22 @@
+title: Acoustic Vehicle Alerting System (AVAS) Speaker Disable
+raw_community_title: Disable Pedestrian Alert Speaker
+category: Chimes and Horn
+platform: F-150
+model_years: 2021-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+notes: 'If your default is 4 change to 0, if default is 5 change to 1 AND disconnect
+  PACM under the glove box according to this video: https://youtu.be/0K9M7hZQTec'
+steps:
+- module: IPC
+  address: 720-09-02
+  notes: 'If your default is 4 change to 0, if default is 5 change to 1 AND disconnect
+    PACM under the glove box according to this video: https://youtu.be/0K9M7hZQTec'
+  targets:
+  - mask: x*xx xxxx xx--
+    type: discrete
+    bits:
+    - bit: 2
+      action: 1
+      feature: Approaching Vehicle Audible System (AVAS)
+recipe_version: '1.1'

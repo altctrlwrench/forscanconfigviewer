@@ -4,33 +4,23 @@ category: Locks and Security
 platform: F-150
 model_years: 2021-2026
 trim: All
-validated: true
-verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
 notes: 0=lights & horn (default) 1=lights only (target setting)
 steps:
 - module: BCM
   address: 726-01-02
-  mask: xxxx xxx* xx--
   notes: 0=lights & horn (default) 1=lights only
-  nibbles:
-  - nibble: 7
+  targets:
+  - mask: xxxx xxx* xx--
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: PanicAlarm_Cfg (PAC)
-      target_state: PAC BOTH
     - bit: 2
       action: 0
-      feature_name: PanicAlarm_Cfg (PAC)
-      target_state: PAC BOTH
     - bit: 1
       action: 0
-      feature_name: PanicAlarm_Cfg (PAC)
-      target_state: PAC BOTH
     - bit: 0
       action: 1
-      feature_name: PanicAlarm_Cfg (PAC)
-      target_state: PAC LIGHTS_ONLY
-    notes: 0=lights & horn (default) 1=lights only
-validation_status: validated
+      feature: PanicAlarm_Cfg (PAC)
+recipe_version: '1.1'

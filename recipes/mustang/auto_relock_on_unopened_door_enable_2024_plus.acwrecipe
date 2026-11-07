@@ -1,0 +1,137 @@
+title: Auto Relock on Unopened Door Enable
+raw_community_title: Auto Relock - if you hit the unlock button on the fob and do
+  not open a door within the timer it will lock the truck
+category: Locks and Security
+platform: Mustang
+model_years: 2024+
+trim: All
+source_sheet: 2024 Mustang Darkhorse (public).xlsx
+notes: '*= 1 for 30 seconds, 2 for 45 seconds
+
+  optional - adds Autorelock to settings, vehicle, locks'
+steps:
+- module: BCM
+  address: 726-20-01
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+      feature: Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)
+  - mask: xxx* xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+      feature: Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)
+  - mask: xxxx x*xx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+      feature: Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+      feature: Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+      feature: Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)
+    - bit: 0
+      action: 1
+      feature: Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)
+- module: BCM
+  address: 726-27-01
+  targets:
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+      feature: FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)
+    - bit: 0
+      action: 1
+      feature: FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)
+- module: BCM
+  address: 726-58-02
+  notes: '*= 1 for 30 seconds, 2 for 45 seconds'
+  targets:
+  - mask: xxx* xxxx xx--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 1
+      feature: AutoRelock_Timeduration_Cfg (ARTC)
+    - bit: 0
+      action: 0
+      feature: AutoRelock_Timeduration_Cfg (ARTC)
+- module: APIM
+  address: 7D0-09-01
+  notes: optional - adds Autorelock to settings, vehicle, locks
+  targets:
+  - mask: xx*x xxxx xx--
+    community_hex: '2'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: Autolock Control Function (ACF)
+    - bit: 1
+      action: 1
+      feature: Auto Relock (AR)
+    - bit: 0
+      action: 1
+      feature: Autounlock Control Function (ACF)
+recipe_version: '1.1'

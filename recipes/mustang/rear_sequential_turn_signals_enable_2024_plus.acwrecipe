@@ -1,0 +1,25 @@
+title: Rear Sequential Turn Signals Enable
+raw_community_title: Rear Sequential Turn Signals
+category: Lighting
+platform: Mustang
+model_years: 2024+
+trim: All
+source_sheet: 2024 Mustang Darkhorse (public).xlsx
+steps:
+- module: BCMB
+  address: 7B7-03-01
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: LED Sequencing Mode (LEDSM)
+recipe_version: '1.1'

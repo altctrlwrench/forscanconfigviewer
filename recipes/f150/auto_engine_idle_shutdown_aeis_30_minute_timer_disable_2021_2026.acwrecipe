@@ -1,0 +1,20 @@
+title: Auto Engine Idle Shutdown (AEIS) 30-Minute Timer Disable
+raw_community_title: Disable Auto Engine Idle Shutdown of 30 mins
+category: Convenience and Electrical
+platform: F-150
+model_years: 2021-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+notes: subtract 8 from your default value (if default is F, change to 7)
+steps:
+- module: IPC
+  address: 720-01-01
+  notes: subtract 8 from your default value (if default is F, change to 7)
+  targets:
+  - mask: x*xx xxxx xx--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+      feature: AEIS With Override (AEISWO)
+recipe_version: '1.1'

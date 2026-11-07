@@ -1,0 +1,37 @@
+title: 12V Power Outlet (Power Point) Timeout Enable/Disable
+raw_community_title: Power Point Timeout Configuration
+category: Convenience and Electrical
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+source_sheet: (2024+) 6G Ranger.xlsx
+notes: "12v outlet power off (seconds) after AUX is off.  Affects center console power\
+  \ port as well as the one in the truck bed, but not the USB ports or 120VAC\n0 -\
+  \ disabled (target setting) = always on\n1 - enabled = use timeout duration setting.\
+  \ \nFORScan Menu: Power Point Feature (Disabled (Always on), Enabled (use timeout\
+  \ - Default))\nTrim: All [Confirmed: craigc (9/16/2024) Lariat]"
+steps:
+- module: BCM
+  address: 726-57-01
+  notes: '0 - disabled/always on, 1-enabled/use timeout duration above.   12v outlet
+    power off (seconds) after AUX is off.  Affects center console power port as well
+    as the one in the truck bed, but not the USB ports or 120VAC
+
+    FORScan Menu: Power Point Feature (Disabled (Always on), Enabled (use timeout
+    - Default))
+
+    Trim: All [Confirmed: craigc (9/16/2024) Lariat]'
+  targets:
+  - mask: xxxx x*xx xx--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+      feature: Power_Point_Timeout_Cfg (PPTC)
+recipe_version: '1.1'

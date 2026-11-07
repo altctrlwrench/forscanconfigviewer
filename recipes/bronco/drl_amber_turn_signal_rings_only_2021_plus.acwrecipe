@@ -1,0 +1,81 @@
+title: DRL - Amber Turn Signal Rings Only
+raw_community_title: Daytime running lights - after writting vehicle must be in drive
+  to see new state (doesn't work in park)
+category: Lighting
+platform: Bronco
+model_years: 2021+
+trim: All
+source_sheet: 2021+ Bronco Common Items.xlsx
+notes: '** NOTE 04 works during daylight, at night white and blink amber
+
+  Confirmed: D2dhanover|multi'
+steps:
+- module: BdyCM
+  address: 726-43-01
+  notes: 'LF_DRL_Lamp_Ckt_Usage_Cfg:
+
+    00=Not Used 01=DRL Only 02=DRL Position 03=Fixed DRL Position 04=Turn and DRL
+    05=Position Only 06=Stop Turn
+
+    ** NOTE 04 works during daylight, at night white and blink amber'
+  targets:
+  - mask: '*xxx xxxx xx--'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: x*xx xxxx xx--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 1
+      feature: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+    - bit: 1
+      action: 0
+      feature: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+    - bit: 0
+      action: 0
+      feature: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+- module: BdyCM
+  address: 726-43-01
+  notes: 'RF_DRL_Lamp_Ckt_Usage_Cfg
+
+    00=Not Used 01=DRL Only 02=DRL Position 03=Fixed DRL Position 04=Turn and DRL
+    05=Position Only 06=Stop Turn
+
+    ** NOTE 04 works during daylight, at night white and blink amber'
+  targets:
+  - mask: xx*x xxxx xx--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxx* xxxx xx--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 1
+      feature: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+    - bit: 1
+      action: 0
+      feature: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+    - bit: 0
+      action: 0
+      feature: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+recipe_version: '1.1'

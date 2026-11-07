@@ -1,0 +1,23 @@
+title: Audio System Equalizer Configuration (non-LUX)
+raw_community_title: Base EQ configuration (non-LUX)
+category: Lighting
+platform: Bronco
+model_years: 2021+
+trim: All
+source_sheet: 2021+ Bronco Common Items.xlsx
+notes: '00 = EQ Off
+
+  01 = EQ On (High-pass filter on the rear pods)
+
+  Confirmed: RagnarKon'
+steps:
+- module: ACM
+  address: 727-01-02
+  notes: '00 = EQ Off
+
+    01 = EQ On (High-pass filter on the rear pods)'
+  targets:
+  - mask: xx** xxxx xx--
+    type: continuous
+    user_input: required
+recipe_version: '1.1'

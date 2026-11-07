@@ -1,0 +1,79 @@
+title: DRL - Grille Marker Lights On with DRL
+raw_community_title: (2024-2026) Raptor (marker lights on with DRL)
+category: Lighting
+platform: F-150
+model_years: 2024-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+notes: Daytime Running Lights (DRL) Include Parklamps Config
+steps:
+- module: BCM
+  address: 726-38-01
+  notes: Daytime Running Lights (DRL) Include Parklamps Config
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: DRL_IncludeParklamps_Cfg (DRLIPC)
+- module: BCM
+  address: 726-43-02
+  notes: Daytime Running Lights (DRL) On With Park Lamps On Config
+  targets:
+  - mask: xxxx xx*x xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: DRL_OnWithParkLampsOn_Cfg (DRLOWPLOC)
+- module: BCM
+  address: 726-87-01
+  notes: Daytime Running Lights (DRL) Suppress License Config
+  targets:
+  - mask: xx*x xxxx xx--
+    community_hex: '0'
+    type: discrete
+  - mask: xxx* xxxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+      feature: DRL_SuppressLicense_Cfg (DRLSLC)
+recipe_version: '1.1'

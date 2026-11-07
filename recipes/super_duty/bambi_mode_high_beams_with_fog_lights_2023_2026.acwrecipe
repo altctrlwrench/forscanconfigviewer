@@ -1,0 +1,27 @@
+title: Bambi Mode (High Beams with Fog Lights)
+raw_community_title: Bambi Mode (High Beams / Fogs)
+category: Lighting
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+source_sheet: 2023-2026 Super Duty Common Items.xlsx
+notes: 0=Enabled  1=Disabled
+steps:
+- module: BdyCm-BCM
+  address: 726-39-02
+  notes: 0=Enabled  1=Disabled
+  targets:
+  - mask: xxx* xxxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+      feature: FrontFog_WithHighBeams_Cfg (FFWHBC)
+recipe_version: '1.1'

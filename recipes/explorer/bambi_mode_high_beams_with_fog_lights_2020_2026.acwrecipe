@@ -1,0 +1,26 @@
+title: Bambi Mode (High Beams with Fog Lights)
+raw_community_title: Bambi Fog Light Mode
+category: Lighting
+platform: Explorer
+model_years: 2020-2026
+trim: All
+source_sheet: 2020-2024 Explorer.xlsx
+notes: Fog lights remain on with high beams activated, once button is pressed.
+steps:
+- module: BCM
+  address: 726-39-02
+  targets:
+  - mask: xxx* xxxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+      feature: FrontFog_WithHighBeams_Cfg (FFWHBC)
+recipe_version: '1.1'

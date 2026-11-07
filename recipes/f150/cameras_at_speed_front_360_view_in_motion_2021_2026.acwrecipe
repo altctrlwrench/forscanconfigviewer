@@ -1,0 +1,85 @@
+title: Cameras at Speed (Front & 360 View in Motion)
+raw_community_title: Enable Cameras at Speed
+category: Cameras and ADAS
+platform: F-150
+model_years: 2021-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: IPMA
+  address: 706-02-02
+  targets:
+  - mask: xxx* xxxx xx--
+    community_hex: F
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_Hitch (FCDPACVCASH)
+    - bit: 2
+      action: 1
+      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_Aux (FCDPACVCASA)
+    - bit: 1
+      action: 1
+      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_CHMSL (FCDPACVCASCHMSL)
+    - bit: 0
+      action: 1
+      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_RCOD (FCDPACVCASRCOD)
+  - mask: xxxx *xxx xx--
+    community_hex: C
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: FeatureCfg_TBA_HitchView (FCTBAHV)
+  - mask: xxxx x*xx xx--
+    community_hex: E
+    type: discrete
+    bits:
+    - bit: 1
+      action: 1
+      feature: FeatureCfg_DPAC_ViewCtlAtSpeed (FCDPACVCAS)
+- module: APIM
+  address: 7D0-01-01
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: F
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: Rear Camera (RC)
+  - mask: xxxx xxxx x*--
+    community_hex: D
+    type: discrete
+- module: APIM
+  address: 7D0-01-04
+  notes: use FF if you have 1-pedal drive
+  targets:
+  - mask: xxxx *xxx xx--
+    community_hex: F
+    type: discrete
+    bits:
+    - bit: 2
+      action: 1
+      feature: Hitch View (HV)
+    - bit: 1
+      action: 1
+      feature: CHMSL View at Speed (CHMSLVS)
+    - bit: 0
+      action: 1
+      feature: Aux View at Speed (AVS)
+  - mask: xxxx x*xx xx--
+    community_hex: D
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: RCOD View at Speed (RCODVS)
+    - bit: 2
+      action: 1
+      feature: Hitch View at Speed (HVS)
+    - bit: 0
+      action: 1
+      feature: Off road Views at Speed (OVS)
+recipe_version: '1.1'

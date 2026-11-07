@@ -1,0 +1,20 @@
+title: 12V Power Outlet (Power Point) Timeout Duration
+raw_community_title: Power Point Timeout Duration (in seconds converted to hex)
+category: Convenience and Electrical
+platform: Bronco
+model_years: 2021+
+trim: All
+source_sheet: 2021+ Bronco Common Items.xlsx
+notes: 'Calculator: https://docs.google.com/spreadsheets/d/15RmCgd740T10K0PnG44p42FCod9BSG3f6yrUc0X5qxw/edit?usp=sharing
+
+  0001 for 1 second, 001E for 30 seconds, 003C for 1 minute, 012C for 5 minutes, 0258
+  for 10 minutes, 0708 for 30 minutes, and 0E10 for 1 hour'
+steps:
+- module: BdyCM
+  address: 726-57-01
+  notes: DeltaNu1142's power point timeout calculator
+  targets:
+  - mask: '**** xxxx xx--'
+    type: continuous
+    user_input: required
+recipe_version: '1.1'

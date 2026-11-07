@@ -1,0 +1,31 @@
+title: DRL - Switchback Operation with Turn Signal
+raw_community_title: Using DRL with Turn Signal
+category: Lighting
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+source_sheet: (2024+) 6G Ranger.xlsx
+notes: "FORScan Menu: Using DRL with Turn Signal \nInhibited (Default, 2), Allow/On\
+  \ (target), set to 1 to dim DRL."
+steps:
+- module: BCM
+  address: 726-38-02
+  notes: '* -> 0 for Allow, 1 for Dim, 2 for Inhibit (Default)
+
+    FORScan Menu: Using DRL with Turn Signal (Inhibited (Default, 2), ** need to verify
+    but options should be "Allow (0)" or "Dim (1))'
+  targets:
+  - mask: xxx* xxxx xx--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+      feature: DRL_WithTurn_Cfg (DRLWTC)
+    - bit: 0
+      action: 0
+      feature: DRL_WithTurn_Cfg (DRLWTC)
+recipe_version: '1.1'

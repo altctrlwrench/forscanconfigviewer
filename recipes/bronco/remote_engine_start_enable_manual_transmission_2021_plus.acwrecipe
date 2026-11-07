@@ -1,0 +1,119 @@
+title: Remote Engine Start Enable (Manual Transmission)
+raw_community_title: Remote Start - 7-Speed
+category: Convenience and Electrical
+platform: Bronco
+model_years: 2021+
+trim: All
+source_sheet: 2021+ Bronco Common Items.xlsx
+notes: 'Remote Start via Keyfob
+
+  Confirmed: Buck Your Bronco
+
+  Remote Start Enable
+
+  Confirmed: Buck Your Bronco
+
+  Remote Start Lightning Enable
+
+  Confirmed: Buck Your Bronco
+
+  Two-way Remote Keyless Entry Enable
+
+  Confirmed: Buck Your Bronco
+
+  Remote Start feature Enable
+
+  Confirmed: Buck Your Bronco'
+steps:
+- module: IPC
+  address: 720-02-02
+  notes: Remote Start via Keyfob
+  targets:
+  - mask: xxxx *xxx xx--
+    community_hex: F
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: Remote Start - Climate Settings (RSCS)
+    - bit: 2
+      action: 1
+      feature: Remote Start - Driver Seat (RSDS)
+    - bit: 1
+      action: 1
+      feature: Remote Start - Feature (RSF)
+    - bit: 0
+      action: 1
+      feature: Remote Start - Passenger Seat (RSPS)
+- module: BCM
+  address: 726-30-01
+  notes: Remote Start Enable
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Remote_Start_Enable_Cfg (RSEC)
+- module: BCM
+  address: 726-63-02
+  notes: Remote Start Lightning Enable
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: RStart_Lighting_Enable_Cfg (RSLEC)
+- module: BCM
+  address: 726-66-01
+  notes: Two-way Remote Keyless Entry Enable
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: TwoWayRKE_Enable_Cfg (TWRKEEC)
+- module: APIM
+  address: 7D0-09-01
+  notes: Remote Start feature Enable
+  targets:
+  - mask: xxxx xxxx *x--
+    community_hex: F
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: Remote Start Climate Settings (RSCS)
+    - bit: 2
+      action: 1
+      feature: Remote Start Driver Seat (RSDS)
+    - bit: 1
+      action: 1
+      feature: Remote Start - Feature (RSF)
+    - bit: 0
+      action: 1
+      feature: Remote Start Passenger Seat (RSPS)
+recipe_version: '1.1'

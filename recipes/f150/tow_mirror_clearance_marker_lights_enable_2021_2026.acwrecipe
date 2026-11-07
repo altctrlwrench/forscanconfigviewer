@@ -4,31 +4,23 @@ category: Lighting
 platform: F-150
 model_years: 2021-2026
 trim: All
-validated: true
-verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
 steps:
 - module: BCM
   address: 726-40-01
-  mask: xxxx xxx* xx--
-  nibbles:
-  - nibble: 7
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
-      target_state: PLBCUC NOT_USED
     - bit: 2
       action: 0
-      feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
-      target_state: PLBCUC NOT_USED
     - bit: 1
       action: 0
-      feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
-      target_state: PLBCUC NOT_USED
+      feature: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
     - bit: 0
       action: 1
-      feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
-      target_state: PLBCUC POSITION_ONLY
-    recommended_hex: '1'
-validation_status: validated
+      feature: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
+recipe_version: '1.1'

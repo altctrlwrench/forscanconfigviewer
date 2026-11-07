@@ -1,0 +1,28 @@
+title: Double Horn Honk on Keyless Exit Disable
+raw_community_title: Double Horn Honk disable
+category: Chimes and Horn
+platform: Bronco
+model_years: 2021+
+trim: All
+source_sheet: 2021+ Bronco Common Items.xlsx
+notes: '0 = disables double honk when exiting running vehicle
+
+  Confirmed: D2dhanover/multi'
+steps:
+- module: BdyCM
+  address: 726-63-02
+  notes: 0 = disables double honk when exiting running vehicle
+  targets:
+  - mask: xxx* xxxx xx--
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+      feature: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+recipe_version: '1.1'

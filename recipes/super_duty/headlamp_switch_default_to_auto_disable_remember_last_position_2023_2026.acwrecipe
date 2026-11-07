@@ -1,0 +1,27 @@
+title: Headlamp Switch Default to Auto Disable (Remember Last Position)
+raw_community_title: Headlamp Switch  "Auto" to Last Known
+category: General
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+source_sheet: 2023-2026 Super Duty Common Items.xlsx
+notes: Change 0 to 1
+steps:
+- module: BdyCm-BCM
+  address: 726-74-01
+  notes: Change 0 to 1
+  targets:
+  - mask: xxx* xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+recipe_version: '1.1'

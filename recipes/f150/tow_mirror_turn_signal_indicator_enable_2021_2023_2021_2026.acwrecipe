@@ -1,0 +1,41 @@
+title: Tow Mirror Turn Signal Indicator Enable (2021-2023)
+raw_community_title: 2021-23 Enabling side turn indicator on tow mirrors upgrade
+category: Lighting
+platform: F-150
+model_years: 2021-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+steps:
+- module: DDM
+  address: 740-03-04
+  targets:
+  - mask: xxxx x*xx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Side Turn Indicator
+- module: PDM
+  address: 741-03-04
+  targets:
+  - mask: xxxx x*xx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: Side Turn Indicator
+recipe_version: '1.1'

@@ -1,0 +1,17 @@
+title: Lane Change Turn Signal Flash Count
+raw_community_title: Turn Signal Flashes (2021-26)
+category: Lighting
+platform: F-150
+model_years: 2021-26
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+notes: add 04 (hex) to your default value for each additional flash
+steps:
+- module: SCCM
+  address: 724-01-01
+  notes: add 04 (hex) to your default value for each additional flash
+  targets:
+  - mask: xxxx **xx xx--
+    type: continuous
+    user_input: required
+recipe_version: '1.1'

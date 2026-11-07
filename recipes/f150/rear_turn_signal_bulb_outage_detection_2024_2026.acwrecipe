@@ -4,38 +4,23 @@ category: Lighting
 platform: F-150
 model_years: 2024-2026
 trim: All
-validated: true
-verified_by: Kyle / AsBuiltPro
 source_sheet: 2021-2026 F150.xlsx
 notes: 0=No Outage (target setting) 01=Outage. Set to No Outage if changing to LED
 steps:
 - module: BCM
   address: 726-44-01
-  mask: xxxx x*xx xx--
-  notes: 0=No Outage (target setting) 01=Outage. Set to No Outage if changing to LED
-    | Data table indicates different feature configured than bulb outage
-  community_instruction: 0=No Outage (target setting) 01=Outage. Set to No Outage
-    if changing to LED | Data table indicates different feature configured than bulb
-    outage
-  nibbles:
-  - nibble: 5
+  notes: 0=No Outage 01=Outage - set to no outage when upgrading to LED
+  targets:
+  - mask: xxxx x*xx xx--
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-      target_state: RBTOC NO_OUTAGE
     - bit: 2
       action: 0
-      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-      target_state: RBTOC NO_OUTAGE
     - bit: 1
       action: 0
-      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-      target_state: RBTOC NO_OUTAGE
     - bit: 0
       action: 0
-      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-      target_state: RBTOC NO_OUTAGE
-    notes: 0=No Outage (target setting) 01=Outage. Set to No Outage if changing to
-      LED | Data table indicates different feature configured than bulb outage
-validation_status: validated
+      feature: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
+recipe_version: '1.1'

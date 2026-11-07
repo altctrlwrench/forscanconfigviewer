@@ -4,57 +4,36 @@ category: Lighting
 platform: Explorer
 model_years: 2021-2024
 trim: All
-validated: true
-verified_by: Kyle / AsBuiltPro
 source_sheet: 2020-2024 Explorer.xlsx
 notes: 00=No Outage 01=Outage - set to no outage when upgrading to LED
 steps:
 - module: BCM
   address: 726-44-02
-  mask: '**xx xxxx xx--'
   notes: 00=No Outage 01=Outage - set to no outage when upgrading to LED
-  nibbles:
-  - nibble: 0
-    recommended_hex: '0'
-    notes: 00=No Outage 01=Outage - set to no outage when upgrading to LED
-    community_instruction: 00=No Outage 01=Outage - set to no outage when upgrading
-      to LED
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: '0'
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-      target_state: RBTOC NO_OUTAGE
     - bit: 2
       action: 0
-      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-      target_state: RBTOC NO_OUTAGE
     - bit: 1
       action: 0
-      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-      target_state: RBTOC NO_OUTAGE
     - bit: 0
       action: 0
-      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-      target_state: RBTOC NO_OUTAGE
-  - nibble: 1
-    recommended_hex: '0'
-    notes: 00=No Outage 01=Outage - set to no outage when upgrading to LED
-    community_instruction: 00=No Outage 01=Outage - set to no outage when upgrading
-      to LED
+  - mask: x*xx xxxx xx--
+    community_hex: '0'
+    type: discrete
     bits:
     - bit: 3
       action: 0
-      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-      target_state: RBTOC NO_OUTAGE
     - bit: 2
       action: 0
-      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-      target_state: RBTOC NO_OUTAGE
     - bit: 1
       action: 0
-      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-      target_state: RBTOC NO_OUTAGE
     - bit: 0
       action: 0
-      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
-      target_state: RBTOC NO_OUTAGE
+      feature: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
+recipe_version: '1.1'

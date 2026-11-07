@@ -1,0 +1,31 @@
+title: TPMS Tire Temperature Display Enable
+raw_community_title: TPMS - Display tire temperature in addition to tire pressure
+category: Cluster and Displays
+platform: Ranger (6G)
+model_years: 2024+
+trim: All
+source_sheet: (2024+) 6G Ranger.xlsx
+notes: 'Can use FORScan Easy Mode
+
+  FORScan Menu: Tire Temperature Display (Disabled (Default), Enabled)
+
+  Trim: All [Confirmed: jezzzza (9/12/2024) Raptor]'
+steps:
+- module: IPC
+  address: 720-11-01
+  notes: 'Suggest to use the non-asbuilt menu to change
+
+    * -> Bit 4 (Add 8 to enable, e.g. change 2 to A)
+
+    FORScan Menu: Tire Temperature Display (Disabled (Default), Enabled)
+
+    Trim: All [Confirmed: jezzzza (9/12/2024) Raptor]'
+  targets:
+  - mask: xxxx *xxx xx--
+    offset_hint: '+8'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature: Tire Temperature Display (TTD)
+recipe_version: '1.1'

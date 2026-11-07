@@ -1,0 +1,45 @@
+title: AutoHold Brake Memory / Default State
+raw_community_title: AutoHold
+category: Powertrain and Drivetrain
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+source_sheet: 2023-2026 Super Duty Common Items.xlsx
+notes: 'Add 1 to current value
+
+  Add 4 to current value'
+steps:
+- module: ABS
+  address: 760-03-01
+  notes: Add 1 to current value
+  targets:
+  - mask: '*xxx xxxx xx--'
+    offset_hint: '+1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature: Autohold  (A)
+- module: APIM
+  address: 7D0-01-03
+  notes: Add 4 to current value
+  targets:
+  - mask: xx*x xxxx xx--
+    offset_hint: '+4'
+    type: discrete
+    bits:
+    - bit: 2
+      action: 1
+      feature: Auto Hold (AH)
+- module: IPC
+  address: 720-02-01
+  notes: Add 1 to current value
+  targets:
+  - mask: xxxx x*xx xx--
+    offset_hint: '+1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature: AutoHold (AH)
+recipe_version: '1.1'

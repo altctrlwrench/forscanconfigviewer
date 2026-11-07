@@ -1,0 +1,23 @@
+title: Door Ajar Warning Chime Disable
+raw_community_title: Door Ajar - Chime Disable
+category: Chimes and Horn
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+source_sheet: 2023-2026 Super Duty Common Items.xlsx
+notes: Subtract 4 to current value
+steps:
+- module: IPC
+  address: 720-01-02
+  notes: Subtract 4 to current value
+  targets:
+  - mask: xx*x xxxx xx--
+    type: discrete
+    bits:
+    - bit: 1
+      action: 0
+      feature: Engine/Ignition On Chime - Message (EIOCM)
+    - bit: 0
+      action: 0
+      feature: Engine/Ignition On Chime - Message (EIOCM)
+recipe_version: '1.1'

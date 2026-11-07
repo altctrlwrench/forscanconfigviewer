@@ -1,0 +1,24 @@
+title: Key-in-Ignition Warning Chime Disable
+raw_community_title: Disable key-in ignition chime
+category: Chimes and Horn
+platform: Bronco
+model_years: 2021+
+trim: Raptor / Digital Cluster
+source_sheet: 2021+ Bronco Common Items.xlsx
+notes: 'changed from 0 to 2
+
+  Confirmed: LagoCJ/multi'
+steps:
+- module: IPC
+  address: 720-01-02
+  notes: 'changed from 0 to 2
+
+    Confirmed: LagoCJ/multi'
+  targets:
+  - mask: xxxx x*xx xx--
+    type: discrete
+    bits:
+    - bit: 1
+      action: 1
+      feature: Seatbelt Warning Market (SWM)
+recipe_version: '1.1'

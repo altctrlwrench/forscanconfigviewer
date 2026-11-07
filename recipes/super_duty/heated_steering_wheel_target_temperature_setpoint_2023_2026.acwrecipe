@@ -1,0 +1,17 @@
+title: Heated Steering Wheel Target Temperature Setpoint
+raw_community_title: Heated Wheel Steering Wheel Temp
+category: Convenience and Electrical
+platform: Super Duty
+model_years: 2023-2026
+trim: All
+source_sheet: 2023-2026 Super Duty Common Items.xlsx
+notes: Range 24°c-39°c (1-F) ex:0=24c, 1=25c,B=35°c
+steps:
+- module: SCCM
+  address: 724-06-01
+  notes: Range 24°c-39°c (1-F) ex:B=35°c
+  targets:
+  - mask: '*xxx xxxx xx--'
+    type: continuous
+    user_input: required
+recipe_version: '1.1'

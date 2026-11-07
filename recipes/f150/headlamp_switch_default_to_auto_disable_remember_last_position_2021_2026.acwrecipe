@@ -1,0 +1,39 @@
+title: Headlamp Switch Default to Auto Disable (Remember Last Position)
+raw_community_title: Prevent headlamp switch from defaulting to Auto position (2021-2026)
+category: Lighting
+platform: F-150
+model_years: 2021-2026
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+notes: headlamp switch will revert to last position used on next startup
+steps:
+- module: BCM
+  address: 726-74-01
+  notes: headlamp switch will revert to last position used on next startup
+  targets:
+  - mask: xx*x xxxx xx--
+    community_hex: '0'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 0
+  - mask: xxx* xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 0
+    - bit: 2
+      action: 0
+    - bit: 1
+      action: 0
+    - bit: 0
+      action: 1
+      feature: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+recipe_version: '1.1'
