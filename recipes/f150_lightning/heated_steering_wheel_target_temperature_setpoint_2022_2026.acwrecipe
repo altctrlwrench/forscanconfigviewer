@@ -22,17 +22,17 @@ steps:
     - bit: 3
       action: 1
       feature_name: HSW_Level_3_TempSetPt (HSWLTSP)
-      target_state: HSWLTSP 32°C
+      target_state: HSWLTSP 35°C
     - bit: 2
       action: 0
       feature_name: HSW_Level_3_TempSetPt (HSWLTSP)
-      target_state: HSWLTSP 24°C
+      target_state: HSWLTSP 35°C
     - bit: 1
       action: 1
       feature_name: HSW_Level_3_TempSetPt (HSWLTSP)
-      target_state: HSWLTSP 26°C
+      target_state: HSWLTSP 35°C
     - bit: 0
       action: 1
       feature_name: HSW_Level_3_TempSetPt (HSWLTSP)
-      target_state: HSWLTSP 25°C
+      target_state: HSWLTSP 35°C
 recipe_version: '1.1'

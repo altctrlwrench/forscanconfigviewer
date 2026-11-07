@@ -19,7 +19,7 @@ steps:
       feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
       aliases:
       - Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE]
-      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+      target_state: AUDIBLELOCKFEEDBACK_VEHICLE ENABLE
       state_aliases:
       - Disable
     - bit: 0

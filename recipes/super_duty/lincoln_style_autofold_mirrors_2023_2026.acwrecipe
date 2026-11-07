@@ -21,7 +21,7 @@ steps:
       feature_name: Mirror_Folding_Cfg (MFC)
       aliases:
       - Mirror_Folding_Cfg
-      target_state: MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
+      target_state: MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
       state_aliases:
       - Ford,
     - bit: 0
@@ -45,7 +45,7 @@ steps:
       feature_name: Mirror_Folding_Cfg (MFC)
       aliases:
       - Mirror_Folding_Cfg
-      target_state: MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
+      target_state: MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
       state_aliases:
       - Ford,
     - bit: 0

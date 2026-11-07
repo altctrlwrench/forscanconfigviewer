@@ -43,7 +43,7 @@ steps:
       feature_name: Mirror_Folding_Cfg
       aliases:
       - Mirror_Folding_Cfg (MFC)
-      target_state: Ford,
+      target_state: MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
       state_aliases:
       - MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
     - bit: 0
@@ -51,7 +51,7 @@ steps:
       feature_name: Mirror_Folding_Cfg
       aliases:
       - Mirror_Folding_Cfg (MFC)
-      target_state: Lincoln,
+      target_state: MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
       state_aliases:
       - MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
 - module: PDM
@@ -86,7 +86,7 @@ steps:
       feature_name: Mirror_Folding_Cfg
       aliases:
       - Mirror_Folding_Cfg (MFC)
-      target_state: Ford,
+      target_state: MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
       state_aliases:
       - MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
     - bit: 0
@@ -94,7 +94,7 @@ steps:
       feature_name: Mirror_Folding_Cfg
       aliases:
       - Mirror_Folding_Cfg (MFC)
-      target_state: Lincoln,
+      target_state: MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
       state_aliases:
       - MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
 recipe_version: '1.1'

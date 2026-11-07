@@ -54,7 +54,7 @@ steps:
       feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
       aliases:
       - LF_Turn_Lamp_Ckt_Usage_Cfg
-      target_state: LFTLCUC NOT_USED
+      target_state: LFTLCUC TURN_POSITION_DRL
       state_aliases:
       - Not Used
     - bit: 0
@@ -62,7 +62,7 @@ steps:
       feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
       aliases:
       - LF_Turn_Lamp_Ckt_Usage_Cfg
-      target_state: LFTLCUC NOT_USED
+      target_state: LFTLCUC TURN_POSITION_DRL
       state_aliases:
       - Not Used
 - module: BdyCM
@@ -109,7 +109,7 @@ steps:
       feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
       aliases:
       - RF_Turn_Lamp_Ckt_Usage_Cfg
-      target_state: RFTLCUC NOT_USED
+      target_state: RFTLCUC TURN_POSITION_DRL
       state_aliases:
       - Not Used
     - bit: 0
@@ -117,7 +117,7 @@ steps:
       feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
       aliases:
       - RF_Turn_Lamp_Ckt_Usage_Cfg
-      target_state: RFTLCUC NOT_USED
+      target_state: RFTLCUC TURN_POSITION_DRL
       state_aliases:
       - Not Used
 recipe_version: '1.1'

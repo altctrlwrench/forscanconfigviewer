@@ -81,7 +81,7 @@ steps:
       feature_name: Ext_Courtesy_Sw_Input_Cfg (ECSIC)
       aliases:
       - Ext_Courtesy_Sw_Input_Cfg
-      target_state: ECSIC NULL
+      target_state: ECSIC MAN_PUDDLE
       state_aliases:
       - 'Null'
   - mask: xx*x xxxx xx--
@@ -113,7 +113,7 @@ steps:
       feature_name: Rear_Ext_Courtesy_Mode_Cfg (RECMC)
       aliases:
       - Rear_Ext_Courtesy_Mode_Cfg
-      target_state: RECMC NULL
+      target_state: RECMC BEDLIGHT
       state_aliases:
       - 'Null'
     - bit: 0

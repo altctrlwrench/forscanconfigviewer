@@ -19,7 +19,7 @@ steps:
       feature_name: Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)
       aliases:
       - Feat_Cfg [AUTORELOCK] [PERS_1]
-      target_state: AUTORELOCK_PERS_1 DISABLE
+      target_state: AUTORELOCK_PERS_1 ENABLE
       state_aliases:
       - Disable
     - bit: 0
@@ -39,7 +39,7 @@ steps:
       feature_name: Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)
       aliases:
       - Feat_Cfg [AUTORELOCK] [PERS_2]
-      target_state: AUTORELOCK_PERS_2 DISABLE
+      target_state: AUTORELOCK_PERS_2 ENABLE
       state_aliases:
       - Disable
     - bit: 0
@@ -59,7 +59,7 @@ steps:
       feature_name: Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)
       aliases:
       - Feat_Cfg [AUTORELOCK] [PERS_3]
-      target_state: AUTORELOCK_PERS_3 DISABLE
+      target_state: AUTORELOCK_PERS_3 ENABLE
       state_aliases:
       - Disable
     - bit: 0
@@ -79,7 +79,7 @@ steps:
       feature_name: Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)
       aliases:
       - Feat_Cfg [AUTORELOCK] [PERS_4]
-      target_state: AUTORELOCK_PERS_4 DISABLE
+      target_state: AUTORELOCK_PERS_4 ENABLE
       state_aliases:
       - Disable
     - bit: 0
@@ -99,7 +99,7 @@ steps:
       feature_name: Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)
       aliases:
       - Feat_Cfg [AUTORELOCK] [VEHICLE]
-      target_state: AUTORELOCK_VEHICLE DISABLE
+      target_state: AUTORELOCK_VEHICLE ENABLE
       state_aliases:
       - Disable
     - bit: 0
@@ -122,7 +122,7 @@ steps:
       feature_name: FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)
       aliases:
       - FeatLst_to_BCM_Feature_InitVal [AUTORELOCK]
-      target_state: AUTORELOCK DISABLE
+      target_state: AUTORELOCK ENABLE
       state_aliases:
       - Disable
     - bit: 0
@@ -153,7 +153,7 @@ steps:
       feature_name: AutoRelock_Timeduration_Cfg (ARTC)
       aliases:
       - AutoRelock_Timeduration_Cfg
-      target_state: ARTC NULL
+      target_state: ARTC AUTORELOCK_45SEC
       state_aliases:
       - 'Null'
 - module: BCM
@@ -180,7 +180,7 @@ steps:
       - Vehicle_Real_FB_Source_RR_Cfg (VRFBSRRC)
       - Vehicle_Real_FB_Source_RR_Cfg
       - AutoRelock_Timeduration_Cfg
-      target_state: ARTC NULL
+      target_state: ARTC AUTORELOCK_45SEC
       state_aliases:
       - 'Null'
 - module: APIM

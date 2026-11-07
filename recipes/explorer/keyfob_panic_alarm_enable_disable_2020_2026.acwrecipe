@@ -16,7 +16,7 @@ steps:
     - bit: 1
       action: 0
       feature_name: PanicActivate_Cfg (PAC)
-      target_state: PAC DISABLE
+      target_state: PAC DOUBLE
     - bit: 0
       action: 1
       feature_name: PanicActivate_Cfg (PAC)

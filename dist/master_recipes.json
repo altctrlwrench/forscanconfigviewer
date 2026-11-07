@@ -510,7 +510,7 @@
                         "bit": 1,
                         "action": 1,
                         "feature_name": "360 Camera View Format (CVF)",
-                        "target_state": "CVF Vertical (Normal Top)",
+                        "target_state": "CVF Reserved",
                         "state_aliases": [
                           "CVF Reserved"
                         ]
@@ -519,7 +519,7 @@
                         "bit": 0,
                         "action": 1,
                         "feature_name": "360 Camera View Format (CVF)",
-                        "target_state": "CVF Vertical (360 top)"
+                        "target_state": "CVF Reserved"
                       }
                     ]
                   }
@@ -1057,7 +1057,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)",
-                        "target_state": "AUTORELOCK_PERS_1 DISABLE"
+                        "target_state": "AUTORELOCK_PERS_1 ENABLE"
                       },
                       {
                         "bit": 0,
@@ -1076,7 +1076,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)",
-                        "target_state": "AUTORELOCK_PERS_2 DISABLE"
+                        "target_state": "AUTORELOCK_PERS_2 ENABLE"
                       },
                       {
                         "bit": 0,
@@ -1095,7 +1095,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)",
-                        "target_state": "AUTORELOCK_PERS_3 DISABLE"
+                        "target_state": "AUTORELOCK_PERS_3 ENABLE"
                       },
                       {
                         "bit": 0,
@@ -1114,7 +1114,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)",
-                        "target_state": "AUTORELOCK_PERS_4 DISABLE"
+                        "target_state": "AUTORELOCK_PERS_4 ENABLE"
                       },
                       {
                         "bit": 0,
@@ -1133,7 +1133,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)",
-                        "target_state": "AUTORELOCK_VEHICLE DISABLE"
+                        "target_state": "AUTORELOCK_VEHICLE ENABLE"
                       },
                       {
                         "bit": 0,
@@ -1158,7 +1158,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)",
-                        "target_state": "AUTORELOCK DISABLE"
+                        "target_state": "AUTORELOCK ENABLE"
                       },
                       {
                         "bit": 0,
@@ -1189,7 +1189,7 @@
                         "bit": 0,
                         "action": 0,
                         "feature_name": "AutoRelock_Timeduration_Cfg (ARTC)",
-                        "target_state": "ARTC NULL"
+                        "target_state": "ARTC AUTORELOCK_45SEC"
                       }
                     ]
                   },
@@ -1207,7 +1207,7 @@
                         "bit": 0,
                         "action": 0,
                         "feature_name": "AutoRelock_Timeduration_Cfg (ARTC)",
-                        "target_state": "ARTC NULL"
+                        "target_state": "ARTC AUTORELOCK_45SEC"
                       }
                     ]
                   }
@@ -1276,7 +1276,7 @@
                         "aliases": [
                           "Feat_Cfg [AUTORELOCK] [PERS_1]"
                         ],
-                        "target_state": "AUTORELOCK_PERS_1 DISABLE",
+                        "target_state": "AUTORELOCK_PERS_1 ENABLE",
                         "state_aliases": [
                           "Disable"
                         ]
@@ -1307,7 +1307,7 @@
                         "aliases": [
                           "Feat_Cfg [AUTORELOCK] [PERS_2]"
                         ],
-                        "target_state": "AUTORELOCK_PERS_2 DISABLE",
+                        "target_state": "AUTORELOCK_PERS_2 ENABLE",
                         "state_aliases": [
                           "Disable"
                         ]
@@ -1338,7 +1338,7 @@
                         "aliases": [
                           "Feat_Cfg [AUTORELOCK] [PERS_3]"
                         ],
-                        "target_state": "AUTORELOCK_PERS_3 DISABLE",
+                        "target_state": "AUTORELOCK_PERS_3 ENABLE",
                         "state_aliases": [
                           "Disable"
                         ]
@@ -1369,7 +1369,7 @@
                         "aliases": [
                           "Feat_Cfg [AUTORELOCK] [PERS_4]"
                         ],
-                        "target_state": "AUTORELOCK_PERS_4 DISABLE",
+                        "target_state": "AUTORELOCK_PERS_4 ENABLE",
                         "state_aliases": [
                           "Disable"
                         ]
@@ -1400,7 +1400,7 @@
                         "aliases": [
                           "Feat_Cfg [AUTORELOCK] [VEHICLE]"
                         ],
-                        "target_state": "AUTORELOCK_VEHICLE DISABLE",
+                        "target_state": "AUTORELOCK_VEHICLE ENABLE",
                         "state_aliases": [
                           "Disable"
                         ]
@@ -1437,7 +1437,7 @@
                         "aliases": [
                           "FeatLst_to_BCM_Feature_InitVal [AUTORELOCK]"
                         ],
-                        "target_state": "AUTORELOCK DISABLE",
+                        "target_state": "AUTORELOCK ENABLE",
                         "state_aliases": [
                           "Disable"
                         ]
@@ -1486,7 +1486,7 @@
                         "aliases": [
                           "AutoRelock_Timeduration_Cfg"
                         ],
-                        "target_state": "ARTC NULL",
+                        "target_state": "ARTC AUTORELOCK_45SEC",
                         "state_aliases": [
                           "Null"
                         ]
@@ -1527,7 +1527,7 @@
                           "Vehicle_Real_FB_Source_RR_Cfg",
                           "AutoRelock_Timeduration_Cfg"
                         ],
-                        "target_state": "ARTC NULL",
+                        "target_state": "ARTC AUTORELOCK_45SEC",
                         "state_aliases": [
                           "Null"
                         ]
@@ -1800,7 +1800,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)",
-                        "target_state": "AUTORELOCK_PERS_1 DISABLE"
+                        "target_state": "AUTORELOCK_PERS_1 ENABLE"
                       },
                       {
                         "bit": 0,
@@ -1819,7 +1819,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)",
-                        "target_state": "AUTORELOCK_PERS_2 DISABLE"
+                        "target_state": "AUTORELOCK_PERS_2 ENABLE"
                       },
                       {
                         "bit": 0,
@@ -1838,7 +1838,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)",
-                        "target_state": "AUTORELOCK_PERS_3 DISABLE"
+                        "target_state": "AUTORELOCK_PERS_3 ENABLE"
                       },
                       {
                         "bit": 0,
@@ -1857,7 +1857,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)",
-                        "target_state": "AUTORELOCK_PERS_4 DISABLE"
+                        "target_state": "AUTORELOCK_PERS_4 ENABLE"
                       },
                       {
                         "bit": 0,
@@ -1876,7 +1876,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)",
-                        "target_state": "AUTORELOCK_VEHICLE DISABLE"
+                        "target_state": "AUTORELOCK_VEHICLE ENABLE"
                       },
                       {
                         "bit": 0,
@@ -1901,7 +1901,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)",
-                        "target_state": "AUTORELOCK DISABLE"
+                        "target_state": "AUTORELOCK ENABLE"
                       },
                       {
                         "bit": 0,
@@ -1932,7 +1932,7 @@
                         "bit": 0,
                         "action": 0,
                         "feature_name": "AutoRelock_Timeduration_Cfg (ARTC)",
-                        "target_state": "ARTC NULL"
+                        "target_state": "ARTC AUTORELOCK_45SEC"
                       }
                     ]
                   }
@@ -2209,13 +2209,13 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Start / Stop",
-                        "target_state": "Disabled"
+                        "target_state": "SS Start/Stop Disabled"
                       },
                       {
                         "bit": 0,
                         "action": 0,
                         "feature_name": "Start / Stop",
-                        "target_state": "Disabled"
+                        "target_state": "SS Start/Stop Disabled"
                       }
                     ]
                   }
@@ -2938,13 +2938,13 @@
                         "bit": 3,
                         "action": 1,
                         "feature_name": "ModuleFeatureCfg_LKS (MFCLKS)",
-                        "target_state": "MFCLKS LKAlert+LKAid"
+                        "target_state": "MFCLKS LKAlert+LKAid+LCWA"
                       },
                       {
                         "bit": 2,
                         "action": 1,
                         "feature_name": "ModuleFeatureCfg_LKS (MFCLKS)",
-                        "target_state": "MFCLKS LKAlert"
+                        "target_state": "MFCLKS LKAlert+LKAid+LCWA"
                       },
                       {
                         "bit": 1,
@@ -3120,13 +3120,13 @@
                         "bit": 3,
                         "action": 1,
                         "feature_name": "ModuleFeatureCfg_LKS (MFCLKS)",
-                        "target_state": "MFCLKS LKAlert+LKAid"
+                        "target_state": "MFCLKS LKAlert+LKAid+LCWA"
                       },
                       {
                         "bit": 2,
                         "action": 1,
                         "feature_name": "ModuleFeatureCfg_LKS (MFCLKS)",
-                        "target_state": "MFCLKS LKAlert"
+                        "target_state": "MFCLKS LKAlert+LKAid+LCWA"
                       },
                       {
                         "bit": 1,
@@ -3732,7 +3732,7 @@
                         "aliases": [
                           "LF_Turn_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "LFTLCUC NOT_USED",
+                        "target_state": "LFTLCUC TURN_POSITION_DRL",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -3744,7 +3744,7 @@
                         "aliases": [
                           "LF_Turn_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "LFTLCUC NOT_USED",
+                        "target_state": "LFTLCUC TURN_POSITION_DRL",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -3811,7 +3811,7 @@
                         "aliases": [
                           "RF_Turn_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "RFTLCUC NOT_USED",
+                        "target_state": "RFTLCUC TURN_POSITION_DRL",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -3823,7 +3823,7 @@
                         "aliases": [
                           "RF_Turn_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "RFTLCUC NOT_USED",
+                        "target_state": "RFTLCUC TURN_POSITION_DRL",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -3868,13 +3868,13 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)",
-                        "target_state": "LFDRLLCUC NOT_USED"
+                        "target_state": "LFDRLLCUC FIXED_POSITION_ONLY"
                       },
                       {
                         "bit": 0,
                         "action": 0,
                         "feature_name": "LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)",
-                        "target_state": "LFDRLLCUC NOT_USED"
+                        "target_state": "LFDRLLCUC FIXED_POSITION_ONLY"
                       }
                     ]
                   },
@@ -3893,13 +3893,13 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)",
-                        "target_state": "RFDRLLCUC NOT_USED"
+                        "target_state": "RFDRLLCUC FIXED_POSITION_ONLY"
                       },
                       {
                         "bit": 0,
                         "action": 0,
                         "feature_name": "RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)",
-                        "target_state": "RFDRLLCUC NOT_USED"
+                        "target_state": "RFDRLLCUC FIXED_POSITION_ONLY"
                       }
                     ]
                   }
@@ -3919,19 +3919,19 @@
                         "bit": 2,
                         "action": 0,
                         "feature_name": "LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)",
-                        "target_state": "LFTLCUC NOT_USED"
+                        "target_state": "LFTLCUC TURN_DRL"
                       },
                       {
                         "bit": 1,
                         "action": 0,
                         "feature_name": "LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)",
-                        "target_state": "LFTLCUC NOT_USED"
+                        "target_state": "LFTLCUC TURN_DRL"
                       },
                       {
                         "bit": 0,
                         "action": 1,
                         "feature_name": "LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)",
-                        "target_state": "LFTLCUC TURN_POSITION"
+                        "target_state": "LFTLCUC TURN_DRL"
                       }
                     ]
                   },
@@ -3944,19 +3944,19 @@
                         "bit": 2,
                         "action": 0,
                         "feature_name": "RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)",
-                        "target_state": "RFTLCUC NOT_USED"
+                        "target_state": "RFTLCUC TURN_DRL"
                       },
                       {
                         "bit": 1,
                         "action": 0,
                         "feature_name": "RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)",
-                        "target_state": "RFTLCUC NOT_USED"
+                        "target_state": "RFTLCUC TURN_DRL"
                       },
                       {
                         "bit": 0,
                         "action": 1,
                         "feature_name": "RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)",
-                        "target_state": "RFTLCUC TURN_POSITION"
+                        "target_state": "RFTLCUC TURN_DRL"
                       }
                     ]
                   }
@@ -3996,7 +3996,7 @@
                         "bit": 2,
                         "action": 0,
                         "feature_name": "LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)",
-                        "target_state": "LFDRLLCUC NOT_USED"
+                        "target_state": "LFDRLLCUC DRL_POSITION"
                       },
                       {
                         "bit": 1,
@@ -4008,7 +4008,7 @@
                         "bit": 0,
                         "action": 0,
                         "feature_name": "LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)",
-                        "target_state": "LFDRLLCUC NOT_USED"
+                        "target_state": "LFDRLLCUC DRL_POSITION"
                       }
                     ]
                   },
@@ -4021,7 +4021,7 @@
                         "bit": 2,
                         "action": 0,
                         "feature_name": "RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)",
-                        "target_state": "RFDRLLCUC NOT_USED"
+                        "target_state": "RFDRLLCUC DRL_POSITION"
                       },
                       {
                         "bit": 1,
@@ -4033,7 +4033,7 @@
                         "bit": 0,
                         "action": 0,
                         "feature_name": "RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)",
-                        "target_state": "RFDRLLCUC NOT_USED"
+                        "target_state": "RFDRLLCUC DRL_POSITION"
                       }
                     ]
                   }
@@ -4083,7 +4083,7 @@
                         "aliases": [
                           "LF_DRL_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "LFDRLLCUC NOT_USED",
+                        "target_state": "LFDRLLCUC DRL_POSITION",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -4107,7 +4107,7 @@
                         "aliases": [
                           "LF_DRL_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "LFDRLLCUC NOT_USED",
+                        "target_state": "LFDRLLCUC DRL_POSITION",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -4126,7 +4126,7 @@
                         "aliases": [
                           "RF_DRL_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "RFDRLLCUC NOT_USED",
+                        "target_state": "RFDRLLCUC DRL_POSITION",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -4150,7 +4150,7 @@
                         "aliases": [
                           "RF_DRL_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "RFDRLLCUC NOT_USED",
+                        "target_state": "RFDRLLCUC DRL_POSITION",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -4203,7 +4203,7 @@
                         "aliases": [
                           "LF_DRL_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "LFDRLLCUC NOT_USED",
+                        "target_state": "LFDRLLCUC DRL_POSITION",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -4227,7 +4227,7 @@
                         "aliases": [
                           "LF_DRL_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "LFDRLLCUC NOT_USED",
+                        "target_state": "LFDRLLCUC DRL_POSITION",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -4246,7 +4246,7 @@
                         "aliases": [
                           "RF_DRL_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "RFDRLLCUC NOT_USED",
+                        "target_state": "RFDRLLCUC DRL_POSITION",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -4270,7 +4270,7 @@
                         "aliases": [
                           "RF_DRL_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "RFDRLLCUC NOT_USED",
+                        "target_state": "RFDRLLCUC DRL_POSITION",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -4310,7 +4310,7 @@
                         "aliases": [
                           "LF_DRL_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "LFDRLLCUC NOT_USED",
+                        "target_state": "LFDRLLCUC DRL_POSITION",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -4334,7 +4334,7 @@
                         "aliases": [
                           "LF_DRL_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "LFDRLLCUC NOT_USED",
+                        "target_state": "LFDRLLCUC DRL_POSITION",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -4353,7 +4353,7 @@
                         "aliases": [
                           "RF_DRL_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "RFDRLLCUC NOT_USED",
+                        "target_state": "RFDRLLCUC DRL_POSITION",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -4377,7 +4377,7 @@
                         "aliases": [
                           "RF_DRL_Lamp_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "RFDRLLCUC NOT_USED",
+                        "target_state": "RFDRLLCUC DRL_POSITION",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -4772,7 +4772,7 @@
                         "aliases": [
                           "LF_Low_Beam_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "LFLBCUC NOT_USED",
+                        "target_state": "LFLBCUC LOW_DRL",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -4803,7 +4803,7 @@
                         "aliases": [
                           "RF_Low_Beam_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "RFLBCUC NOT_USED",
+                        "target_state": "RFLBCUC LOW_DRL",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -5156,7 +5156,7 @@
                         "bit": 3,
                         "action": 0,
                         "feature_name": "Eng Temp Dig (ETD)",
-                        "target_state": "ETD Always Off"
+                        "target_state": "ETD Always On"
                       },
                       {
                         "bit": 2,
@@ -5168,7 +5168,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Trans Temp Dig (TTD)",
-                        "target_state": "TTD Always Off"
+                        "target_state": "TTD Always On"
                       },
                       {
                         "bit": 0,
@@ -5208,7 +5208,7 @@
                         "bit": 3,
                         "action": 0,
                         "feature_name": "Eng Temp Dig (ETD)",
-                        "target_state": "ETD Always Off"
+                        "target_state": "ETD Always On"
                       },
                       {
                         "bit": 2,
@@ -5220,7 +5220,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Trans Temp Dig (TTD)",
-                        "target_state": "TTD Always Off"
+                        "target_state": "TTD Always On"
                       },
                       {
                         "bit": 0,
@@ -5245,7 +5245,7 @@
                         "bit": 3,
                         "action": 0,
                         "feature_name": "Eng Temp Dig (ETD)",
-                        "target_state": "ETD Always Off"
+                        "target_state": "ETD Always On"
                       },
                       {
                         "bit": 2,
@@ -5257,7 +5257,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Trans Temp Dig (TTD)",
-                        "target_state": "TTD Always Off"
+                        "target_state": "TTD Always On"
                       },
                       {
                         "bit": 0,
@@ -5341,7 +5341,7 @@
                         "bit": 3,
                         "action": 0,
                         "feature_name": "Eng Temp Dig (ETD)",
-                        "target_state": "ETD Always Off"
+                        "target_state": "ETD Always On"
                       },
                       {
                         "bit": 2,
@@ -5353,7 +5353,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Trans Temp Dig (TTD)",
-                        "target_state": "TTD Always Off"
+                        "target_state": "TTD Always On"
                       },
                       {
                         "bit": 0,
@@ -5372,7 +5372,7 @@
                         "bit": 3,
                         "action": 0,
                         "feature_name": "Eng Oil Dig (EOD)",
-                        "target_state": "EOD Always Off"
+                        "target_state": "EOD Always On"
                       },
                       {
                         "bit": 2,
@@ -6861,13 +6861,13 @@
                         "bit": 3,
                         "action": 1,
                         "feature_name": "Auto High Beam Menu (AHBM)",
-                        "target_state": "AHBM Glare free High Beams"
+                        "target_state": "AHBM Adaptive Driving Beams"
                       },
                       {
                         "bit": 2,
                         "action": 1,
                         "feature_name": "Auto High Beam Menu (AHBM)",
-                        "target_state": "AHBM Auto High Beams"
+                        "target_state": "AHBM Adaptive Driving Beams"
                       }
                     ]
                   }
@@ -6886,7 +6886,7 @@
                         "bit": 3,
                         "action": 1,
                         "feature_name": "ModuleFeatureCfg_HighBeam (MFCHB)",
-                        "target_state": "MFCHB GFHB_ADB",
+                        "target_state": "MFCHB GFHB",
                         "state_aliases": [
                           "MFCHB GFHB"
                         ]
@@ -6895,7 +6895,7 @@
                         "bit": 2,
                         "action": 0,
                         "feature_name": "ModuleFeatureCfg_HighBeam (MFCHB)",
-                        "target_state": "MFCHB Disabled"
+                        "target_state": "MFCHB GFHB"
                       }
                     ]
                   }
@@ -6920,13 +6920,13 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "AHB_Feature (AHBF)",
-                        "target_state": "AHBF Undefined"
+                        "target_state": "AHBF ADB"
                       },
                       {
                         "bit": 0,
                         "action": 0,
                         "feature_name": "AHB_Feature (AHBF)",
-                        "target_state": "AHBF Undefined"
+                        "target_state": "AHBF ADB"
                       }
                     ]
                   }
@@ -6964,13 +6964,13 @@
                         "bit": 1,
                         "action": 1,
                         "feature_name": "AutoHighBeam Menu (AHBM)",
-                        "target_state": "AHBM Glarefree High Beams"
+                        "target_state": "AHBM Adaptive Driving Beams"
                       },
                       {
                         "bit": 0,
                         "action": 1,
                         "feature_name": "AutoHighBeam Menu (AHBM)",
-                        "target_state": "AHBM Auto HighBeams"
+                        "target_state": "AHBM Adaptive Driving Beams"
                       }
                     ]
                   }
@@ -6995,7 +6995,7 @@
                         "bit": 0,
                         "action": 0,
                         "feature_name": "Config_AhbFeature (CAF)",
-                        "target_state": "CAF Disable"
+                        "target_state": "CAF ADB_GfHB"
                       }
                     ]
                   }
@@ -7105,7 +7105,7 @@
                         "bit": 2,
                         "action": 0,
                         "feature_name": "ModuleFeatureCfg_HighBeam (MFCHB)",
-                        "target_state": "MFCHB Disabled"
+                        "target_state": "MFCHB GFHB"
                       }
                     ]
                   }
@@ -7124,7 +7124,7 @@
                         "bit": 2,
                         "action": 0,
                         "feature_name": "AHB_Feature (AHBF)",
-                        "target_state": "AHBF Undefined"
+                        "target_state": "AHBF GFHB"
                       },
                       {
                         "bit": 1,
@@ -7161,7 +7161,7 @@
                         "bit": 0,
                         "action": 0,
                         "feature_name": "AutoHighBeam Menu (AHBM)",
-                        "target_state": "AHBM Disabled"
+                        "target_state": "AHBM Glarefree High Beams"
                       }
                     ]
                   }
@@ -7186,7 +7186,7 @@
                         "bit": 0,
                         "action": 0,
                         "feature_name": "High_Beam_Handling_Config (HBHC)",
-                        "target_state": "HBHC OFF"
+                        "target_state": "HBHC Adaptive Driving Beam"
                       }
                     ]
                   }
@@ -7490,7 +7490,7 @@
                         "bit": 2,
                         "action": 0,
                         "feature_name": "Auto High Beam Menu (AHBM)",
-                        "target_state": "AHBM Disabled"
+                        "target_state": "AHBM Glare free High Beams"
                       }
                     ]
                   }
@@ -9621,7 +9621,7 @@
                         "bit": 0,
                         "action": 0,
                         "feature_name": "NAV Repeater Conformance (NAVRC)",
-                        "target_state": "NAVRC Off"
+                        "target_state": "NAVRC HUD Support"
                       }
                     ]
                   }
@@ -10014,25 +10014,25 @@
                         "bit": 3,
                         "action": 1,
                         "feature_name": "HSW_Level_3_TempSetPt (HSWLTSP)",
-                        "target_state": "HSWLTSP 32\u00b0C"
+                        "target_state": "HSWLTSP 35\u00b0C"
                       },
                       {
                         "bit": 2,
                         "action": 0,
                         "feature_name": "HSW_Level_3_TempSetPt (HSWLTSP)",
-                        "target_state": "HSWLTSP 24\u00b0C"
+                        "target_state": "HSWLTSP 35\u00b0C"
                       },
                       {
                         "bit": 1,
                         "action": 1,
                         "feature_name": "HSW_Level_3_TempSetPt (HSWLTSP)",
-                        "target_state": "HSWLTSP 26\u00b0C"
+                        "target_state": "HSWLTSP 35\u00b0C"
                       },
                       {
                         "bit": 0,
                         "action": 1,
                         "feature_name": "HSW_Level_3_TempSetPt (HSWLTSP)",
-                        "target_state": "HSWLTSP 25\u00b0C"
+                        "target_state": "HSWLTSP 35\u00b0C"
                       }
                     ]
                   }
@@ -10454,7 +10454,7 @@
                         "aliases": [
                           "Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE]"
                         ],
-                        "target_state": "AUDIBLELOCKFEEDBACK_VEHICLE DISABLE",
+                        "target_state": "AUDIBLELOCKFEEDBACK_VEHICLE ENABLE",
                         "state_aliases": [
                           "Disable"
                         ]
@@ -10509,7 +10509,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "PanicActivate_Cfg (PAC)",
-                        "target_state": "PAC DISABLE"
+                        "target_state": "PAC DOUBLE"
                       },
                       {
                         "bit": 0,
@@ -10695,7 +10695,7 @@
                         "aliases": [
                           "PanicActivate_Cfg"
                         ],
-                        "target_state": "PAC DISABLE",
+                        "target_state": "PAC DOUBLE",
                         "state_aliases": [
                           "Disable"
                         ]
@@ -10748,7 +10748,7 @@
                         "aliases": [
                           "PanicActivate_Cfg"
                         ],
-                        "target_state": "PAC DISABLE",
+                        "target_state": "PAC DOUBLE",
                         "state_aliases": [
                           "Disable"
                         ]
@@ -10798,7 +10798,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "PanicActivate_Cfg (PAC)",
-                        "target_state": "PAC DISABLE"
+                        "target_state": "PAC DOUBLE"
                       },
                       {
                         "bit": 0,
@@ -10842,7 +10842,7 @@
                         "aliases": [
                           "PanicActivate_Cfg"
                         ],
-                        "target_state": "PAC DISABLE",
+                        "target_state": "PAC DOUBLE",
                         "state_aliases": [
                           "Disable"
                         ]
@@ -11019,42 +11019,12 @@
                 "address": "724-01-01",
                 "targets": [
                   {
-                    "mask": "xxxx *xxx xx--",
-                    "type": "discrete",
-                    "bits": [
-                      {
-                        "bit": 1,
-                        "action": 0,
-                        "feature_name": "Lane Change Blink Number",
-                        "target_state": "null,"
-                      },
-                      {
-                        "bit": 0,
-                        "action": 1,
-                        "feature_name": "Lane Change Blink Number",
-                        "target_state": "Enabled"
-                      }
-                    ]
-                  },
-                  {
-                    "mask": "xxxx x*xx xx--",
-                    "type": "discrete",
-                    "bits": [
-                      {
-                        "bit": 3,
-                        "action": 0,
-                        "feature_name": "Lane Change Blink Number",
-                        "target_state": "null,"
-                      },
-                      {
-                        "bit": 2,
-                        "action": 1,
-                        "feature_name": "Lane Change Blink Number",
-                        "target_state": "1,"
-                      }
-                    ]
+                    "mask": "xxxx **xx xx--",
+                    "type": "continuous",
+                    "user_input": "required"
                   }
-                ]
+                ],
+                "notes": "80=none, 84=1, 88=2, 8C=3, 90=4, 94=5, 98=6, 9C=7, A0=8, A4=9, A8=10"
               }
             ],
             "recipe_version": "1.1"
@@ -11154,7 +11124,7 @@
                         "aliases": [
                           "Mirror_Folding_Cfg (MFC)"
                         ],
-                        "target_state": "Ford,",
+                        "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                         "state_aliases": [
                           "MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles"
                         ]
@@ -11166,7 +11136,7 @@
                         "aliases": [
                           "Mirror_Folding_Cfg (MFC)"
                         ],
-                        "target_state": "Lincoln,",
+                        "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                         "state_aliases": [
                           "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles"
                         ]
@@ -11223,7 +11193,7 @@
                         "aliases": [
                           "Mirror_Folding_Cfg (MFC)"
                         ],
-                        "target_state": "Ford,",
+                        "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                         "state_aliases": [
                           "MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles"
                         ]
@@ -11235,7 +11205,7 @@
                         "aliases": [
                           "Mirror_Folding_Cfg (MFC)"
                         ],
-                        "target_state": "Lincoln,",
+                        "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                         "state_aliases": [
                           "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles"
                         ]
@@ -11333,7 +11303,7 @@
                         "aliases": [
                           "Mirror_Folding_Cfg (MFC)"
                         ],
-                        "target_state": "Ford,",
+                        "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                         "state_aliases": [
                           "MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles"
                         ]
@@ -11345,7 +11315,7 @@
                         "aliases": [
                           "Mirror_Folding_Cfg (MFC)"
                         ],
-                        "target_state": "Lincoln,",
+                        "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                         "state_aliases": [
                           "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles"
                         ]
@@ -11401,7 +11371,7 @@
                         "aliases": [
                           "Mirror_Folding_Cfg (MFC)"
                         ],
-                        "target_state": "Ford,",
+                        "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                         "state_aliases": [
                           "MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles"
                         ]
@@ -11413,7 +11383,7 @@
                         "aliases": [
                           "Mirror_Folding_Cfg (MFC)"
                         ],
-                        "target_state": "Lincoln,",
+                        "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                         "state_aliases": [
                           "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles"
                         ]
@@ -11454,7 +11424,7 @@
                         "aliases": [
                           "Mirror_Folding_Cfg"
                         ],
-                        "target_state": "MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles",
+                        "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                         "state_aliases": [
                           "Ford,"
                         ]
@@ -11491,7 +11461,7 @@
                         "aliases": [
                           "Mirror_Folding_Cfg"
                         ],
-                        "target_state": "MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles",
+                        "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                         "state_aliases": [
                           "Ford,"
                         ]
@@ -11824,7 +11794,7 @@
                         "aliases": [
                           "FeatureCfg_DPAC_OffRoadVersion (FCDPACORV)"
                         ],
-                        "target_state": "CX430",
+                        "target_state": "FCDPACORV U725",
                         "state_aliases": [
                           "FCDPACORV CX430",
                           "FCDPACORV U725"
@@ -11837,7 +11807,7 @@
                         "aliases": [
                           "FeatureCfg_DPAC_OffRoadVersion (FCDPACORV)"
                         ],
-                        "target_state": "Raptor",
+                        "target_state": "FCDPACORV U725",
                         "state_aliases": [
                           "FCDPACORV RAPTOR",
                           "FCDPACORV U725"
@@ -14061,7 +14031,7 @@
                         "aliases": [
                           "KeyPad_Enable_Cfg"
                         ],
-                        "target_state": "KPEC DISABLE",
+                        "target_state": "KPEC HW_INPUT",
                         "state_aliases": [
                           "Disable"
                         ]
@@ -14816,7 +14786,7 @@
                         "bit": 2,
                         "action": 0,
                         "feature_name": "Heated Seats HMI (HSHMI)",
-                        "target_state": "HSHMI None (Hard buttons or No Heated or Cooled Seats)"
+                        "target_state": "HSHMI Heated and Cooled"
                       }
                     ]
                   }
@@ -14857,7 +14827,7 @@
                         "bit": 2,
                         "action": 0,
                         "feature_name": "Heated Seats HMI (HSHMI)",
-                        "target_state": "HSHMI None (Hard buttons or No Heated or Cooled Seats)"
+                        "target_state": "HSHMI Heated and Cooled"
                       }
                     ]
                   }
@@ -15054,13 +15024,13 @@
                         "bit": 3,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS F150"
                       },
                       {
                         "bit": 2,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS F150"
                       },
                       {
                         "bit": 1,
@@ -15075,7 +15045,7 @@
                         "bit": 0,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS F150"
                       }
                     ]
                   },
@@ -15088,7 +15058,7 @@
                         "bit": 3,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS Black Label"
                       },
                       {
                         "bit": 2,
@@ -15103,13 +15073,13 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS Black Label"
                       },
                       {
                         "bit": 0,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS Black Label"
                       }
                     ]
                   }
@@ -15144,13 +15114,13 @@
                         "bit": 3,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS F150"
                       },
                       {
                         "bit": 2,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS F150"
                       },
                       {
                         "bit": 1,
@@ -15167,7 +15137,7 @@
                         "bit": 0,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS F150"
                       }
                     ]
                   },
@@ -15180,7 +15150,7 @@
                         "bit": 3,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS Black Label"
                       },
                       {
                         "bit": 2,
@@ -15197,13 +15167,13 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS Black Label"
                       },
                       {
                         "bit": 0,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS Black Label"
                       }
                     ]
                   }
@@ -15243,19 +15213,19 @@
                         "bit": 3,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
                       },
                       {
                         "bit": 2,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
                       },
                       {
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
                       },
                       {
                         "bit": 0,
@@ -15274,7 +15244,7 @@
                         "bit": 3,
                         "action": 1,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Mustang Shelby R1",
+                        "target_state": "SS Navigator",
                         "state_aliases": [
                           "SS Continental"
                         ]
@@ -15283,7 +15253,7 @@
                         "bit": 2,
                         "action": 1,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Black Label",
+                        "target_state": "SS Navigator",
                         "state_aliases": [
                           "SS Continental"
                         ]
@@ -15292,7 +15262,7 @@
                         "bit": 1,
                         "action": 1,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS F150",
+                        "target_state": "SS Navigator",
                         "state_aliases": [
                           "SS Continental"
                         ]
@@ -15301,7 +15271,7 @@
                         "bit": 0,
                         "action": 1,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
+                        "target_state": "SS Navigator"
                       }
                     ]
                   }
@@ -15336,19 +15306,19 @@
                         "bit": 3,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
                       },
                       {
                         "bit": 2,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
                       },
                       {
                         "bit": 1,
                         "action": 0,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Default/not programmed"
+                        "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
                       },
                       {
                         "bit": 0,
@@ -15367,7 +15337,7 @@
                         "bit": 3,
                         "action": 1,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Mustang Shelby R1",
+                        "target_state": "SS Navigator",
                         "state_aliases": [
                           "SS Continental"
                         ]
@@ -15376,7 +15346,7 @@
                         "bit": 2,
                         "action": 1,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Black Label",
+                        "target_state": "SS Navigator",
                         "state_aliases": [
                           "SS Continental"
                         ]
@@ -15385,7 +15355,7 @@
                         "bit": 1,
                         "action": 1,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS F150",
+                        "target_state": "SS Navigator",
                         "state_aliases": [
                           "SS Continental"
                         ]
@@ -15394,7 +15364,7 @@
                         "bit": 0,
                         "action": 1,
                         "feature_name": "Splash Screen (SS)",
-                        "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
+                        "target_state": "SS Navigator"
                       }
                     ]
                   }
@@ -15437,7 +15407,7 @@
                         "aliases": [
                           "Smart Surface Themes (SST)"
                         ],
-                        "target_state": "QTHMIT Classic"
+                        "target_state": "QTHMIT Smart Surface"
                       },
                       {
                         "bit": 0,
@@ -15480,7 +15450,7 @@
                         "bit": 1,
                         "action": 0,
                         "feature_name": "QT HMI Themes (QTHMIT)",
-                        "target_state": "QTHMIT Classic"
+                        "target_state": "QTHMIT Smart Surface"
                       },
                       {
                         "bit": 0,
@@ -15772,7 +15742,7 @@
                         "aliases": [
                           "Park_Lamps_Body_Ckt_Usage_Cfg"
                         ],
-                        "target_state": "PLBCUC NOT_USED",
+                        "target_state": "PLBCUC POSITION_ONLY",
                         "state_aliases": [
                           "Not Used"
                         ]
@@ -16081,13 +16051,13 @@
                         "bit": 1,
                         "action": 1,
                         "feature_name": "ModuleFeatureCfg_TurnSgnlView (MFCTSV)",
-                        "target_state": "MFCTSV Right"
+                        "target_state": "MFCTSV Both"
                       },
                       {
                         "bit": 0,
                         "action": 1,
                         "feature_name": "ModuleFeatureCfg_TurnSgnlView (MFCTSV)",
-                        "target_state": "MFCTSV Left"
+                        "target_state": "MFCTSV Both"
                       }
                     ]
                   }
@@ -16141,13 +16111,13 @@
                         "bit": 1,
                         "action": 1,
                         "feature_name": "ModuleFeatureCfg_TurnSgnlView (MFCTSV)",
-                        "target_state": "MFCTSV Right"
+                        "target_state": "MFCTSV Both"
                       },
                       {
                         "bit": 0,
                         "action": 1,
                         "feature_name": "ModuleFeatureCfg_TurnSgnlView (MFCTSV)",
-                        "target_state": "MFCTSV Left"
+                        "target_state": "MFCTSV Both"
                       }
                     ]
                   }
@@ -16200,13 +16170,13 @@
                         "bit": 1,
                         "action": 1,
                         "feature_name": "ModuleFeatureCfg_TurnSgnlView (MFCTSV)",
-                        "target_state": "MFCTSV Right"
+                        "target_state": "MFCTSV Both"
                       },
                       {
                         "bit": 0,
                         "action": 1,
                         "feature_name": "ModuleFeatureCfg_TurnSgnlView (MFCTSV)",
-                        "target_state": "MFCTSV Left"
+                        "target_state": "MFCTSV Both"
                       }
                     ]
                   }
@@ -16415,7 +16385,7 @@
                         "aliases": [
                           "Ext_Courtesy_Sw_Input_Cfg"
                         ],
-                        "target_state": "ECSIC NULL",
+                        "target_state": "ECSIC MAN_PUDDLE",
                         "state_aliases": [
                           "Null"
                         ]
@@ -16465,7 +16435,7 @@
                         "aliases": [
                           "Rear_Ext_Courtesy_Mode_Cfg"
                         ],
-                        "target_state": "RECMC NULL",
+                        "target_state": "RECMC BEDLIGHT",
                         "state_aliases": [
                           "Null"
                         ]
@@ -16531,7 +16501,7 @@
                         "aliases": [
                           "Ext_Courtesy_Sw_Input_Cfg"
                         ],
-                        "target_state": "ECSIC NULL",
+                        "target_state": "ECSIC MAN_PUDDLE",
                         "state_aliases": [
                           "Null"
                         ]
@@ -16550,7 +16520,7 @@
                         "aliases": [
                           "Rear_Ext_Courtesy_Mode_Cfg"
                         ],
-                        "target_state": "RECMC NULL",
+                        "target_state": "RECMC BEDLIGHT",
                         "state_aliases": [
                           "Null"
                         ]
@@ -18531,7 +18501,7 @@
                   "aliases": [
                     "LF_Turn_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "LFTLCUC NOT_USED",
+                  "target_state": "LFTLCUC TURN_POSITION_DRL",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -18543,7 +18513,7 @@
                   "aliases": [
                     "LF_Turn_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "LFTLCUC NOT_USED",
+                  "target_state": "LFTLCUC TURN_POSITION_DRL",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -18610,7 +18580,7 @@
                   "aliases": [
                     "RF_Turn_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "RFTLCUC NOT_USED",
+                  "target_state": "RFTLCUC TURN_POSITION_DRL",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -18622,7 +18592,7 @@
                   "aliases": [
                     "RF_Turn_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "RFTLCUC NOT_USED",
+                  "target_state": "RFTLCUC TURN_POSITION_DRL",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -19310,7 +19280,7 @@
                   "aliases": [
                     "PanicActivate_Cfg"
                   ],
-                  "target_state": "PAC DISABLE",
+                  "target_state": "PAC DOUBLE",
                   "state_aliases": [
                     "Disable"
                   ]
@@ -20079,7 +20049,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)",
-                  "target_state": "AUTORELOCK_PERS_1 DISABLE"
+                  "target_state": "AUTORELOCK_PERS_1 ENABLE"
                 },
                 {
                   "bit": 0,
@@ -20098,7 +20068,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)",
-                  "target_state": "AUTORELOCK_PERS_2 DISABLE"
+                  "target_state": "AUTORELOCK_PERS_2 ENABLE"
                 },
                 {
                   "bit": 0,
@@ -20117,7 +20087,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)",
-                  "target_state": "AUTORELOCK_PERS_3 DISABLE"
+                  "target_state": "AUTORELOCK_PERS_3 ENABLE"
                 },
                 {
                   "bit": 0,
@@ -20136,7 +20106,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)",
-                  "target_state": "AUTORELOCK_PERS_4 DISABLE"
+                  "target_state": "AUTORELOCK_PERS_4 ENABLE"
                 },
                 {
                   "bit": 0,
@@ -20155,7 +20125,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)",
-                  "target_state": "AUTORELOCK_VEHICLE DISABLE"
+                  "target_state": "AUTORELOCK_VEHICLE ENABLE"
                 },
                 {
                   "bit": 0,
@@ -20180,7 +20150,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)",
-                  "target_state": "AUTORELOCK DISABLE"
+                  "target_state": "AUTORELOCK ENABLE"
                 },
                 {
                   "bit": 0,
@@ -20211,7 +20181,7 @@
                   "bit": 0,
                   "action": 0,
                   "feature_name": "AutoRelock_Timeduration_Cfg (ARTC)",
-                  "target_state": "ARTC NULL"
+                  "target_state": "ARTC AUTORELOCK_45SEC"
                 }
               ]
             },
@@ -20229,7 +20199,7 @@
                   "bit": 0,
                   "action": 0,
                   "feature_name": "AutoRelock_Timeduration_Cfg (ARTC)",
-                  "target_state": "ARTC NULL"
+                  "target_state": "ARTC AUTORELOCK_45SEC"
                 }
               ]
             }
@@ -20367,13 +20337,13 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)",
-                  "target_state": "LFDRLLCUC NOT_USED"
+                  "target_state": "LFDRLLCUC FIXED_POSITION_ONLY"
                 },
                 {
                   "bit": 0,
                   "action": 0,
                   "feature_name": "LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)",
-                  "target_state": "LFDRLLCUC NOT_USED"
+                  "target_state": "LFDRLLCUC FIXED_POSITION_ONLY"
                 }
               ]
             },
@@ -20392,13 +20362,13 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)",
-                  "target_state": "RFDRLLCUC NOT_USED"
+                  "target_state": "RFDRLLCUC FIXED_POSITION_ONLY"
                 },
                 {
                   "bit": 0,
                   "action": 0,
                   "feature_name": "RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)",
-                  "target_state": "RFDRLLCUC NOT_USED"
+                  "target_state": "RFDRLLCUC FIXED_POSITION_ONLY"
                 }
               ]
             }
@@ -20418,19 +20388,19 @@
                   "bit": 2,
                   "action": 0,
                   "feature_name": "LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)",
-                  "target_state": "LFTLCUC NOT_USED"
+                  "target_state": "LFTLCUC TURN_DRL"
                 },
                 {
                   "bit": 1,
                   "action": 0,
                   "feature_name": "LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)",
-                  "target_state": "LFTLCUC NOT_USED"
+                  "target_state": "LFTLCUC TURN_DRL"
                 },
                 {
                   "bit": 0,
                   "action": 1,
                   "feature_name": "LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)",
-                  "target_state": "LFTLCUC TURN_POSITION"
+                  "target_state": "LFTLCUC TURN_DRL"
                 }
               ]
             },
@@ -20443,19 +20413,19 @@
                   "bit": 2,
                   "action": 0,
                   "feature_name": "RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)",
-                  "target_state": "RFTLCUC NOT_USED"
+                  "target_state": "RFTLCUC TURN_DRL"
                 },
                 {
                   "bit": 1,
                   "action": 0,
                   "feature_name": "RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)",
-                  "target_state": "RFTLCUC NOT_USED"
+                  "target_state": "RFTLCUC TURN_DRL"
                 },
                 {
                   "bit": 0,
                   "action": 1,
                   "feature_name": "RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)",
-                  "target_state": "RFTLCUC TURN_POSITION"
+                  "target_state": "RFTLCUC TURN_DRL"
                 }
               ]
             }
@@ -20487,7 +20457,7 @@
                   "bit": 2,
                   "action": 0,
                   "feature_name": "LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)",
-                  "target_state": "LFDRLLCUC NOT_USED"
+                  "target_state": "LFDRLLCUC DRL_POSITION"
                 },
                 {
                   "bit": 1,
@@ -20499,7 +20469,7 @@
                   "bit": 0,
                   "action": 0,
                   "feature_name": "LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)",
-                  "target_state": "LFDRLLCUC NOT_USED"
+                  "target_state": "LFDRLLCUC DRL_POSITION"
                 }
               ]
             },
@@ -20512,7 +20482,7 @@
                   "bit": 2,
                   "action": 0,
                   "feature_name": "RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)",
-                  "target_state": "RFDRLLCUC NOT_USED"
+                  "target_state": "RFDRLLCUC DRL_POSITION"
                 },
                 {
                   "bit": 1,
@@ -20524,7 +20494,7 @@
                   "bit": 0,
                   "action": 0,
                   "feature_name": "RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)",
-                  "target_state": "RFDRLLCUC NOT_USED"
+                  "target_state": "RFDRLLCUC DRL_POSITION"
                 }
               ]
             }
@@ -20839,7 +20809,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "PanicActivate_Cfg (PAC)",
-                  "target_state": "PAC DISABLE"
+                  "target_state": "PAC DOUBLE"
                 },
                 {
                   "bit": 0,
@@ -21564,7 +21534,7 @@
                   "aliases": [
                     "Feat_Cfg [AUTORELOCK] [PERS_1]"
                   ],
-                  "target_state": "AUTORELOCK_PERS_1 DISABLE",
+                  "target_state": "AUTORELOCK_PERS_1 ENABLE",
                   "state_aliases": [
                     "Disable"
                   ]
@@ -21595,7 +21565,7 @@
                   "aliases": [
                     "Feat_Cfg [AUTORELOCK] [PERS_2]"
                   ],
-                  "target_state": "AUTORELOCK_PERS_2 DISABLE",
+                  "target_state": "AUTORELOCK_PERS_2 ENABLE",
                   "state_aliases": [
                     "Disable"
                   ]
@@ -21626,7 +21596,7 @@
                   "aliases": [
                     "Feat_Cfg [AUTORELOCK] [PERS_3]"
                   ],
-                  "target_state": "AUTORELOCK_PERS_3 DISABLE",
+                  "target_state": "AUTORELOCK_PERS_3 ENABLE",
                   "state_aliases": [
                     "Disable"
                   ]
@@ -21657,7 +21627,7 @@
                   "aliases": [
                     "Feat_Cfg [AUTORELOCK] [PERS_4]"
                   ],
-                  "target_state": "AUTORELOCK_PERS_4 DISABLE",
+                  "target_state": "AUTORELOCK_PERS_4 ENABLE",
                   "state_aliases": [
                     "Disable"
                   ]
@@ -21688,7 +21658,7 @@
                   "aliases": [
                     "Feat_Cfg [AUTORELOCK] [VEHICLE]"
                   ],
-                  "target_state": "AUTORELOCK_VEHICLE DISABLE",
+                  "target_state": "AUTORELOCK_VEHICLE ENABLE",
                   "state_aliases": [
                     "Disable"
                   ]
@@ -21725,7 +21695,7 @@
                   "aliases": [
                     "FeatLst_to_BCM_Feature_InitVal [AUTORELOCK]"
                   ],
-                  "target_state": "AUTORELOCK DISABLE",
+                  "target_state": "AUTORELOCK ENABLE",
                   "state_aliases": [
                     "Disable"
                   ]
@@ -21774,7 +21744,7 @@
                   "aliases": [
                     "AutoRelock_Timeduration_Cfg"
                   ],
-                  "target_state": "ARTC NULL",
+                  "target_state": "ARTC AUTORELOCK_45SEC",
                   "state_aliases": [
                     "Null"
                   ]
@@ -21815,7 +21785,7 @@
                     "Vehicle_Real_FB_Source_RR_Cfg",
                     "AutoRelock_Timeduration_Cfg"
                   ],
-                  "target_state": "ARTC NULL",
+                  "target_state": "ARTC AUTORELOCK_45SEC",
                   "state_aliases": [
                     "Null"
                   ]
@@ -21918,13 +21888,13 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Start / Stop",
-                  "target_state": "Disabled"
+                  "target_state": "SS Start/Stop Disabled"
                 },
                 {
                   "bit": 0,
                   "action": 0,
                   "feature_name": "Start / Stop",
-                  "target_state": "Disabled"
+                  "target_state": "SS Start/Stop Disabled"
                 }
               ]
             }
@@ -22068,13 +22038,13 @@
                   "bit": 3,
                   "action": 1,
                   "feature_name": "ModuleFeatureCfg_LKS (MFCLKS)",
-                  "target_state": "MFCLKS LKAlert+LKAid"
+                  "target_state": "MFCLKS LKAlert+LKAid+LCWA"
                 },
                 {
                   "bit": 2,
                   "action": 1,
                   "feature_name": "ModuleFeatureCfg_LKS (MFCLKS)",
-                  "target_state": "MFCLKS LKAlert"
+                  "target_state": "MFCLKS LKAlert+LKAid+LCWA"
                 },
                 {
                   "bit": 1,
@@ -22400,7 +22370,7 @@
                   "bit": 3,
                   "action": 0,
                   "feature_name": "Eng Temp Dig (ETD)",
-                  "target_state": "ETD Always Off"
+                  "target_state": "ETD Always On"
                 },
                 {
                   "bit": 2,
@@ -22412,7 +22382,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Trans Temp Dig (TTD)",
-                  "target_state": "TTD Always Off"
+                  "target_state": "TTD Always On"
                 },
                 {
                   "bit": 0,
@@ -22450,7 +22420,7 @@
                   "bit": 3,
                   "action": 0,
                   "feature_name": "Eng Temp Dig (ETD)",
-                  "target_state": "ETD Always Off"
+                  "target_state": "ETD Always On"
                 },
                 {
                   "bit": 2,
@@ -22462,7 +22432,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Trans Temp Dig (TTD)",
-                  "target_state": "TTD Always Off"
+                  "target_state": "TTD Always On"
                 },
                 {
                   "bit": 0,
@@ -22481,7 +22451,7 @@
                   "bit": 3,
                   "action": 0,
                   "feature_name": "Eng Oil Dig (EOD)",
-                  "target_state": "EOD Always Off"
+                  "target_state": "EOD Always On"
                 },
                 {
                   "bit": 2,
@@ -22673,7 +22643,7 @@
                   "aliases": [
                     "LF_DRL_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "LFDRLLCUC NOT_USED",
+                  "target_state": "LFDRLLCUC DRL_POSITION",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -22697,7 +22667,7 @@
                   "aliases": [
                     "LF_DRL_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "LFDRLLCUC NOT_USED",
+                  "target_state": "LFDRLLCUC DRL_POSITION",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -22716,7 +22686,7 @@
                   "aliases": [
                     "RF_DRL_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "RFDRLLCUC NOT_USED",
+                  "target_state": "RFDRLLCUC DRL_POSITION",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -22740,7 +22710,7 @@
                   "aliases": [
                     "RF_DRL_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "RFDRLLCUC NOT_USED",
+                  "target_state": "RFDRLLCUC DRL_POSITION",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -23082,7 +23052,7 @@
                   "aliases": [
                     "LF_Low_Beam_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "LFLBCUC NOT_USED",
+                  "target_state": "LFLBCUC LOW_DRL",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -23113,7 +23083,7 @@
                   "aliases": [
                     "RF_Low_Beam_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "RFLBCUC NOT_USED",
+                  "target_state": "RFLBCUC LOW_DRL",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -24302,7 +24272,7 @@
                   "aliases": [
                     "PanicActivate_Cfg"
                   ],
-                  "target_state": "PAC DISABLE",
+                  "target_state": "PAC DOUBLE",
                   "state_aliases": [
                     "Disable"
                   ]
@@ -24504,7 +24474,7 @@
                   "aliases": [
                     "Mirror_Folding_Cfg (MFC)"
                   ],
-                  "target_state": "Ford,",
+                  "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                   "state_aliases": [
                     "MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles"
                   ]
@@ -24516,7 +24486,7 @@
                   "aliases": [
                     "Mirror_Folding_Cfg (MFC)"
                   ],
-                  "target_state": "Lincoln,",
+                  "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                   "state_aliases": [
                     "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles"
                   ]
@@ -24573,7 +24543,7 @@
                   "aliases": [
                     "Mirror_Folding_Cfg (MFC)"
                   ],
-                  "target_state": "Ford,",
+                  "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                   "state_aliases": [
                     "MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles"
                   ]
@@ -24585,7 +24555,7 @@
                   "aliases": [
                     "Mirror_Folding_Cfg (MFC)"
                   ],
-                  "target_state": "Lincoln,",
+                  "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                   "state_aliases": [
                     "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles"
                   ]
@@ -24680,7 +24650,7 @@
                   "aliases": [
                     "FeatureCfg_DPAC_OffRoadVersion (FCDPACORV)"
                   ],
-                  "target_state": "CX430",
+                  "target_state": "FCDPACORV U725",
                   "state_aliases": [
                     "FCDPACORV CX430",
                     "FCDPACORV U725"
@@ -24693,7 +24663,7 @@
                   "aliases": [
                     "FeatureCfg_DPAC_OffRoadVersion (FCDPACORV)"
                   ],
-                  "target_state": "Raptor",
+                  "target_state": "FCDPACORV U725",
                   "state_aliases": [
                     "FCDPACORV RAPTOR",
                     "FCDPACORV U725"
@@ -25017,7 +24987,7 @@
                   "aliases": [
                     "KeyPad_Enable_Cfg"
                   ],
-                  "target_state": "KPEC DISABLE",
+                  "target_state": "KPEC HW_INPUT",
                   "state_aliases": [
                     "Disable"
                   ]
@@ -25125,7 +25095,7 @@
                   "bit": 2,
                   "action": 0,
                   "feature_name": "Heated Seats HMI (HSHMI)",
-                  "target_state": "HSHMI None (Hard buttons or No Heated or Cooled Seats)"
+                  "target_state": "HSHMI Heated and Cooled"
                 }
               ]
             }
@@ -25225,13 +25195,13 @@
                   "bit": 3,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS F150"
                 },
                 {
                   "bit": 2,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS F150"
                 },
                 {
                   "bit": 1,
@@ -25246,7 +25216,7 @@
                   "bit": 0,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS F150"
                 }
               ]
             },
@@ -25259,7 +25229,7 @@
                   "bit": 3,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS Black Label"
                 },
                 {
                   "bit": 2,
@@ -25274,13 +25244,13 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS Black Label"
                 },
                 {
                   "bit": 0,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS Black Label"
                 }
               ]
             }
@@ -25312,19 +25282,19 @@
                   "bit": 3,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
                 },
                 {
                   "bit": 2,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
                 },
                 {
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
                 },
                 {
                   "bit": 0,
@@ -25343,7 +25313,7 @@
                   "bit": 3,
                   "action": 1,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Mustang Shelby R1",
+                  "target_state": "SS Navigator",
                   "state_aliases": [
                     "SS Continental"
                   ]
@@ -25352,7 +25322,7 @@
                   "bit": 2,
                   "action": 1,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Black Label",
+                  "target_state": "SS Navigator",
                   "state_aliases": [
                     "SS Continental"
                   ]
@@ -25361,7 +25331,7 @@
                   "bit": 1,
                   "action": 1,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS F150",
+                  "target_state": "SS Navigator",
                   "state_aliases": [
                     "SS Continental"
                   ]
@@ -25370,7 +25340,7 @@
                   "bit": 0,
                   "action": 1,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
+                  "target_state": "SS Navigator"
                 }
               ]
             }
@@ -25405,7 +25375,7 @@
                   "aliases": [
                     "Smart Surface Themes (SST)"
                   ],
-                  "target_state": "QTHMIT Classic"
+                  "target_state": "QTHMIT Smart Surface"
                 },
                 {
                   "bit": 0,
@@ -25522,7 +25492,7 @@
                   "aliases": [
                     "Park_Lamps_Body_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "PLBCUC NOT_USED",
+                  "target_state": "PLBCUC POSITION_ONLY",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -25708,13 +25678,13 @@
                   "bit": 1,
                   "action": 1,
                   "feature_name": "ModuleFeatureCfg_TurnSgnlView (MFCTSV)",
-                  "target_state": "MFCTSV Right"
+                  "target_state": "MFCTSV Both"
                 },
                 {
                   "bit": 0,
                   "action": 1,
                   "feature_name": "ModuleFeatureCfg_TurnSgnlView (MFCTSV)",
-                  "target_state": "MFCTSV Left"
+                  "target_state": "MFCTSV Both"
                 }
               ]
             }
@@ -25870,7 +25840,7 @@
                   "aliases": [
                     "Ext_Courtesy_Sw_Input_Cfg"
                   ],
-                  "target_state": "ECSIC NULL",
+                  "target_state": "ECSIC MAN_PUDDLE",
                   "state_aliases": [
                     "Null"
                   ]
@@ -25920,7 +25890,7 @@
                   "aliases": [
                     "Rear_Ext_Courtesy_Mode_Cfg"
                   ],
-                  "target_state": "RECMC NULL",
+                  "target_state": "RECMC BEDLIGHT",
                   "state_aliases": [
                     "Null"
                   ]
@@ -26274,7 +26244,7 @@
                   "bit": 1,
                   "action": 1,
                   "feature_name": "360 Camera View Format (CVF)",
-                  "target_state": "CVF Vertical (Normal Top)",
+                  "target_state": "CVF Reserved",
                   "state_aliases": [
                     "CVF Reserved"
                   ]
@@ -26283,7 +26253,7 @@
                   "bit": 0,
                   "action": 1,
                   "feature_name": "360 Camera View Format (CVF)",
-                  "target_state": "CVF Vertical (360 top)"
+                  "target_state": "CVF Reserved"
                 }
               ]
             }
@@ -26626,13 +26596,13 @@
                   "bit": 3,
                   "action": 1,
                   "feature_name": "ModuleFeatureCfg_LKS (MFCLKS)",
-                  "target_state": "MFCLKS LKAlert+LKAid"
+                  "target_state": "MFCLKS LKAlert+LKAid+LCWA"
                 },
                 {
                   "bit": 2,
                   "action": 1,
                   "feature_name": "ModuleFeatureCfg_LKS (MFCLKS)",
-                  "target_state": "MFCLKS LKAlert"
+                  "target_state": "MFCLKS LKAlert+LKAid+LCWA"
                 },
                 {
                   "bit": 1,
@@ -26925,7 +26895,7 @@
                   "aliases": [
                     "LF_DRL_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "LFDRLLCUC NOT_USED",
+                  "target_state": "LFDRLLCUC DRL_POSITION",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -26949,7 +26919,7 @@
                   "aliases": [
                     "LF_DRL_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "LFDRLLCUC NOT_USED",
+                  "target_state": "LFDRLLCUC DRL_POSITION",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -26968,7 +26938,7 @@
                   "aliases": [
                     "RF_DRL_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "RFDRLLCUC NOT_USED",
+                  "target_state": "RFDRLLCUC DRL_POSITION",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -26992,7 +26962,7 @@
                   "aliases": [
                     "RF_DRL_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "RFDRLLCUC NOT_USED",
+                  "target_state": "RFDRLLCUC DRL_POSITION",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -27188,13 +27158,13 @@
                   "bit": 3,
                   "action": 1,
                   "feature_name": "Auto High Beam Menu (AHBM)",
-                  "target_state": "AHBM Glare free High Beams"
+                  "target_state": "AHBM Adaptive Driving Beams"
                 },
                 {
                   "bit": 2,
                   "action": 1,
                   "feature_name": "Auto High Beam Menu (AHBM)",
-                  "target_state": "AHBM Auto High Beams"
+                  "target_state": "AHBM Adaptive Driving Beams"
                 }
               ]
             }
@@ -27213,7 +27183,7 @@
                   "bit": 3,
                   "action": 1,
                   "feature_name": "ModuleFeatureCfg_HighBeam (MFCHB)",
-                  "target_state": "MFCHB GFHB_ADB",
+                  "target_state": "MFCHB GFHB",
                   "state_aliases": [
                     "MFCHB GFHB"
                   ]
@@ -27222,7 +27192,7 @@
                   "bit": 2,
                   "action": 0,
                   "feature_name": "ModuleFeatureCfg_HighBeam (MFCHB)",
-                  "target_state": "MFCHB Disabled"
+                  "target_state": "MFCHB GFHB"
                 }
               ]
             }
@@ -27247,13 +27217,13 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "AHB_Feature (AHBF)",
-                  "target_state": "AHBF Undefined"
+                  "target_state": "AHBF ADB"
                 },
                 {
                   "bit": 0,
                   "action": 0,
                   "feature_name": "AHB_Feature (AHBF)",
-                  "target_state": "AHBF Undefined"
+                  "target_state": "AHBF ADB"
                 }
               ]
             }
@@ -27291,13 +27261,13 @@
                   "bit": 1,
                   "action": 1,
                   "feature_name": "AutoHighBeam Menu (AHBM)",
-                  "target_state": "AHBM Glarefree High Beams"
+                  "target_state": "AHBM Adaptive Driving Beams"
                 },
                 {
                   "bit": 0,
                   "action": 1,
                   "feature_name": "AutoHighBeam Menu (AHBM)",
-                  "target_state": "AHBM Auto HighBeams"
+                  "target_state": "AHBM Adaptive Driving Beams"
                 }
               ]
             }
@@ -27322,7 +27292,7 @@
                   "bit": 0,
                   "action": 0,
                   "feature_name": "Config_AhbFeature (CAF)",
-                  "target_state": "CAF Disable"
+                  "target_state": "CAF ADB_GfHB"
                 }
               ]
             }
@@ -27899,25 +27869,25 @@
                   "bit": 3,
                   "action": 1,
                   "feature_name": "HSW_Level_3_TempSetPt (HSWLTSP)",
-                  "target_state": "HSWLTSP 32\u00b0C"
+                  "target_state": "HSWLTSP 35\u00b0C"
                 },
                 {
                   "bit": 2,
                   "action": 0,
                   "feature_name": "HSW_Level_3_TempSetPt (HSWLTSP)",
-                  "target_state": "HSWLTSP 24\u00b0C"
+                  "target_state": "HSWLTSP 35\u00b0C"
                 },
                 {
                   "bit": 1,
                   "action": 1,
                   "feature_name": "HSW_Level_3_TempSetPt (HSWLTSP)",
-                  "target_state": "HSWLTSP 26\u00b0C"
+                  "target_state": "HSWLTSP 35\u00b0C"
                 },
                 {
                   "bit": 0,
                   "action": 1,
                   "feature_name": "HSW_Level_3_TempSetPt (HSWLTSP)",
-                  "target_state": "HSWLTSP 25\u00b0C"
+                  "target_state": "HSWLTSP 35\u00b0C"
                 }
               ]
             }
@@ -27942,42 +27912,12 @@
           "address": "724-01-01",
           "targets": [
             {
-              "mask": "xxxx *xxx xx--",
-              "type": "discrete",
-              "bits": [
-                {
-                  "bit": 1,
-                  "action": 0,
-                  "feature_name": "Lane Change Blink Number",
-                  "target_state": "null,"
-                },
-                {
-                  "bit": 0,
-                  "action": 1,
-                  "feature_name": "Lane Change Blink Number",
-                  "target_state": "Enabled"
-                }
-              ]
-            },
-            {
-              "mask": "xxxx x*xx xx--",
-              "type": "discrete",
-              "bits": [
-                {
-                  "bit": 3,
-                  "action": 0,
-                  "feature_name": "Lane Change Blink Number",
-                  "target_state": "null,"
-                },
-                {
-                  "bit": 2,
-                  "action": 1,
-                  "feature_name": "Lane Change Blink Number",
-                  "target_state": "1,"
-                }
-              ]
+              "mask": "xxxx **xx xx--",
+              "type": "continuous",
+              "user_input": "required"
             }
-          ]
+          ],
+          "notes": "80=none, 84=1, 88=2, 8C=3, 90=4, 94=5, 98=6, 9C=7, A0=8, A4=9, A8=10"
         }
       ],
       "recipe_version": "1.1"
@@ -28040,7 +27980,7 @@
                   "aliases": [
                     "Mirror_Folding_Cfg (MFC)"
                   ],
-                  "target_state": "Ford,",
+                  "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                   "state_aliases": [
                     "MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles"
                   ]
@@ -28052,7 +27992,7 @@
                   "aliases": [
                     "Mirror_Folding_Cfg (MFC)"
                   ],
-                  "target_state": "Lincoln,",
+                  "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                   "state_aliases": [
                     "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles"
                   ]
@@ -28108,7 +28048,7 @@
                   "aliases": [
                     "Mirror_Folding_Cfg (MFC)"
                   ],
-                  "target_state": "Ford,",
+                  "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                   "state_aliases": [
                     "MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles"
                   ]
@@ -28120,7 +28060,7 @@
                   "aliases": [
                     "Mirror_Folding_Cfg (MFC)"
                   ],
-                  "target_state": "Lincoln,",
+                  "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                   "state_aliases": [
                     "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles"
                   ]
@@ -28632,19 +28572,19 @@
                   "bit": 3,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
                 },
                 {
                   "bit": 2,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
                 },
                 {
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
                 },
                 {
                   "bit": 0,
@@ -28663,7 +28603,7 @@
                   "bit": 3,
                   "action": 1,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Mustang Shelby R1",
+                  "target_state": "SS Navigator",
                   "state_aliases": [
                     "SS Continental"
                   ]
@@ -28672,7 +28612,7 @@
                   "bit": 2,
                   "action": 1,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Black Label",
+                  "target_state": "SS Navigator",
                   "state_aliases": [
                     "SS Continental"
                   ]
@@ -28681,7 +28621,7 @@
                   "bit": 1,
                   "action": 1,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS F150",
+                  "target_state": "SS Navigator",
                   "state_aliases": [
                     "SS Continental"
                   ]
@@ -28690,7 +28630,7 @@
                   "bit": 0,
                   "action": 1,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Stock Ford/Lincoln Splash Screen, as determined by brand bit"
+                  "target_state": "SS Navigator"
                 }
               ]
             }
@@ -28722,13 +28662,13 @@
                   "bit": 1,
                   "action": 1,
                   "feature_name": "ModuleFeatureCfg_TurnSgnlView (MFCTSV)",
-                  "target_state": "MFCTSV Right"
+                  "target_state": "MFCTSV Both"
                 },
                 {
                   "bit": 0,
                   "action": 1,
                   "feature_name": "ModuleFeatureCfg_TurnSgnlView (MFCTSV)",
-                  "target_state": "MFCTSV Left"
+                  "target_state": "MFCTSV Both"
                 }
               ]
             }
@@ -28794,7 +28734,7 @@
                   "aliases": [
                     "Ext_Courtesy_Sw_Input_Cfg"
                   ],
-                  "target_state": "ECSIC NULL",
+                  "target_state": "ECSIC MAN_PUDDLE",
                   "state_aliases": [
                     "Null"
                   ]
@@ -28813,7 +28753,7 @@
                   "aliases": [
                     "Rear_Ext_Courtesy_Mode_Cfg"
                   ],
-                  "target_state": "RECMC NULL",
+                  "target_state": "RECMC BEDLIGHT",
                   "state_aliases": [
                     "Null"
                   ]
@@ -29272,7 +29212,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)",
-                  "target_state": "AUTORELOCK_PERS_1 DISABLE"
+                  "target_state": "AUTORELOCK_PERS_1 ENABLE"
                 },
                 {
                   "bit": 0,
@@ -29291,7 +29231,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)",
-                  "target_state": "AUTORELOCK_PERS_2 DISABLE"
+                  "target_state": "AUTORELOCK_PERS_2 ENABLE"
                 },
                 {
                   "bit": 0,
@@ -29310,7 +29250,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)",
-                  "target_state": "AUTORELOCK_PERS_3 DISABLE"
+                  "target_state": "AUTORELOCK_PERS_3 ENABLE"
                 },
                 {
                   "bit": 0,
@@ -29329,7 +29269,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)",
-                  "target_state": "AUTORELOCK_PERS_4 DISABLE"
+                  "target_state": "AUTORELOCK_PERS_4 ENABLE"
                 },
                 {
                   "bit": 0,
@@ -29348,7 +29288,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)",
-                  "target_state": "AUTORELOCK_VEHICLE DISABLE"
+                  "target_state": "AUTORELOCK_VEHICLE ENABLE"
                 },
                 {
                   "bit": 0,
@@ -29373,7 +29313,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)",
-                  "target_state": "AUTORELOCK DISABLE"
+                  "target_state": "AUTORELOCK ENABLE"
                 },
                 {
                   "bit": 0,
@@ -29404,7 +29344,7 @@
                   "bit": 0,
                   "action": 0,
                   "feature_name": "AutoRelock_Timeduration_Cfg (ARTC)",
-                  "target_state": "ARTC NULL"
+                  "target_state": "ARTC AUTORELOCK_45SEC"
                 }
               ]
             }
@@ -30207,7 +30147,7 @@
                   "bit": 3,
                   "action": 0,
                   "feature_name": "Eng Temp Dig (ETD)",
-                  "target_state": "ETD Always Off"
+                  "target_state": "ETD Always On"
                 },
                 {
                   "bit": 2,
@@ -30219,7 +30159,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Trans Temp Dig (TTD)",
-                  "target_state": "TTD Always Off"
+                  "target_state": "TTD Always On"
                 },
                 {
                   "bit": 0,
@@ -30244,7 +30184,7 @@
                   "bit": 3,
                   "action": 0,
                   "feature_name": "Eng Temp Dig (ETD)",
-                  "target_state": "ETD Always Off"
+                  "target_state": "ETD Always On"
                 },
                 {
                   "bit": 2,
@@ -30256,7 +30196,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Trans Temp Dig (TTD)",
-                  "target_state": "TTD Always Off"
+                  "target_state": "TTD Always On"
                 },
                 {
                   "bit": 0,
@@ -30553,7 +30493,7 @@
                   "bit": 2,
                   "action": 0,
                   "feature_name": "ModuleFeatureCfg_HighBeam (MFCHB)",
-                  "target_state": "MFCHB Disabled"
+                  "target_state": "MFCHB GFHB"
                 }
               ]
             }
@@ -30572,7 +30512,7 @@
                   "bit": 2,
                   "action": 0,
                   "feature_name": "AHB_Feature (AHBF)",
-                  "target_state": "AHBF Undefined"
+                  "target_state": "AHBF GFHB"
                 },
                 {
                   "bit": 1,
@@ -30609,7 +30549,7 @@
                   "bit": 0,
                   "action": 0,
                   "feature_name": "AutoHighBeam Menu (AHBM)",
-                  "target_state": "AHBM Disabled"
+                  "target_state": "AHBM Glarefree High Beams"
                 }
               ]
             }
@@ -30634,7 +30574,7 @@
                   "bit": 0,
                   "action": 0,
                   "feature_name": "High_Beam_Handling_Config (HBHC)",
-                  "target_state": "HBHC OFF"
+                  "target_state": "HBHC Adaptive Driving Beam"
                 }
               ]
             }
@@ -30938,7 +30878,7 @@
                   "bit": 2,
                   "action": 0,
                   "feature_name": "Auto High Beam Menu (AHBM)",
-                  "target_state": "AHBM Disabled"
+                  "target_state": "AHBM Glare free High Beams"
                 }
               ]
             }
@@ -31114,7 +31054,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "PanicActivate_Cfg (PAC)",
-                  "target_state": "PAC DISABLE"
+                  "target_state": "PAC DOUBLE"
                 },
                 {
                   "bit": 0,
@@ -31663,13 +31603,13 @@
                   "bit": 1,
                   "action": 1,
                   "feature_name": "ModuleFeatureCfg_TurnSgnlView (MFCTSV)",
-                  "target_state": "MFCTSV Right"
+                  "target_state": "MFCTSV Both"
                 },
                 {
                   "bit": 0,
                   "action": 1,
                   "feature_name": "ModuleFeatureCfg_TurnSgnlView (MFCTSV)",
-                  "target_state": "MFCTSV Left"
+                  "target_state": "MFCTSV Both"
                 }
               ]
             }
@@ -32274,7 +32214,7 @@
                   "aliases": [
                     "LF_DRL_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "LFDRLLCUC NOT_USED",
+                  "target_state": "LFDRLLCUC DRL_POSITION",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -32298,7 +32238,7 @@
                   "aliases": [
                     "LF_DRL_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "LFDRLLCUC NOT_USED",
+                  "target_state": "LFDRLLCUC DRL_POSITION",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -32317,7 +32257,7 @@
                   "aliases": [
                     "RF_DRL_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "RFDRLLCUC NOT_USED",
+                  "target_state": "RFDRLLCUC DRL_POSITION",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -32341,7 +32281,7 @@
                   "aliases": [
                     "RF_DRL_Lamp_Ckt_Usage_Cfg"
                   ],
-                  "target_state": "RFDRLLCUC NOT_USED",
+                  "target_state": "RFDRLLCUC DRL_POSITION",
                   "state_aliases": [
                     "Not Used"
                   ]
@@ -33111,7 +33051,7 @@
                   "bit": 0,
                   "action": 0,
                   "feature_name": "NAV Repeater Conformance (NAVRC)",
-                  "target_state": "NAVRC Off"
+                  "target_state": "NAVRC HUD Support"
                 }
               ]
             }
@@ -33283,7 +33223,7 @@
                   "aliases": [
                     "Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE]"
                   ],
-                  "target_state": "AUDIBLELOCKFEEDBACK_VEHICLE DISABLE",
+                  "target_state": "AUDIBLELOCKFEEDBACK_VEHICLE ENABLE",
                   "state_aliases": [
                     "Disable"
                   ]
@@ -33373,7 +33313,7 @@
                   "aliases": [
                     "PanicActivate_Cfg"
                   ],
-                  "target_state": "PAC DISABLE",
+                  "target_state": "PAC DOUBLE",
                   "state_aliases": [
                     "Disable"
                   ]
@@ -33424,7 +33364,7 @@
                   "aliases": [
                     "Mirror_Folding_Cfg"
                   ],
-                  "target_state": "MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles",
+                  "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                   "state_aliases": [
                     "Ford,"
                   ]
@@ -33461,7 +33401,7 @@
                   "aliases": [
                     "Mirror_Folding_Cfg"
                   ],
-                  "target_state": "MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles",
+                  "target_state": "MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles",
                   "state_aliases": [
                     "Ford,"
                   ]
@@ -34593,7 +34533,7 @@
                   "bit": 2,
                   "action": 0,
                   "feature_name": "Heated Seats HMI (HSHMI)",
-                  "target_state": "HSHMI None (Hard buttons or No Heated or Cooled Seats)"
+                  "target_state": "HSHMI Heated and Cooled"
                 }
               ]
             }
@@ -34695,13 +34635,13 @@
                   "bit": 3,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS F150"
                 },
                 {
                   "bit": 2,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS F150"
                 },
                 {
                   "bit": 1,
@@ -34718,7 +34658,7 @@
                   "bit": 0,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS F150"
                 }
               ]
             },
@@ -34731,7 +34671,7 @@
                   "bit": 3,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS Black Label"
                 },
                 {
                   "bit": 2,
@@ -34748,13 +34688,13 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS Black Label"
                 },
                 {
                   "bit": 0,
                   "action": 0,
                   "feature_name": "Splash Screen (SS)",
-                  "target_state": "SS Default/not programmed"
+                  "target_state": "SS Black Label"
                 }
               ]
             }
@@ -34786,7 +34726,7 @@
                   "bit": 1,
                   "action": 0,
                   "feature_name": "QT HMI Themes (QTHMIT)",
-                  "target_state": "QTHMIT Classic"
+                  "target_state": "QTHMIT Smart Surface"
                 },
                 {
                   "bit": 0,

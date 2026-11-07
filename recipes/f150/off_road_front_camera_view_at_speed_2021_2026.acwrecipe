@@ -39,7 +39,7 @@ steps:
       feature_name: FeatureCfg_DPAC_OffRoadVersion
       aliases:
       - FeatureCfg_DPAC_OffRoadVersion (FCDPACORV)
-      target_state: CX430
+      target_state: FCDPACORV U725
       state_aliases:
       - FCDPACORV CX430
       - FCDPACORV U725
@@ -48,7 +48,7 @@ steps:
       feature_name: FeatureCfg_DPAC_OffRoadVersion
       aliases:
       - FeatureCfg_DPAC_OffRoadVersion (FCDPACORV)
-      target_state: Raptor
+      target_state: FCDPACORV U725
       state_aliases:
       - FCDPACORV RAPTOR
       - FCDPACORV U725

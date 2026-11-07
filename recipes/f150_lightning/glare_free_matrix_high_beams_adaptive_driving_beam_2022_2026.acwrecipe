@@ -33,11 +33,11 @@ steps:
     - bit: 3
       action: 1
       feature_name: Auto High Beam Menu (AHBM)
-      target_state: AHBM Glare free High Beams
+      target_state: AHBM Adaptive Driving Beams
     - bit: 2
       action: 1
       feature_name: Auto High Beam Menu (AHBM)
-      target_state: AHBM Auto High Beams
+      target_state: AHBM Adaptive Driving Beams
 - module: IPMA
   address: 706-01-01
   targets:
@@ -48,13 +48,13 @@ steps:
     - bit: 3
       action: 1
       feature_name: ModuleFeatureCfg_HighBeam (MFCHB)
-      target_state: MFCHB GFHB_ADB
+      target_state: MFCHB GFHB
       state_aliases:
       - MFCHB GFHB
     - bit: 2
       action: 0
       feature_name: ModuleFeatureCfg_HighBeam (MFCHB)
-      target_state: MFCHB Disabled
+      target_state: MFCHB GFHB
 - module: SCCM
   address: 724-04-01
   targets:
@@ -69,11 +69,11 @@ steps:
     - bit: 1
       action: 0
       feature_name: AHB_Feature (AHBF)
-      target_state: AHBF Undefined
+      target_state: AHBF ADB
     - bit: 0
       action: 0
       feature_name: AHB_Feature (AHBF)
-      target_state: AHBF Undefined
+      target_state: AHBF ADB
 - module: IPC
   address: 720-01-01
   targets:
@@ -95,11 +95,11 @@ steps:
     - bit: 1
       action: 1
       feature_name: AutoHighBeam Menu (AHBM)
-      target_state: AHBM Glarefree High Beams
+      target_state: AHBM Adaptive Driving Beams
     - bit: 0
       action: 1
       feature_name: AutoHighBeam Menu (AHBM)
-      target_state: AHBM Auto HighBeams
+      target_state: AHBM Adaptive Driving Beams
 - module: HCM
   address: 734-01-02
   targets:
@@ -114,7 +114,7 @@ steps:
     - bit: 0
       action: 0
       feature_name: Config_AhbFeature (CAF)
-      target_state: CAF Disable
+      target_state: CAF ADB_GfHB
 - module: HCM
   address: 734-03-02
   targets:

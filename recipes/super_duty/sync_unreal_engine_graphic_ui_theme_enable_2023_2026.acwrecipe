@@ -16,7 +16,7 @@ steps:
     - bit: 1
       action: 0
       feature_name: QT HMI Themes (QTHMIT)
-      target_state: QTHMIT Classic
+      target_state: QTHMIT Smart Surface
     - bit: 0
       action: 1
       feature_name: QT HMI Themes (QTHMIT)

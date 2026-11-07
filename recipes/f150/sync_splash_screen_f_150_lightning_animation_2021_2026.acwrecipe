@@ -16,15 +16,15 @@ steps:
     - bit: 3
       action: 0
       feature_name: Splash Screen (SS)
-      target_state: SS Default/not programmed
+      target_state: SS Stock Ford/Lincoln Splash Screen, as determined by brand bit
     - bit: 2
       action: 0
       feature_name: Splash Screen (SS)
-      target_state: SS Default/not programmed
+      target_state: SS Stock Ford/Lincoln Splash Screen, as determined by brand bit
     - bit: 1
       action: 0
       feature_name: Splash Screen (SS)
-      target_state: SS Default/not programmed
+      target_state: SS Stock Ford/Lincoln Splash Screen, as determined by brand bit
     - bit: 0
       action: 1
       feature_name: Splash Screen (SS)
@@ -36,23 +36,23 @@ steps:
     - bit: 3
       action: 1
       feature_name: Splash Screen (SS)
-      target_state: SS Mustang Shelby R1
+      target_state: SS Navigator
       state_aliases:
       - SS Continental
     - bit: 2
       action: 1
       feature_name: Splash Screen (SS)
-      target_state: SS Black Label
+      target_state: SS Navigator
       state_aliases:
       - SS Continental
     - bit: 1
       action: 1
       feature_name: Splash Screen (SS)
-      target_state: SS F150
+      target_state: SS Navigator
       state_aliases:
       - SS Continental
     - bit: 0
       action: 1
       feature_name: Splash Screen (SS)
-      target_state: SS Stock Ford/Lincoln Splash Screen, as determined by brand bit
+      target_state: SS Navigator
 recipe_version: '1.1'

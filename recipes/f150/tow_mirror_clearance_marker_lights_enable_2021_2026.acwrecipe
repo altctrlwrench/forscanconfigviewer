@@ -18,7 +18,7 @@ steps:
       feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
       aliases:
       - Park_Lamps_Body_Ckt_Usage_Cfg
-      target_state: PLBCUC NOT_USED
+      target_state: PLBCUC POSITION_ONLY
       state_aliases:
       - Not Used
     - bit: 0

@@ -22,5 +22,5 @@ steps:
     - bit: 2
       action: 0
       feature_name: Heated Seats HMI (HSHMI)
-      target_state: HSHMI None (Hard buttons or No Heated or Cooled Seats)
+      target_state: HSHMI Heated and Cooled
 recipe_version: '1.1'

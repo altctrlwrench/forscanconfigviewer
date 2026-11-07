@@ -26,11 +26,11 @@ steps:
     - bit: 1
       action: 0
       feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
-      target_state: LFDRLLCUC NOT_USED
+      target_state: LFDRLLCUC FIXED_POSITION_ONLY
     - bit: 0
       action: 0
       feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
-      target_state: LFDRLLCUC NOT_USED
+      target_state: LFDRLLCUC FIXED_POSITION_ONLY
   - mask: xxx* xxxx xx--
     community_hex: '4'
     type: discrete
@@ -42,11 +42,11 @@ steps:
     - bit: 1
       action: 0
       feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
-      target_state: RFDRLLCUC NOT_USED
+      target_state: RFDRLLCUC FIXED_POSITION_ONLY
     - bit: 0
       action: 0
       feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
-      target_state: RFDRLLCUC NOT_USED
+      target_state: RFDRLLCUC FIXED_POSITION_ONLY
 - module: BCM
   address: 726-43-01
   notes: Sets Turn to Turn and DRL
@@ -58,15 +58,15 @@ steps:
     - bit: 2
       action: 0
       feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
-      target_state: LFTLCUC NOT_USED
+      target_state: LFTLCUC TURN_DRL
     - bit: 1
       action: 0
       feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
-      target_state: LFTLCUC NOT_USED
+      target_state: LFTLCUC TURN_DRL
     - bit: 0
       action: 1
       feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
-      target_state: LFTLCUC TURN_POSITION
+      target_state: LFTLCUC TURN_DRL
   - mask: xxx* xxxx xx--
     community_hex: '1'
     type: discrete
@@ -74,13 +74,13 @@ steps:
     - bit: 2
       action: 0
       feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
-      target_state: RFTLCUC NOT_USED
+      target_state: RFTLCUC TURN_DRL
     - bit: 1
       action: 0
       feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
-      target_state: RFTLCUC NOT_USED
+      target_state: RFTLCUC TURN_DRL
     - bit: 0
       action: 1
       feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
-      target_state: RFTLCUC TURN_POSITION
+      target_state: RFTLCUC TURN_DRL
 recipe_version: '1.1'

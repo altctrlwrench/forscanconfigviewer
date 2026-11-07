@@ -21,7 +21,7 @@ steps:
       feature_name: PanicActivate_Cfg (PAC)
       aliases:
       - PanicActivate_Cfg
-      target_state: PAC DISABLE
+      target_state: PAC DOUBLE
       state_aliases:
       - Disable
     - bit: 0

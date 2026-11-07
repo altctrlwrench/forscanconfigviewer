@@ -77,7 +77,7 @@ steps:
       feature_name: LF_Low_Beam_Ckt_Usage_Cfg (LFLBCUC)
       aliases:
       - LF_Low_Beam_Ckt_Usage_Cfg
-      target_state: LFLBCUC NOT_USED
+      target_state: LFLBCUC LOW_DRL
       state_aliases:
       - Not Used
     - bit: 0
@@ -97,7 +97,7 @@ steps:
       feature_name: RF_Low_Beam_Ckt_Usage_Cfg (RFLBCUC)
       aliases:
       - RF_Low_Beam_Ckt_Usage_Cfg
-      target_state: RFLBCUC NOT_USED
+      target_state: RFLBCUC LOW_DRL
       state_aliases:
       - Not Used
     - bit: 0

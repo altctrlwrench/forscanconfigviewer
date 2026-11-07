@@ -20,7 +20,7 @@ steps:
       feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
       aliases:
       - LF_DRL_Lamp_Ckt_Usage_Cfg
-      target_state: LFDRLLCUC NOT_USED
+      target_state: LFDRLLCUC DRL_POSITION
       state_aliases:
       - Not Used
     - bit: 1
@@ -36,7 +36,7 @@ steps:
       feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
       aliases:
       - LF_DRL_Lamp_Ckt_Usage_Cfg
-      target_state: LFDRLLCUC NOT_USED
+      target_state: LFDRLLCUC DRL_POSITION
       state_aliases:
       - Not Used
   - mask: xxx* xxxx xx--
@@ -48,7 +48,7 @@ steps:
       feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
       aliases:
       - RF_DRL_Lamp_Ckt_Usage_Cfg
-      target_state: RFDRLLCUC NOT_USED
+      target_state: RFDRLLCUC DRL_POSITION
       state_aliases:
       - Not Used
     - bit: 1
@@ -64,7 +64,7 @@ steps:
       feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
       aliases:
       - RF_DRL_Lamp_Ckt_Usage_Cfg
-      target_state: RFDRLLCUC NOT_USED
+      target_state: RFDRLLCUC DRL_POSITION
       state_aliases:
       - Not Used
 - module: BCM

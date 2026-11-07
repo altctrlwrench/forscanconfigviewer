@@ -16,26 +16,8 @@ steps:
 - module: SCCM
   address: 724-01-01
   targets:
-  - mask: xxxx *xxx xx--
-    type: discrete
-    bits:
-    - bit: 1
-      action: 0
-      feature_name: Lane Change Blink Number
-      target_state: null,
-    - bit: 0
-      action: 1
-      feature_name: Lane Change Blink Number
-      target_state: Enabled
-  - mask: xxxx x*xx xx--
-    type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Lane Change Blink Number
-      target_state: null,
-    - bit: 2
-      action: 1
-      feature_name: Lane Change Blink Number
-      target_state: 1,
+  - mask: xxxx **xx xx--
+    type: continuous
+    user_input: required
+  notes: 80=none, 84=1, 88=2, 8C=3, 90=4, 94=5, 98=6, 9C=7, A0=8, A4=9, A8=10
 recipe_version: '1.1'

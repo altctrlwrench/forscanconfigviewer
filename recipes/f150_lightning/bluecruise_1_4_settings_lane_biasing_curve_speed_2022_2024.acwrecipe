@@ -56,11 +56,11 @@ steps:
     - bit: 3
       action: 1
       feature_name: ModuleFeatureCfg_LKS (MFCLKS)
-      target_state: MFCLKS LKAlert+LKAid
+      target_state: MFCLKS LKAlert+LKAid+LCWA
     - bit: 2
       action: 1
       feature_name: ModuleFeatureCfg_LKS (MFCLKS)
-      target_state: MFCLKS LKAlert
+      target_state: MFCLKS LKAlert+LKAid+LCWA
     - bit: 1
       action: 1
       feature_name: ModuleFeatureCfg_DAS (MFCDAS)

@@ -40,11 +40,11 @@ steps:
     - bit: 1
       action: 0
       feature_name: Start / Stop
-      target_state: Disabled
+      target_state: SS Start/Stop Disabled
     - bit: 0
       action: 0
       feature_name: Start / Stop
-      target_state: Disabled
+      target_state: SS Start/Stop Disabled
 - module: HVAC
   address: 733-01-05
   notes: optional - disables Auto Stop/Start switch from illuminating

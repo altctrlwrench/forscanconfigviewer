@@ -40,7 +40,7 @@ steps:
       feature_name: KeyPad_Enable_Cfg (KPEC)
       aliases:
       - KeyPad_Enable_Cfg
-      target_state: KPEC DISABLE
+      target_state: KPEC HW_INPUT
       state_aliases:
       - Disable
     - bit: 0

@@ -16,7 +16,7 @@ steps:
     - bit: 2
       action: 0
       feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
-      target_state: LFDRLLCUC NOT_USED
+      target_state: LFDRLLCUC DRL_POSITION
     - bit: 1
       action: 1
       feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
@@ -24,7 +24,7 @@ steps:
     - bit: 0
       action: 0
       feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
-      target_state: LFDRLLCUC NOT_USED
+      target_state: LFDRLLCUC DRL_POSITION
   - mask: xxx* xxxx xx--
     community_hex: '2'
     type: discrete
@@ -32,7 +32,7 @@ steps:
     - bit: 2
       action: 0
       feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
-      target_state: RFDRLLCUC NOT_USED
+      target_state: RFDRLLCUC DRL_POSITION
     - bit: 1
       action: 1
       feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
@@ -40,7 +40,7 @@ steps:
     - bit: 0
       action: 0
       feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
-      target_state: RFDRLLCUC NOT_USED
+      target_state: RFDRLLCUC DRL_POSITION
 - module: BCM
   address: 726-38-01
   notes: 'set at about 60% brightness (3C hex) thru 75% brightness (4B hex) use lowest

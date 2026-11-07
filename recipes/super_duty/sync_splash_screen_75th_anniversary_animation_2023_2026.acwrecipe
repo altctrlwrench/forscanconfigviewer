@@ -20,11 +20,11 @@ steps:
     - bit: 3
       action: 0
       feature_name: Splash Screen (SS)
-      target_state: SS Default/not programmed
+      target_state: SS F150
     - bit: 2
       action: 0
       feature_name: Splash Screen (SS)
-      target_state: SS Default/not programmed
+      target_state: SS F150
     - bit: 1
       action: 1
       feature_name: Splash Screen (SS)
@@ -36,7 +36,7 @@ steps:
     - bit: 0
       action: 0
       feature_name: Splash Screen (SS)
-      target_state: SS Default/not programmed
+      target_state: SS F150
   - mask: xxxx x*xx xx--
     community_hex: '4'
     type: discrete
@@ -44,7 +44,7 @@ steps:
     - bit: 3
       action: 0
       feature_name: Splash Screen (SS)
-      target_state: SS Default/not programmed
+      target_state: SS Black Label
     - bit: 2
       action: 1
       feature_name: Splash Screen (SS)
@@ -56,9 +56,9 @@ steps:
     - bit: 1
       action: 0
       feature_name: Splash Screen (SS)
-      target_state: SS Default/not programmed
+      target_state: SS Black Label
     - bit: 0
       action: 0
       feature_name: Splash Screen (SS)
-      target_state: SS Default/not programmed
+      target_state: SS Black Label
 recipe_version: '1.1'

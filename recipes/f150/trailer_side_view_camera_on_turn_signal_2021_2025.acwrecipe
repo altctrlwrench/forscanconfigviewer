@@ -18,11 +18,11 @@ steps:
     - bit: 1
       action: 1
       feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
-      target_state: MFCTSV Right
+      target_state: MFCTSV Both
     - bit: 0
       action: 1
       feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
-      target_state: MFCTSV Left
+      target_state: MFCTSV Both
 - module: APIM
   address: 7D0-02-03
   notes: adds Trailer Side View toggle under Driver Assistance

@@ -17,7 +17,7 @@ steps:
     - bit: 3
       action: 0
       feature_name: Eng Temp Dig (ETD)
-      target_state: ETD Always Off
+      target_state: ETD Always On
     - bit: 2
       action: 1
       feature_name: Eng Temp Dig (ETD)
@@ -25,7 +25,7 @@ steps:
     - bit: 1
       action: 0
       feature_name: Trans Temp Dig (TTD)
-      target_state: TTD Always Off
+      target_state: TTD Always On
     - bit: 0
       action: 1
       feature_name: Trans Temp Dig (TTD)
@@ -37,7 +37,7 @@ steps:
     - bit: 3
       action: 0
       feature_name: Eng Oil Dig (EOD)
-      target_state: EOD Always Off
+      target_state: EOD Always On
     - bit: 2
       action: 1
       feature_name: Eng Oil Dig (EOD)
