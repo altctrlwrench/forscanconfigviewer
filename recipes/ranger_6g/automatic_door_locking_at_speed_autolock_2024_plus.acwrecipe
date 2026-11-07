@@ -42,56 +42,96 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Disabled
     - bit: 0
       action: 1
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Enabled
   - mask: xxx* xxxx xx--
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Disabled
     - bit: 0
       action: 1
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Enabled
   - mask: xxxx x*xx xx--
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Disabled
     - bit: 0
       action: 1
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Enabled
   - mask: xxxx xxx* xx--
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Disabled
     - bit: 0
       action: 1
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Enabled
   - mask: xxxx xxxx x*--
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Disabled
     - bit: 0
       action: 1
+      feature_name: Automatic Door Locking at Speed (Autolock)
+      target_state: Enabled
 - module: APIM
   address: 7D0-09-01
   notes: '* Bit4 (add 8 to enable)
@@ -106,7 +146,8 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: Autolock Control Function (ACF)
+      feature_name: Autolock Control Function (ACF)
+      target_state: ACF Enabled
 - module: IPC
   address: 720-06-01
   notes: '* -> Bit 3 (add 4 to enable (if currently disabled)
@@ -121,7 +162,8 @@ steps:
     bits:
     - bit: 2
       action: 1
-      feature: Locking Feedback Audible (LFA)
+      feature_name: Locking Feedback Audible (LFA)
+      target_state: LFA enabled
 - module: IPC
   address: 720-06-01
   notes: '* -> Bit 2 (add 2 to enable) (if currently disabled)
@@ -136,5 +178,6 @@ steps:
     bits:
     - bit: 1
       action: 1
-      feature: Locking Feedback Visual (LFV)
+      feature_name: Locking Feedback Visual (LFV)
+      target_state: LFV enabled
 recipe_version: '1.1'

@@ -14,13 +14,8 @@ steps:
     community_hex: '0'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 0
-      feature: FrontFog_WithHighBeams_Cfg (FFWHBC)
+      feature_name: FrontFog_WithHighBeams_Cfg (FFWHBC)
+      target_state: FFWHBC ALLOW
 recipe_version: '1.1'

@@ -19,10 +19,12 @@ steps:
     bits:
     - bit: 1
       action: 1
-      feature: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
+      feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
+      target_state: MFCTSV Right
     - bit: 0
       action: 1
-      feature: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
+      feature_name: ModuleFeatureCfg_TurnSgnlView (MFCTSV)
+      target_state: MFCTSV Left
 - module: APIM
   address: 7D0-02-03
   targets:
@@ -31,5 +33,6 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: Turn Signal Views (TSV)
+      feature_name: Turn Signal Views (TSV)
+      target_state: TSV Present
 recipe_version: '1.1'

@@ -17,160 +17,200 @@ steps:
     bits:
     - bit: 3
       action: 0
-      feature: Belt_Minder_Chime_Operator_Cfg (BMCOC)
+      feature_name: Belt_Minder_Chime_Operator_Cfg (BMCOC)
+      target_state: BMCOC disabled
     - bit: 2
       action: 0
-      feature: Belt_Monitor_Chime_Cfg (BMCC)
+      feature_name: Belt_Monitor_Chime_Cfg (BMCC)
+      target_state: BMCC disabled
     - bit: 1
       action: 0
-      feature: Belt_Monitor_Chime_Operator_Cfg (BMCOC)
+      feature_name: Belt_Monitor_Chime_Operator_Cfg (BMCOC)
+      target_state: BMCOC disabled
     - bit: 0
       action: 0
-      feature: R1C1_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R1C1_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
   - mask: x*xx xxxx xx--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
-      feature: R1C2_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R1C2_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 2
       action: 0
-      feature: R1C3_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R1C3_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 1
       action: 0
-      feature: R1C4_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R1C4_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 0
       action: 0
-      feature: R1C5_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R1C5_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
   - mask: xx*x xxxx xx--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
-      feature: R2C1_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R2C1_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 2
       action: 0
-      feature: R2C2_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R2C2_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 1
       action: 0
-      feature: R2C3_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R2C3_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 0
       action: 0
-      feature: R2C4_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R2C4_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
   - mask: xxx* xxxx xx--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
-      feature: R2C5_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R2C5_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 2
       action: 0
-      feature: R3C1_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R3C1_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 1
       action: 0
-      feature: R3C2_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R3C2_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 0
       action: 0
-      feature: R3C3_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R3C3_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
   - mask: xxxx *xxx xx--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
-      feature: R3C4_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R3C4_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 2
       action: 0
-      feature: R3C5_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R3C5_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 1
       action: 0
-      feature: R4C1_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R4C1_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 0
       action: 0
-      feature: R4C2_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R4C2_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
   - mask: xxxx x*xx xx--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
-      feature: R4C3_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R4C3_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 2
       action: 0
-      feature: R4C4_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R4C4_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 1
       action: 0
-      feature: R4C5_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R4C5_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 0
       action: 0
-      feature: R5C1_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R5C1_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
   - mask: xxxx xx*x xx--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
-      feature: R5C2_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R5C2_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 2
       action: 0
-      feature: R5C3_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R5C3_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 1
       action: 0
-      feature: R5C4_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R5C4_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
     - bit: 0
       action: 0
-      feature: R5C5_Belt_Minder_Chime_Cfg (RCBMCC)
+      feature_name: R5C5_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
   - mask: xxxx xxx* xx--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
-      feature: R1_Bench (RB)
+      feature_name: R1_Bench (RB)
+      target_state: RB No Bench
     - bit: 2
       action: 0
-      feature: R1C1_Seatbelt_Cfg (RCSC)
+      feature_name: R1C1_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 1
       action: 0
-      feature: R1C1_Seatbelt_Cfg (RCSC)
+      feature_name: R1C1_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 0
       action: 0
-      feature: R1C1_Seatbelt_Cfg (RCSC)
+      feature_name: R1C1_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
   - mask: xxxx xxxx *x--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
-      feature: R2_Bench (RB)
+      feature_name: R2_Bench (RB)
+      target_state: RB No Bench
     - bit: 2
       action: 0
-      feature: R1C2_Seatbelt_Cfg (RCSC)
+      feature_name: R1C2_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 1
       action: 0
-      feature: R1C2_Seatbelt_Cfg (RCSC)
+      feature_name: R1C2_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 0
       action: 0
-      feature: R1C2_Seatbelt_Cfg (RCSC)
+      feature_name: R1C2_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
   - mask: xxxx xxxx x*--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
-      feature: R3_Bench (RB)
+      feature_name: R3_Bench (RB)
+      target_state: RB No Bench
     - bit: 2
       action: 0
-      feature: R1C3_Seatbelt_Cfg (RCSC)
+      feature_name: R1C3_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 1
       action: 0
-      feature: R1C3_Seatbelt_Cfg (RCSC)
+      feature_name: R1C3_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 0
       action: 0
-      feature: R1C3_Seatbelt_Cfg (RCSC)
+      feature_name: R1C3_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
 - module: IPC
   address: 720-13-02
   notes: Tells the truck there are no seatbelts nor belt minders installed
@@ -181,139 +221,186 @@ steps:
     bits:
     - bit: 3
       action: 0
-      feature: R4_Bench (RB)
+      feature_name: R4_Bench (RB)
+      target_state: RB No Bench
     - bit: 2
       action: 0
-      feature: R1C4_Seatbelt_Cfg (RCSC)
+      feature_name: R1C4_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 1
       action: 0
-      feature: R1C4_Seatbelt_Cfg (RCSC)
+      feature_name: R1C4_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 0
       action: 0
-      feature: R1C4_Seatbelt_Cfg (RCSC)
+      feature_name: R1C4_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
   - mask: x*xx xxxx xx--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
-      feature: R5_Bench (RB)
+      feature_name: R5_Bench (RB)
+      target_state: RB No Bench
     - bit: 2
       action: 0
-      feature: R1C5_Seatbelt_Cfg (RCSC)
+      feature_name: R1C5_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 1
       action: 0
-      feature: R1C5_Seatbelt_Cfg (RCSC)
+      feature_name: R1C5_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 0
       action: 0
-      feature: R1C5_Seatbelt_Cfg (RCSC)
+      feature_name: R1C5_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
   - mask: xx*x xxxx xx--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
-      feature: R6_Bench (RB)
+      feature_name: R6_Bench (RB)
+      target_state: RB No Bench
     - bit: 2
       action: 0
-      feature: R2C1_Seatbelt_Cfg (RCSC)
+      feature_name: R2C1_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 1
       action: 0
-      feature: R2C1_Seatbelt_Cfg (RCSC)
+      feature_name: R2C1_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 0
       action: 0
-      feature: R2C1_Seatbelt_Cfg (RCSC)
+      feature_name: R2C1_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
   - mask: xxx* xxxx xx--
     community_hex: '0'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
     - bit: 2
       action: 0
-      feature: R2C2_Seatbelt_Cfg (RCSC)
+      feature_name: R2C2_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 1
       action: 0
-      feature: R2C2_Seatbelt_Cfg (RCSC)
+      feature_name: R2C2_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 0
       action: 0
-      feature: R2C2_Seatbelt_Cfg (RCSC)
+      feature_name: R2C2_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
   - mask: xxxx *xxx xx--
     community_hex: '0'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
     - bit: 2
       action: 0
-      feature: R2C3_Seatbelt_Cfg (RCSC)
+      feature_name: R2C3_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 1
       action: 0
-      feature: R2C3_Seatbelt_Cfg (RCSC)
+      feature_name: R2C3_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 0
       action: 0
-      feature: R2C3_Seatbelt_Cfg (RCSC)
+      feature_name: R2C3_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
   - mask: xxxx x*xx xx--
     community_hex: '0'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
     - bit: 2
       action: 0
-      feature: R2C4_Seatbelt_Cfg (RCSC)
+      feature_name: R2C4_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 1
       action: 0
-      feature: R2C4_Seatbelt_Cfg (RCSC)
+      feature_name: R2C4_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
     - bit: 0
       action: 0
-      feature: R2C4_Seatbelt_Cfg (RCSC)
+      feature_name: R2C4_Seatbelt_Cfg (RCSC)
+      target_state: RCSC Seat not present
   - mask: xxxx xx*x xx--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
   - mask: xxxx xxx* xx--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
   - mask: xxxx xxxx *x--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
+      target_state: Disabled
 recipe_version: '1.1'

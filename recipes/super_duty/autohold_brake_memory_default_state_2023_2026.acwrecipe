@@ -19,7 +19,8 @@ steps:
     bits:
     - bit: 0
       action: 1
-      feature: Autohold  (A)
+      feature_name: Autohold  (A)
+      target_state: A With Autohold [Standard Equipment]
 - module: APIM
   address: 7D0-01-03
   notes: Add 4 to current value
@@ -30,7 +31,8 @@ steps:
     bits:
     - bit: 2
       action: 1
-      feature: Auto Hold (AH)
+      feature_name: Auto Hold (AH)
+      target_state: AH Enabled
 - module: IPC
   address: 720-02-01
   notes: Add 1 to current value
@@ -41,5 +43,8 @@ steps:
     bits:
     - bit: 0
       action: 1
-      feature: AutoHold (AH)
+      feature_name: AutoHold (AH)
+      aliases:
+      - '*AutoHold (AH)'
+      target_state: AH enabled
 recipe_version: '1.1'

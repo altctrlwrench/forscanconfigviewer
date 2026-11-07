@@ -17,23 +17,30 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: 12V Power Outlet (Power Point) Timeout Enable/Disable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: 12V Power Outlet (Power Point) Timeout Enable/Disable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: 12V Power Outlet (Power Point) Timeout Enable/Disable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: 12V Power Outlet (Power Point) Timeout Enable/Disable
+      target_state: Disabled
   - mask: xxxx x*xx xx--
     community_hex: '0'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 0
-      feature: Power_Point_Timeout_Cfg (PPTC)
+      feature_name: Power_Point_Timeout_Cfg (PPTC)
+      aliases:
+      - Power_Point_Timeout_Cfg
+      target_state: PPTC DISABLE
+      state_aliases:
+      - Disable
 recipe_version: '1.1'

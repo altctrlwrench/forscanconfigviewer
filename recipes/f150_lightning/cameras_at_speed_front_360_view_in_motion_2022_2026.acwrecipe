@@ -21,7 +21,8 @@ steps:
     bits:
     - bit: 0
       action: 1
-      feature: RCOD HMI w/o Blackbox (RCODHMIB)
+      feature_name: RCOD HMI w/o Blackbox (RCODHMIB)
+      target_state: RCODHMIB Enabled
 - module: IPMA
   address: 706-02-02
   targets:
@@ -31,27 +32,33 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_Hitch (FCDPACVCASH)
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_Hitch (FCDPACVCASH)
+      target_state: FCDPACVCASH Enabled
     - bit: 2
       action: 1
-      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_Aux (FCDPACVCASA)
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_Aux (FCDPACVCASA)
+      target_state: FCDPACVCASA Enabled
     - bit: 1
       action: 1
-      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_CHMSL (FCDPACVCASCHMSL)
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_CHMSL (FCDPACVCASCHMSL)
+      target_state: FCDPACVCASCHMSL Enabled
     - bit: 0
       action: 1
-      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_RCOD (FCDPACVCASRCOD)
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_RCOD (FCDPACVCASRCOD)
+      target_state: FCDPACVCASRCOD Enabled
   - mask: xxxx *xxx xx--
     community_hex: C
     type: discrete
     bits:
     - bit: 3
       action: 1
-      feature: FeatureCfg_TBA_HitchView (FCTBAHV)
+      feature_name: FeatureCfg_TBA_HitchView (FCTBAHV)
+      target_state: FCTBAHV Enabled
   - mask: xxxx x*xx xx--
     type: discrete
     bits:
     - bit: 1
       action: 1
-      feature: FeatureCfg_DPAC_ViewCtlAtSpeed (FCDPACVCAS)
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed (FCDPACVCAS)
+      target_state: FCDPACVCAS Enabled
 recipe_version: '1.1'

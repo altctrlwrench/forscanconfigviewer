@@ -19,32 +19,34 @@ steps:
     community_hex: '4'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
     - bit: 2
       action: 1
-      feature: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      target_state: LFDRLLCUC FIXED_POSITION_ONLY
     - bit: 1
       action: 0
-      feature: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      target_state: LFDRLLCUC NOT_USED
     - bit: 0
       action: 0
-      feature: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      target_state: LFDRLLCUC NOT_USED
   - mask: xxx* xxxx xx--
     community_hex: '4'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
     - bit: 2
       action: 1
-      feature: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      target_state: RFDRLLCUC FIXED_POSITION_ONLY
     - bit: 1
       action: 0
-      feature: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      target_state: RFDRLLCUC NOT_USED
     - bit: 0
       action: 0
-      feature: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      target_state: RFDRLLCUC NOT_USED
 - module: BCM
   address: 726-43-01
   notes: Sets Turn to Turn and DRL
@@ -53,30 +55,32 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
     - bit: 2
       action: 0
-      feature: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      target_state: LFTLCUC NOT_USED
     - bit: 1
       action: 0
-      feature: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      target_state: LFTLCUC NOT_USED
     - bit: 0
       action: 1
-      feature: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      target_state: LFTLCUC TURN_POSITION
   - mask: xxx* xxxx xx--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
     - bit: 2
       action: 0
-      feature: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      target_state: RFTLCUC NOT_USED
     - bit: 1
       action: 0
-      feature: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      target_state: RFTLCUC NOT_USED
     - bit: 0
       action: 1
-      feature: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      target_state: RFTLCUC TURN_POSITION
 recipe_version: '1.1'

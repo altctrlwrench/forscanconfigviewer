@@ -19,11 +19,14 @@ steps:
     bits:
     - bit: 2
       action: 1
-      feature: Global Clock 12 or 24 (GC)
+      feature_name: Global Clock 12 or 24 (GC)
+      target_state: GC 24 hour display
     - bit: 1
       action: 0
-      feature: Engine/Ignition On Chime - Message (EIOCM)
+      feature_name: Engine/Ignition On Chime - Message (EIOCM)
+      target_state: EIOCM Disabled
     - bit: 0
       action: 0
-      feature: Engine/Ignition On Chime - Message (EIOCM)
+      feature_name: Engine/Ignition On Chime - Message (EIOCM)
+      target_state: EIOCM Disabled
 recipe_version: '1.1'

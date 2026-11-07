@@ -21,12 +21,14 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: ModuleFeatureCfg_TJA (MFCTJA)
+      feature_name: ModuleFeatureCfg_TJA (MFCTJA)
+      target_state: MFCTJA Enabled
   - mask: xxxx xxxx *x--
     community_hex: '8'
     type: discrete
     bits:
     - bit: 1
       action: 1
-      feature: ModuleFeatureCfg_HwyAssist (MFCHA)
+      feature_name: ModuleFeatureCfg_HwyAssist (MFCHA)
+      target_state: MFCHA Enabled
 recipe_version: '1.1'

@@ -17,5 +17,6 @@ steps:
     bits:
     - bit: 0
       action: 1
-      feature: RCOD HMI w/o Blackbox (RCODHMIB)
+      feature_name: RCOD HMI w/o Blackbox (RCODHMIB)
+      target_state: RCODHMIB Enabled
 recipe_version: '1.1'

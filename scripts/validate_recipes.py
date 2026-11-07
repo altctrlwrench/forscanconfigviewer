@@ -109,6 +109,10 @@ def validate_catalog(recipes_dir="recipes"):
                             errors.append(f"[{rel_path}] Bit index in {addr} must be 0, 1, 2, or 3. Found: {b.get('bit')}")
                         elif b.get('action') not in (0, 1):
                             errors.append(f"[{rel_path}] Bit action in {addr} must be 0 or 1. Found: {b.get('action')}")
+                        if 'feature_name' not in b and 'feature' not in b:
+                            errors.append(f"[{rel_path}] Bit {b.get('bit')} in {addr} missing 'feature_name'.")
+                        if 'target_state' not in b and 'state' not in b:
+                            errors.append(f"[{rel_path}] Bit {b.get('bit')} in {addr} missing 'target_state'.")
 
     print(f"--- AsBuiltPro Recipe Validation Report (v1.1) ---")
     print(f"Scanned {len(recipe_files)} recipes ({total_steps} total module steps, {total_targets} atomic targets).")

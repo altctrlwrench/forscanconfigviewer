@@ -22,5 +22,10 @@ steps:
     bits:
     - bit: 1
       action: 1
-      feature: SDM_GENERIC_MODE10 (SDMGENERICMODE)
+      feature_name: SDM_GENERIC_MODE10 (SDMGENERICMODE)
+      aliases:
+      - SDM_GENERIC_MODE1
+      target_state: SDMGENERICMODE Enabled
+      state_aliases:
+      - Mode1 disabled
 recipe_version: '1.1'

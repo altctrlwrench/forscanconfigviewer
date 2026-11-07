@@ -18,5 +18,6 @@ steps:
     bits:
     - bit: 2
       action: 1
-      feature: Approaching Vehicle Audible System (AVAS)
+      feature_name: Approaching Vehicle Audible System (AVAS)
+      target_state: AVAS enabled
 recipe_version: '1.1'

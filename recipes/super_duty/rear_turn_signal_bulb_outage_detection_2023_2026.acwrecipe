@@ -14,13 +14,8 @@ steps:
   - mask: xxxx x*xx xx--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 0
-      feature: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
+      feature_name: Rear_Bulb_Turn_Outage_Cfg (RBTOC)
+      target_state: RBTOC NO_OUTAGE
 recipe_version: '1.1'

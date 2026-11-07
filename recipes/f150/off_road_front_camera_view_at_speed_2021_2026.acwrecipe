@@ -16,24 +16,40 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Off-Road Front Camera View at Speed
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Off-Road Front Camera View at Speed
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Off-Road Front Camera View at Speed
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Off-Road Front Camera View at Speed
+      target_state: Disabled
   - mask: xxxx xxx* xx--
     community_hex: '3'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 1
-      feature: FeatureCfg_DPAC_OffRoadVersion
+      feature_name: FeatureCfg_DPAC_OffRoadVersion
+      aliases:
+      - FeatureCfg_DPAC_OffRoadVersion (FCDPACORV)
+      target_state: CX430
+      state_aliases:
+      - FCDPACORV CX430
+      - FCDPACORV U725
     - bit: 0
       action: 1
-      feature: FeatureCfg_DPAC_OffRoadVersion
+      feature_name: FeatureCfg_DPAC_OffRoadVersion
+      aliases:
+      - FeatureCfg_DPAC_OffRoadVersion (FCDPACORV)
+      target_state: Raptor
+      state_aliases:
+      - FCDPACORV RAPTOR
+      - FCDPACORV U725
 recipe_version: '1.1'

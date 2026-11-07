@@ -18,28 +18,26 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: TBM_Available_Cfg (TBMAC)
+      feature_name: TBM_Available_Cfg (TBMAC)
+      aliases:
+      - TBM_Available_Cfg
+      target_state: TBMAC PRESENT
+      state_aliases:
+      - Present
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: TRM_Available_Cfg (TRMAC)
+      feature_name: TRM_Available_Cfg (TRMAC)
+      aliases:
+      - TRM_Available_Cfg
+      target_state: TRMAC PRESENT
+      state_aliases:
+      - Present
 - module: APIM
   address: 7D0-09-03
   targets:
@@ -49,7 +47,8 @@ steps:
     bits:
     - bit: 2
       action: 1
-      feature: Trailer Brake Controller (TBC)
+      feature_name: Trailer Brake Controller (TBC)
+      target_state: TBC Enabled
 - module: IPMA
   address: 706-18-01
   targets:
@@ -59,8 +58,14 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: VehicleInfo_TrailerLightModule (VITLM)
+      feature_name: VehicleInfo_TrailerLightModule (VITLM)
+      target_state: VITLM Present
     - bit: 2
       action: 1
-      feature: VehicleInfo_TrailerBrakeModule (VITBM)
+      feature_name: VehicleInfo_TrailerBrakeModule (VITBM)
+      aliases:
+      - VehicleInfo_TrailerTowPresent (VITTP)
+      target_state: VITBM Present
+      state_aliases:
+      - VITBM Not Present
 recipe_version: '1.1'

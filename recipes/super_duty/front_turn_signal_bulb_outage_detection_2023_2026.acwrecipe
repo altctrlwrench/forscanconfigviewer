@@ -14,13 +14,12 @@ steps:
   - mask: x*xx xxxx xx--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 0
-      feature: Front_Bulb_Turn_Outage_Cfg (FBTOC)
+      feature_name: Front_Bulb_Turn_Outage_Cfg (FBTOC)
+      aliases:
+      - Front_Bulb_Turn_Outage_Cfg
+      target_state: FBTOC NO_OUTAGE
+      state_aliases:
+      - No Outage
 recipe_version: '1.1'

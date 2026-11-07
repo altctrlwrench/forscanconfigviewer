@@ -22,23 +22,37 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Auto Start/Stop System Disable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Auto Start/Stop System Disable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Auto Start/Stop System Disable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Auto Start/Stop System Disable
+      target_state: Disabled
   - mask: xxxx xxxx x*--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 0
-      feature: Start / Stop (SS)
+      feature_name: Start / Stop (SS)
+      aliases:
+      - Start / Stop
+      target_state: SS Start/Stop Disabled
+      state_aliases:
+      - Disabled
     - bit: 0
       action: 0
-      feature: Start / Stop (SS)
+      feature_name: Start / Stop (SS)
+      aliases:
+      - Start / Stop
+      target_state: SS Start/Stop Disabled
+      state_aliases:
+      - Disabled
 recipe_version: '1.1'

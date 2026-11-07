@@ -26,5 +26,6 @@ steps:
     bits:
     - bit: 1
       action: 0
-      feature: Auto Stop Start (ASS)
+      feature_name: Auto Stop Start (ASS)
+      target_state: ASS disabled
 recipe_version: '1.1'

@@ -21,7 +21,8 @@ steps:
     bits:
     - bit: 0
       action: 1
-      feature: Autolamp Delay (AD)
+      feature_name: Autolamp Delay (AD)
+      target_state: AD Enabled
 - module: APIM
   address: 7D0-09-03
   targets:
@@ -31,10 +32,12 @@ steps:
     bits:
     - bit: 1
       action: 0
-      feature: Air Suspension SUMA Control Function (ASSUMACF)
+      feature_name: Air Suspension SUMA Control Function (ASSUMACF)
+      target_state: ASSUMACF Disabled
     - bit: 0
       action: 0
-      feature: Air Suspension Auto Height SUMA (ASAHSUMA)
+      feature_name: Air Suspension Auto Height SUMA (ASAHSUMA)
+      target_state: ASAHSUMA Disabled
 - module: IPMA
   address: 706-01-01
   targets:
@@ -44,10 +47,12 @@ steps:
     bits:
     - bit: 1
       action: 0
-      feature: ModuleFeatureCfg_RBA (MFCRBA)
+      feature_name: ModuleFeatureCfg_RBA (MFCRBA)
+      target_state: MFCRBA Disabled
     - bit: 0
       action: 1
-      feature: ModuleFeatureCfg_RBA (MFCRBA)
+      feature_name: ModuleFeatureCfg_RBA (MFCRBA)
+      target_state: MFCRBA RBA
 - module: SCCM
   address: 724-04-01
   targets:
@@ -55,17 +60,18 @@ steps:
     community_hex: '4'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
     - bit: 2
       action: 1
-      feature: AHB_Feature (AHBF)
+      feature_name: AHB_Feature (AHBF)
+      target_state: AHBF ADB
     - bit: 1
       action: 0
-      feature: AHB_Feature (AHBF)
+      feature_name: AHB_Feature (AHBF)
+      target_state: AHBF Undefined
     - bit: 0
       action: 0
-      feature: AHB_Feature (AHBF)
+      feature_name: AHB_Feature (AHBF)
+      target_state: AHBF Undefined
 - module: IPC
   address: 720-01-01
   targets:
@@ -75,7 +81,8 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: Adaptive Head Lamps Control Function (AHLCF)
+      feature_name: Adaptive Head Lamps Control Function (AHLCF)
+      target_state: AHLCF enabled
 - module: IPC
   address: 720-10-01
   targets:
@@ -85,10 +92,12 @@ steps:
     bits:
     - bit: 1
       action: 1
-      feature: AutoHighBeam Menu (AHBM)
+      feature_name: AutoHighBeam Menu (AHBM)
+      target_state: AHBM Glarefree High Beams
     - bit: 0
       action: 1
-      feature: AutoHighBeam Menu (AHBM)
+      feature_name: AutoHighBeam Menu (AHBM)
+      target_state: AHBM Auto HighBeams
 - module: HCM
   address: 734-01-02
   targets:
@@ -105,15 +114,10 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: m2_ADB_DBL_combine (ADBDBL)
+      feature_name: m2_ADB_DBL_combine (ADBDBL)
+      target_state: ADBDBL ADB/DBL Combined
 - module: HCM
   address: 734-11-01
   targets:
@@ -123,78 +127,118 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Disabled
   - mask: x*xx xxxx xx--
     community_hex: '7'
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Disabled
     - bit: 2
       action: 1
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Enabled
     - bit: 1
       action: 1
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Enabled
     - bit: 0
       action: 1
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Enabled
   - mask: xx*x xxxx xx--
     community_hex: '3'
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Disabled
     - bit: 1
       action: 1
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Enabled
     - bit: 0
       action: 1
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Enabled
   - mask: xxx* xxxx xx--
     community_hex: '5'
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Disabled
     - bit: 2
       action: 1
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Enabled
     - bit: 1
       action: 0
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Disabled
     - bit: 0
       action: 1
+      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
+      target_state: Enabled
   - mask: xxxx *xxx xx--
     community_hex: '8'
     type: discrete
     bits:
     - bit: 3
       action: 1
-      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Enabled
     - bit: 2
       action: 0
-      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Disabled
     - bit: 1
       action: 0
-      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Disabled
     - bit: 0
       action: 0
-      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Disabled
   - mask: xxxx x*xx xx--
     community_hex: '9'
     type: discrete
     bits:
     - bit: 3
       action: 1
-      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Enabled
     - bit: 2
       action: 0
-      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Disabled
     - bit: 1
       action: 0
-      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Disabled
     - bit: 0
       action: 1
-      feature: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
+      target_state: Enabled
 recipe_version: '1.1'

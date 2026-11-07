@@ -75,7 +75,10 @@ targets:
     bits:
       - bit: 0
         action: 0
-        feature: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+        feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+        aliases:
+          - LostPKExteriorNotificationEnable_Cfg
+        target_state: LPKENEC DISABLED
 ```
 
 * **`mask`**: Single-nibble visual position indicator (`*` marks the active nibble, `x` marks untouched nibbles, `--` marks the checksum). Exactly one `*` per target.
@@ -83,7 +86,10 @@ targets:
 * **`bits`**: Atomic bit manipulation list:
   * **`bit`**: 0-indexed bit within the target nibble (`0`, `1`, `2`, or `3`). Bit 0 is least significant ($2^0$), bit 3 is most significant ($2^3$).
   * **`action`**: `0` (clear bit / disable) or `1` (set bit / enable).
-  * **`feature`**: Exact engineering parameter name from the official module mapping.
+  * **`feature_name`**: Exact engineering parameter name from the official module mapping.
+  * **`aliases`** *(optional)*: Alternative parameter names found across different vehicle model years or trims.
+  * **`target_state`**: Target human-readable state (e.g. `LPKENEC DISABLED`, `AutoFold Profile Enabled`, `Enabled`).
+  * **`state_aliases`** *(optional)*: Alternative state labels from other sheets (e.g. `Disabled`).
 
 #### 2. Continuous Targets (`type: continuous`)
 Used for user-configurable numerical parameters such as tire circumference, timeout durations, or PWM brightness levels:
@@ -126,7 +132,8 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: AutoFoldProfile_Cfg (AFPC)
+      feature_name: AutoFoldProfile_Cfg (AFPC)
+      target_state: AFPC ENABLED
 - module: DDM
   address: 740-12-01
   targets:
@@ -136,7 +143,8 @@ steps:
     bits:
     - bit: 2
       action: 1
-      feature: LincolnAutoFold_Cfg (LAFC)
+      feature_name: LincolnAutoFold_Cfg (LAFC)
+      target_state: LAFC ENABLED
 - module: PDM
   address: 741-03-01
   targets:
@@ -146,7 +154,8 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: AutoFoldProfile_Cfg (AFPC)
+      feature_name: AutoFoldProfile_Cfg (AFPC)
+      target_state: AFPC ENABLED
 - module: PDM
   address: 741-12-01
   targets:
@@ -156,7 +165,8 @@ steps:
     bits:
     - bit: 2
       action: 1
-      feature: LincolnAutoFold_Cfg (LAFC)
+      feature_name: LincolnAutoFold_Cfg (LAFC)
+      target_state: LAFC ENABLED
 recipe_version: '1.1'
 ```
 

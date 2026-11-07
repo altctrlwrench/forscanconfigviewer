@@ -17,26 +17,40 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: SecuriCode Door Pillar Keypad Enable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: SecuriCode Door Pillar Keypad Enable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: SecuriCode Door Pillar Keypad Enable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: SecuriCode Door Pillar Keypad Enable
+      target_state: Disabled
   - mask: xxxx xxx* xx--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 0
-      feature: KeyPad_Enable_Cfg (KPEC)
+      feature_name: KeyPad_Enable_Cfg (KPEC)
+      aliases:
+      - KeyPad_Enable_Cfg
+      target_state: KPEC DISABLE
+      state_aliases:
+      - Disable
     - bit: 0
       action: 1
-      feature: KeyPad_Enable_Cfg (KPEC)
+      feature_name: KeyPad_Enable_Cfg (KPEC)
+      aliases:
+      - KeyPad_Enable_Cfg
+      target_state: KPEC HW_INPUT
+      state_aliases:
+      - HW_Input
 - module: APIM
   address: 7D0-01-02
   notes: optional - adds door keypad code to Sync settings use 6 if you have ambient
@@ -47,5 +61,6 @@ steps:
     bits:
     - bit: 1
       action: 1
-      feature: Door Keypad Code (DKC)
+      feature_name: Door Keypad Code (DKC)
+      target_state: DKC Available (Door Keypad menu button shall be displayed)
 recipe_version: '1.1'

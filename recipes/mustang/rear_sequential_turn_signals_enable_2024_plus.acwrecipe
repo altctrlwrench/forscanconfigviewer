@@ -13,13 +13,8 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: LED Sequencing Mode (LEDSM)
+      feature_name: LED Sequencing Mode (LEDSM)
+      target_state: 'LEDSM Sequencing Mode #1'
 recipe_version: '1.1'

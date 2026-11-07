@@ -14,14 +14,20 @@ steps:
   - mask: xxxx xxxx x*--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 0
-      feature: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      aliases:
+      - Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE]
+      target_state: AUDIBLELOCKFEEDBACK_VEHICLE DISABLE
+      state_aliases:
+      - Disable
     - bit: 0
       action: 1
-      feature: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      feature_name: Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE] (AUDIBLELOCKFEEDBACK_VEHICLE)
+      aliases:
+      - Feat_Cfg [AUDIBLELOCKFEEDBACK] [VEHICLE]
+      target_state: AUDIBLELOCKFEEDBACK_VEHICLE ENABLE
+      state_aliases:
+      - Enable
 recipe_version: '1.1'

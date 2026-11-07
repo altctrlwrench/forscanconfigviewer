@@ -19,30 +19,56 @@ steps:
     community_hex: '2'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
     - bit: 2
       action: 0
-      feature: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      aliases:
+      - LF_DRL_Lamp_Ckt_Usage_Cfg
+      target_state: LFDRLLCUC NOT_USED
+      state_aliases:
+      - Not Used
     - bit: 1
       action: 1
-      feature: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      aliases:
+      - LF_DRL_Lamp_Ckt_Usage_Cfg
+      target_state: LFDRLLCUC DRL_POSITION
+      state_aliases:
+      - DRL Position
     - bit: 0
       action: 0
-      feature: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
+      aliases:
+      - LF_DRL_Lamp_Ckt_Usage_Cfg
+      target_state: LFDRLLCUC NOT_USED
+      state_aliases:
+      - Not Used
   - mask: xxx* xxxx xx--
     community_hex: '2'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
     - bit: 2
       action: 0
-      feature: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      aliases:
+      - RF_DRL_Lamp_Ckt_Usage_Cfg
+      target_state: RFDRLLCUC NOT_USED
+      state_aliases:
+      - Not Used
     - bit: 1
       action: 1
-      feature: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      aliases:
+      - RF_DRL_Lamp_Ckt_Usage_Cfg
+      target_state: RFDRLLCUC DRL_POSITION
+      state_aliases:
+      - DRL Position
     - bit: 0
       action: 0
-      feature: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
+      aliases:
+      - RF_DRL_Lamp_Ckt_Usage_Cfg
+      target_state: RFDRLLCUC NOT_USED
+      state_aliases:
+      - Not Used
 recipe_version: '1.1'

@@ -15,30 +15,36 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_Hitch (FCDPACVCASH)
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_Hitch (FCDPACVCASH)
+      target_state: FCDPACVCASH Enabled
     - bit: 2
       action: 1
-      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_Aux (FCDPACVCASA)
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_Aux (FCDPACVCASA)
+      target_state: FCDPACVCASA Enabled
     - bit: 1
       action: 1
-      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_CHMSL (FCDPACVCASCHMSL)
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_CHMSL (FCDPACVCASCHMSL)
+      target_state: FCDPACVCASCHMSL Enabled
     - bit: 0
       action: 1
-      feature: FeatureCfg_DPAC_ViewCtlAtSpeed_RCOD (FCDPACVCASRCOD)
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed_RCOD (FCDPACVCASRCOD)
+      target_state: FCDPACVCASRCOD Enabled
   - mask: xxxx *xxx xx--
     community_hex: C
     type: discrete
     bits:
     - bit: 3
       action: 1
-      feature: FeatureCfg_TBA_HitchView (FCTBAHV)
+      feature_name: FeatureCfg_TBA_HitchView (FCTBAHV)
+      target_state: FCTBAHV Enabled
   - mask: xxxx x*xx xx--
     community_hex: E
     type: discrete
     bits:
     - bit: 1
       action: 1
-      feature: FeatureCfg_DPAC_ViewCtlAtSpeed (FCDPACVCAS)
+      feature_name: FeatureCfg_DPAC_ViewCtlAtSpeed (FCDPACVCAS)
+      target_state: FCDPACVCAS Enabled
 - module: APIM
   address: 7D0-01-01
   targets:
@@ -48,7 +54,8 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: Rear Camera (RC)
+      feature_name: Rear Camera (RC)
+      target_state: RC Rear Camera Present
   - mask: xxxx xxxx x*--
     community_hex: D
     type: discrete
@@ -62,24 +69,30 @@ steps:
     bits:
     - bit: 2
       action: 1
-      feature: Hitch View (HV)
+      feature_name: Hitch View (HV)
+      target_state: HV Enabled
     - bit: 1
       action: 1
-      feature: CHMSL View at Speed (CHMSLVS)
+      feature_name: CHMSL View at Speed (CHMSLVS)
+      target_state: CHMSLVS Enabled
     - bit: 0
       action: 1
-      feature: Aux View at Speed (AVS)
+      feature_name: Aux View at Speed (AVS)
+      target_state: AVS Enabled
   - mask: xxxx x*xx xx--
     community_hex: D
     type: discrete
     bits:
     - bit: 3
       action: 1
-      feature: RCOD View at Speed (RCODVS)
+      feature_name: RCOD View at Speed (RCODVS)
+      target_state: RCODVS Enabled
     - bit: 2
       action: 1
-      feature: Hitch View at Speed (HVS)
+      feature_name: Hitch View at Speed (HVS)
+      target_state: HVS Enabled
     - bit: 0
       action: 1
-      feature: Off road Views at Speed (OVS)
+      feature_name: Off road Views at Speed (OVS)
+      target_state: OVS Enabled
 recipe_version: '1.1'

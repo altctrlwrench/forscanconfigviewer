@@ -17,5 +17,9 @@ steps:
     bits:
     - bit: 1
       action: 1
-      feature: HDC Only (HDCO)
+      feature_name: HDC Only (HDCO)
+      target_state: HDCO With HDC (Hill Descent Control) MFAL FECAB (ABS - HILL DESCENT
+        CONTROL)
+      state_aliases:
+      - HDCO With HDC (Hill Descent Control)  MFAL FECAB (ABS - HILL DESCENT CONTROL)
 recipe_version: '1.1'

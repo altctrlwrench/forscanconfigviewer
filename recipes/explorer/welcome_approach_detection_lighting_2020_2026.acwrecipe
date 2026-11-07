@@ -26,13 +26,8 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: Approach_Lighting_Enable_Cfg (ALEC)
+      feature_name: Approach_Lighting_Enable_Cfg (ALEC)
+      target_state: ALEC ENABLE
 recipe_version: '1.1'

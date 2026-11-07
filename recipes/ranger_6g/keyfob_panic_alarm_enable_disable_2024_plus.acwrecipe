@@ -20,13 +20,8 @@ steps:
   - mask: xxxx xxx* xx--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: PanicAlarm_Cfg (PAC)
+      feature_name: PanicAlarm_Cfg (PAC)
+      target_state: PAC LIGHTS_ONLY
 recipe_version: '1.1'

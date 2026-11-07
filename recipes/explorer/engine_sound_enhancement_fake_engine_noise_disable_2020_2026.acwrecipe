@@ -21,12 +21,20 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Engine Sound Enhancement (Fake Engine Noise) Disable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Engine Sound Enhancement (Fake Engine Noise) Disable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Engine Sound Enhancement (Fake Engine Noise) Disable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Engine Sound Enhancement (Fake Engine Noise) Disable
+      target_state: Disabled
 - module: DSP
   address: 783-01-01
   notes: Change 1st digit to C. Note:if your AS BUILT Is a D, leave it selected to
@@ -38,4 +46,6 @@ steps:
     bits:
     - bit: 0
       action: 0
+      feature_name: Engine Sound Enhancement (Fake Engine Noise) Disable
+      target_state: Disabled
 recipe_version: '1.1'

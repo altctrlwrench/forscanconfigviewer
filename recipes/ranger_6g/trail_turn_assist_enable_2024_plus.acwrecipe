@@ -27,7 +27,10 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: TTA (TTA)
+      feature_name: TTA (TTA)
+      target_state: TTA Without TTA
+      state_aliases:
+      - TTA Without Trail Turn Assist
   - mask: xxxx x*xx xx--
     community_hex: x
     offset_hint: '+8'
@@ -46,7 +49,8 @@ steps:
     bits:
     - bit: 0
       action: 1
-      feature: Trail Turn Assist (TTA)
+      feature_name: Trail Turn Assist (TTA)
+      target_state: TTA Enabled
 - module: APIM
   address: 7D0-10-02
   notes: '* -> Bit 3 (add 4 to enable)
@@ -59,5 +63,6 @@ steps:
     bits:
     - bit: 2
       action: 1
-      feature: Offroad Menu Trail Turn Assist (OMTTA)
+      feature_name: Offroad Menu Trail Turn Assist (OMTTA)
+      target_state: OMTTA Present
 recipe_version: '1.1'

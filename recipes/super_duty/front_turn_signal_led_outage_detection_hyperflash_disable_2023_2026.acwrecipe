@@ -14,13 +14,12 @@ steps:
   - mask: xxx* xxxx xx--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 0
-      feature: Front_LED_Turn_Outage_Cfg (FLEDTOC)
+      feature_name: Front_LED_Turn_Outage_Cfg (FLEDTOC)
+      aliases:
+      - Front_LED_Turn_Outage_Cfg
+      target_state: FLEDTOC NO_OUTAGE
+      state_aliases:
+      - No Outage
 recipe_version: '1.1'

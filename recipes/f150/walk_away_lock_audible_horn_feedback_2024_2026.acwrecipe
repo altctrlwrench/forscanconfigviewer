@@ -15,67 +15,45 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_1] (AUDIBLEWALKAWAYLOCK_PERS_1)
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_1] (AUDIBLEWALKAWAYLOCK_PERS_1)
+      aliases:
+      - ESCL 02 - ESCL_UnlockOnDoorAjar_Cfg (ESCLESCLUODAC)
+      - ESCL 02 - ESCL_UnlockOnDoorAjar_Cfg
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_1 ENABLE
   - mask: xxx* xxxx xx--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_2] (AUDIBLEWALKAWAYLOCK_PERS_2)
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_2] (AUDIBLEWALKAWAYLOCK_PERS_2)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_2 ENABLE
   - mask: xxxx x*xx xx--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_3] (AUDIBLEWALKAWAYLOCK_PERS_3)
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_3] (AUDIBLEWALKAWAYLOCK_PERS_3)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_3 ENABLE
   - mask: xxxx xxx* xx--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_4] (AUDIBLEWALKAWAYLOCK_PERS_4)
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [PERS_4] (AUDIBLEWALKAWAYLOCK_PERS_4)
+      target_state: AUDIBLEWALKAWAYLOCK_PERS_4 ENABLE
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [VEHICLE] (AUDIBLEWALKAWAYLOCK_VEHICLE)
+      feature_name: Feat_Cfg [AUDIBLEWALKAWAYLOCK] [VEHICLE] (AUDIBLEWALKAWAYLOCK_VEHICLE)
+      target_state: AUDIBLEWALKAWAYLOCK_VEHICLE ENABLE
 - module: BCM
   address: 726-90-01
   targets:
@@ -83,15 +61,10 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK]  (AUDIBLEWALKAWAYLOCK)
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUDIBLEWALKAWAYLOCK]  (AUDIBLEWALKAWAYLOCK)
+      target_state: AUDIBLEWALKAWAYLOCK ENABLE
 - module: APIM
   address: 7D0-09-05
   targets:
@@ -101,8 +74,10 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: Walk Away Lock (WAL)
+      feature_name: Walk Away Lock (WAL)
+      target_state: WAL Enabled
     - bit: 2
       action: 1
-      feature: Walk Away Lock Feedback (WALF)
+      feature_name: Walk Away Lock Feedback (WALF)
+      target_state: WALF Enabled
 recipe_version: '1.1'

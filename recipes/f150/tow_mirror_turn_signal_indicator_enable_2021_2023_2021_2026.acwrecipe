@@ -13,15 +13,12 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: Side Turn Indicator
+      feature_name: Side Turn Indicator
+      aliases:
+      - X_SensorDir_Cfg (XSDC)
+      target_state: enabled
 - module: PDM
   address: 741-03-04
   targets:
@@ -29,13 +26,10 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: Side Turn Indicator
+      feature_name: Side Turn Indicator
+      aliases:
+      - X_SensorDir_Cfg (XSDC)
+      target_state: enabled
 recipe_version: '1.1'

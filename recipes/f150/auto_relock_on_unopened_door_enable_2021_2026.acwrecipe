@@ -14,72 +14,102 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 0
-      feature: Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [PERS_1]
+      target_state: AUTORELOCK_PERS_1 DISABLE
+      state_aliases:
+      - Disable
     - bit: 0
       action: 1
-      feature: Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [PERS_1]
+      target_state: AUTORELOCK_PERS_1 ENABLE
+      state_aliases:
+      - Enable
   - mask: xxx* xxxx xx--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 0
-      feature: Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [PERS_2]
+      target_state: AUTORELOCK_PERS_2 DISABLE
+      state_aliases:
+      - Disable
     - bit: 0
       action: 1
-      feature: Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [PERS_2]
+      target_state: AUTORELOCK_PERS_2 ENABLE
+      state_aliases:
+      - Enable
   - mask: xxxx x*xx xx--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 0
-      feature: Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [PERS_3]
+      target_state: AUTORELOCK_PERS_3 DISABLE
+      state_aliases:
+      - Disable
     - bit: 0
       action: 1
-      feature: Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [PERS_3]
+      target_state: AUTORELOCK_PERS_3 ENABLE
+      state_aliases:
+      - Enable
   - mask: xxxx xxx* xx--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 0
-      feature: Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [PERS_4]
+      target_state: AUTORELOCK_PERS_4 DISABLE
+      state_aliases:
+      - Disable
     - bit: 0
       action: 1
-      feature: Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [PERS_4]
+      target_state: AUTORELOCK_PERS_4 ENABLE
+      state_aliases:
+      - Enable
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 0
-      feature: Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)
+      feature_name: Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [VEHICLE]
+      target_state: AUTORELOCK_VEHICLE DISABLE
+      state_aliases:
+      - Disable
     - bit: 0
       action: 1
-      feature: Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)
+      feature_name: Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [VEHICLE]
+      target_state: AUTORELOCK_VEHICLE ENABLE
+      state_aliases:
+      - Enable
 - module: BCM
   address: 726-27-01
   targets:
@@ -87,16 +117,22 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 0
-      feature: FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)
+      aliases:
+      - FeatLst_to_BCM_Feature_InitVal [AUTORELOCK]
+      target_state: AUTORELOCK DISABLE
+      state_aliases:
+      - Disable
     - bit: 0
       action: 1
-      feature: FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)
+      aliases:
+      - FeatLst_to_BCM_Feature_InitVal [AUTORELOCK]
+      target_state: AUTORELOCK ENABLE
+      state_aliases:
+      - Enable
 - module: BCM
   address: 726-58-02
   notes: 'Use this on 2021-23   duration: 1=30 seconds, 2=45 secs'
@@ -104,16 +140,22 @@ steps:
   - mask: xxx* xxxx xx--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 1
-      feature: AutoRelock_Timeduration_Cfg (ARTC)
+      feature_name: AutoRelock_Timeduration_Cfg (ARTC)
+      aliases:
+      - AutoRelock_Timeduration_Cfg
+      target_state: ARTC AUTORELOCK_45SEC
+      state_aliases:
+      - AutoRelock 45 Seconds
     - bit: 0
       action: 0
-      feature: AutoRelock_Timeduration_Cfg (ARTC)
+      feature_name: AutoRelock_Timeduration_Cfg (ARTC)
+      aliases:
+      - AutoRelock_Timeduration_Cfg
+      target_state: ARTC NULL
+      state_aliases:
+      - 'Null'
 - module: BCM
   address: 726-58-02
   notes: 'Use this on 2024-26   duration: 1=30 seconds, 2=45 secs'
@@ -121,16 +163,26 @@ steps:
   - mask: x*xx xxxx xx--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 1
-      feature: AutoRelock_Timeduration_Cfg (ARTC)
+      feature_name: AutoRelock_Timeduration_Cfg (ARTC)
+      aliases:
+      - Vehicle_Real_FB_Source_RR_Cfg (VRFBSRRC)
+      - Vehicle_Real_FB_Source_RR_Cfg
+      - AutoRelock_Timeduration_Cfg
+      target_state: ARTC AUTORELOCK_45SEC
+      state_aliases:
+      - AutoRelock 45 Seconds
     - bit: 0
       action: 0
-      feature: AutoRelock_Timeduration_Cfg (ARTC)
+      feature_name: AutoRelock_Timeduration_Cfg (ARTC)
+      aliases:
+      - Vehicle_Real_FB_Source_RR_Cfg (VRFBSRRC)
+      - Vehicle_Real_FB_Source_RR_Cfg
+      - AutoRelock_Timeduration_Cfg
+      target_state: ARTC NULL
+      state_aliases:
+      - 'Null'
 - module: APIM
   address: 7D0-09-01
   notes: optional - adds Autorelock to settings, vehicle, locks
@@ -141,11 +193,16 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: Autolock Control Function (ACF)
+      feature_name: Autolock Control Function (ACF)
+      target_state: ACF Enabled
     - bit: 1
       action: 1
-      feature: Auto Relock (AR)
+      feature_name: Auto Relock (AR)
+      target_state: AR Enabled
     - bit: 0
       action: 1
-      feature: Autounlock Control Function (ACF)
+      feature_name: Autounlock Control Function (ACF)
+      aliases:
+      - Autounlock Control Function (AUCF)
+      target_state: ACF Enabled
 recipe_version: '1.1'

@@ -16,8 +16,16 @@ steps:
     bits:
     - bit: 1
       action: 0
-      feature: Engine/Ignition On Chime - Message (EIOCM)
+      feature_name: Engine/Ignition On Chime - Message (EIOCM)
+      aliases:
+      - E
+      - '*Engine/Ignition On Chime - Message (EIOCM)'
+      target_state: EIOCM Disabled
     - bit: 0
       action: 0
-      feature: Engine/Ignition On Chime - Message (EIOCM)
+      feature_name: Engine/Ignition On Chime - Message (EIOCM)
+      aliases:
+      - E
+      - '*Engine/Ignition On Chime - Message (EIOCM)'
+      target_state: EIOCM Disabled
 recipe_version: '1.1'

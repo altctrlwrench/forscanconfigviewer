@@ -15,5 +15,8 @@ steps:
     bits:
     - bit: 1
       action: 1
-      feature: Seatbelt Warning Market (SWM)
+      feature_name: Seatbelt Warning Market (SWM)
+      aliases:
+      - '*Seatbelt Warning Market (SWM)'
+      target_state: SWM ECE
 recipe_version: '1.1'

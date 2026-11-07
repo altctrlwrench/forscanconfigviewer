@@ -17,23 +17,26 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Front Turn Signal LED Outage Detection (Hyperflash Disable)
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Front Turn Signal LED Outage Detection (Hyperflash Disable)
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Front Turn Signal LED Outage Detection (Hyperflash Disable)
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Front Turn Signal LED Outage Detection (Hyperflash Disable)
+      target_state: Disabled
   - mask: xxx* xxxx xx--
     community_hex: '0'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 0
-      feature: Front_LED_Turn_Outage_Cfg (FLEDTOC)
+      feature_name: Front_LED_Turn_Outage_Cfg (FLEDTOC)
+      target_state: FLEDTOC NO_OUTAGE
 recipe_version: '1.1'

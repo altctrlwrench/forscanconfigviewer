@@ -16,5 +16,8 @@ steps:
     bits:
     - bit: 3
       action: 0
-      feature: Key In Ignition Warning Chime (KIIWC)
+      feature_name: Key In Ignition Warning Chime (KIIWC)
+      aliases:
+      - REGULATORY FMVSS CHIME  (REGULATORYFMVSSCHIME)
+      target_state: KIIWC disabled
 recipe_version: '1.1'

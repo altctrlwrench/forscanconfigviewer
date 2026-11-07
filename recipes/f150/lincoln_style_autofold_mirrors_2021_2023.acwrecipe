@@ -21,26 +21,40 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Lincoln Style Autofold Mirrors
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Lincoln Style Autofold Mirrors
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Lincoln Style Autofold Mirrors
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Lincoln Style Autofold Mirrors
+      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 0
-      feature: Mirror_Folding_Cfg
+      feature_name: Mirror_Folding_Cfg
+      aliases:
+      - Mirror_Folding_Cfg (MFC)
+      target_state: Ford,
+      state_aliases:
+      - MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
     - bit: 0
       action: 1
-      feature: Mirror_Folding_Cfg
+      feature_name: Mirror_Folding_Cfg
+      aliases:
+      - Mirror_Folding_Cfg (MFC)
+      target_state: Lincoln,
+      state_aliases:
+      - MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
 - module: PDM
   address: 741-03-16
   notes: 'Note: the tradeoff of using Lincoln Autofold is that puddle lights won''t
@@ -52,26 +66,40 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Lincoln Style Autofold Mirrors
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Lincoln Style Autofold Mirrors
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Lincoln Style Autofold Mirrors
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Lincoln Style Autofold Mirrors
+      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 0
-      feature: Mirror_Folding_Cfg
+      feature_name: Mirror_Folding_Cfg
+      aliases:
+      - Mirror_Folding_Cfg (MFC)
+      target_state: Ford,
+      state_aliases:
+      - MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
     - bit: 0
       action: 1
-      feature: Mirror_Folding_Cfg
+      feature_name: Mirror_Folding_Cfg
+      aliases:
+      - Mirror_Folding_Cfg (MFC)
+      target_state: Lincoln,
+      state_aliases:
+      - MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
 - module: APIM
   address: 7D0-09-01
   targets:
@@ -82,8 +110,10 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: Mirrors Autofold (MA)
+      feature_name: Mirrors Autofold (MA)
+      target_state: MA Enabled
     - bit: 2
       action: 1
-      feature: Mirrors Reverse Tilt (MRT)
+      feature_name: Mirrors Reverse Tilt (MRT)
+      target_state: MRT Enabled
 recipe_version: '1.1'

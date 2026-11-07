@@ -24,26 +24,47 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: DRL - Amber Turn Signal Rings Only
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: DRL - Amber Turn Signal Rings Only
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: DRL - Amber Turn Signal Rings Only
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: DRL - Amber Turn Signal Rings Only
+      target_state: Disabled
   - mask: x*xx xxxx xx--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
     - bit: 2
       action: 1
-      feature: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      aliases:
+      - LF_Turn_Lamp_Ckt_Usage_Cfg
+      target_state: LFTLCUC TURN_POSITION_DRL
+      state_aliases:
+      - Turn Position DRL
     - bit: 1
       action: 0
-      feature: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      aliases:
+      - LF_Turn_Lamp_Ckt_Usage_Cfg
+      target_state: LFTLCUC NOT_USED
+      state_aliases:
+      - Not Used
     - bit: 0
       action: 0
-      feature: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      feature_name: LF_Turn_Lamp_Ckt_Usage_Cfg (LFTLCUC)
+      aliases:
+      - LF_Turn_Lamp_Ckt_Usage_Cfg
+      target_state: LFTLCUC NOT_USED
+      state_aliases:
+      - Not Used
 - module: BdyCM
   address: 726-43-01
   notes: 'RF_DRL_Lamp_Ckt_Usage_Cfg
@@ -58,24 +79,45 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: DRL - Amber Turn Signal Rings Only
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: DRL - Amber Turn Signal Rings Only
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: DRL - Amber Turn Signal Rings Only
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: DRL - Amber Turn Signal Rings Only
+      target_state: Disabled
   - mask: xxx* xxxx xx--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
     - bit: 2
       action: 1
-      feature: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      aliases:
+      - RF_Turn_Lamp_Ckt_Usage_Cfg
+      target_state: RFTLCUC TURN_POSITION_DRL
+      state_aliases:
+      - Turn Position DRL
     - bit: 1
       action: 0
-      feature: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      aliases:
+      - RF_Turn_Lamp_Ckt_Usage_Cfg
+      target_state: RFTLCUC NOT_USED
+      state_aliases:
+      - Not Used
     - bit: 0
       action: 0
-      feature: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      feature_name: RF_Turn_Lamp_Ckt_Usage_Cfg (RFTLCUC)
+      aliases:
+      - RF_Turn_Lamp_Ckt_Usage_Cfg
+      target_state: RFTLCUC NOT_USED
+      state_aliases:
+      - Not Used
 recipe_version: '1.1'

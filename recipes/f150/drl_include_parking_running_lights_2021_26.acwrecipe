@@ -17,23 +17,30 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: DRL - Include Parking / Running Lights
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: DRL - Include Parking / Running Lights
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: DRL - Include Parking / Running Lights
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: DRL - Include Parking / Running Lights
+      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: DRL_IncludeParklamps_Cfg (DRLIPC)
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      aliases:
+      - DRL_IncludeParklamps_Cfg
+      target_state: DRLIPC ENABLE
+      state_aliases:
+      - Enable
 recipe_version: '1.1'

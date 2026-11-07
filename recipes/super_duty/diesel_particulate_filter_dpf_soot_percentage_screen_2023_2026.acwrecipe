@@ -17,5 +17,8 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: ManRegen (MR)
+      feature_name: ManRegen (MR)
+      aliases:
+      - '*ManRegen (MR)'
+      target_state: MR enabled
 recipe_version: '1.1'

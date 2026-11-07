@@ -20,8 +20,10 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: Walk Away Lock (WAL)
+      feature_name: Walk Away Lock (WAL)
+      target_state: WAL Enabled
     - bit: 2
       action: 1
-      feature: Walk Away Lock Feedback (WALF)
+      feature_name: Walk Away Lock Feedback (WALF)
+      target_state: WALF Enabled
 recipe_version: '1.1'

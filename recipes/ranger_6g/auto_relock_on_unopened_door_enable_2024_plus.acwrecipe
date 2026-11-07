@@ -29,11 +29,14 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: Autolock Control Function (ACF)
+      feature_name: Autolock Control Function (ACF)
+      target_state: ACF Enabled
     - bit: 1
       action: 1
-      feature: Auto Relock (AR)
+      feature_name: Auto Relock (AR)
+      target_state: AR Enabled
     - bit: 0
       action: 1
-      feature: Autounlock Control Function (ACF)
+      feature_name: Autounlock Control Function (ACF)
+      target_state: ACF Enabled
 recipe_version: '1.1'

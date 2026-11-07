@@ -13,14 +13,12 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 0
-      feature: Bumper Air Dam - Front (BADF)
+      feature_name: Bumper Air Dam - Front (BADF)
+      target_state: BADF Less Front Bumper Air Dam
     - bit: 0
       action: 1
-      feature: Bumper Air Dam - Front (BADF)
+      feature_name: Bumper Air Dam - Front (BADF)
+      target_state: BADF Less Front Bumper Air Dam
 recipe_version: '1.1'

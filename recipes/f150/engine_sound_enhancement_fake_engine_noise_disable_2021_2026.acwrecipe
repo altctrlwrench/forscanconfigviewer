@@ -15,5 +15,6 @@ steps:
     bits:
     - bit: 0
       action: 0
-      feature: Software ESE/EV-ESE (SESEEVESE)
+      feature_name: Software ESE/EV-ESE (SESEEVESE)
+      target_state: SESEEVESE Disabled
 recipe_version: '1.1'

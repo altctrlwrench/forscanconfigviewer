@@ -15,25 +15,46 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Keyfob Remote Tailgate Release Disable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Keyfob Remote Tailgate Release Disable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Keyfob Remote Tailgate Release Disable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Keyfob Remote Tailgate Release Disable
+      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '0'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
     - bit: 2
       action: 0
-      feature: Remote07_Cfg (RC)
+      feature_name: Remote07_Cfg (RC)
+      aliases:
+      - Remote07_Cfg
+      target_state: RC NO_ACTION
+      state_aliases:
+      - No Action
     - bit: 1
       action: 0
-      feature: Remote07_Cfg (RC)
+      feature_name: Remote07_Cfg (RC)
+      aliases:
+      - Remote07_Cfg
+      target_state: RC NO_ACTION
+      state_aliases:
+      - No Action
     - bit: 0
       action: 0
-      feature: Remote07_Cfg (RC)
+      feature_name: Remote07_Cfg (RC)
+      aliases:
+      - Remote07_Cfg
+      target_state: RC NO_ACTION
+      state_aliases:
+      - No Action
 recipe_version: '1.1'

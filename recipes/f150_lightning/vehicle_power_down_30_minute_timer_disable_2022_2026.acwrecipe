@@ -19,5 +19,6 @@ steps:
     bits:
     - bit: 3
       action: 0
-      feature: AEIS With Override (AEISWO)
+      feature_name: AEIS With Override (AEISWO)
+      target_state: AEISWO disabled
 recipe_version: '1.1'

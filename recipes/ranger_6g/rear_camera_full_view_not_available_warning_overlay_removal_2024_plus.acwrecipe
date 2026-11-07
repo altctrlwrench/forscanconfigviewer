@@ -24,4 +24,8 @@ steps:
     bits:
     - bit: 0
       action: 0
+      feature_name: Rear Camera 'Full View Not Available' Warning Overlay Removal
+      aliases:
+      - RCOD HMI w/o Blackbox (RCODHMIB)
+      target_state: Disabled
 recipe_version: '1.1'

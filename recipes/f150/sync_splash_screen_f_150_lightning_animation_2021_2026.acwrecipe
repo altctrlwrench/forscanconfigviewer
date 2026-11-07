@@ -15,30 +15,44 @@ steps:
     bits:
     - bit: 3
       action: 0
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS Default/not programmed
     - bit: 2
       action: 0
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS Default/not programmed
     - bit: 1
       action: 0
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS Default/not programmed
     - bit: 0
       action: 1
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS Stock Ford/Lincoln Splash Screen, as determined by brand bit
   - mask: xxxx x*xx xx--
     community_hex: F
     type: discrete
     bits:
     - bit: 3
       action: 1
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS Mustang Shelby R1
+      state_aliases:
+      - SS Continental
     - bit: 2
       action: 1
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS Black Label
+      state_aliases:
+      - SS Continental
     - bit: 1
       action: 1
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS F150
+      state_aliases:
+      - SS Continental
     - bit: 0
       action: 1
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS Stock Ford/Lincoln Splash Screen, as determined by brand bit
 recipe_version: '1.1'

@@ -20,5 +20,6 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: VehicleCfg_APAInterface (VCAPAI)
+      feature_name: VehicleCfg_APAInterface (VCAPAI)
+      target_state: VCAPAI Newstyle
 recipe_version: '1.1'

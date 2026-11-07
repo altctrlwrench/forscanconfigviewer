@@ -24,12 +24,20 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Truck Bed Cargo Lighting Switch Enable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Truck Bed Cargo Lighting Switch Enable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Truck Bed Cargo Lighting Switch Enable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Truck Bed Cargo Lighting Switch Enable
+      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '3'
     type: discrete
@@ -42,50 +50,79 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Truck Bed Cargo Lighting Switch Enable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Truck Bed Cargo Lighting Switch Enable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Truck Bed Cargo Lighting Switch Enable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Truck Bed Cargo Lighting Switch Enable
+      target_state: Disabled
   - mask: x*xx xxxx xx--
     community_hex: '2'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 1
-      feature: Ext_Courtesy_Sw_Input_Cfg (ECSIC)
+      feature_name: Ext_Courtesy_Sw_Input_Cfg (ECSIC)
+      aliases:
+      - Ext_Courtesy_Sw_Input_Cfg
+      target_state: ECSIC MAN_PUDDLE
+      state_aliases:
+      - MAN_Puddle
     - bit: 0
       action: 0
-      feature: Ext_Courtesy_Sw_Input_Cfg (ECSIC)
+      feature_name: Ext_Courtesy_Sw_Input_Cfg (ECSIC)
+      aliases:
+      - Ext_Courtesy_Sw_Input_Cfg
+      target_state: ECSIC NULL
+      state_aliases:
+      - 'Null'
   - mask: xx*x xxxx xx--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Truck Bed Cargo Lighting Switch Enable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Truck Bed Cargo Lighting Switch Enable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Truck Bed Cargo Lighting Switch Enable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Truck Bed Cargo Lighting Switch Enable
+      target_state: Disabled
   - mask: xxx* xxxx xx--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 0
-      feature: Rear_Ext_Courtesy_Mode_Cfg (RECMC)
+      feature_name: Rear_Ext_Courtesy_Mode_Cfg (RECMC)
+      aliases:
+      - Rear_Ext_Courtesy_Mode_Cfg
+      target_state: RECMC NULL
+      state_aliases:
+      - 'Null'
     - bit: 0
       action: 1
-      feature: Rear_Ext_Courtesy_Mode_Cfg (RECMC)
+      feature_name: Rear_Ext_Courtesy_Mode_Cfg (RECMC)
+      aliases:
+      - Rear_Ext_Courtesy_Mode_Cfg
+      target_state: RECMC BEDLIGHT
+      state_aliases:
+      - Bed Light
+      - RECMC FLOODLIGHT
 recipe_version: '1.1'

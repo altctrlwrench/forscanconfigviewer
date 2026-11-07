@@ -15,13 +15,12 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      feature_name: HeadlampPosAtIgnOn_Cfg (HPAIOC)
+      aliases:
+      - HeadlampPosAtIgnOn_Cfg
+      target_state: HPAIOC LAST_KNOWN
+      state_aliases:
+      - Last Known
 recipe_version: '1.1'

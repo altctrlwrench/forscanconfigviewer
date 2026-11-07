@@ -16,5 +16,6 @@ steps:
     bits:
     - bit: 3
       action: 0
-      feature: REGULATORY FMVSS CHIME  (REGULATORYFMVSSCHIME)
+      feature_name: REGULATORY FMVSS CHIME  (REGULATORYFMVSSCHIME)
+      target_state: REGULATORYFMVSSCHIME disabled
 recipe_version: '1.1'

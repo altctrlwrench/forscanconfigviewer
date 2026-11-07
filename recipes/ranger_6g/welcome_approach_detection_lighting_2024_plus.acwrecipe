@@ -22,15 +22,10 @@ steps:
   - mask: xxxx xxxx x*--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: Approach_Lighting_Enable_Cfg (ALEC)
+      feature_name: Approach_Lighting_Enable_Cfg (ALEC)
+      target_state: ALEC ENABLE
 - module: BCM
   address: 726-18-01
   notes: '* -> 0=Disabled, 1=Enabled
@@ -40,15 +35,10 @@ steps:
   - mask: xxxx xxxx x*--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: Feat_Cfg [APPROACHDETECTION] [VEHICLE] (APPROACHDETECTION_VEHICLE)
+      feature_name: Feat_Cfg [APPROACHDETECTION] [VEHICLE] (APPROACHDETECTION_VEHICLE)
+      target_state: APPROACHDETECTION_VEHICLE ENABLE
 - module: APIM
   address: 7D0-09-01
   notes: 'suggest using non asbuilt to change this
@@ -63,5 +53,6 @@ steps:
     bits:
     - bit: 2
       action: 1
-      feature: Approach Detection Control Function (ADCF)
+      feature_name: Approach Detection Control Function (ADCF)
+      target_state: ADCF Enabled
 recipe_version: '1.1'

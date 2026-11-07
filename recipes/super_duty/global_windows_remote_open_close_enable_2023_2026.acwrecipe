@@ -15,7 +15,14 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: Global Window Open (GWO)
+      feature_name: Global Window Open (GWO)
+      aliases:
+      - Global Window Open (GWO) & Global Window Close (GWC) &  Daytime Running Lamps
+        Control Function (DRLCF) & Temporary Mobility Kit (TMK)
+      target_state: GWO Enabled
+      state_aliases:
+      - GWO enabled, GWC disabled, DRLCF disabled, TMK disabled
+      - GWO enabled
 - module: DDM
   address: 740-06-02
   targets:
@@ -25,25 +32,28 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: Global_Open_Cfg (GOC)
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC ENABLED
 - module: PDM
   address: 741-06-02
   targets:
@@ -53,25 +63,28 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: Global_Open_Cfg (GOC)
+      feature_name: Global_Open_Cfg (GOC)
+      target_state: GOC ENABLED
 - module: DDM
   address: 740-06-03
   targets:
@@ -81,25 +94,28 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
   - mask: x*xx xxxx xx--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: GlassSoftStop_Cfg (GSSC)
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC ENABLED
 - module: PDM
   address: 741-06-03
   targets:
@@ -109,25 +125,28 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
   - mask: x*xx xxxx xx--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: GlassSoftStop_Cfg (GSSC)
+      feature_name: GlassSoftStop_Cfg (GSSC)
+      target_state: GSSC ENABLED
 - module: BCM
   address: 726-11-02
   targets:
@@ -137,43 +156,72 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
   - mask: xxx* xxxx xx--
     community_hex: '1'
     type: discrete
     bits:
     - bit: 0
       action: 0
-      feature: GlobalClose_Mode_Cfg (GCMC)
+      feature_name: GlobalClose_Mode_Cfg (GCMC)
+      aliases:
+      - GlobalClose_Mode_Cfg
+      target_state: GCMC PRESS_N_HOLD
+      state_aliases:
+      - Press_N_Hold
   - mask: xxxx xx*x xx--
     community_hex: '0'
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
   - mask: xxxx xxx* xx--
     community_hex: '1'
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 0
       action: 1
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Enabled
 - module: BCM
   address: 726-22-01
   targets:
@@ -183,25 +231,32 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      feature_name: Feat_Cfg [GLOBALCLOSE] [VEHICLE] (GLOBALCLOSE_VEHICLE)
+      aliases:
+      - Feat_Cfg [GLOBALCLOSE] [VEHICLE]
+      target_state: GLOBALCLOSE_VEHICLE ENABLE
+      state_aliases:
+      - Enable
 - module: BCM
   address: 726-22-02
   targets:
@@ -211,23 +266,30 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      feature_name: Feat_Cfg [GLOBALOPEN] [VEHICLE] (GLOBALOPEN_VEHICLE)
+      aliases:
+      - Feat_Cfg [GLOBALOPEN] [VEHICLE]
+      target_state: GLOBALOPEN_VEHICLE ENABLE
+      state_aliases:
+      - Enable
 recipe_version: '1.1'

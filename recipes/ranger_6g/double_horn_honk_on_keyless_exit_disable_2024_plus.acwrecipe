@@ -20,13 +20,8 @@ steps:
   - mask: xxx* xxxx xx--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 0
-      feature: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+      feature_name: LostPKExteriorNotificationEnable_Cfg (LPKENEC)
+      target_state: LPKENEC DISABLED
 recipe_version: '1.1'

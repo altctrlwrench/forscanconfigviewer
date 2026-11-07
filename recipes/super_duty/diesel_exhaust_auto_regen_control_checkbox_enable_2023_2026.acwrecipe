@@ -23,7 +23,10 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: Auto Regen Control (ARC)
+      feature_name: Auto Regen Control (ARC)
+      aliases:
+      - '*Auto Regen Control (ARC)'
+      target_state: ARC enabled
 - module: APIM
   address: 7D0-09-03
   notes: Add 2 to current value
@@ -34,5 +37,8 @@ steps:
     bits:
     - bit: 1
       action: 1
-      feature: Auto Regen Control (ARC)
+      feature_name: Auto Regen Control (ARC)
+      target_state: ARC Enabled
+      state_aliases:
+      - ARC enabled
 recipe_version: '1.1'

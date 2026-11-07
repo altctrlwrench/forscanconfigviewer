@@ -22,16 +22,20 @@ steps:
     bits:
     - bit: 3
       action: 0
-      feature: Eng Temp Dig (ETD)
+      feature_name: Eng Temp Dig (ETD)
+      target_state: ETD Always Off
     - bit: 2
       action: 1
-      feature: Eng Temp Dig (ETD)
+      feature_name: Eng Temp Dig (ETD)
+      target_state: ETD Always On
     - bit: 1
       action: 0
-      feature: Trans Temp Dig (TTD)
+      feature_name: Trans Temp Dig (TTD)
+      target_state: TTD Always Off
     - bit: 0
       action: 1
-      feature: Trans Temp Dig (TTD)
+      feature_name: Trans Temp Dig (TTD)
+      target_state: TTD Always On
 - module: IPC
   address: 720-07-01
   notes: 'highly recommend to use the non asbuilt menu option instead of the asbuilt,
@@ -48,14 +52,18 @@ steps:
     bits:
     - bit: 3
       action: 0
-      feature: Eng Temp Dig (ETD)
+      feature_name: Eng Temp Dig (ETD)
+      target_state: ETD Always Off
     - bit: 2
       action: 1
-      feature: Eng Temp Dig (ETD)
+      feature_name: Eng Temp Dig (ETD)
+      target_state: ETD Always On
     - bit: 1
       action: 0
-      feature: Trans Temp Dig (TTD)
+      feature_name: Trans Temp Dig (TTD)
+      target_state: TTD Always Off
     - bit: 0
       action: 1
-      feature: Trans Temp Dig (TTD)
+      feature_name: Trans Temp Dig (TTD)
+      target_state: TTD Always On
 recipe_version: '1.1'

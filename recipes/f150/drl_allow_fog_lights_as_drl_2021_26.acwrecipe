@@ -17,23 +17,30 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: DRL - Allow Fog Lights as DRL
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: DRL - Allow Fog Lights as DRL
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: DRL - Allow Fog Lights as DRL
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: DRL - Allow Fog Lights as DRL
+      target_state: Disabled
   - mask: x*xx xxxx xx--
     community_hex: '0'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 0
-      feature: DRL_WithFog_Cfg (DRLWFC)
+      feature_name: DRL_WithFog_Cfg (DRLWFC)
+      aliases:
+      - DRL_WithFog_Cfg
+      target_state: DRLWFC ALLOW
+      state_aliases:
+      - Allow
 recipe_version: '1.1'

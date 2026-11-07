@@ -19,8 +19,12 @@ steps:
     bits:
     - bit: 1
       action: 1
-      feature: 360 Camera View Format (CVF)
+      feature_name: 360 Camera View Format (CVF)
+      target_state: CVF Vertical (Normal Top)
+      state_aliases:
+      - CVF Reserved
     - bit: 0
       action: 1
-      feature: 360 Camera View Format (CVF)
+      feature_name: 360 Camera View Format (CVF)
+      target_state: CVF Vertical (360 top)
 recipe_version: '1.1'

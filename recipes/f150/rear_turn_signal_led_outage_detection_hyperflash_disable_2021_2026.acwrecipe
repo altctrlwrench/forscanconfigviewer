@@ -16,22 +16,29 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Rear Turn Signal LED Outage Detection (Hyperflash Disable)
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Rear Turn Signal LED Outage Detection (Hyperflash Disable)
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Rear Turn Signal LED Outage Detection (Hyperflash Disable)
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Rear Turn Signal LED Outage Detection (Hyperflash Disable)
+      target_state: Disabled
   - mask: xxxx x*xx xx--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 0
-      feature: Rear_LED_Turn_Outage_Cfg (RLEDTOC)
+      feature_name: Rear_LED_Turn_Outage_Cfg (RLEDTOC)
+      aliases:
+      - Rear_LED_Turn_Outage_Cfg
+      target_state: RLEDTOC NO_OUTAGE
+      state_aliases:
+      - No Outage
 recipe_version: '1.1'

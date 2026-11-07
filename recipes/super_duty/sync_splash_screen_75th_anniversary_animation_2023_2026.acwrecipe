@@ -19,30 +19,46 @@ steps:
     bits:
     - bit: 3
       action: 0
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS Default/not programmed
     - bit: 2
       action: 0
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS Default/not programmed
     - bit: 1
       action: 1
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS F150
+      state_aliases:
+      - SS Continental
+      - SS S650 Dark Horse Welcome Animation (w/ B&O)
+      - SS Unused
     - bit: 0
       action: 0
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS Default/not programmed
   - mask: xxxx x*xx xx--
     community_hex: '4'
     type: discrete
     bits:
     - bit: 3
       action: 0
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS Default/not programmed
     - bit: 2
       action: 1
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS Black Label
+      state_aliases:
+      - SS Continental
+      - SS S650 Pony Welcome Animation (w/ B&O)
+      - SS Unused
     - bit: 1
       action: 0
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS Default/not programmed
     - bit: 0
       action: 0
-      feature: Splash Screen (SS)
+      feature_name: Splash Screen (SS)
+      target_state: SS Default/not programmed
 recipe_version: '1.1'

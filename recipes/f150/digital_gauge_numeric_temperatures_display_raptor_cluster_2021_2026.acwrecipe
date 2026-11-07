@@ -16,24 +16,30 @@ steps:
     bits:
     - bit: 3
       action: 0
-      feature: Eng Temp Dig (ETD)
+      feature_name: Eng Temp Dig (ETD)
+      target_state: ETD Always Off
     - bit: 2
       action: 1
-      feature: Eng Temp Dig (ETD)
+      feature_name: Eng Temp Dig (ETD)
+      target_state: ETD Always On
     - bit: 1
       action: 0
-      feature: Trans Temp Dig (TTD)
+      feature_name: Trans Temp Dig (TTD)
+      target_state: TTD Always Off
     - bit: 0
       action: 1
-      feature: Trans Temp Dig (TTD)
+      feature_name: Trans Temp Dig (TTD)
+      target_state: TTD Always On
   - mask: xxxx xxx* xx--
     community_hex: '4'
     type: discrete
     bits:
     - bit: 3
       action: 0
-      feature: Eng Oil Dig (EOD)
+      feature_name: Eng Oil Dig (EOD)
+      target_state: EOD Always Off
     - bit: 2
       action: 1
-      feature: Eng Oil Dig (EOD)
+      feature_name: Eng Oil Dig (EOD)
+      target_state: EOD Always On
 recipe_version: '1.1'

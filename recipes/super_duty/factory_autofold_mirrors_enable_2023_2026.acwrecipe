@@ -14,15 +14,10 @@ steps:
   - mask: xxxx xxxx x*--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: TrailerTowFold_Cfg (TTFC)
+      feature_name: TrailerTowFold_Cfg (TTFC)
+      target_state: TTFC ENABLED
 - module: PDM
   address: 741-03-03
   notes: 0=Disabled  1 Enabled Factory Folding Mirror Enabled
@@ -30,13 +25,8 @@ steps:
   - mask: xxxx xxxx x*--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: TrailerTowFold_Cfg (TTFC)
+      feature_name: TrailerTowFold_Cfg (TTFC)
+      target_state: TTFC ENABLED
 recipe_version: '1.1'

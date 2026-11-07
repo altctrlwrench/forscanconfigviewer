@@ -17,46 +17,78 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Disabled
     - bit: 2
       action: 1
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Enabled
     - bit: 1
       action: 0
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Disabled
     - bit: 0
       action: 1
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Enabled
   - mask: x*xx xxxx xx--
     community_hex: '7'
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Disabled
     - bit: 2
       action: 1
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Enabled
     - bit: 1
       action: 1
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Enabled
     - bit: 0
       action: 1
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Enabled
   - mask: xx*x xxxx xx--
     community_hex: '5'
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Disabled
     - bit: 2
       action: 1
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Enabled
     - bit: 1
       action: 0
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Disabled
     - bit: 0
       action: 1
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Enabled
   - mask: xxx* xxxx xx--
     community_hex: '3'
     type: discrete
     bits:
     - bit: 3
       action: 0
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Disabled
     - bit: 1
       action: 1
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Enabled
     - bit: 0
       action: 1
+      feature_name: Navigation Destination Input in Motion Enable
+      target_state: Enabled
 recipe_version: '1.1'

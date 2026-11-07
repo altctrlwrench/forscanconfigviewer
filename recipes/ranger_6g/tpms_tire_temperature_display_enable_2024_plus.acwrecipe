@@ -27,5 +27,8 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: Tire Temperature Display (TTD)
+      feature_name: Tire Temperature Display (TTD)
+      target_state: TTD Enabled
+      state_aliases:
+      - TTD enabled
 recipe_version: '1.1'

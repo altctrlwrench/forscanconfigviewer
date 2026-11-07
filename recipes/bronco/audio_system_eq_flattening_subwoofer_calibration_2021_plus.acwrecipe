@@ -18,25 +18,53 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Audio System EQ Flattening & Subwoofer Calibration
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Audio System EQ Flattening & Subwoofer Calibration
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Audio System EQ Flattening & Subwoofer Calibration
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: Audio System EQ Flattening & Subwoofer Calibration
+      target_state: Disabled
   - mask: xxx* xxxx xx--
     type: discrete
     bits:
     - bit: 3
       action: 0
-      feature: EQ Selection (EQS)
+      feature_name: EQ Selection (EQS)
+      aliases:
+      - EQ Selection
+      target_state: EQS Flat EQ
+      state_aliases:
+      - Flat EQ
     - bit: 2
       action: 0
-      feature: EQ Selection (EQS)
+      feature_name: EQ Selection (EQS)
+      aliases:
+      - EQ Selection
+      target_state: EQS Flat EQ
+      state_aliases:
+      - Flat EQ
     - bit: 1
       action: 0
-      feature: EQ Selection (EQS)
+      feature_name: EQ Selection (EQS)
+      aliases:
+      - EQ Selection
+      target_state: EQS Flat EQ
+      state_aliases:
+      - Flat EQ
     - bit: 0
       action: 0
-      feature: EQ Selection (EQS)
+      feature_name: EQ Selection (EQS)
+      aliases:
+      - EQ Selection
+      target_state: EQS Flat EQ
+      state_aliases:
+      - Flat EQ
 recipe_version: '1.1'

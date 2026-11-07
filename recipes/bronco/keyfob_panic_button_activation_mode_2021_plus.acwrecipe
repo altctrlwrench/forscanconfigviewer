@@ -16,14 +16,20 @@ steps:
   - mask: x*xx xxxx xx--
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 0
-      feature: PanicActivate_Cfg (PAC)
+      feature_name: PanicActivate_Cfg (PAC)
+      aliases:
+      - PanicActivate_Cfg
+      target_state: PAC DISABLE
+      state_aliases:
+      - Disable
     - bit: 0
       action: 1
-      feature: PanicActivate_Cfg (PAC)
+      feature_name: PanicActivate_Cfg (PAC)
+      aliases:
+      - PanicActivate_Cfg
+      target_state: PAC DOUBLE
+      state_aliases:
+      - Double
 recipe_version: '1.1'

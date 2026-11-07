@@ -29,12 +29,20 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Disabled
     - bit: 0
       action: 1
+      feature_name: Global Windows Remote Open/Close Enable
+      target_state: Enabled
 - module: DDM
   address: 740-06-02
   targets:
@@ -42,13 +50,8 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: Global_Close_Cfg (GCC)
+      feature_name: Global_Close_Cfg (GCC)
+      target_state: Enabled
 recipe_version: '1.1'

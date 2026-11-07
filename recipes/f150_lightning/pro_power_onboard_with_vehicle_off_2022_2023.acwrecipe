@@ -21,6 +21,10 @@ steps:
     bits:
     - bit: 1
       action: 1
+      feature_name: Pro Power Onboard with Vehicle Off
+      aliases:
+      - PPO Outlets On in Vehicle Off State (PPOOOVOS)
+      target_state: Enabled
 - module: APIM
   address: 7D0-10-04
   targets:
@@ -29,5 +33,6 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: PPO Utility Idle (PPOUI)
+      feature_name: PPO Utility Idle (PPOUI)
+      target_state: PPOUI Version 2 (MY24 and beyond)
 recipe_version: '1.1'

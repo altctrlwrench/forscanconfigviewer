@@ -21,20 +21,24 @@ steps:
     bits:
     - bit: 2
       action: 1
-      feature: Lane Biasing (LB)
+      feature_name: Lane Biasing (LB)
+      target_state: LB Enabled
     - bit: 1
       action: 1
-      feature: Key Detection Alert  (KDA)
+      feature_name: Key Detection Alert  (KDA)
+      target_state: KDA Enabled
   - mask: xxxx xxxx *x--
     community_hex: '2'
     type: discrete
     bits:
     - bit: 2
       action: 0
-      feature: Curve Speed Control Menu (CSCM)
+      feature_name: Curve Speed Control Menu (CSCM)
+      target_state: CSCM Disabled
     - bit: 1
       action: 1
-      feature: Predictive Speed Assist (PSA)
+      feature_name: Predictive Speed Assist (PSA)
+      target_state: PSA Enabled
 - module: APIM
   address: 7D0-10-02
   targets:
@@ -44,7 +48,8 @@ steps:
     bits:
     - bit: 0
       action: 1
-      feature: Assisted Lane Change  (ALC)
+      feature_name: Assisted Lane Change  (ALC)
+      target_state: ALC Enabled
 - module: IPMA
   address: 706-01-01
   targets:
@@ -54,13 +59,16 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: ModuleFeatureCfg_LKS (MFCLKS)
+      feature_name: ModuleFeatureCfg_LKS (MFCLKS)
+      target_state: MFCLKS LKAlert+LKAid
     - bit: 2
       action: 1
-      feature: ModuleFeatureCfg_LKS (MFCLKS)
+      feature_name: ModuleFeatureCfg_LKS (MFCLKS)
+      target_state: MFCLKS LKAlert
     - bit: 1
       action: 1
-      feature: ModuleFeatureCfg_DAS (MFCDAS)
+      feature_name: ModuleFeatureCfg_DAS (MFCDAS)
+      target_state: MFCDAS Enabled
 - module: IPMA
   address: 706-01-02
   targets:
@@ -70,10 +78,12 @@ steps:
     bits:
     - bit: 2
       action: 1
-      feature: ModuleFeatureCfg_ALB (MFCALB)
+      feature_name: ModuleFeatureCfg_ALB (MFCALB)
+      target_state: MFCALB Enabled
     - bit: 0
       action: 1
-      feature: ModuleFeatureCfg_ALC (MFCALC)
+      feature_name: ModuleFeatureCfg_ALC (MFCALC)
+      target_state: MFCALC Enabled
 - module: IPMA
   address: 706-02-02
   targets:
@@ -89,24 +99,14 @@ steps:
     bits:
     - bit: 3
       action: 1
-      feature: CustomerSetting_ALBSelected_Vehicle (CSALBSV)
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
-    - bit: 0
-      action: 0
+      feature_name: CustomerSetting_ALBSelected_Vehicle (CSALBSV)
+      target_state: CSALBSV On
   - mask: xxx* xxxx xx--
     community_hex: '8'
     type: discrete
     bits:
     - bit: 3
       action: 1
-      feature: CustomerSetting_ALCSelected_Vehicle (CSALCSV)
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
-    - bit: 0
-      action: 0
+      feature_name: CustomerSetting_ALCSelected_Vehicle (CSALCSV)
+      target_state: CSALCSV On
 recipe_version: '1.1'

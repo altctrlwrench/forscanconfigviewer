@@ -13,14 +13,20 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
     - bit: 1
       action: 0
-      feature: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
+      feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
+      aliases:
+      - Park_Lamps_Body_Ckt_Usage_Cfg
+      target_state: PLBCUC NOT_USED
+      state_aliases:
+      - Not Used
     - bit: 0
       action: 1
-      feature: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
+      feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)
+      aliases:
+      - Park_Lamps_Body_Ckt_Usage_Cfg
+      target_state: PLBCUC POSITION_ONLY
+      state_aliases:
+      - Position Only
 recipe_version: '1.1'

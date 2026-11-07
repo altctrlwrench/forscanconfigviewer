@@ -17,5 +17,8 @@ steps:
     bits:
     - bit: 1
       action: 1
-      feature: Trailer TPMS (TTPMS)
+      feature_name: Trailer TPMS (TTPMS)
+      aliases:
+      - '*Trailer TPMS (TTPMS)'
+      target_state: TTPMS enabled
 recipe_version: '1.1'

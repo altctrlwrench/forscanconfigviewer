@@ -17,5 +17,10 @@ steps:
     bits:
     - bit: 2
       action: 1
-      feature: Compass Sync (CS)
+      feature_name: Compass Sync (CS)
+      aliases:
+      - '*Compass Sync (CS)'
+      target_state: CS Present
+      state_aliases:
+      - CS enabled
 recipe_version: '1.1'

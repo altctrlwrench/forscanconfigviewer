@@ -15,11 +15,14 @@ steps:
     bits:
     - bit: 2
       action: 0
-      feature: Driver Beltminder (DB)
+      feature_name: Driver Beltminder (DB)
+      target_state: DB disabled
     - bit: 1
       action: 0
-      feature: Pass BeltMinder (PBM)
+      feature_name: Pass BeltMinder (PBM)
+      target_state: PBM disabled
     - bit: 0
       action: 0
-      feature: Mid Pass Beltminder (MPB)
+      feature_name: Mid Pass Beltminder (MPB)
+      target_state: MPB disabled
 recipe_version: '1.1'

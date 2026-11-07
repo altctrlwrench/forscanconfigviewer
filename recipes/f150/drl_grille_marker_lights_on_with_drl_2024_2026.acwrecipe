@@ -17,25 +17,32 @@ steps:
     bits:
     - bit: 3
       action: 0
+      feature_name: DRL - Grille Marker Lights On with DRL
+      target_state: Disabled
     - bit: 2
       action: 0
+      feature_name: DRL - Grille Marker Lights On with DRL
+      target_state: Disabled
     - bit: 1
       action: 0
+      feature_name: DRL - Grille Marker Lights On with DRL
+      target_state: Disabled
     - bit: 0
       action: 0
+      feature_name: DRL - Grille Marker Lights On with DRL
+      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: DRL_IncludeParklamps_Cfg (DRLIPC)
+      feature_name: DRL_IncludeParklamps_Cfg (DRLIPC)
+      aliases:
+      - DRL_IncludeParklamps_Cfg
+      target_state: DRLIPC ENABLE
+      state_aliases:
+      - Enable
 - module: BCM
   address: 726-43-02
   notes: Daytime Running Lights (DRL) On With Park Lamps On Config
@@ -47,15 +54,13 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 1
-      feature: DRL_OnWithParkLampsOn_Cfg (DRLOWPLOC)
+      feature_name: DRL_OnWithParkLampsOn_Cfg (DRLOWPLOC)
+      aliases:
+      - OutageABM_Cfg (OABMC)
+      - OutageABM_Cfg
+      target_state: DRLOWPLOC ENABLE
 - module: BCM
   address: 726-87-01
   notes: Daytime Running Lights (DRL) Suppress License Config
@@ -67,13 +72,11 @@ steps:
     community_hex: '0'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-    - bit: 2
-      action: 0
-    - bit: 1
-      action: 0
     - bit: 0
       action: 0
-      feature: DRL_SuppressLicense_Cfg (DRLSLC)
+      feature_name: DRL_SuppressLicense_Cfg (DRLSLC)
+      aliases:
+      - SlaveExists_OHC_Cfg (SEOHCC)
+      - SlaveExists_OHC_Cfg
+      target_state: DRLSLC NOT_SUPPRESSED
 recipe_version: '1.1'

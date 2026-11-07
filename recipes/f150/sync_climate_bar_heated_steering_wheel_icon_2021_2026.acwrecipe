@@ -16,5 +16,6 @@ steps:
     bits:
     - bit: 0
       action: 1
-      feature: Heated Steering Wheel (HSW)
+      feature_name: Heated Steering Wheel (HSW)
+      target_state: HSW Available
 recipe_version: '1.1'

@@ -15,8 +15,14 @@ steps:
     bits:
     - bit: 1
       action: 0
-      feature: QT HMI Themes (QTHMIT)
+      feature_name: QT HMI Themes (QTHMIT)
+      aliases:
+      - Smart Surface Themes (SST)
+      target_state: QTHMIT Classic
     - bit: 0
       action: 1
-      feature: QT HMI Themes (QTHMIT)
+      feature_name: QT HMI Themes (QTHMIT)
+      aliases:
+      - Smart Surface Themes (SST)
+      target_state: QTHMIT Smart Surface
 recipe_version: '1.1'
