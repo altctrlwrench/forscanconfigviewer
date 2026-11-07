@@ -3064,12 +3064,6 @@
                         "action": 1,
                         "feature_name": "Lane Biasing (LB)",
                         "target_state": "LB Enabled"
-                      },
-                      {
-                        "bit": 1,
-                        "action": 1,
-                        "feature_name": "Key Detection Alert  (KDA)",
-                        "target_state": "KDA Enabled"
                       }
                     ]
                   },
@@ -26576,12 +26570,6 @@
                   "action": 1,
                   "feature_name": "Lane Biasing (LB)",
                   "target_state": "LB Enabled"
-                },
-                {
-                  "bit": 1,
-                  "action": 1,
-                  "feature_name": "Key Detection Alert  (KDA)",
-                  "target_state": "KDA Enabled"
                 }
               ]
             },
