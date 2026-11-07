@@ -19,10 +19,10 @@ steps:
     community_hex: '1'
     type: discrete
     bits:
-    - bit: 0
-      action: 1
-      feature_name: Autolamp Delay (AD)
-      target_state: AD Enabled
+    - bit: 1
+      action: 0
+      feature_name: Auto High Beam Control Function (AHBCF)
+      target_state: AHBCF Disabled
 - module: APIM
   address: 7D0-09-03
   targets:
@@ -30,14 +30,14 @@ steps:
     community_hex: C
     type: discrete
     bits:
-    - bit: 1
-      action: 0
-      feature_name: Air Suspension SUMA Control Function (ASSUMACF)
-      target_state: ASSUMACF Disabled
-    - bit: 0
-      action: 0
-      feature_name: Air Suspension Auto Height SUMA (ASAHSUMA)
-      target_state: ASAHSUMA Disabled
+    - bit: 3
+      action: 1
+      feature_name: Auto High Beam Menu (AHBM)
+      target_state: AHBM Glare free High Beams
+    - bit: 2
+      action: 1
+      feature_name: Auto High Beam Menu (AHBM)
+      target_state: AHBM Auto High Beams
 - module: IPMA
   address: 706-01-01
   targets:
@@ -45,14 +45,16 @@ steps:
     community_hex: '9'
     type: discrete
     bits:
-    - bit: 1
-      action: 0
-      feature_name: ModuleFeatureCfg_RBA (MFCRBA)
-      target_state: MFCRBA Disabled
-    - bit: 0
+    - bit: 3
       action: 1
-      feature_name: ModuleFeatureCfg_RBA (MFCRBA)
-      target_state: MFCRBA RBA
+      feature_name: ModuleFeatureCfg_HighBeam (MFCHB)
+      target_state: MFCHB GFHB_ADB
+      state_aliases:
+      - MFCHB GFHB
+    - bit: 2
+      action: 0
+      feature_name: ModuleFeatureCfg_HighBeam (MFCHB)
+      target_state: MFCHB Disabled
 - module: SCCM
   address: 724-04-01
   targets:
@@ -104,12 +106,26 @@ steps:
   - mask: xxxx x*xx xx--
     community_hex: '2'
     type: discrete
+    bits:
+    - bit: 1
+      action: 1
+      feature_name: Config_AhbFeature (CAF)
+      target_state: CAF ADB_GfHB
+    - bit: 0
+      action: 0
+      feature_name: Config_AhbFeature (CAF)
+      target_state: CAF Disable
 - module: HCM
   address: 734-03-02
   targets:
   - mask: xxxx xxx* xx--
     community_hex: '1'
     type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: m2_Zone_Lighting (ZL)
+      target_state: ZL Enable
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
@@ -120,125 +136,24 @@ steps:
       target_state: ADBDBL ADB/DBL Combined
 - module: HCM
   address: 734-11-01
+  notes: Calibration strategy data block (0735 89--)
   targets:
   - mask: '*xxx xxxx xx--'
     community_hex: '0'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
   - mask: x*xx xxxx xx--
     community_hex: '7'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 2
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
-    - bit: 1
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
-    - bit: 0
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
   - mask: xx*x xxxx xx--
     community_hex: '3'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 1
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
-    - bit: 0
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
   - mask: xxx* xxxx xx--
     community_hex: '5'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 2
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
-    - bit: 1
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 0
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
   - mask: xxxx *xxx xx--
     community_hex: '8'
     type: discrete
-    bits:
-    - bit: 3
-      action: 1
-      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
-      target_state: Enabled
-    - bit: 2
-      action: 0
-      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
-      target_state: Disabled
   - mask: xxxx x*xx xx--
     community_hex: '9'
     type: discrete
-    bits:
-    - bit: 3
-      action: 1
-      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
-      target_state: Enabled
-    - bit: 2
-      action: 0
-      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
-      target_state: Disabled
-    - bit: 0
-      action: 1
-      feature_name: CRC_HIGH_BYTE (CRCHIGHBYTE)
-      target_state: Enabled
 recipe_version: '1.1'
