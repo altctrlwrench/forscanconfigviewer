@@ -2,9 +2,9 @@
   "version": "1.1.0",
   "generated_at": null,
   "summary": {
-    "total_files": 209,
-    "validated_recipes": 209,
-    "unique_canonical_features": 109,
+    "total_files": 210,
+    "validated_recipes": 210,
+    "unique_canonical_features": 110,
     "supported_platforms": [
       "Bronco",
       "Explorer",
@@ -5938,6 +5938,120 @@
                           "R1C1_Belt_Minder_Chime_Cfg (RCBMCC)"
                         ],
                         "target_state": "RCBMC Disabled"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "recipe_version": "1.1"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Dynamic Headlamp Auto-Leveling (Pitch & Acceleration Compensation)",
+      "category": "Lighting",
+      "platforms": {
+        "F-150 Lightning": [
+          {
+            "file": "f150_lightning/dynamic_headlamp_auto_leveling_2022.acwrecipe",
+            "title": "Dynamic Headlamp Auto-Leveling (Pitch & Acceleration Compensation)",
+            "raw_community_title": "Dynamic Headlamp Leveling (DHL)",
+            "category": "Lighting",
+            "platform": "F-150 Lightning",
+            "model_years": "2022",
+            "trim": "Lariat / Platinum (Equipped with Onboard Scales & Suspension Height Sensors)",
+            "status": "untested",
+            "source_sheet": "Euro Kuga Mk3.5 / Ranger Platinum / Mustang S650 Comparison & Livnitup Master Database",
+            "notes": "UNTESTED / EXPERIMENTAL: Enables Dynamic Headlamp Auto-Leveling (m2_DHL_Enable and m2_DHL_Mode = dynamic)\nto automatically adjust vertical headlamp aim during acceleration, braking, and payload/towing squat.\n\nIMPORTANT HARDWARE REQUIREMENT: Only for 2022 F-150 Lightnings equipped from the factory with front\nand rear suspension ride-height sensors (Onboard Scales / Smart Hitch). Ford deleted physical suspension\nheight sensors on 2023+ Lightnings; enabling this on a truck without height sensors will trigger a missing\nleveling sensor DTC. Because the Lightning's height sensors report via the VDM over CAN rather than direct\nanalog wiring to the HCM, m2_DHL_Input (734-01-02 xxxx xxx*) is set to 1 (CAN Input).\n\nNOTE ON HCM CRC BITS: The HCM requires secondary CRC calculation bits (in addition to the standard\n2-nibble checksum) and we do not currently have the offline calculation formula. Our working hypothesis\nis that setting the CRC bits to all 0s (0000) or all 1s (1111) and then, without resetting or power-cycling\nthe module, immediately running the HCM headlamp calibration routine MIGHT trigger the module to generate\nthe correct CRC bits internally.",
+            "steps": [
+              {
+                "module": "HCM",
+                "address": "734-01-01",
+                "notes": "HCM requires CRC bits: try setting CRC bits to 0000 or 1111 and running the calibration routine\nwithout resetting the module to see if it generates valid CRC bits.",
+                "targets": [
+                  {
+                    "mask": "xxx* xxxx xx--",
+                    "community_hex": "1",
+                    "type": "discrete",
+                    "bits": [
+                      {
+                        "bit": 0,
+                        "action": 1,
+                        "feature_name": "m2_DHL_Enable (DHLE)",
+                        "target_state": "DHLE Leveling ON"
+                      }
+                    ]
+                  },
+                  {
+                    "mask": "xxxx x*xx xx--",
+                    "community_hex": "1",
+                    "type": "discrete",
+                    "bits": [
+                      {
+                        "bit": 0,
+                        "action": 1,
+                        "feature_name": "m2_DHL_Mode (DHLM)",
+                        "target_state": "DHLM dynamic"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "module": "HCM",
+                "address": "734-01-02",
+                "notes": "HCM requires CRC bits: try setting CRC bits to 0000 or 1111 and running the calibration routine\nwithout resetting the module to see if it generates valid CRC bits.",
+                "targets": [
+                  {
+                    "mask": "xxxx xxx* xx--",
+                    "community_hex": "1",
+                    "type": "discrete",
+                    "bits": [
+                      {
+                        "bit": 0,
+                        "action": 1,
+                        "feature_name": "m2_DHL_Input (DHLI)",
+                        "target_state": "DHLI Leveling On - CAN Input"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "module": "LDCMA",
+                "address": "6F6-01-01",
+                "targets": [
+                  {
+                    "mask": "x*xx xxxx xx--",
+                    "community_hex": "1",
+                    "type": "discrete",
+                    "bits": [
+                      {
+                        "bit": 0,
+                        "action": 1,
+                        "feature_name": "LDM_Leveling_Cfg (LDMLC)",
+                        "target_state": "LDMLC LDM Leveling present"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "module": "LDCMB",
+                "address": "6F7-01-01",
+                "targets": [
+                  {
+                    "mask": "x*xx xxxx xx--",
+                    "community_hex": "1",
+                    "type": "discrete",
+                    "bits": [
+                      {
+                        "bit": 0,
+                        "action": 1,
+                        "feature_name": "LDM_Leveling_Cfg (LDMLC)",
+                        "target_state": "LDMLC LDM Leveling present"
                       }
                     ]
                   }
@@ -27235,6 +27349,112 @@
                   "state_aliases": [
                     "Not Used"
                   ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "recipe_version": "1.1"
+    },
+    {
+      "file": "f150_lightning/dynamic_headlamp_auto_leveling_2022.acwrecipe",
+      "title": "Dynamic Headlamp Auto-Leveling (Pitch & Acceleration Compensation)",
+      "raw_community_title": "Dynamic Headlamp Leveling (DHL)",
+      "category": "Lighting",
+      "platform": "F-150 Lightning",
+      "model_years": "2022",
+      "trim": "Lariat / Platinum (Equipped with Onboard Scales & Suspension Height Sensors)",
+      "status": "untested",
+      "source_sheet": "Euro Kuga Mk3.5 / Ranger Platinum / Mustang S650 Comparison & Livnitup Master Database",
+      "notes": "UNTESTED / EXPERIMENTAL: Enables Dynamic Headlamp Auto-Leveling (m2_DHL_Enable and m2_DHL_Mode = dynamic)\nto automatically adjust vertical headlamp aim during acceleration, braking, and payload/towing squat.\n\nIMPORTANT HARDWARE REQUIREMENT: Only for 2022 F-150 Lightnings equipped from the factory with front\nand rear suspension ride-height sensors (Onboard Scales / Smart Hitch). Ford deleted physical suspension\nheight sensors on 2023+ Lightnings; enabling this on a truck without height sensors will trigger a missing\nleveling sensor DTC. Because the Lightning's height sensors report via the VDM over CAN rather than direct\nanalog wiring to the HCM, m2_DHL_Input (734-01-02 xxxx xxx*) is set to 1 (CAN Input).\n\nNOTE ON HCM CRC BITS: The HCM requires secondary CRC calculation bits (in addition to the standard\n2-nibble checksum) and we do not currently have the offline calculation formula. Our working hypothesis\nis that setting the CRC bits to all 0s (0000) or all 1s (1111) and then, without resetting or power-cycling\nthe module, immediately running the HCM headlamp calibration routine MIGHT trigger the module to generate\nthe correct CRC bits internally.",
+      "steps": [
+        {
+          "module": "HCM",
+          "address": "734-01-01",
+          "notes": "HCM requires CRC bits: try setting CRC bits to 0000 or 1111 and running the calibration routine\nwithout resetting the module to see if it generates valid CRC bits.",
+          "targets": [
+            {
+              "mask": "xxx* xxxx xx--",
+              "community_hex": "1",
+              "type": "discrete",
+              "bits": [
+                {
+                  "bit": 0,
+                  "action": 1,
+                  "feature_name": "m2_DHL_Enable (DHLE)",
+                  "target_state": "DHLE Leveling ON"
+                }
+              ]
+            },
+            {
+              "mask": "xxxx x*xx xx--",
+              "community_hex": "1",
+              "type": "discrete",
+              "bits": [
+                {
+                  "bit": 0,
+                  "action": 1,
+                  "feature_name": "m2_DHL_Mode (DHLM)",
+                  "target_state": "DHLM dynamic"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "module": "HCM",
+          "address": "734-01-02",
+          "notes": "HCM requires CRC bits: try setting CRC bits to 0000 or 1111 and running the calibration routine\nwithout resetting the module to see if it generates valid CRC bits.",
+          "targets": [
+            {
+              "mask": "xxxx xxx* xx--",
+              "community_hex": "1",
+              "type": "discrete",
+              "bits": [
+                {
+                  "bit": 0,
+                  "action": 1,
+                  "feature_name": "m2_DHL_Input (DHLI)",
+                  "target_state": "DHLI Leveling On - CAN Input"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "module": "LDCMA",
+          "address": "6F6-01-01",
+          "targets": [
+            {
+              "mask": "x*xx xxxx xx--",
+              "community_hex": "1",
+              "type": "discrete",
+              "bits": [
+                {
+                  "bit": 0,
+                  "action": 1,
+                  "feature_name": "LDM_Leveling_Cfg (LDMLC)",
+                  "target_state": "LDMLC LDM Leveling present"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "module": "LDCMB",
+          "address": "6F7-01-01",
+          "targets": [
+            {
+              "mask": "x*xx xxxx xx--",
+              "community_hex": "1",
+              "type": "discrete",
+              "bits": [
+                {
+                  "bit": 0,
+                  "action": 1,
+                  "feature_name": "LDM_Leveling_Cfg (LDMLC)",
+                  "target_state": "LDMLC LDM Leveling present"
                 }
               ]
             }
