@@ -1,0 +1,81 @@
+title: Sign-Based Lighting & Traffic Sign Deglare (SBLM & TSDG)
+raw_community_title: Sign-Based Light Mode & Traffic Sign Deglare
+category: Lighting
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: Lariat / Platinum / Flash (Matrix LED Headlamps)
+status: untested
+source_sheet: Euro Kuga Mk3.5 Matrix LED Comparison & Livnitup Master Database
+notes: |-
+  UNTESTED / EXPERIMENTAL: Enables two camera-driven road sign lighting features used on European Ford
+  Matrix LED headlamps. (1) Sign-Based Light Mode (SBLM) uses the IPMA front camera to recognize
+  approaching junctions, roundabouts, yield, and stop signs and pre-widens the headlight beam into
+  the intersection. (2) Traffic Sign Deglare (TSDG) dims the specific Matrix high-beam LEDs shining
+  directly onto highly reflective road signs so they do not dazzle the driver when Glare-Free High
+  Beams are active. There is no separate APIM toggle specifically for TSDG (it operates automatically
+  whenever Glare-Free High Beams are switched on), but APIM 7D0-09-02 (Bit 3 of Nibble 9) is included
+  to enable the Traffic Sign Recognition (TSR) toggle in SYNC 4 if not already enabled.
+
+  NOTE ON HCM CRC BITS: The HCM requires secondary CRC calculation bits (in addition to the standard
+  2-nibble checksum) and we do not currently have the offline calculation formula. Our working hypothesis
+  is that setting the CRC bits to all 0s (0000) or all 1s (1111) and then, without resetting or power-cycling
+  the module, immediately running the HCM headlamp calibration routine MIGHT trigger the module to generate
+  the correct CRC bits internally.
+
+  Note that HCM 734-05-01 xxxx xxx* also supports value 2 (SLME Traffic sign deglare ON) if testing against value 1 (SLME Enable).
+steps:
+- module: IPMA
+  address: 706-01-01
+  targets:
+  - mask: xxx* xxxx xx--
+    community_hex: '2'
+    offset_hint: '+2'
+    type: discrete
+    bits:
+    - bit: 1
+      action: 1
+      feature_name: ModuleFeatureCfg_SBLM (MFCSBLM)
+      target_state: MFCSBLM Enabled
+- module: APIM
+  address: 7D0-09-02
+  targets:
+  - mask: xxxx xxxx x*--
+    community_hex: D
+    offset_hint: '+8'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Traffic Sign Recognition (TSR)
+      target_state: TSR Enabled
+- module: HCM
+  address: 734-01-02
+  notes: |-
+    Set to 1 to enable Traffic Sign Deglare (TSDGE Enable).
+    HCM requires CRC bits: try setting CRC bits to 0000 or 1111 and running the calibration routine
+    without resetting the module to see if it generates valid CRC bits.
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: m2_TSDG_Enable (TSDGE)
+      target_state: TSDGE Enable
+- module: HCM
+  address: 734-05-01
+  notes: |-
+    Set to 1 (SLME Enable) or 2 (SLME Traffic sign deglare ON).
+    HCM requires CRC bits: try setting CRC bits to 0000 or 1111 and running the calibration routine
+    without resetting the module to see if it generates valid CRC bits.
+  targets:
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: m2_SbLM_Enable (SLME)
+      target_state: SLME Enable
+recipe_version: '1.1'
