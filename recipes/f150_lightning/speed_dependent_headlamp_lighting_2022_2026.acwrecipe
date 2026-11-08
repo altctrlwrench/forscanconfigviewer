@@ -1,0 +1,35 @@
+title: Speed-Dependent Headlamp Lighting (Town & Highway Beam Shaping)
+raw_community_title: Speed-Dependent Lighting (SDL)
+category: Lighting
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: Lariat / Platinum / Flash (Matrix LED Headlamps)
+status: untested
+source_sheet: Euro Kuga Mk3.5 / Ranger 6G / Mach-E GT Matrix LED Comparison & Livnitup Master Database
+notes: |-
+  UNTESTED / EXPERIMENTAL: Enables Speed-Dependent Light Mode (m2_SDL_Enable) in the Headlamp Control
+  Module (HCM). Automatically widens and softens the low-beam light distribution at lower city/town speeds
+  to better illuminate curbs, ditches, and pedestrians, and narrows/focuses the beam further down the road
+  at highway speeds. Uses existing vehicle speed data on the CAN bus and does not require suspension ride-height sensors.
+
+  NOTE ON HCM CRC BITS: The HCM requires secondary CRC calculation bits (in addition to the standard
+  2-nibble checksum) and we do not currently have the offline calculation formula. Our working hypothesis
+  is that setting the CRC bits to all 0s (0000) or all 1s (1111) and then, without resetting or power-cycling
+  the module, immediately running the HCM headlamp calibration routine MIGHT trigger the module to generate
+  the correct CRC bits internally.
+steps:
+- module: HCM
+  address: 734-05-01
+  notes: |-
+    HCM requires CRC bits: try setting CRC bits to 0000 or 1111 and running the calibration routine
+    without resetting the module to see if it generates valid CRC bits.
+  targets:
+  - mask: xxx* xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: m2_SDL_Enable (SDLE)
+      target_state: SDLE Enable
+recipe_version: '1.1'
