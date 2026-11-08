@@ -1,0 +1,116 @@
+title: Predictive Curve Lighting (Map & Camera-Based Dynamic Bending)
+raw_community_title: Predictive Curve Lighting (Adaptive Front Lighting System)
+category: Lighting
+platform: F-150 Lightning
+model_years: 2022-2026
+trim: Lariat / Platinum / Flash (Matrix LED Headlamps)
+status: untested
+source_sheet: Euro Kuga Mk3.5 / Ranger 6G Matrix LED Comparison & Livnitup Master Database
+notes: |-
+  UNTESTED / EXPERIMENTAL: Upgrades the Dynamic Bending Headlamps from reactive steering-wheel-only mode
+  (1) to anticipatory Map/Camera-Based Dynamic Bending (4), using the IPMA front lane-tracking
+  camera and SYNC 4 Navigation Electronic Horizon map stream to pre-steer the headlamp
+  projectors into upcoming curves before turning the steering wheel. Also enables
+  the Predictive Lighting toggle in SYNC 4 Settings > Vehicle > Lighting. Requires
+  Glare-Free High Beams (ADB/DBL Combined) to be enabled.
+
+  NOTE ON HCM CRC BITS: The HCM requires secondary CRC calculation bits (in addition to the
+  standard 2-nibble checksum) and we do not currently have the offline calculation formula.
+  Our working hypothesis is that setting the CRC bits to all 0s (0000) or all 1s (1111) and then,
+  without resetting or power-cycling the module, immediately running the HCM headlamp calibration
+  routine MIGHT trigger the module to generate the correct CRC bits internally.
+
+  If North American map data triggers an HCM Electronic Horizon fault under mode 4, set
+  HCM 734-04-02 x*xx to 2 (Camera Based Dynamic Bending Enabled) instead.
+steps:
+- module: APIM
+  address: 7D0-05-01
+  targets:
+  - mask: xx*x xxxx xx--
+    community_hex: '8'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Electric Horizon (EH)
+      target_state: EH Electronic horizon EH
+    - bit: 2
+      action: 0
+      feature_name: Electric Horizon Type (EHT)
+      target_state: EHT MPP + Stubs
+    - bit: 1
+      action: 0
+      feature_name: Electric Horizon Type (EHT)
+      target_state: EHT MPP + Stubs
+- module: APIM
+  address: 7D0-09-01
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: '5'
+    offset_hint: '+1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: Adaptive Head Lamps Control Function (AHLCF)
+      target_state: AHLCF Enabled
+- module: APIM
+  address: 7D0-09-03
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: '8'
+    offset_hint: '+8'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Predictive Lights (PL)
+      target_state: PL Enabled
+- module: IPC
+  address: 720-09-02
+  targets:
+  - mask: '*xxx xx--'
+    community_hex: '1'
+    offset_hint: '+1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: Adaptive Headlamps Feature (AHF)
+      target_state: AHF enabled
+- module: IPC
+  address: 720-10-01
+  targets:
+  - mask: xx*x xxxx xx--
+    community_hex: '2'
+    offset_hint: '+2'
+    type: discrete
+    bits:
+    - bit: 1
+      action: 1
+      feature_name: Predictive Lights (PL)
+      target_state: PL enabled
+- module: HCM
+  address: 734-04-02
+  notes: |-
+    Set to 4 for Map/Camera Based Dynamic Bending (or 2 for Camera-Only Dynamic Bending).
+    HCM requires CRC bits: try setting CRC bits to 0000 or 1111 and running the calibration routine
+    without resetting the module to see if it generates valid CRC bits.
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '4'
+    type: discrete
+    bits:
+    - bit: 2
+      action: 1
+      feature_name: m2_Bending_Enable (BE)
+      target_state: BE Map/Camera Based Dynamic Bending Enabled
+    - bit: 1
+      action: 0
+      feature_name: m2_Bending_Enable (BE)
+      target_state: BE Map/Camera Based Dynamic Bending Enabled
+    - bit: 0
+      action: 0
+      feature_name: m2_Bending_Enable (BE)
+      target_state: BE Map/Camera Based Dynamic Bending Enabled
+recipe_version: '1.1'

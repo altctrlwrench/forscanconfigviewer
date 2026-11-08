@@ -63,6 +63,7 @@ def compile_catalog(recipes_dir="recipes", dist_dir="dist", skip_validation=Fals
             'platform': platform,
             'model_years': str(data.get('model_years', '')),
             'trim': data.get('trim', 'All'),
+            'status': data.get('status'),
             'source_sheet': data.get('source_sheet', ''),
             'notes': data.get('notes'),
             'steps': data.get('steps', []),
