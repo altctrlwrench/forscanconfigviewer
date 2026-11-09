@@ -47,6 +47,12 @@ If the tool crashes, misinterprets an address, or displays incorrect data:
 Have an idea for a better dashboard or a specific comparison tool?
 * Open an issue with the label `enhancement`.
 
+The [UI improvement plan](docs/ui-improvement-plan.md) records reproducible
+live-interface findings, screenshots, and proposed acceptance criteria,
+including a Light / Dark / System theme selector that defaults to System.
+These proposed UI changes are unimplemented and untested against the private
+application or a vehicle.
+
 ---
 
 ## 🔒 Privacy & Safety
