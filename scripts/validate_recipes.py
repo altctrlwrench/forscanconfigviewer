@@ -15,6 +15,40 @@ import os
 import glob
 import yaml
 
+STANDARD_MODULE_PREFIXES = {
+    '6F0': ['BCMC'],
+    '6F6': ['LDCMA'],
+    '6F7': ['LDCMB'],
+    '706': ['IPMA'],
+    '720': ['IPC'],
+    '724': ['SCCM', 'TRM'],
+    '726': ['BCM', 'BDYCM', 'BODYCM', 'BDYCM-BCM'],
+    '727': ['ACM'],
+    '730': ['PSCM'],
+    '733': ['HVAC', 'DATC'],
+    '734': ['HCM'],
+    '736': ['DSP'],
+    '737': ['RCM'],
+    '740': ['DDM'],
+    '741': ['PDM'],
+    '744': ['DSM'],
+    '754': ['TCU'],
+    '760': ['ABS'],
+    '761': ['CCM'],
+    '764': ['CCM'],
+    '765': ['CMR', 'IPMB'],
+    '783': ['DSP', 'VDM'],  # DSP on CD6 Explorer/Aviator, VDM on F-150/Lightning
+    '791': ['TRM'],
+    '797': ['GSM', 'GWM'],
+    '7B7': ['BCMB'],
+    '7D0': ['APIM'],
+    '7E0': ['PCM'],
+    '7E4': ['BECM'],
+    '7E6': ['SOBDM'],
+    '7E7': ['SOBDMC'],
+    '7E8': ['SOBDMB']
+}
+
 def validate_catalog(recipes_dir="recipes"):
     recipe_files = sorted(glob.glob(os.path.join(recipes_dir, "**", "*.acwrecipe"), recursive=True) +
                           glob.glob(os.path.join(recipes_dir, "**", "*.yaml"), recursive=True))
@@ -69,6 +103,14 @@ def validate_catalog(recipes_dir="recipes"):
 
             if not mod:
                 errors.append(f"[{rel_path}] Step {addr} missing 'module'.")
+            else:
+                mod_upper = str(mod).upper().strip()
+                addr_upper = str(addr).upper().strip()
+                prefix = addr_upper.split('-')[0] if '-' in addr_upper else addr_upper[:3]
+                if prefix in STANDARD_MODULE_PREFIXES:
+                    expected = STANDARD_MODULE_PREFIXES[prefix]
+                    if not any(exp in mod_upper or mod_upper in exp for exp in expected):
+                        errors.append(f"[{rel_path}] Module/CAN address mismatch at {addr}: Module is declared as '{mod}', but Ford CAN prefix '{prefix}' belongs to {expected}.")
 
             # Check for key typos (e.g. trailing colons)
             for k in step.keys():

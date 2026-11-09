@@ -23,23 +23,6 @@ steps:
   - mask: xxxx xxxx *x--
     community_hex: '0'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
@@ -54,66 +37,15 @@ steps:
   - mask: xxxx xxxx *x--
     community_hex: '0'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 0
-      action: 1
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Enabled
 - module: DDM
   address: 740-06-03
   targets:
   - mask: '*xxx xxxx xx--'
     community_hex: '0'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
   - mask: x*xx xxxx xx--
     community_hex: '1'
     type: discrete
@@ -128,66 +60,15 @@ steps:
   - mask: '*xxx xxxx xx--'
     community_hex: '0'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
   - mask: x*xx xxxx xx--
     community_hex: '1'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 0
-      action: 1
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Enabled
 - module: BdyCM
   address: 726-11-02
   targets:
   - mask: xx*x xxxx xx--
     community_hex: '0'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
   - mask: xxx* xxxx xx--
     community_hex: '1'
     type: discrete
@@ -203,23 +84,6 @@ steps:
   - mask: xxxx xx*x xx--
     community_hex: '0'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
   - mask: xxxx xxx* xx--
     community_hex: '1'
     type: discrete
@@ -238,23 +102,6 @@ steps:
   - mask: xxxx xxxx *x--
     community_hex: '0'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
@@ -273,23 +120,6 @@ steps:
   - mask: xxxx xxxx *x--
     community_hex: '0'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete

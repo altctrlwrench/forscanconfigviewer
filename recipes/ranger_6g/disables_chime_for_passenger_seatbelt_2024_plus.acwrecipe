@@ -24,6 +24,8 @@ steps:
     bits:
     - bit: 0
       action: 0
-      feature_name: Disables chime for Passenger seatbelt
-      target_state: Disabled
+      feature_name: R1C5_Belt_Minder_Chime_Cfg (RCBMCC)
+      target_state: RCBMCC disabled
+      aliases:
+      - Disables chime for Passenger seatbelt
 recipe_version: '1.1'

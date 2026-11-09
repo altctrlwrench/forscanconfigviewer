@@ -95,80 +95,16 @@ steps:
   targets:
   - mask: xx*x xxxx xx--
     type: discrete
-    bits:
-    - bit: 3
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
-    - bit: 2
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 1
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
-    - bit: 0
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
+    community_hex: A
   - mask: xxx* xxxx xx--
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
+    community_hex: '0'
   - mask: xxxx *xxx xx--
     type: discrete
-    bits:
-    - bit: 3
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
-    - bit: 2
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
-    - bit: 1
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 0
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
+    community_hex: D
   - mask: xxxx x*xx xx--
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 0
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
+    community_hex: '1'
 - module: HCM
   address: 734-01-04
   notes: '* -> A5-4E=GFHB, 14-81=OEM (Default)
@@ -177,80 +113,16 @@ steps:
   targets:
   - mask: xx*x xxxx xx--
     type: discrete
-    bits:
-    - bit: 3
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
-    - bit: 2
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 1
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
-    - bit: 0
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
+    community_hex: A
   - mask: xxx* xxxx xx--
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 2
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
-    - bit: 1
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 0
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
+    community_hex: '5'
   - mask: xxxx *xxx xx--
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 2
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
-    - bit: 1
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
+    community_hex: '4'
   - mask: xxxx x*xx xx--
     type: discrete
-    bits:
-    - bit: 3
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
-    - bit: 2
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
-    - bit: 1
-      action: 1
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Enabled
-    - bit: 0
-      action: 0
-      feature_name: Glare-Free Matrix High Beams (Adaptive Driving Beam)
-      target_state: Disabled
+    community_hex: E
 - module: APIM
   address: 7D0-09-01
   notes: '* -> 1=GFHB, 3=OEM (Default)

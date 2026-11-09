@@ -21,9 +21,9 @@ steps:
     bits:
     - bit: 1
       action: 1
-      feature_name: Pro Power Onboard with Vehicle Off
+      feature_name: PPO Outlets On in Vehicle Off State (PPOOOVOS)
       aliases:
-      - PPO Outlets On in Vehicle Off State (PPOOOVOS)
+      - Pro Power Onboard with Vehicle Off
       target_state: Enabled
 - module: APIM
   address: 7D0-10-04

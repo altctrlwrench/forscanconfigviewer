@@ -29,109 +29,80 @@ notes: 'FORScan Menu: Auto Lock - Initial Value, Personal 1-4,  and Vehicle (Ena
   Confirmed: raptortugal (2/17/2025)'
 steps:
 - module: BCM
-  address: 724-19-02
-  notes: '* -> set to 1 (e.g. 0101 0101 01--)
-
-    FORScan Menu: Auto Lock - Initial Value, Personal 1-4,  and Vehicle (Enabled (Default
-    NA), Disabled)
-
-    Confirmed: raptortugal (2/17/2025)'
+  address: 726-19-02
+  notes: |
+    * -> set to 1 (e.g. 0101 0101 01--)
+    FORScan Menu: Auto Lock - Initial Value, Personal 1-4, and Vehicle (Enabled (Default NA), Disabled)
+    Confirmed: raptortugal (2/17/2025)
   targets:
   - mask: x*xx xxxx xx--
+    community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Disabled
     - bit: 1
       action: 0
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Disabled
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_1] (AUTOLOCK_PERS_1)
+      target_state: AUTOLOCK_PERS_1 ENABLE
     - bit: 0
       action: 1
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Enabled
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_1] (AUTOLOCK_PERS_1)
+      target_state: AUTOLOCK_PERS_1 ENABLE
   - mask: xxx* xxxx xx--
+    community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Disabled
     - bit: 1
       action: 0
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Disabled
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_2] (AUTOLOCK_PERS_2)
+      target_state: AUTOLOCK_PERS_2 ENABLE
     - bit: 0
       action: 1
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Enabled
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_2] (AUTOLOCK_PERS_2)
+      target_state: AUTOLOCK_PERS_2 ENABLE
   - mask: xxxx x*xx xx--
+    community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Disabled
     - bit: 1
       action: 0
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Disabled
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_3] (AUTOLOCK_PERS_3)
+      target_state: AUTOLOCK_PERS_3 ENABLE
     - bit: 0
       action: 1
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Enabled
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_3] (AUTOLOCK_PERS_3)
+      target_state: AUTOLOCK_PERS_3 ENABLE
   - mask: xxxx xxx* xx--
+    community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Disabled
     - bit: 1
       action: 0
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Disabled
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_4] (AUTOLOCK_PERS_4)
+      target_state: AUTOLOCK_PERS_4 ENABLE
     - bit: 0
       action: 1
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Enabled
+      feature_name: Feat_Cfg [AUTOLOCK] [PERS_4] (AUTOLOCK_PERS_4)
+      target_state: AUTOLOCK_PERS_4 ENABLE
   - mask: xxxx xxxx x*--
+    community_hex: '1'
     type: discrete
     bits:
-    - bit: 3
-      action: 0
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Disabled
     - bit: 1
       action: 0
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Disabled
+      feature_name: Feat_Cfg [AUTOLOCK] [VEHICLE] (AUTOLOCK_VEHICLE)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)
+      target_state: AUTOLOCK_VEHICLE ENABLE
+      state_aliases:
+      - AUTORELOCK_VEHICLE ENABLE
     - bit: 0
       action: 1
-      feature_name: Automatic Door Locking at Speed (Autolock)
-      target_state: Enabled
+      feature_name: Feat_Cfg [AUTOLOCK] [VEHICLE] (AUTOLOCK_VEHICLE)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)
+      target_state: AUTOLOCK_VEHICLE ENABLE
+      state_aliases:
+      - AUTORELOCK_VEHICLE ENABLE
 - module: APIM
   address: 7D0-09-01
   notes: '* Bit4 (add 8 to enable)

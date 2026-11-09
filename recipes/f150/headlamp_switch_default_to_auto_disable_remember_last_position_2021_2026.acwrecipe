@@ -14,23 +14,6 @@ steps:
   - mask: xx*x xxxx xx--
     community_hex: '0'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Headlamp Switch Default to Auto Disable (Remember Last Position)
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Headlamp Switch Default to Auto Disable (Remember Last Position)
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Headlamp Switch Default to Auto Disable (Remember Last Position)
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Headlamp Switch Default to Auto Disable (Remember Last Position)
-      target_state: Disabled
   - mask: xxx* xxxx xx--
     community_hex: '1'
     type: discrete

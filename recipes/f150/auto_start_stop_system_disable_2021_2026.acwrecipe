@@ -5,46 +5,22 @@ platform: F-150
 model_years: 2021-2026
 trim: All
 source_sheet: 2021-2026 F150.xlsx
-notes: tricks Auto Start/Stop into thinking a steering event is happening at a stop
-  so ASS never happens
+notes: tricks Auto Start/Stop into thinking a steering event is happening at a stop so ASS never happens
 steps:
 - module: PSCM
   address: 730-03-01
-  notes: tricks Auto Start/Stop into thinking a steering event is happening at a stop
-    so ASS never happens
+  notes: tricks Auto Start/Stop into thinking a steering event is happening at a stop so ASS never happens
   targets:
-  - mask: xxxx xxxx *x--
-    community_hex: '0'
+  - mask: xxxx xxxx **--
+    community_hex: '00'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Auto Start/Stop System Disable
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Auto Start/Stop System Disable
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Auto Start/Stop System Disable
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Auto Start/Stop System Disable
-      target_state: Disabled
-  - mask: xxxx xxxx x*--
-    community_hex: '0'
-    type: discrete
-    bits:
-    - bit: 1
-      action: 0
-      feature_name: Start / Stop
-      target_state: SS Start/Stop Disabled
-    - bit: 0
-      action: 0
-      feature_name: Start / Stop
-      target_state: SS Start/Stop Disabled
+    feature_name: Start / Stop
+    target_state: Disabled
+    aliases:
+    - StartStop (SS)
+    state_aliases:
+    - SS Start/Stop Disabled
+    - SS Start/Stop Disabled (Default)
 - module: HVAC
   address: 733-01-05
   notes: optional - disables Auto Stop/Start switch from illuminating
@@ -52,4 +28,21 @@ steps:
   - mask: xxxx x*xx xx--
     community_hex: '0'
     type: discrete
+    feature_name: Start Stop Button Indicator (SSBI)
+    target_state: Disabled
+    aliases:
+    - StartStop Indicator (SSI)
+    state_aliases:
+    - SSI NOT Present
+    - SSBI Vehicle is not equipped with start/stop Button
+    bits:
+    - bit: 1
+      action: 0
+      feature_name: Start Stop Button Indicator (SSBI)
+      target_state: Disabled
+      aliases:
+      - StartStop Indicator (SSI)
+      state_aliases:
+      - SSI NOT Present
+      - SSBI Vehicle is not equipped with start/stop Button
 recipe_version: '1.1'

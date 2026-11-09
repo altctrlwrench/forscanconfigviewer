@@ -18,41 +18,7 @@ steps:
   - mask: '*xxx xxxx xx--'
     community_hex: '5'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Navigation in Motion
-      target_state: Disabled
-    - bit: 2
-      action: 1
-      feature_name: Navigation in Motion
-      target_state: Enabled
-    - bit: 1
-      action: 0
-      feature_name: Navigation in Motion
-      target_state: Disabled
-    - bit: 0
-      action: 1
-      feature_name: Navigation in Motion
-      target_state: Enabled
   - mask: x*xx xxxx xx--
     community_hex: '7'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Navigation in Motion
-      target_state: Disabled
-    - bit: 2
-      action: 1
-      feature_name: Navigation in Motion
-      target_state: Enabled
-    - bit: 1
-      action: 1
-      feature_name: Navigation in Motion
-      target_state: Enabled
-    - bit: 0
-      action: 1
-      feature_name: Navigation in Motion
-      target_state: Enabled
 recipe_version: '1.1'

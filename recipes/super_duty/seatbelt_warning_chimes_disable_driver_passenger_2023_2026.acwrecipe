@@ -326,81 +326,13 @@ steps:
   - mask: xxxx xx*x xx--
     community_hex: '0'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
   - mask: xxxx xxx* xx--
     community_hex: '0'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
   - mask: xxxx xxxx *x--
     community_hex: '0'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
   - mask: xxxx xxxx x*--
     community_hex: '0'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Seatbelt Warning Chimes Disable (Driver & Passenger)
-      target_state: Disabled
 recipe_version: '1.1'

@@ -13,21 +13,5 @@ steps:
   targets:
   - mask: xxxx x*xx xx--
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Rear Turn LED Outage Detection
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Rear Turn LED Outage Detection
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Rear Turn LED Outage Detection
-      target_state: Disabled
-    - bit: 0
-      action: 0
-      feature_name: Rear Turn LED Outage Detection
-      target_state: Disabled
+    community_hex: '0'
 recipe_version: '1.1'

@@ -26,23 +26,6 @@ steps:
   - mask: xxxx xxx* xx--
     community_hex: '1'
     type: discrete
-    bits:
-    - bit: 3
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 2
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 1
-      action: 0
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Disabled
-    - bit: 0
-      action: 1
-      feature_name: Global Windows Remote Open/Close Enable
-      target_state: Enabled
 - module: DDM
   address: 740-06-02
   targets:
