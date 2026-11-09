@@ -6,11 +6,17 @@ on:
     paths:
       - 'recipes/**'
       - 'scripts/**'
+      - 'tests/**'
+      - 'requirements.txt'
+      - '.github/workflows/build_catalog.yml'
   pull_request:
     branches: [ main ]
     paths:
       - 'recipes/**'
       - 'scripts/**'
+      - 'tests/**'
+      - 'requirements.txt'
+      - '.github/workflows/build_catalog.yml'
   workflow_dispatch:
 
 permissions:
@@ -30,7 +36,10 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install pyyaml
+          pip install -r requirements.txt
+
+      - name: Run Regression Tests
+        run: python -m unittest discover -s tests -v
 
       - name: Validate Recipe Schema & Quality
         run: |

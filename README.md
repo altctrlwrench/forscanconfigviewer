@@ -23,13 +23,38 @@ Each recipe defines the exact CAN module registers, bitmasks, and offset math ne
 
 * **Browse by Platform:** Check the [`recipes/`](recipes/) folder for your vehicle (`f150`, `super_duty`, `bronco`, `ranger_6g`, `explorer`, `mustang`).
 * **Recipe Specification & Authoring Guide:** See the **[Recipes Authoring Guide](recipes/README.md)** for full details on the YAML schema and examples.
-* **Compiled Catalog:** Every push to `main` automatically compiles validated recipes into [`dist/master_recipes.json`](dist/master_recipes.json) via GitHub Actions.
+* **Compiled Catalog:** Every recipe or tooling push to `main` runs structural validation and compiles the catalog into [`dist/master_recipes.json`](dist/master_recipes.json) via GitHub Actions. Existing recipes with review warnings remain included. A schema pass does not establish vehicle compatibility or a successful vehicle test.
 
 ### Contributing a Recipe:
 Have a modification working on your truck that isn't listed yet?
 1. Create a `.acwrecipe` file under `recipes/<platform>/<feature_name>.acwrecipe`.
 2. Follow the [Recipe Schema Guide](recipes/README.md) and set `validated: false`.
-3. Open a Pull Request! Once verified, it will be marked `validated: true` and automatically added to As Built Pro.
+3. Open a Pull Request! The compiler preserves `validated: false`; set `validated: true` only after a maintainer accepts supporting vehicle-test evidence. Missing verification metadata means unknown, rather than verified. Accepted recipes remain available for discovery regardless of that flag.
+
+### Development checks
+
+Use Python 3.11 or newer in a virtual environment, then run:
+
+```sh
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -v
+python scripts/validate_recipes.py recipes
+python scripts/compile_catalog.py
+```
+
+For a stricter review, run `python scripts/validate_recipes.py recipes --strict`
+or `python scripts/compile_catalog.py --strict`. Strict mode fails on existing
+review warnings as well as structural errors; the current catalog needs source
+review before it can pass this mode. The default mode preserves existing recipe
+values and reports those warnings explicitly.
+
+Catalog summaries distinguish `schema_valid_recipes` from `validated_recipes`
+(explicit `validated: true`), `unverified_recipes`, and `untested_recipes`
+(explicit `status: untested`). Untested recipes are a subset of unverified ones.
+Missing verification flags are preserved as missing; compilation never invents
+vehicle-test results.
+
+The [catalog review](docs/catalog-review.md) records unresolved recipe issues.
 
 ---
 

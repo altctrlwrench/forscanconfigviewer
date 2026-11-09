@@ -11,7 +11,7 @@ Every recipe in this catalog is stored as an individual `.acwrecipe` YAML file u
 Each `.acwrecipe` file defines:
 1. **Target Vehicle Architecture:** The platform, model years, and trim/powertrain compatibility.
 2. **Deterministic Step Sequence:** The exact CAN modules and addresses required for the modification.
-3. **Atomic Single-Nibble Targets:** The exact visual mask, target hex or bitwise toggles, and feature names mapped from Ford engineering definitions.
+3. **Atomic Single-Nibble Targets:** The exact visual mask, target hex or bitwise toggles, and feature names mapped from Ford engineering definitions. Some existing numeric and legacy targets span several nibbles; these are reported for review rather than silently rewritten.
 
 When pushed to GitHub, GitHub Actions runs automated validation and compiles all recipes into [`dist/master_recipes.json`](../dist/master_recipes.json), which directly powers the [AsBuiltPro Web App](https://asbuilt.altctrlwrench.com/).
 
@@ -28,11 +28,13 @@ When pushed to GitHub, GitHub Actions runs automated validation and compiles all
 | `category` | `string` | **Yes** | Functional category (e.g. `Lighting`, `Chimes and Horn`, `Doors and Locks`, `Mirrors`, `Convenience and Comfort`, `Cameras and Driver Assist`, `Cluster and Displays`, `Towing and Powertrain`, `Climate Control`). |
 | `platform` | `string` | **Yes** | Target vehicle platform (`F-150`, `F-150 Lightning`, `Super Duty`, `Bronco`, `Ranger 6G`, `Explorer`, `Mustang`). |
 | `model_years` | `string` | **Yes** | Applicable year span (e.g. `2021-2026`, `2024+`). |
-| `trim` | `string` | **Yes** | Target equipment trim or powertrain (defaults to `All`, or e.g. `Diesel (6.7L Powerstroke)` for Super Duty diesel features). |
+| `trim` | `string` | No | Target equipment trim or powertrain (defaults to `All`, or e.g. `Diesel (6.7L Powerstroke)` for Super Duty diesel features). |
 | `source_sheet` | `string` | No | Source spreadsheet name (e.g. `2021-2026 F150.xlsx`). |
 | `notes` | `string` | No | Contextual instructions, FORScan menu alternatives, and source forum references. |
+| `validated` | `boolean` | No | Explicit vehicle-verification assertion accepted by a maintainer. Use `false` for a new contribution. Missing means unknown; a schema pass never sets this to `true`. |
+| `status` | `string` | No | Preserved review status, such as `untested`. `validated: true` conflicts with `status: untested` or `experimental` and is rejected. |
 | `steps` | `list` | **Yes** | List of CAN module address modifications. |
-| `recipe_version` | `string` | **Yes** | **Must be `'1.1'` on the final line of the recipe.** |
+| `recipe_version` | `string` | **Yes** | Must be the exact string `'1.1'`. Keep it last for consistent authoring. |
 
 ---
 
@@ -57,7 +59,7 @@ steps:
 | Field | Type | Required | Description |
 | :--- | :--- | :---: | :--- |
 | `module` | `string` | **Yes** | Physical ECU acronym (`BCM`, `APIM`, `IPC`, `DDM`, `PDM`, `IPMA`, `PSCM`, `SODL`, `SODR`, etc.). |
-| `address` | `string` | **Yes** | CAN register address matching `XXX-XX-XX` format (e.g. `726-63-02`). Checksum nibbles (`--`) are omitted from the address. |
+| `address` | `string` | **Yes** | CAN register address matching `XXX-XX-XX` (e.g. `726-63-02`), or an extended block such as `7E0-162-02`. The prefix must be registered in the validator and the module must match one of its exact aliases. A missing registry entry requires source verification, rather than a guessed prefix. |
 | `targets` | `list` | **Yes** | One or more atomic single-nibble targets within this address. |
 
 ---
@@ -182,20 +184,45 @@ Before committing any recipe, run the validator to verify that it meets all v1.1
 python scripts/validate_recipes.py recipes
 ```
 
-The validator checks:
-* Valid YAML syntax with no unquoted special characters.
-* Required metadata (`title`, `platform`, `model_years`, `category`, `steps`).
-* `recipe_version: '1.1'` on the final line.
-* Single-nibble visual masks (`xxx* xxxx xx--`).
-* Proper bit indices (`0`–`3`) and actions (`0` or `1`).
+Structural errors fail validation:
+* Valid YAML with duplicate keys rejected, including nested keys. YAML merge-key overrides (`<<`) are also rejected; spell out each mapping to keep modification instructions unambiguous.
+* Nonempty required metadata (`title`, `platform`, `model_years`, `category`), plus nonempty lists of step and target mappings.
+* The exact string `recipe_version: '1.1'`. Keep it last for consistent authoring; physical line order is not enforced.
+* Address syntax, registered prefixes, and exact module aliases.
+* Masks with 8 or 12 positions, `x`/`X` or `*` in data positions, and a final `--` checksum. A target cannot modify checksum positions.
+* Actual integer bit indices (`0`–`3`) and actions (`0` or `1`), with engineering feature and target-state names. Booleans and floating-point values do not count as integers.
 * Continuous parameters have `user_input: required` with no hardcoded hex.
-* Super Duty diesel trim requirements.
+* Valid verification metadata and Super Duty diesel trim requirements.
+
+The compatibility mode also prints review warnings for legacy masks with zero
+or multiple active nibbles, placeholder or multi-nibble hex values, hex/bit
+disagreements, and duplicate or conflicting bit writes. It does not choose a
+replacement vehicle value. Use strict mode to turn all review warnings into
+failures:
+
+```sh
+python scripts/validate_recipes.py recipes --strict
+```
+
+The current catalog contains legacy warnings and therefore does not yet pass
+strict mode. A successful default check establishes structural validity only,
+not a working modification for a particular model year, trim, or firmware.
 
 ### 2. Compile Master Catalog
 ```powershell
 python scripts/compile_catalog.py
 ```
 This runs the validator and compiles all recipes into `dist/master_recipes.json`.
+Add `--strict` to refuse compilation when review warnings remain. A failed build
+preserves the last complete output instead of publishing a partial catalog.
+
+The compiler preserves explicit `validated` and `status` fields in both catalog
+views. `summary.schema_valid_recipes` counts recipes that passed structural
+validation; `summary.validated_recipes` counts only explicit `validated: true`
+assertions. Missing flags stay unknown. `unverified_recipes` includes recipes
+with missing or false flags, and `untested_recipes` counts the subset explicitly
+marked `status: untested`. These counts are not independent categories to add
+together.
 
 ---
 
