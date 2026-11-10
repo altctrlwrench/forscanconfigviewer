@@ -1,0 +1,423 @@
+- generic "Alt Ctrl Wrench As-Built Pro - Click to return Home":
+  - img "ACW Logo"
+  - generic: Alt Ctrl Wrench
+  - generic: As-Built Pro
+- generic: View Mode
+- generic: ⚡ Common Mods
+- generic: Experimental
+- generic: DB Mode
+- generic: Diff Mode
+- generic: Bitwise Engine
+- generic: Features
+- generic: Master Database
+- combobox:
+  - option "None"
+  - option "21-26 F150" [selected]
+  - option "15-20 F150"
+  - option "27+ F150"
+  - option "Mach-E"
+  - option "Mustang (S650)"
+  - option "Mustang (Dark Horse / GTD)"
+  - option "24+ Ranger"
+  - option "24 Ranger (New)"
+  - option "20-24 Explorer"
+  - option "25 Explorer"
+  - option "23 Maverick"
+  - option "25 Maverick"
+  - option "26 Maverick"
+  - option "23 Super Duty"
+  - option "24 Super Duty"
+  - option "24 Expedition"
+  - option "22 Bronco"
+  - option "24 Bronco Raptor"
+- combobox:
+  - option "--- Select a Module ---" [selected]
+  - option "All Modules (Slow)"
+  - option "ABS 25-26 RaptorTremor • 760"
+  - option "ABS (21-23 RaptorTremor) • 760"
+  - option "ABS (25-26) • 760"
+  - option "ABS - 2022 RaptorTremor • 760"
+  - option "ABS - (21-24) • 760"
+  - option "ACM (21-23) • 727"
+  - option "ACM (25-26) • 727"
+  - option "APIM (2024) • 7D0"
+  - option "APIM • 7D0"
+  - option "BCM (21-23 Lightning) • 726"
+  - option "BCM (21-23) • 726"
+  - option "BCM (2024-25) • 726"
+  - option "BCM (2026) • 726"
+  - option "BCMC (21-23) • 6F0"
+  - option "BCMC (24-25) • 6F0"
+  - option "CMR (21-26) • 7C1"
+  - option "DCACA (2024) • 6F1"
+  - option "DSM (2023) • 744"
+  - option "DSM • 744"
+  - option "DSP (2024) • 783"
+  - option "DSP • 783"
+  - option "FHCM-2022 Lightning • 6E3"
+  - option "HCM (2024 Lightning) • 734"
+  - option "HCM (2024) • 734"
+  - option "HCM -2022 Lightning • 734"
+  - option "HCM • 734"
+  - option "HUD (2024) • 7B2"
+  - option "HVAC (21-23) • 733"
+  - option "HVAC (2024-26) • 733"
+  - option "HVAC (Lightning) • 733"
+  - option "IPC (24 Lightning) • 720"
+  - option "IPC (2024) • 720"
+  - option "IPC • 720"
+  - option "IPMA (24 Lightning) • 706"
+  - option "IPMA (2024-AB) • 706"
+  - option "IPMA (BC 1.3) • 706"
+  - option "IPMA - 2023 • 706"
+  - option "IPMA • 706"
+  - option "IPMA_MY22 • 706"
+  - option "LDCMA • 6F6"
+  - option "PCM (22 Lightning) • 7E0"
+  - option "PCM (2024) • 7E0"
+  - option "PCM -orig • 7E0"
+  - option "PCM • 7E0"
+  - option "PSCM • 730"
+  - option "RCM • 737"
+  - option "SASM • 797"
+  - option "SCCM (2024) • 724"
+  - option "SCCM - (21-23) • 724"
+  - option "SCMG • 712"
+  - option "SECM • 7C5"
+  - option "SOBDMC (22 Lightning) • 7E6"
+  - option "TCU • 754"
+  - option "TRM (21-23) • 791"
+  - option "VDM (2024) • 721"
+  - option "VDM -2022 • 721"
+  - option "WACM • 725"
+- button "Upload DB..."
+- generic: AB File Groups
+- generic: AB Grp 1
+- button "Upload files to AB Grp 1":
+- generic: AB Grp 2
+- button "Upload files to AB Grp 2":
+- generic: AB Grp 3
+- button "Upload files to AB Grp 3":
+- generic: AB Grp 4
+- button "Upload files to AB Grp 4":
+- generic: Controls
+- checkbox "⚡ Diff Only" [disabled]
+- text: ⚡ Diff Only
+- checkbox "✂️ Smart Trim" [disabled]
+- text: ✂️ Smart Trim
+- checkbox "🤝 Require All Files" [disabled]
+- text: 🤝 Require All Files
+- checkbox "📊 Rubric Mode"
+- text: 📊 Rubric Mode
+- button "Hex"
+- button "Bit"
+- button "Stacked"
+- button "Side-by-Side"
+- button "Light Mode":
+- button "Support the Developer":
+- button "Minimize Ribbon":
+- textbox "Global Search... (e.g. DRL, TPMS, Police)"
+- checkbox "Search all modules"
+- text: Search all modules
+- generic: "DB: 21-26 F150"
+- text: Target Vehicle
+- combobox:
+  - option "21-26 F150" [selected]
+  - option "15-20 F150"
+  - option "27+ F150"
+  - option "Mach-E"
+  - option "Mustang (S650)"
+  - option "Mustang (Dark Horse / GTD)"
+  - option "24+ Ranger"
+  - option "24 Ranger (New)"
+  - option "20-24 Explorer"
+  - option "25 Explorer"
+  - option "23 Maverick"
+  - option "25 Maverick"
+  - option "26 Maverick"
+  - option "23 Super Duty"
+  - option "24 Super Duty"
+  - option "24 Expedition"
+  - option "22 Bronco"
+  - option "24 Bronco Raptor"
+- text: Trim / Sub-Model
+- combobox:
+  - option "Standard (Gas / Base)" [selected]
+  - option "Lightning (EV) (9 sheets)"
+  - option "Raptor / Tremor (3 sheets)"
+- generic: ⚡ Common Mods & Discovery
+- generic: 111 Canonical Features
+- button "Sync GitHub":
+  - text: Sync GitHub
+- text: "Scoping:"
+- strong: 21-26 F150
+- textbox "Search mods by name, address (726-27-01), or parameter...": Tire Size Calibration
+- button "Clear search":
+- generic: "Status:"
+- combobox:
+  - option "All Statuses (111)" [selected]
+  - option "Verified Native (53)"
+  - option "Untested (4)"
+  - option "Matches Same Address (32)"
+  - option "Relocated Address (2)"
+  - option "Partial Match (6)"
+  - option "Unsupported (14)"
+- generic: "Category:"
+- combobox:
+  - option "All Categories (111)" [selected]
+  - option "Cameras and ADAS (7)"
+  - option "Chimes and Horn (7)"
+  - option "Cluster and Displays (11)"
+  - option "Convenience and Electrical (7)"
+  - option "General (13)"
+  - option "Lighting (30)"
+  - option "Locks and Security (11)"
+  - option "Powertrain and Drivetrain (11)"
+  - option "Sync and Infotainment (11)"
+  - option "Windows and Mirrors (3)"
+- button "Reset":
+  - text: Reset
+- generic: Showing 1 of 111
+- generic "Click to validate and inspect memory blocks":
+  - generic: Tire Size Calibration (PCM / BCM Circumference)
+  - generic: Powertrain and Drivetrain
+  - text: "Origin:"
+  - strong: F-150, Super Duty
+- generic "Officially verified and tested for this vehicle platform.":
+  - generic: Verified Native
+- text: Recommended As-Built Values
+- generic: Community Values
+- button "Copy":
+  - generic: Copy
+- generic "Click to copy line":
+  - generic: 726-15-01
+  - generic: x
+  - generic: x
+  - generic: x
+  - generic: x
+  - generic: x
+  - generic: x
+  - generic: x
+  - generic: x
+  - generic: "*"
+  - generic: "*"
+  - generic: "-"
+  - generic: "-"
+- generic "Click to copy line":
+  - generic: 726-15-02
+  - generic: "*"
+  - generic: "*"
+  - generic: x
+  - generic: x
+  - generic: x
+  - generic: x
+  - generic: x
+  - generic: x
+  - generic: x
+  - generic: x
+  - generic: "-"
+  - generic: "-"
+- generic: "Verified As-Built Steps:"
+- generic: 726-15-01
+- generic: BCM
+- button "Inspect":
+  - generic: Inspect
+- generic: 726-15-02
+- generic: BCM
+- button "Inspect":
+  - generic: Inspect
+- button "Validate & Compare Memory Blocks":
+  - generic: Validate & Compare Memory Blocks
+- button "Export .acwrecipe":
+  - generic: Export .acwrecipe
+- generic: ⚡ Tire Size Calibration (PCM / BCM Circumference)
+- generic: Verified Native on F-150
+- generic: Verified native modification instructions for your active vehicle platform (2021-2026 F-150).
+- button "Export .acwrecipe":
+  - generic: Export .acwrecipe
+- button "Copy YAML":
+  - generic: Copy YAML
+- button "Close Validation Window":
+- text: 💡
+- strong: "Vehicle AsBuilt Pro Dynamic Calculations:"
+- text: Upload your vehicle's
+- code: .abt
+- text: or
+- code: .ab
+- text: backup in the Cohorts ribbon above to unlock live current nibble detection and AsBuilt Pro verified write digits.
+- generic: "MODIFICATION PROCEDURE (2 STEPS):"
+- generic: All steps must be written to your vehicle modules using FORScan.
+- generic: STEP 1
+- generic: BCM Module • 726-15-01
+- generic: Verified Native
+- button "Inspect":
+  - generic: Inspect
+- generic: Target Address
+- generic: 726-15-01
+- button "Copy":
+  - generic: Copy
+- generic: Target Mask
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: "*"
+- generic: "*"
+- generic: "-"
+- generic: "-"
+- generic: FORScan Write Pattern
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- 'generic "Digit 9: Configure target bits"': "*"
+- generic: "*"
+- generic: "-"
+- generic: "-"
+- generic: Target Value
+- generic: "--"
+- text: "FORScan Action:"
+- generic: Configure target bit parameters. Upload vehicle backup (.abt) to calculate exact write digits.
+- text: "Feature:"
+- strong: Tire Circumference
+- generic: Enabled
+- text: Continuous Numeric Calibration • First two digits of tire circumference in MM encoded in hex
+- generic: "Unit: Millimeters"
+- generic: Reference (F-150)
+- generic: 726-15-01
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: "*"
+- generic: "*"
+- generic: "-"
+- generic: "-"
+- generic: Target Platform (F-150)
+- generic: MISSING
+- generic: 726-15-01
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: "*"
+- generic: "*"
+- generic: "-"
+- generic: "-"
+- generic: "Tire Circumference to Hex Converter:"
+- button "Direct MM"
+- button "Tire Dimensions"
+- generic: "Circumference:"
+- spinbutton [active]: "2785"
+- generic: mm
+- generic: "FORScan Write Value (4-Digit Hex):"
+- generic: 0AE1
+- strong: "Operational Notes:"
+- generic: • First two digits of tire circumference in MM encoded in hex. Check speed vs GPS, then tweak to correct speedometer with GSP speed
+- generic: • First two digits of tire circumference in MM encoded in hex
+- generic: STEP 2
+- generic: BCM Module • 726-15-02
+- generic: Verified Native
+- button "Inspect":
+  - generic: Inspect
+- generic: Target Address
+- generic: 726-15-02
+- button "Copy":
+  - generic: Copy
+- generic: Target Mask
+- generic: "*"
+- generic: "*"
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: "-"
+- generic: "-"
+- generic: FORScan Write Pattern
+- 'generic "Digit 1: Configure target bits"': "*"
+- generic: "*"
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: "-"
+- generic: "-"
+- generic: Target Value
+- generic: "--"
+- text: "FORScan Action:"
+- generic: Configure target bit parameters. Upload vehicle backup (.abt) to calculate exact write digits.
+- text: "Feature:"
+- strong: Tire Circumference
+- generic: Enabled
+- text: Continuous Numeric Calibration • Last two digits of tire circumference in MM encoded in hex
+- generic: "Unit: Millimeters"
+- generic: Reference (F-150)
+- generic: 726-15-02
+- generic: "*"
+- generic: "*"
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: "-"
+- generic: "-"
+- generic: Target Platform (F-150)
+- generic: MISSING
+- generic: 726-15-02
+- generic: "*"
+- generic: "*"
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: x
+- generic: "-"
+- generic: "-"
+- generic: "Tire Circumference to Hex Converter:"
+- button "Direct MM"
+- button "Tire Dimensions"
+- generic: "Circumference:"
+- spinbutton: "2455"
+- generic: mm
+- generic: "FORScan Write Value (4-Digit Hex):"
+- generic: "0997"
+- strong: "Operational Notes:"
+- generic: • First two digits of tire circumference in MM encoded in hex. Check speed vs GPS, then tweak to correct speedometer with GSP speed
+- generic: • Last two digits of tire circumference in MM encoded in hex
+- button "🔬 Technical Memory Block & Truth Table Inspection (F-150 ➔ F-150) Show Technical Inspection":
+  - generic: 🔬 Technical Memory Block & Truth Table Inspection (F-150 ➔ F-150)
+  - generic: Show Technical Inspection
+- button "Inspect Origin (726-15-01)":
+  - generic: Inspect Origin (726-15-01)
+- button "Close"
