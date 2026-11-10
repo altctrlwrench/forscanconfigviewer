@@ -3,7 +3,10 @@
   "generated_at": null,
   "summary": {
     "total_files": 211,
-    "validated_recipes": 211,
+    "schema_valid_recipes": 211,
+    "validated_recipes": 0,
+    "unverified_recipes": 211,
+    "untested_recipes": 4,
     "unique_canonical_features": 111,
     "supported_platforms": [
       "Bronco",
