@@ -5,6 +5,7 @@ platform: Ranger (6G)
 model_years: 2024+
 trim: All
 source_sheet: (2024+) 6G Ranger.xlsx
+status: reviewed_untested
 notes: 'FORScan Menu: Using Front Fog With High Beam (Allowed, Inhibited (Default))
 
   Trim: All [Confirmed: pablo94sc (9/9/24)]

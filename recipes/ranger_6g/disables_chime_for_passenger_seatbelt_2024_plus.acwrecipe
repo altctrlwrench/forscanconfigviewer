@@ -5,6 +5,7 @@ platform: Ranger (6G)
 model_years: 2024+
 trim: All
 source_sheet: (2024+) 6G Ranger.xlsx
+status: reviewed_untested
 notes: 'FORScan Menu: Belt Minder Chime - Row 1 Col 5 (Set to Disabled. Also can be
   done using procedure in user manual)
 
@@ -28,4 +29,7 @@ steps:
       target_state: RCBMCC disabled
       aliases:
       - Disables chime for Passenger seatbelt
+      - R1C5 Belt Minder Chime (RCBMC)
+      state_aliases:
+      - RCBMC Disabled
 recipe_version: '1.1'

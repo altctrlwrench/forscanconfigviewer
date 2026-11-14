@@ -2,9 +2,10 @@ title: Truck Bed Cargo Lighting Switch Enable
 raw_community_title: ⚡ [Lightning] Truck Bed Cargo Lighting Switch Enable
 category: Lighting
 platform: F-150 Lightning
-model_years: 2022-2026
+model_years: 2022-2023
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: '[Category: Lighting] [Years: 2022-2026] [Original Title: 2021-23 Enabling
   Bed Lights/Switch (Lightning Specific)]
 
@@ -35,6 +36,7 @@ steps:
       target_state: ECSIC MAN_PUDDLE
       state_aliases:
       - 'Null'
+      - MAN_Puddle
   - mask: xxx* xxxx xx--
     community_hex: '1'
     type: discrete
@@ -47,6 +49,7 @@ steps:
       target_state: RECMC BEDLIGHT
       state_aliases:
       - 'Null'
+      - Bed Light
     - bit: 0
       action: 1
       feature_name: Rear_Ext_Courtesy_Mode_Cfg (RECMC)

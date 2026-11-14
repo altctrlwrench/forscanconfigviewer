@@ -10,6 +10,7 @@ platform: Explorer
 model_years: 2020-2026
 trim: All
 source_sheet: 2020-2024 Explorer.xlsx
+status: reviewed_untested
 notes: "[BCM] - - Enable the following from DISABLED to ENABLED in BdyCM (easy way):\
   \ \n-Global Close (change from Disabled to Remote)**\n-Global Close - Vehicle\n\
   -Global Close - Initial Value\n-Global Close - Personal 1\n-Global Close - Personal\

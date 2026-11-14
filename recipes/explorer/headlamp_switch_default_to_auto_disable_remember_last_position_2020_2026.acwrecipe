@@ -5,6 +5,7 @@ platform: Explorer
 model_years: 2020-2026
 trim: All
 source_sheet: 2020-2024 Explorer.xlsx
+status: reviewed_untested
 notes: Headlamp will revert to last position at startup
 steps:
 - module: BCM

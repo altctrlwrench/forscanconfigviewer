@@ -5,6 +5,7 @@ platform: Ranger (6G)
 model_years: 2024+
 trim: All
 source_sheet: (2024+) 6G Ranger.xlsx
+status: reviewed_untested
 notes: "FORScan Menu: Using DRL with Turn Signal \nInhibited (Default, 2), Allow/On\
   \ (target), set to 1 to dim DRL."
 steps:

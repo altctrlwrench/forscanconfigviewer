@@ -5,6 +5,7 @@ platform: F-150
 model_years: 2021-2026
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 steps:
 - module: ACM
   address: 727-01-01

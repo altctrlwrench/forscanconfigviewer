@@ -5,6 +5,7 @@ platform: Bronco
 model_years: 2021+
 trim: Base (Standard Cluster)
 source_sheet: 2021+ Bronco Common Items.xlsx
+status: reviewed_untested
 notes: 'Confirmed: mrjking200'
 steps:
 - module: IPC

@@ -5,6 +5,7 @@ platform: Bronco
 model_years: 2021+
 trim: All
 source_sheet: 2021+ Bronco Common Items.xlsx
+status: reviewed_untested
 notes: 'Remote Start via Keyfob
 
   Confirmed: Buck Your Bronco

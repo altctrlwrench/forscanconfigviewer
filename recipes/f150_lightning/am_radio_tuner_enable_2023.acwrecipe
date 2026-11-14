@@ -5,6 +5,7 @@ platform: F-150 Lightning
 model_years: '2023'
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: '[Category: Sync and Infotainment] [Years: 2023] [Original Title: Enable AM
   radio (2023 only)]
 
@@ -35,4 +36,6 @@ steps:
       aliases:
       - X40 Radio Present (XRP)
       target_state: SDARSRP Non-SDARS Radio or Disabled
+      state_aliases:
+      - XRP Pre X40 SDARS
 recipe_version: '1.1'

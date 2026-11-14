@@ -5,6 +5,7 @@ platform: F-150 Lightning
 model_years: 2022-2023
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: '[Category: Powertrain and Drivetrain] [Years: 2022-2023] [Original Title:
   Enable Pro Power Onboard with truck off (2022-2023 only. Standard on 2024+)]
 
@@ -25,6 +26,8 @@ steps:
       aliases:
       - Pro Power Onboard with Vehicle Off
       target_state: Enabled
+      state_aliases:
+      - PPOOOVOS Enable
 - module: APIM
   address: 7D0-10-04
   targets:

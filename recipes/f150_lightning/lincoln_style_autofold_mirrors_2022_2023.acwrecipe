@@ -2,9 +2,10 @@ title: Lincoln Style Autofold Mirrors
 raw_community_title: ⚡ [Lightning] Lincoln Style Autofold Mirrors
 category: Windows and Mirrors
 platform: F-150 Lightning
-model_years: 2022-2026
+model_years: 2022-2023
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: '[Category: Windows and Mirrors] [Years: 2022-2023] [Original Title: Lincoln
   Folding Mirrors Setting]
 
@@ -29,6 +30,7 @@ steps:
       target_state: MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
       state_aliases:
       - MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
+      - Lincoln,
     - bit: 0
       action: 1
       feature_name: Mirror_Folding_Cfg
@@ -37,6 +39,7 @@ steps:
       target_state: MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
       state_aliases:
       - MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
+      - Lincoln,
 - module: PDM
   address: 741-03-16
   targets:
@@ -55,6 +58,7 @@ steps:
       target_state: MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
       state_aliases:
       - MFC AUTOFOLD_1/auto foldable mirror for non-lincoln vehicles
+      - Lincoln,
     - bit: 0
       action: 1
       feature_name: Mirror_Folding_Cfg
@@ -63,4 +67,5 @@ steps:
       target_state: MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
       state_aliases:
       - MFC AUTOFOLD_2/auto foldable mirror for lincoln vehicles
+      - Lincoln,
 recipe_version: '1.1'

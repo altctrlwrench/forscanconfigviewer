@@ -5,6 +5,7 @@ platform: Bronco
 model_years: 2021+
 trim: All
 source_sheet: 2021+ Bronco Common Items.xlsx
+status: reviewed_untested
 notes: '0=disabled, 1=2 clicks, 2=one click (default)
 
   Confirmed: nottinbe/multi'

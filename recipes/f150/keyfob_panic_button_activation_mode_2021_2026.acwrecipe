@@ -5,6 +5,7 @@ platform: F-150
 model_years: 2021-2026
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: 0=disabled, 1=2 clicks (target setting), 2=one click (default)
 steps:
 - module: BCM
@@ -22,6 +23,7 @@ steps:
       target_state: PAC DOUBLE
       state_aliases:
       - Disable
+      - Double
     - bit: 0
       action: 1
       feature_name: PanicActivate_Cfg (PAC)

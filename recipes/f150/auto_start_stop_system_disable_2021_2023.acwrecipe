@@ -2,14 +2,17 @@ title: Auto Start/Stop System Disable
 raw_community_title: Auto Start/Stop Disabled
 category: Powertrain and Drivetrain
 platform: F-150
-model_years: 2021-2026
+model_years: 2021-2023
 trim: All
 source_sheet: 2021-2026 F150.xlsx
-notes: tricks Auto Start/Stop into thinking a steering event is happening at a stop so ASS never happens
+status: reviewed_untested
+notes: tricks Auto Start/Stop into thinking a steering event is happening at a stop
+  so ASS never happens
 steps:
 - module: PSCM
   address: 730-03-01
-  notes: tricks Auto Start/Stop into thinking a steering event is happening at a stop so ASS never happens
+  notes: tricks Auto Start/Stop into thinking a steering event is happening at a stop
+    so ASS never happens
   targets:
   - mask: xxxx xxxx **--
     community_hex: '00'

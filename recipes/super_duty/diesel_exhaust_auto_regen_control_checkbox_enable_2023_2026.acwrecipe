@@ -5,6 +5,7 @@ platform: Super Duty
 model_years: 2023-2026
 trim: Diesel (6.7L Powerstroke)
 source_sheet: 2023-2026 Super Duty Common Items.xlsx
+status: reviewed_untested
 notes: '[PCM] Plain English - Select option 3 under manual regen
 
   Add 8 to current value

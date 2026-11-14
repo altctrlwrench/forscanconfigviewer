@@ -5,6 +5,7 @@ platform: Ranger (6G)
 model_years: 2024+
 trim: All
 source_sheet: (2024+) 6G Ranger.xlsx
+status: reviewed_untested
 notes: "12v outlet power off (seconds) after AUX is off.  Affects center console power\
   \ port as well as the one in the truck bed, but not the USB ports or 120VAC\n0 -\
   \ disabled (target setting) = always on\n1 - enabled = use timeout duration setting.\

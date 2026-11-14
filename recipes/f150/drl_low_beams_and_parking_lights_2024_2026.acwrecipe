@@ -6,6 +6,7 @@ platform: F-150
 model_years: 2024-2026
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: DRL_IncludeParklamps_Cfg https://www.f150forum.com/f129/forscan-14th-gen-f150s-481816/index330/#post7599368
 steps:
 - module: BCM
@@ -80,6 +81,7 @@ steps:
       target_state: LFLBCUC LOW_DRL
       state_aliases:
       - Not Used
+      - Low DRL
     - bit: 0
       action: 1
       feature_name: LF_Low_Beam_Ckt_Usage_Cfg (LFLBCUC)
@@ -100,6 +102,7 @@ steps:
       target_state: RFLBCUC LOW_DRL
       state_aliases:
       - Not Used
+      - Low DRL
     - bit: 0
       action: 1
       feature_name: RF_Low_Beam_Ckt_Usage_Cfg (RFLBCUC)

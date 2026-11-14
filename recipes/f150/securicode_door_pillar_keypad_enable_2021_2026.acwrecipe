@@ -5,6 +5,7 @@ platform: F-150
 model_years: 2021-2026
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: See this post if you don't know the factory code https://www.f150forum.com/f129/forscan-14th-gen-f150s-481816/index67/#post6964982
 steps:
 - module: BCM
@@ -26,6 +27,7 @@ steps:
       target_state: KPEC HW_INPUT
       state_aliases:
       - Disable
+      - HW_Input
     - bit: 0
       action: 1
       feature_name: KeyPad_Enable_Cfg (KPEC)

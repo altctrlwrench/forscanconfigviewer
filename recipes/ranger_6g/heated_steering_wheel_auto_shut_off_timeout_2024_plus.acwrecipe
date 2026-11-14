@@ -5,6 +5,7 @@ platform: Ranger (6G)
 model_years: 2024+
 trim: All
 source_sheet: (2024+) 6G Ranger.xlsx
+status: reviewed_untested
 notes: 'FORScan Menu: Heated Steering Wheel Auto Shutoff Time (Infinite (Default),
   1-10 min, 2-15 min, 3-20 min, 4-30 min, 5-40 min, 6-50 min, 7-60 min)'
 steps:

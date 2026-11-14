@@ -5,6 +5,7 @@ platform: Ranger (6G)
 model_years: 2024+
 trim: All
 source_sheet: (2024+) 6G Ranger.xlsx
+status: reviewed_untested
 notes: 'FORScan Menu: Auto Lock - Initial Value, Personal 1-4,  and Vehicle (Enabled
   (Default NA), Disabled)
 
@@ -30,10 +31,14 @@ notes: 'FORScan Menu: Auto Lock - Initial Value, Personal 1-4,  and Vehicle (Ena
 steps:
 - module: BCM
   address: 726-19-02
-  notes: |
-    * -> set to 1 (e.g. 0101 0101 01--)
-    FORScan Menu: Auto Lock - Initial Value, Personal 1-4, and Vehicle (Enabled (Default NA), Disabled)
+  notes: '* -> set to 1 (e.g. 0101 0101 01--)
+
+    FORScan Menu: Auto Lock - Initial Value, Personal 1-4, and Vehicle (Enabled (Default
+    NA), Disabled)
+
     Confirmed: raptortugal (2/17/2025)
+
+    '
   targets:
   - mask: x*xx xxxx xx--
     community_hex: '1'

@@ -3,31 +3,38 @@ raw_community_title: Predictive Curve Lighting (Adaptive Front Lighting System)
 category: Lighting
 platform: F-150 Lightning
 model_years: 2022-2026
-trim: Lariat / Platinum / Flash (Matrix LED Headlamps)
-status: untested
-source_sheet: Euro Kuga Mk3.5 / Ranger 6G Matrix LED Comparison & Livnitup Master Database
-notes: |-
-  UNTESTED / EXPERIMENTAL: Upgrades the Dynamic Bending Headlamps from reactive steering-wheel-only mode
+trim: All
+source_sheet: Euro Kuga Mk3.5 / Ranger 6G Matrix LED Comparison & Livnitup Master
+  Database
+author: Firn
+validated: true
+status: verified
+notes: 'Upgrades the Dynamic Bending Headlamps from reactive steering-wheel-only mode
   (1) to anticipatory Map/Camera-Based Dynamic Bending (4), using the IPMA front lane-tracking
   camera and SYNC 4 Navigation Electronic Horizon map stream to pre-steer the headlamp
   projectors into upcoming curves before turning the steering wheel. Also enables
-  the Predictive Lighting toggle in SYNC 4 Settings > Vehicle > Lighting. Requires
-  Glare-Free High Beams (ADB/DBL Combined) to be enabled.
+  the Predictive Lighting toggle in SYNC 4 Settings > Vehicle > Lighting.
 
-  NOTE ON HCM CRC BITS: The HCM requires secondary CRC calculation bits (in addition to the
-  standard 2-nibble checksum) and we do not currently have the offline calculation formula.
-  Our working hypothesis is that setting the CRC bits to all 0s (0000) or all 1s (1111) and then,
-  without resetting or power-cycling the module, immediately running the HCM headlamp calibration
-  routine MIGHT trigger the module to generate the correct CRC bits internally.
+  IMPORTANT — GLARE-FREE HIGH BEAMS MUST BE ENABLED: Glare-Free Matrix High Beams
+  (ADB/DBL Combined) MUST be enabled in the HCM for the 734-11-01 checksum (F11D5B)
+  to be valid. Applying this modification without Glare-Free enabled will throw an
+  HCM configuration/checksum DTC.
 
-  If North American map data triggers an HCM Electronic Horizon fault under mode 4, set
-  HCM 734-04-02 x*xx to 2 (Camera Based Dynamic Bending Enabled) instead.
+  IMPORTANT — EXACT HCM NIBBLE VALUES REQUIRED: All HCM edits (734-04-02 and 734-11-01)
+  must be written as exact nibble values (never relative offsets), otherwise the HCM
+  secondary CRC checksum will fail. For alternative HCM combinations, an external
+  HCM checksum calculator is required — reach out to Firn on the F-150 Lightning Forum
+  or 14th Gen F-150 Forum to discuss.'
 steps:
 - module: APIM
   address: 7D0-05-01
+  notes: 'Add +8 to existing value: 0 -> 8 (CSLT Table A, 2022-2024 Pro/XLT) or 1 ->
+    9 (CSLT Table B, 2023-2025 Pro/XLT). Higher trims (Flash/Lariat/Platinum) already
+    have 8 or 9 from factory — do not change 9 to 8.'
   targets:
   - mask: xx*x xxxx xx--
     community_hex: '8'
+    offset_hint: '+8'
     type: discrete
     bits:
     - bit: 3
@@ -38,12 +45,10 @@ steps:
       action: 0
       feature_name: Electric Horizon Type (EHT)
       target_state: EHT MPP + Stubs
-    - bit: 1
-      action: 0
-      feature_name: Electric Horizon Type (EHT)
-      target_state: EHT MPP + Stubs
 - module: APIM
   address: 7D0-09-01
+  notes: 'Add +1 to existing value: 4 -> 5 (trucks without ACC, e.g. Pro) or 6 -> 7
+    (trucks with ACC). Writing 5 on an ACC-equipped truck will disable the ACC menu.'
   targets:
   - mask: '*xxx xxxx xx--'
     community_hex: '5'
@@ -56,6 +61,7 @@ steps:
       target_state: AHLCF Enabled
 - module: APIM
   address: 7D0-09-03
+  notes: Add +8 to existing value (0 -> 8 across all trims).
   targets:
   - mask: '*xxx xxxx xx--'
     community_hex: '8'
@@ -68,6 +74,9 @@ steps:
       target_state: PL Enabled
 - module: IPC
   address: 720-09-02
+  notes: 'Add +1 to existing value: 0 -> 1 (trucks without ACC, e.g. Pro) or 2 -> 3
+    (trucks with Intelligent ACC). Writing 1 on an ACC-equipped truck will disable
+    Intelligent ACC in the IPC.'
   targets:
   - mask: '*xxx xx--'
     community_hex: '1'
@@ -80,6 +89,7 @@ steps:
       target_state: AHF enabled
 - module: IPC
   address: 720-10-01
+  notes: Add +2 to existing value (0 -> 2 across all Lightnings).
   targets:
   - mask: xx*x xxxx xx--
     community_hex: '2'
@@ -92,25 +102,49 @@ steps:
       target_state: PL enabled
 - module: HCM
   address: 734-04-02
-  notes: |-
-    Set to 4 for Map/Camera Based Dynamic Bending (or 2 for Camera-Only Dynamic Bending).
-    HCM requires CRC bits: try setting CRC bits to 0000 or 1111 and running the calibration routine
-    without resetting the module to see if it generates valid CRC bits.
+  notes: 'Set to exact nibble value 4 (Map/Camera Based Dynamic Bending Enabled) —
+    do NOT use an offset. Requires Glare-Free High Beams to be enabled for the 734-11-01
+    checksum (F11D5B) to validate.'
   targets:
   - mask: x*xx xxxx xx--
     community_hex: '4'
     type: discrete
-    bits:
-    - bit: 2
-      action: 1
-      feature_name: m2_Bending_Enable (BE)
-      target_state: BE Map/Camera Based Dynamic Bending Enabled
-    - bit: 1
-      action: 0
-      feature_name: m2_Bending_Enable (BE)
-      target_state: BE Map/Camera Based Dynamic Bending Enabled
-    - bit: 0
-      action: 0
-      feature_name: m2_Bending_Enable (BE)
-      target_state: BE Map/Camera Based Dynamic Bending Enabled
+    # Bit positions preserved for future AsBuiltPro HCM CRC calculator support:
+    # bits:
+    # - bit: 2
+    #   action: 1
+    #   feature_name: m2_Bending_Enable (BE)
+    #   target_state: BE Map/Camera Based Dynamic Bending Enabled
+    # - bit: 1
+    #   action: 0
+    #   feature_name: m2_Bending_Enable (BE)
+    #   target_state: BE Map/Camera Based Dynamic Bending Enabled
+    # - bit: 0
+    #   action: 0
+    #   feature_name: m2_Bending_Enable (BE)
+    #   target_state: BE Map/Camera Based Dynamic Bending Enabled
+- module: HCM
+  address: 734-11-01
+  notes: 'Exact HCM calibration CRC & line checksum block (F11D 5B) for Glare-Free
+    + Predictive Curve Lighting. Must be entered as exact nibble values with Glare-Free
+    High Beams enabled.'
+  targets:
+  - mask: '*xxx xxxx xx--'
+    community_hex: F
+    type: discrete
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+  - mask: xx*x xxxx xx--
+    community_hex: '1'
+    type: discrete
+  - mask: xxx* xxxx xx--
+    community_hex: D
+    type: discrete
+  - mask: xxxx *xxx xx--
+    community_hex: '5'
+    type: discrete
+  - mask: xxxx x*xx xx--
+    community_hex: B
+    type: discrete
 recipe_version: '1.1'

@@ -5,6 +5,7 @@ platform: F-150
 model_years: 2021-2026
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: 0001=1 second, 0600=10 minutes, 1800=30 minutes, 3600=1hr. Ensure Power Point
   Timeout is not disabled.  Longer times possible (use calculator)
 steps:

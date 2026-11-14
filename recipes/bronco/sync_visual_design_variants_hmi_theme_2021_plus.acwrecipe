@@ -5,6 +5,7 @@ platform: Bronco
 model_years: 2021+
 trim: All
 source_sheet: 2021+ Bronco Common Items.xlsx
+status: reviewed_untested
 notes: '05=Lincoln Sync 4 13.2" (Dashcard)
 
   06=Ford Sync 4 13.2" (Dashcard)

@@ -4,60 +4,75 @@ category: Lighting
 platform: F-150 Lightning
 model_years: '2022'
 trim: Lariat / Platinum (Equipped with Onboard Scales & Suspension Height Sensors)
+source_sheet: Euro Kuga Mk3.5 / Ranger Platinum / Mustang S650 Comparison & Livnitup
+  Master Database
 status: untested
-source_sheet: Euro Kuga Mk3.5 / Ranger Platinum / Mustang S650 Comparison & Livnitup Master Database
-notes: |-
-  UNTESTED / EXPERIMENTAL: Enables Dynamic Headlamp Auto-Leveling (m2_DHL_Enable and m2_DHL_Mode = dynamic)
-  to automatically adjust vertical headlamp aim during acceleration, braking, and payload/towing squat.
+notes: 'UNTESTED / EXPERIMENTAL: Enables Dynamic Headlamp Auto-Leveling (m2_DHL_Enable
+  and m2_DHL_Mode = dynamic)
 
-  IMPORTANT HARDWARE REQUIREMENT: Only for 2022 F-150 Lightnings equipped from the factory with front
-  and rear suspension ride-height sensors (Onboard Scales / Smart Hitch). Ford deleted physical suspension
-  height sensors on 2023+ Lightnings; enabling this on a truck without height sensors will trigger a missing
-  leveling sensor DTC. Because the Lightning's height sensors report via the VDM over CAN rather than direct
+  to automatically adjust vertical headlamp aim during acceleration, braking, and
+  payload/towing squat.
+
+
+  IMPORTANT HARDWARE REQUIREMENT: Only for 2022 F-150 Lightnings equipped from the
+  factory with front
+
+  and rear suspension ride-height sensors (Onboard Scales / Smart Hitch). Ford deleted
+  physical suspension
+
+  height sensors on 2023+ Lightnings; enabling this on a truck without height sensors
+  will trigger a missing
+
+  leveling sensor DTC. Because the Lightning''s height sensors report via the VDM
+  over CAN rather than direct
+
   analog wiring to the HCM, m2_DHL_Input (734-01-02 xxxx xxx*) is set to 1 (CAN Input).
 
-  NOTE ON HCM CRC BITS: The HCM requires secondary CRC calculation bits (in addition to the standard
-  2-nibble checksum) and we do not currently have the offline calculation formula. Our working hypothesis
-  is that setting the CRC bits to all 0s (0000) or all 1s (1111) and then, without resetting or power-cycling
-  the module, immediately running the HCM headlamp calibration routine MIGHT trigger the module to generate
-  the correct CRC bits internally.
+
+  NOTE ON HCM CHECKSUMS: All HCM edits must be written as exact nibble values (never
+  relative offsets). Because the HCM uses a secondary calibration CRC at 734-11-01,
+  an external checksum calculator is required — reach out to Firn on the F-150 Lightning
+  Forum or 14th Gen F-150 Forum to discuss.'
 steps:
 - module: HCM
   address: 734-01-01
-  notes: |-
-    HCM requires CRC bits: try setting CRC bits to 0000 or 1111 and running the calibration routine
-    without resetting the module to see if it generates valid CRC bits.
+  notes: 'Must be entered as exact nibble values. An external HCM checksum calculator
+    is required for 734-11-01 — reach out to Firn on the F-150 Lightning Forum or
+    14th Gen F-150 Forum to discuss.'
   targets:
   - mask: xxx* xxxx xx--
     community_hex: '1'
     type: discrete
-    bits:
-    - bit: 0
-      action: 1
-      feature_name: m2_DHL_Enable (DHLE)
-      target_state: DHLE Leveling ON
+    # Bit positions preserved for future AsBuiltPro HCM CRC calculator support:
+    # bits:
+    # - bit: 0
+    #   action: 1
+    #   feature_name: m2_DHL_Enable (DHLE)
+    #   target_state: DHLE Leveling ON
   - mask: xxxx x*xx xx--
     community_hex: '1'
     type: discrete
-    bits:
-    - bit: 0
-      action: 1
-      feature_name: m2_DHL_Mode (DHLM)
-      target_state: DHLM dynamic
+    # Bit positions preserved for future AsBuiltPro HCM CRC calculator support:
+    # bits:
+    # - bit: 0
+    #   action: 1
+    #   feature_name: m2_DHL_Mode (DHLM)
+    #   target_state: DHLM dynamic
 - module: HCM
   address: 734-01-02
-  notes: |-
-    HCM requires CRC bits: try setting CRC bits to 0000 or 1111 and running the calibration routine
-    without resetting the module to see if it generates valid CRC bits.
+  notes: 'Must be entered as exact nibble value 1 (CAN Input). An external HCM checksum
+    calculator is required for 734-11-01 — reach out to Firn on the F-150 Lightning
+    Forum or 14th Gen F-150 Forum to discuss.'
   targets:
   - mask: xxxx xxx* xx--
     community_hex: '1'
     type: discrete
-    bits:
-    - bit: 0
-      action: 1
-      feature_name: m2_DHL_Input (DHLI)
-      target_state: DHLI Leveling On - CAN Input
+    # Bit positions preserved for future AsBuiltPro HCM CRC calculator support:
+    # bits:
+    # - bit: 0
+    #   action: 1
+    #   feature_name: m2_DHL_Input (DHLI)
+    #   target_state: DHLI Leveling On - CAN Input
 - module: LDCMA
   address: 6F6-01-01
   targets:

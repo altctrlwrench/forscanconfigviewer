@@ -2,9 +2,10 @@ title: Auto Engine Idle Shutdown (AEIS) 30-Minute Timer Disable (Cluster IPC)
 raw_community_title: Disable auto idle shutdown of 30 minutes (2020-2024 only)
 category: General
 platform: F-150
-model_years: 2020-2026
+model_years: 2020-2024
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: subtract 8 from your default value; if default is F, change to 7.
 steps:
 - module: IPC

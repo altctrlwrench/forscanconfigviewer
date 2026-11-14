@@ -128,6 +128,8 @@ def validate_catalog(recipes_dir="recipes", strict=False):
             errors.append(f"[{rel_path}] 'trim' must be a nonempty string when present.")
         if 'source_sheet' in data and not isinstance(data['source_sheet'], str):
             errors.append(f"[{rel_path}] 'source_sheet' must be a string when present.")
+        if 'author' in data and not _nonempty_string(data['author']):
+            errors.append(f"[{rel_path}] 'author' must be a nonempty string when present.")
         if 'validated' in data and type(data['validated']) is not bool:
             errors.append(f"[{rel_path}] 'validated' must be a boolean when present.")
         status = data.get('status')

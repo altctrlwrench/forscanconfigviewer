@@ -5,6 +5,7 @@ platform: F-150 Lightning
 model_years: 2022-2026
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: '[Category: Lighting] [Years: 2022-2026] [Original Title: DRL Brightness Adjustment]
 
   Affects the DRL lamp between the top and bottom headlamps (not the grille light
@@ -27,6 +28,7 @@ steps:
       target_state: LFDRLLCUC DRL_POSITION
       state_aliases:
       - Not Used
+      - DRL Position
     - bit: 1
       action: 1
       feature_name: LF_DRL_Lamp_Ckt_Usage_Cfg (LFDRLLCUC)
@@ -43,6 +45,7 @@ steps:
       target_state: LFDRLLCUC DRL_POSITION
       state_aliases:
       - Not Used
+      - DRL Position
   - mask: xxx* xxxx xx--
     community_hex: '2'
     type: discrete
@@ -55,6 +58,7 @@ steps:
       target_state: RFDRLLCUC DRL_POSITION
       state_aliases:
       - Not Used
+      - DRL Position
     - bit: 1
       action: 1
       feature_name: RF_DRL_Lamp_Ckt_Usage_Cfg (RFDRLLCUC)
@@ -71,4 +75,5 @@ steps:
       target_state: RFDRLLCUC DRL_POSITION
       state_aliases:
       - Not Used
+      - DRL Position
 recipe_version: '1.1'

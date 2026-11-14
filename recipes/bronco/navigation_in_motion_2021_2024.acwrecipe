@@ -5,6 +5,7 @@ platform: Bronco
 model_years: 2021-2024
 trim: All
 source_sheet: 2021+ Bronco Common Items.xlsx
+status: reviewed_untested
 notes: '911 Assist will be disabled, potentially Sirius Travel Link too.
 
   First Letter of Country Code (FLCC)'

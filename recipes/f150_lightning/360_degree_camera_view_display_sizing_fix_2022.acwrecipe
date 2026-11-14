@@ -5,6 +5,7 @@ platform: F-150 Lightning
 model_years: '2022'
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: '[Category: Cameras and ADAS] [Years: 2022] [Original Title: Fix Small 360
   degree camera view]
 
@@ -23,8 +24,11 @@ steps:
       target_state: CVF Reserved
       state_aliases:
       - CVF Reserved
+      - CVF Vertical (Normal Top - Stretched)
     - bit: 0
       action: 1
       feature_name: 360 Camera View Format (CVF)
       target_state: CVF Reserved
+      state_aliases:
+      - CVF Vertical (Normal Top - Stretched)
 recipe_version: '1.1'

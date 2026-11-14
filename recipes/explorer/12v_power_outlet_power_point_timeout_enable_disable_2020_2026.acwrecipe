@@ -5,6 +5,7 @@ platform: Explorer
 model_years: 2020-2026
 trim: All
 source_sheet: 2020-2024 Explorer.xlsx
+status: reviewed_untested
 notes: this will disable the timeout, be aware it will be constant powered and can
   deplete battery.
 steps:

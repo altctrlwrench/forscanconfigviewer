@@ -6,6 +6,7 @@ platform: F-150
 model_years: 2021-2023
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: 'Optional: to add Global Open/Close to Sync 4 Settings menu set this in APIM:
   7D0-09-01- xxxx xExx xx--'''
 steps:
@@ -34,6 +35,10 @@ steps:
       action: 1
       feature_name: Global Close
       target_state: enabled
+      aliases:
+      - Global_Open_Cfg (GOC)
+      state_aliases:
+      - GOC ENABLED
 - module: DDM
   address: 740-06-03
   targets:
@@ -48,6 +53,10 @@ steps:
       action: 1
       feature_name: Global Open
       target_state: enabled
+      aliases:
+      - GlassSoftStop_Cfg (GSSC)
+      state_aliases:
+      - GSSC ENABLED
 - module: PDM
   address: 741-06-03
   notes: To roll down windows press unlock button on fob and then press again and

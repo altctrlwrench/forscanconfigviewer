@@ -5,6 +5,7 @@ platform: Ranger (6G)
 model_years: 2024+
 trim: All
 source_sheet: (2024+) 6G Ranger.xlsx
+status: reviewed_untested
 notes: 'GFHB is Fords term for Matrix Headlights.  Disables the high beam in sections
   to allow it to darken (low beam) where cars are present and high beams where cars
   are not present.
@@ -70,21 +71,23 @@ steps:
       target_state: AHBM Glarefree High Beams
 - module: HCM
   address: 734-01-02
-  notes: '* -> 2=GFHB, 1=OEM (Default)
+  notes: '* -> 2=GFHB, 1=OEM (Default) — Must be entered as exact nibble value 2.
 
     Trim: Lariat/Raptor [Confirmed: moproblems (12/31/24)]'
   targets:
   - mask: x*xx xxxx xx--
+    community_hex: '2'
     type: discrete
-    bits:
-    - bit: 1
-      action: 1
-      feature_name: High_Beam_Handling_Config (HBHC)
-      target_state: HBHC Adaptive Driving Beam
-    - bit: 0
-      action: 0
-      feature_name: High_Beam_Handling_Config (HBHC)
-      target_state: HBHC Adaptive Driving Beam
+    # Bit positions preserved for future AsBuiltPro HCM CRC calculator support:
+    # bits:
+    # - bit: 1
+    #   action: 1
+    #   feature_name: High_Beam_Handling_Config (HBHC)
+    #   target_state: HBHC Adaptive Driving Beam
+    # - bit: 0
+    #   action: 0
+    #   feature_name: High_Beam_Handling_Config (HBHC)
+    #   target_state: HBHC Adaptive Driving Beam
 - module: HCM
   address: 734-01-04
   notes: '* -> A0-D1=GFHB, 11-1E=OEM (Default)

@@ -5,6 +5,7 @@ platform: Explorer
 model_years: 2021-2024
 trim: All
 source_sheet: 2020-2024 Explorer.xlsx
+status: reviewed_untested
 notes: 00=No Outage 01=Outage
 steps:
 - module: BCM

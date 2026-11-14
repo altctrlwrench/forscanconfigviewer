@@ -61,6 +61,7 @@ def compile_catalog(recipes_dir="recipes", dist_dir="dist", skip_validation=Fals
             'trim': data.get('trim', 'All'),
             'validated': data.get('validated'),
             'status': data.get('status'),
+            'author': data.get('author'),
             'source_sheet': data.get('source_sheet', ''),
             'notes': data.get('notes'),
             'steps': data.get('steps', []),

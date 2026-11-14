@@ -5,6 +5,7 @@ platform: Mustang
 model_years: 2024+
 trim: All
 source_sheet: 2024 Mustang Darkhorse (public).xlsx
+status: reviewed_untested
 steps:
 - module: BCMB
   address: 7B7-03-01

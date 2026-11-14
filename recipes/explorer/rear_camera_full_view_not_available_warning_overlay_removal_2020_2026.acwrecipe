@@ -8,6 +8,7 @@ platform: Explorer
 model_years: 2020-2026
 trim: All
 source_sheet: 2020-2024 Explorer.xlsx
+status: reviewed_untested
 notes: negated
 steps:
 - module: APIM
@@ -25,4 +26,8 @@ steps:
       action: 1
       feature_name: RCOD HMI w/o Blackbox (RCODHMIB)
       target_state: Enabled
+      aliases:
+      - Rear Defrost (RD)
+      state_aliases:
+      - RD Off
 recipe_version: '1.1'

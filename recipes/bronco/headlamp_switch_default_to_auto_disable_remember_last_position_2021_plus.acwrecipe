@@ -5,6 +5,7 @@ platform: Bronco
 model_years: 2021+
 trim: All
 source_sheet: 2021+ Bronco Common Items.xlsx
+status: reviewed_untested
 notes: 'HeadlampPosAtIgnOn_Cfg: 00=Auto 01=Last Known
 
   Confirmed: D2dhanover'

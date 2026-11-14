@@ -6,6 +6,7 @@ platform: Explorer
 model_years: 2020-2026
 trim: All
 source_sheet: 2020-2024 Explorer.xlsx
+status: reviewed_untested
 notes: Change 6 to E
 steps:
 - module: APIM
@@ -18,4 +19,8 @@ steps:
       action: 1
       feature_name: AEIS Without Override (AEISWO)
       target_state: Enabled
+      aliases:
+      - Auto Engine Idle Shutdown (AEIS) Without Override (AEISWO)
+      state_aliases:
+      - AEISWO Enabled
 recipe_version: '1.1'

@@ -5,6 +5,7 @@ platform: F-150
 model_years: 2021-2026
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 steps:
 - module: BCM
   address: 726-40-01
@@ -21,6 +22,7 @@ steps:
       target_state: PLBCUC POSITION_ONLY
       state_aliases:
       - Not Used
+      - Position Only
     - bit: 0
       action: 1
       feature_name: Park_Lamps_Body_Ckt_Usage_Cfg (PLBCUC)

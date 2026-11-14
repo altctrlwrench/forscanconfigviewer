@@ -9,9 +9,10 @@ raw_community_title: 'Enable Walk Away Lock (Audible)
   audible-feedback.9073/'
 category: General
 platform: Explorer
-model_years: 2020-2026
+model_years: 2025-2026
 trim: All
-source_sheet: 2020-2024 Explorer.xlsx
+source_sheet: 2025-2026 Explorer.xlsx
+status: reviewed_untested
 notes: 'Source Reference: https://www.explorerst.org/threads/adding-walk-'
 steps:
 - module: BCM

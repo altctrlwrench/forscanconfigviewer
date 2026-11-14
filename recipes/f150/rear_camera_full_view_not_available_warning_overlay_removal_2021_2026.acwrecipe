@@ -6,6 +6,7 @@ platform: F-150
 model_years: 2021-2026
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: 'If your current value is 0 then change to 1, 2 change to 3, 4 change to 5,
   6 change to 7  Note: reset APIM after the change'
 steps:

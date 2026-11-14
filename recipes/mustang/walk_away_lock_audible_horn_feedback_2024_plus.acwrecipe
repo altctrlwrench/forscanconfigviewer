@@ -3,8 +3,9 @@ raw_community_title: Walk Away Lock Feedback (horn sounds)
 category: Locks and Security
 platform: Mustang
 model_years: 2024+
-trim: All
+trim: Job 2+
 source_sheet: 2024 Mustang Darkhorse (public).xlsx
+status: reviewed_untested
 steps:
 - module: BCM
   address: 726-91-01

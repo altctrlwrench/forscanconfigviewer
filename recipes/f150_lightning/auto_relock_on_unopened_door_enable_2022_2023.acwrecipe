@@ -1,0 +1,129 @@
+title: Auto Relock on Unopened Door Enable
+raw_community_title: ⚡ [Lightning] Auto Relock on Unopened Door Enable
+category: Locks and Security
+platform: F-150 Lightning
+model_years: 2022-2023
+trim: All
+source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
+notes: '[Category: Locks and Security] [Years: 2022-2026] [Original Title: Auto Relock]
+
+  If you unlock on the fob and do not open a door within the timer, the truck re-locks
+  automatically. Adds Relock toggle to Lock Settings.'
+steps:
+- module: BCM
+  address: 726-20-01
+  targets:
+  - mask: x*xx xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_1] (AUTORELOCK_PERS_1)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [PERS_1]
+      target_state: AUTORELOCK_PERS_1 ENABLE
+      state_aliases:
+      - Enable
+  - mask: xxx* xxxx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_2] (AUTORELOCK_PERS_2)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [PERS_2]
+      target_state: AUTORELOCK_PERS_2 ENABLE
+      state_aliases:
+      - Enable
+  - mask: xxxx x*xx xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_3] (AUTORELOCK_PERS_3)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [PERS_3]
+      target_state: AUTORELOCK_PERS_3 ENABLE
+      state_aliases:
+      - Enable
+  - mask: xxxx xxx* xx--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUTORELOCK] [PERS_4] (AUTORELOCK_PERS_4)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [PERS_4]
+      target_state: AUTORELOCK_PERS_4 ENABLE
+      state_aliases:
+      - Enable
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: Feat_Cfg [AUTORELOCK] [VEHICLE] (AUTORELOCK_VEHICLE)
+      aliases:
+      - Feat_Cfg [AUTORELOCK] [VEHICLE]
+      target_state: AUTORELOCK_VEHICLE ENABLE
+      state_aliases:
+      - Enable
+- module: BCM
+  address: 726-27-01
+  targets:
+  - mask: xxxx xxxx x*--
+    community_hex: '1'
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: FeatLst_to_BCM_Feature_InitVal [AUTORELOCK] (AUTORELOCK)
+      aliases:
+      - FeatLst_to_BCM_Feature_InitVal [AUTORELOCK]
+      target_state: AUTORELOCK ENABLE
+      state_aliases:
+      - Enable
+- module: BCM
+  address: 726-58-02
+  targets:
+  - mask: xxx* xxxx xx--
+    type: discrete
+    bits:
+    - bit: 0
+      action: 1
+      feature_name: AutoRelock_Timeduration_Cfg (ARTC)
+      aliases:
+      - AutoRelock_Timeduration_Cfg
+      target_state: ARTC AUTORELOCK_3_30SEC
+      state_aliases:
+      - AutoRelock 30 Seconds
+- module: APIM
+  address: 7D0-09-01
+  targets:
+  - mask: xx*x xxxx xx--
+    community_hex: '3'
+    type: discrete
+    bits:
+    - bit: 3
+      action: 1
+      feature_name: Autolock Control Function (ACF)
+      target_state: ACF Enabled
+    - bit: 1
+      action: 1
+      feature_name: Auto Relock (AR)
+      target_state: AR Enabled
+    - bit: 0
+      action: 1
+      feature_name: Autounlock Control Function (ACF)
+      aliases:
+      - Autounlock Control Function (AUCF)
+      target_state: ACF Enabled
+      state_aliases:
+      - AUCF Enabled
+recipe_version: '1.1'

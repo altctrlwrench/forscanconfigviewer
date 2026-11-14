@@ -10,6 +10,7 @@ platform: Explorer
 model_years: 2020-2026
 trim: All
 source_sheet: 2020-2024 Explorer.xlsx
+status: reviewed_untested
 notes: "[BCM] - - Enable the following from DISABLED to ENABLED in BdyCM (easy way):\
   \ \n-Approach Detection - Personal 1\n-Approach Detection - Personal 2\n-Approach\
   \ Detection - Personal 3\n-Approach Detection - Personal 4\n-Approach Detection\

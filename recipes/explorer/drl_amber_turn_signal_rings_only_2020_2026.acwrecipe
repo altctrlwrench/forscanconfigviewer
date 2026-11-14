@@ -5,6 +5,7 @@ platform: Explorer
 model_years: 2020-2026
 trim: All
 source_sheet: 2020-2024 Explorer.xlsx
+status: reviewed_untested
 notes: 'Sets the White DRL to fixed position (off when the car is in normal drive
   mode during daytime)
 

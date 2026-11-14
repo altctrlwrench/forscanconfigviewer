@@ -5,6 +5,7 @@ platform: F-150
 model_years: 2021-2026
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 steps:
 - module: APIM
   address: 7D0-02-03
@@ -19,10 +20,14 @@ steps:
       aliases:
       - Smart Surface Themes (SST)
       target_state: QTHMIT Smart Surface
+      state_aliases:
+      - SST Smart Surface Truck
     - bit: 0
       action: 1
       feature_name: QT HMI Themes (QTHMIT)
       aliases:
       - Smart Surface Themes (SST)
       target_state: QTHMIT Smart Surface
+      state_aliases:
+      - SST Smart Surface Truck
 recipe_version: '1.1'

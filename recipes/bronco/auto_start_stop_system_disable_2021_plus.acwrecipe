@@ -5,6 +5,7 @@ platform: Bronco
 model_years: 2021+
 trim: All
 source_sheet: 2021+ Bronco Common Items.xlsx
+status: reviewed_untested
 notes: 'Start / Stop: 00=Disabled 01=Enabled, Angle Inhibit Enabled 02=Enabled, Angle
   Inhibit Disabled
 

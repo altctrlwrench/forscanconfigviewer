@@ -5,6 +5,7 @@ platform: F-150 Lightning
 model_years: 2022-2026
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: '[Category: Powertrain and Drivetrain] [Years: 2022-2026] [Original Title:
   2021-26 - Adding OEM Trailer Brake Controller (Lightning)]
 
@@ -68,4 +69,5 @@ steps:
       target_state: VITBM Present
       state_aliases:
       - VITBM Not Present
+      - VITTP Yes
 recipe_version: '1.1'

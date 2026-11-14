@@ -2,9 +2,10 @@ title: Glare-Free Matrix High Beams (Adaptive Driving Beam)
 raw_community_title: ⚡ [Lightning] Glare-Free High Beams (Matrix LED Enable)
 category: Lighting
 platform: F-150 Lightning
-model_years: 2022-2026
+model_years: 2022-2023
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: '[Category: Lighting] [Years: 2022-2026] [Original Title: Glare-free headlights]
 
   Enhances Auto High Beam behavior to provide localized dimming of brights based on
@@ -51,10 +52,13 @@ steps:
       target_state: MFCHB GFHB
       state_aliases:
       - MFCHB GFHB
+      - MFCHB GFHB_ADB
     - bit: 2
       action: 0
       feature_name: ModuleFeatureCfg_HighBeam (MFCHB)
       target_state: MFCHB GFHB
+      state_aliases:
+      - MFCHB GFHB_ADB
 - module: SCCM
   address: 724-04-01
   targets:
@@ -102,38 +106,43 @@ steps:
       target_state: AHBM Adaptive Driving Beams
 - module: HCM
   address: 734-01-02
+  notes: Must be entered as exact nibble value 2 (do NOT use an offset).
   targets:
   - mask: xxxx x*xx xx--
     community_hex: '2'
     type: discrete
-    bits:
-    - bit: 1
-      action: 1
-      feature_name: Config_AhbFeature (CAF)
-      target_state: CAF ADB_GfHB
-    - bit: 0
-      action: 0
-      feature_name: Config_AhbFeature (CAF)
-      target_state: CAF ADB_GfHB
+    # Bit positions preserved for future AsBuiltPro HCM CRC calculator support:
+    # bits:
+    # - bit: 1
+    #   action: 1
+    #   feature_name: Config_AhbFeature (CAF)
+    #   target_state: CAF ADB_GfHB
+    # - bit: 0
+    #   action: 0
+    #   feature_name: Config_AhbFeature (CAF)
+    #   target_state: CAF ADB_GfHB
 - module: HCM
   address: 734-03-02
+  notes: Must be entered as exact nibble values (do NOT use offsets).
   targets:
   - mask: xxxx xxx* xx--
     community_hex: '1'
     type: discrete
-    bits:
-    - bit: 0
-      action: 1
-      feature_name: m2_Zone_Lighting (ZL)
-      target_state: ZL Enable
+    # Bit positions preserved for future AsBuiltPro HCM CRC calculator support:
+    # bits:
+    # - bit: 0
+    #   action: 1
+    #   feature_name: m2_Zone_Lighting (ZL)
+    #   target_state: ZL Enable
   - mask: xxxx xxxx x*--
     community_hex: '1'
     type: discrete
-    bits:
-    - bit: 0
-      action: 1
-      feature_name: m2_ADB_DBL_combine (ADBDBL)
-      target_state: ADBDBL ADB/DBL Combined
+    # Bit positions preserved for future AsBuiltPro HCM CRC calculator support:
+    # bits:
+    # - bit: 0
+    #   action: 1
+    #   feature_name: m2_ADB_DBL_combine (ADBDBL)
+    #   target_state: ADBDBL ADB/DBL Combined
 - module: HCM
   address: 734-11-01
   notes: Calibration strategy data block (0735 89--)

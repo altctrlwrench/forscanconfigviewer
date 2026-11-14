@@ -5,6 +5,7 @@ platform: F-150
 model_years: 2024-2026
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: 0=No Outage (target setting) 01=Outage. Set to No Outage if changing to LED
 steps:
 - module: BCM

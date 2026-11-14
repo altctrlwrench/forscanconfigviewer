@@ -5,6 +5,7 @@ platform: Super Duty
 model_years: 2023-2026
 trim: All
 source_sheet: 2023-2026 Super Duty Common Items.xlsx
+status: reviewed_untested
 notes: Subtract 8 from current value (Hex)
 steps:
 - module: IPC

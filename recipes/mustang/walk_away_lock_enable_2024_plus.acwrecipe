@@ -3,8 +3,9 @@ raw_community_title: Walk Away Lock (Job2 Mustang or Job1 that had a BCM update)
 category: Locks and Security
 platform: Mustang
 model_years: 2024+
-trim: All
+trim: Job 2+
 source_sheet: 2024 Mustang Darkhorse (public).xlsx
+status: reviewed_untested
 notes: No data tables for Job 1, unverified.
 steps:
 - module: BCM

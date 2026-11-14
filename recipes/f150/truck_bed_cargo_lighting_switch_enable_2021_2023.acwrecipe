@@ -2,9 +2,10 @@ title: Truck Bed Cargo Lighting Switch Enable
 raw_community_title: 2021-23 Enabling Bed Lights/Switch
 category: Lighting
 platform: F-150
-model_years: 2021-2026
+model_years: 2021-2023
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 steps:
 - module: BCM
   address: 726-46-01
@@ -50,6 +51,7 @@ steps:
       target_state: ECSIC MAN_PUDDLE
       state_aliases:
       - 'Null'
+      - MAN_Puddle
   - mask: xx*x xxxx xx--
     community_hex: '0'
     type: discrete
@@ -65,6 +67,7 @@ steps:
       target_state: RECMC BEDLIGHT
       state_aliases:
       - 'Null'
+      - Bed Light
     - bit: 0
       action: 1
       feature_name: Rear_Ext_Courtesy_Mode_Cfg (RECMC)

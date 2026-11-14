@@ -6,6 +6,7 @@ platform: Mustang
 model_years: 2024+
 trim: All
 source_sheet: 2024 Mustang Darkhorse (public).xlsx
+status: reviewed_untested
 notes: '*= 1 for 30 seconds, 2 for 45 seconds
 
   optional - adds Autorelock to settings, vehicle, locks'

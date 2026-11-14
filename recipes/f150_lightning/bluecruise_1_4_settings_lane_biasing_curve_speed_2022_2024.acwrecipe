@@ -6,6 +6,7 @@ platform: F-150 Lightning
 model_years: 2022-2024
 trim: All
 source_sheet: 2021-2026 F150.xlsx
+status: reviewed_untested
 notes: '[Category: Cameras and ADAS] [Years: 2022-2024] [Original Title: Enable BlueCruise
   1.4]
 
