@@ -10578,12 +10578,12 @@
       "platforms": {
         "F-150 Lightning": [
           {
-            "file": "f150_lightning/predictive_curve_lighting_map_camera_bending_2022_2026.acwrecipe",
+            "file": "f150_lightning/predictive_curve_lighting_map_camera_bending_2022_2025.acwrecipe",
             "title": "Predictive Curve Lighting (Map & Camera-Based Dynamic Bending)",
             "raw_community_title": "Predictive Curve Lighting (Adaptive Front Lighting System)",
             "category": "Lighting",
             "platform": "F-150 Lightning",
-            "model_years": "2022-2026",
+            "model_years": "2022-2025",
             "trim": "All",
             "validated": true,
             "status": "verified",
@@ -25720,12 +25720,12 @@
       "recipe_version": "1.1"
     },
     {
-      "file": "f150_lightning/predictive_curve_lighting_map_camera_bending_2022_2026.acwrecipe",
+      "file": "f150_lightning/predictive_curve_lighting_map_camera_bending_2022_2025.acwrecipe",
       "title": "Predictive Curve Lighting (Map & Camera-Based Dynamic Bending)",
       "raw_community_title": "Predictive Curve Lighting (Adaptive Front Lighting System)",
       "category": "Lighting",
       "platform": "F-150 Lightning",
-      "model_years": "2022-2026",
+      "model_years": "2022-2025",
       "trim": "All",
       "validated": true,
       "status": "verified",
