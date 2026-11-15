@@ -6,7 +6,7 @@
     "schema_valid_recipes": 213,
     "validated_recipes": 1,
     "unverified_recipes": 212,
-    "untested_recipes": 3,
+    "untested_recipes": 2,
     "unique_canonical_features": 111,
     "supported_platforms": [
       "Bronco",
@@ -12777,13 +12777,37 @@
             "platform": "F-150 Lightning",
             "model_years": "2022-2026",
             "trim": "Lariat / Platinum / Flash (Matrix LED Headlamps)",
-            "status": "untested",
-            "source_sheet": "Euro Kuga Mk3.5 Matrix LED Comparison & Livnitup Master Database",
-            "notes": "UNTESTED / EXPERIMENTAL: Enables two camera-driven road sign lighting features used on European Ford\nMatrix LED headlamps. (1) Sign-Based Light Mode (SBLM) uses the IPMA front camera to recognize\napproaching junctions, roundabouts, yield, and stop signs and pre-widens the headlight beam into\nthe intersection. (2) Traffic Sign Deglare (TSDG) dims the specific Matrix high-beam LEDs shining\ndirectly onto highly reflective road signs so they do not dazzle the driver when Glare-Free High\nBeams are active. There is no separate APIM toggle specifically for TSDG (it operates automatically\nwhenever Glare-Free High Beams are switched on), but APIM 7D0-09-02 (Bit 3 of Nibble 9) is included\nto enable the Traffic Sign Recognition (TSR) toggle in SYNC 4 if not already enabled.\n\nNOTE ON HCM CHECKSUMS: All HCM edits must be written as exact nibble values (never relative offsets). Because the HCM uses a secondary calibration CRC at 734-11-01, an external checksum calculator is required \u2014 reach out to Firn on the F-150 Lightning Forum or 14th Gen F-150 Forum to discuss.\n\nNote that HCM 734-05-01 xxxx xxx* also supports value 2 (SLME Traffic sign deglare ON) if testing against value 1 (SLME Enable).",
+            "validated": false,
+            "status": "unvalidated",
+            "author": "Kyle / AsBuiltPro",
+            "source_sheet": "Euro Kuga Mk3.5 Matrix LED & Euro Ranger Platinum Comparison + Livnitup Master Database",
+            "notes": "Enables two camera-driven road sign lighting features used on European Ford Matrix LED headlamps alongside the required IPMA camera sign-recognition feeds (MFCTSR & MFCTSRSY):\n(1) Sign-Based Light Mode (SBLM) uses the IPMA front camera to recognize approaching junctions, roundabouts, yield, and stop signs and pre-widens the headlight beam into the intersection.\n(2) Traffic Sign Deglare (TSDG) dims the specific Matrix high-beam LEDs shining directly onto highly reflective road signs so they do not dazzle the driver when Glare-Free High Beams are actively engaged.\nNOTE \u2014 HCM CHECKSUM PLACEHOLDERS: The 734-11-01 checksum nibbles below are currently set to placeholder zeros (0000 00) because the exact GF(2) CRC for this combination has not been finalized yet. Do NOT flash the HCM changes without computing a valid 734-11-01 CRC for your configuration, or the HCM will set U2100 / B104A.\nNOTE \u2014 734-05-01 & 734-01-02: Euro Kuga Mk3.5 Matrix leaves HCM 734-01-02 nibble 1 (TSDGE) at 0 and sets 734-05-01 nibble 7 (SLME) to 1 (SLME Enable); if testing 2 (SLME Traffic sign deglare ON) produces no SBLM intersection widening, test 1 (or 3).",
             "steps": [
               {
                 "module": "IPMA",
                 "address": "706-01-01",
+                "notes": "Add +2 to existing nibble 2 value (e.g., 0 -> 2, or 1 -> 3 if IACC is enabled) to enable ModuleFeatureCfg_TSR (MFCTSR = SLOIF).",
+                "targets": [
+                  {
+                    "mask": "xx*x xxxx xx--",
+                    "community_hex": "2",
+                    "offset_hint": "+2",
+                    "type": "discrete",
+                    "bits": [
+                      {
+                        "bit": 1,
+                        "action": 1,
+                        "feature_name": "ModuleFeatureCfg_TSR (MFCTSR)",
+                        "target_state": "MFCTSR SLOIF"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "module": "IPMA",
+                "address": "706-01-01",
+                "notes": "Add +2 to existing nibble 3 value (e.g., 0 -> 2) to enable ModuleFeatureCfg_SBLM.",
                 "targets": [
                   {
                     "mask": "xxx* xxxx xx--",
@@ -12802,8 +12826,93 @@
                 ]
               },
               {
+                "module": "IPMA",
+                "address": "706-01-02",
+                "notes": "Add +8 to existing nibble 2 value (e.g., 0 -> 8) to enable Stop/Yield Sign Recognition in the IPMA.",
+                "targets": [
+                  {
+                    "mask": "xx*x xxxx xx--",
+                    "community_hex": "8",
+                    "offset_hint": "+8",
+                    "type": "discrete",
+                    "bits": [
+                      {
+                        "bit": 3,
+                        "action": 1,
+                        "feature_name": "ModuleFeatureCfg_TSR_StopYield (MFCTSRSY)",
+                        "target_state": "MFCTSRSY Enabled"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "module": "IPC",
+                "address": "720-03-02",
+                "notes": "Add +8 to existing nibble 2 value (e.g., 4 -> C) to enable Traffic Sign Recognition in the IPC.",
+                "targets": [
+                  {
+                    "mask": "xx*x xx--",
+                    "community_hex": "C",
+                    "offset_hint": "+8",
+                    "type": "discrete",
+                    "bits": [
+                      {
+                        "bit": 3,
+                        "action": 1,
+                        "feature_name": "Traffic Sign Recognition (TSR)",
+                        "target_state": "TSR enabled"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "module": "IPC",
+                "address": "720-09-02",
+                "notes": "Add +1 to existing value: 0 -> 1 (trucks without ACC, e.g. Pro) or 2 -> 3 (trucks with Intelligent ACC). Writing 1 on an ACC-equipped truck will disable Intelligent ACC in the IPC.",
+                "targets": [
+                  {
+                    "mask": "*xxx xx--",
+                    "community_hex": "1",
+                    "offset_hint": "+1",
+                    "type": "discrete",
+                    "bits": [
+                      {
+                        "bit": 0,
+                        "action": 1,
+                        "feature_name": "Adaptive Headlamps Feature (AHF)",
+                        "target_state": "AHF enabled"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "module": "IPC",
+                "address": "720-10-01",
+                "notes": "Add +2 to existing value (0 -> 2 across all Lightnings).",
+                "targets": [
+                  {
+                    "mask": "xx*x xxxx xx--",
+                    "community_hex": "2",
+                    "offset_hint": "+2",
+                    "type": "discrete",
+                    "bits": [
+                      {
+                        "bit": 1,
+                        "action": 1,
+                        "feature_name": "Predictive Lights (PL)",
+                        "target_state": "PL enabled"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
                 "module": "APIM",
                 "address": "7D0-09-02",
+                "notes": "Add +8 to existing nibble 9 value (e.g., 5 -> D) to enable Traffic Sign Recognition toggle in SYNC 4.",
                 "targets": [
                   {
                     "mask": "xxxx xxxx x*--",
@@ -12824,23 +12933,76 @@
               {
                 "module": "HCM",
                 "address": "734-01-02",
-                "notes": "Set to exact nibble value 1 to enable Traffic Sign Deglare (TSDGE Enable). An external HCM checksum calculator is required for 734-11-01 \u2014 reach out to Firn on the F-150 Lightning Forum or 14th Gen F-150 Forum to discuss.",
+                "notes": "Set to exact nibble value 1 to enable m2_TSDG_Enable (TSDGE Enable). Note: Euro Kuga Mk3.5 Matrix and Euro Ranger Platinum leave this at 0. Requires valid 734-11-01 CRC.",
                 "targets": [
                   {
                     "mask": "x*xx xxxx xx--",
                     "community_hex": "1",
-                    "type": "discrete"
+                    "type": "discrete",
+                    "bits": [
+                      {
+                        "bit": 0,
+                        "action": 1,
+                        "feature_name": "m2_TSDG_Enable (TSDGE)",
+                        "target_state": "TSDGE Enable"
+                      }
+                    ]
                   }
                 ]
               },
               {
                 "module": "HCM",
                 "address": "734-05-01",
-                "notes": "Set to exact nibble value 1 (SLME Enable) or 2 (SLME Traffic sign deglare ON). An external HCM checksum calculator is required for 734-11-01 \u2014 reach out to Firn on the F-150 Lightning Forum or 14th Gen F-150 Forum to discuss.",
+                "notes": "Set to exact nibble value 2 (SLME Traffic sign deglare ON) or 1 (SLME Enable, matching Euro Kuga Matrix). Requires valid 734-11-01 CRC.",
                 "targets": [
                   {
                     "mask": "xxxx xxx* xx--",
-                    "community_hex": "1",
+                    "community_hex": "2",
+                    "type": "discrete",
+                    "bits": [
+                      {
+                        "bit": 1,
+                        "action": 1,
+                        "feature_name": "m2_SbLM_Enable (SLME)",
+                        "target_state": "SLME Traffic sign deglare ON"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "module": "HCM",
+                "address": "734-11-01",
+                "notes": "PLACEHOLDER HCM calibration CRC & line checksum block (0000 00) \u2014 exact CRC values are not yet finalized for this configuration. Replace with the recalculated 16-bit CRC + line checksum before flashing.",
+                "targets": [
+                  {
+                    "mask": "*xxx xxxx xx--",
+                    "community_hex": "0",
+                    "type": "discrete"
+                  },
+                  {
+                    "mask": "x*xx xxxx xx--",
+                    "community_hex": "0",
+                    "type": "discrete"
+                  },
+                  {
+                    "mask": "xx*x xxxx xx--",
+                    "community_hex": "0",
+                    "type": "discrete"
+                  },
+                  {
+                    "mask": "xxx* xxxx xx--",
+                    "community_hex": "0",
+                    "type": "discrete"
+                  },
+                  {
+                    "mask": "xxxx *xxx xx--",
+                    "community_hex": "0",
+                    "type": "discrete"
+                  },
+                  {
+                    "mask": "xxxx x*xx xx--",
+                    "community_hex": "0",
                     "type": "discrete"
                   }
                 ]
@@ -26041,13 +26203,37 @@
       "platform": "F-150 Lightning",
       "model_years": "2022-2026",
       "trim": "Lariat / Platinum / Flash (Matrix LED Headlamps)",
-      "status": "untested",
-      "source_sheet": "Euro Kuga Mk3.5 Matrix LED Comparison & Livnitup Master Database",
-      "notes": "UNTESTED / EXPERIMENTAL: Enables two camera-driven road sign lighting features used on European Ford\nMatrix LED headlamps. (1) Sign-Based Light Mode (SBLM) uses the IPMA front camera to recognize\napproaching junctions, roundabouts, yield, and stop signs and pre-widens the headlight beam into\nthe intersection. (2) Traffic Sign Deglare (TSDG) dims the specific Matrix high-beam LEDs shining\ndirectly onto highly reflective road signs so they do not dazzle the driver when Glare-Free High\nBeams are active. There is no separate APIM toggle specifically for TSDG (it operates automatically\nwhenever Glare-Free High Beams are switched on), but APIM 7D0-09-02 (Bit 3 of Nibble 9) is included\nto enable the Traffic Sign Recognition (TSR) toggle in SYNC 4 if not already enabled.\n\nNOTE ON HCM CHECKSUMS: All HCM edits must be written as exact nibble values (never relative offsets). Because the HCM uses a secondary calibration CRC at 734-11-01, an external checksum calculator is required \u2014 reach out to Firn on the F-150 Lightning Forum or 14th Gen F-150 Forum to discuss.\n\nNote that HCM 734-05-01 xxxx xxx* also supports value 2 (SLME Traffic sign deglare ON) if testing against value 1 (SLME Enable).",
+      "validated": false,
+      "status": "unvalidated",
+      "author": "Kyle / AsBuiltPro",
+      "source_sheet": "Euro Kuga Mk3.5 Matrix LED & Euro Ranger Platinum Comparison + Livnitup Master Database",
+      "notes": "Enables two camera-driven road sign lighting features used on European Ford Matrix LED headlamps alongside the required IPMA camera sign-recognition feeds (MFCTSR & MFCTSRSY):\n(1) Sign-Based Light Mode (SBLM) uses the IPMA front camera to recognize approaching junctions, roundabouts, yield, and stop signs and pre-widens the headlight beam into the intersection.\n(2) Traffic Sign Deglare (TSDG) dims the specific Matrix high-beam LEDs shining directly onto highly reflective road signs so they do not dazzle the driver when Glare-Free High Beams are actively engaged.\nNOTE \u2014 HCM CHECKSUM PLACEHOLDERS: The 734-11-01 checksum nibbles below are currently set to placeholder zeros (0000 00) because the exact GF(2) CRC for this combination has not been finalized yet. Do NOT flash the HCM changes without computing a valid 734-11-01 CRC for your configuration, or the HCM will set U2100 / B104A.\nNOTE \u2014 734-05-01 & 734-01-02: Euro Kuga Mk3.5 Matrix leaves HCM 734-01-02 nibble 1 (TSDGE) at 0 and sets 734-05-01 nibble 7 (SLME) to 1 (SLME Enable); if testing 2 (SLME Traffic sign deglare ON) produces no SBLM intersection widening, test 1 (or 3).",
       "steps": [
         {
           "module": "IPMA",
           "address": "706-01-01",
+          "notes": "Add +2 to existing nibble 2 value (e.g., 0 -> 2, or 1 -> 3 if IACC is enabled) to enable ModuleFeatureCfg_TSR (MFCTSR = SLOIF).",
+          "targets": [
+            {
+              "mask": "xx*x xxxx xx--",
+              "community_hex": "2",
+              "offset_hint": "+2",
+              "type": "discrete",
+              "bits": [
+                {
+                  "bit": 1,
+                  "action": 1,
+                  "feature_name": "ModuleFeatureCfg_TSR (MFCTSR)",
+                  "target_state": "MFCTSR SLOIF"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "module": "IPMA",
+          "address": "706-01-01",
+          "notes": "Add +2 to existing nibble 3 value (e.g., 0 -> 2) to enable ModuleFeatureCfg_SBLM.",
           "targets": [
             {
               "mask": "xxx* xxxx xx--",
@@ -26066,8 +26252,93 @@
           ]
         },
         {
+          "module": "IPMA",
+          "address": "706-01-02",
+          "notes": "Add +8 to existing nibble 2 value (e.g., 0 -> 8) to enable Stop/Yield Sign Recognition in the IPMA.",
+          "targets": [
+            {
+              "mask": "xx*x xxxx xx--",
+              "community_hex": "8",
+              "offset_hint": "+8",
+              "type": "discrete",
+              "bits": [
+                {
+                  "bit": 3,
+                  "action": 1,
+                  "feature_name": "ModuleFeatureCfg_TSR_StopYield (MFCTSRSY)",
+                  "target_state": "MFCTSRSY Enabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "module": "IPC",
+          "address": "720-03-02",
+          "notes": "Add +8 to existing nibble 2 value (e.g., 4 -> C) to enable Traffic Sign Recognition in the IPC.",
+          "targets": [
+            {
+              "mask": "xx*x xx--",
+              "community_hex": "C",
+              "offset_hint": "+8",
+              "type": "discrete",
+              "bits": [
+                {
+                  "bit": 3,
+                  "action": 1,
+                  "feature_name": "Traffic Sign Recognition (TSR)",
+                  "target_state": "TSR enabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "module": "IPC",
+          "address": "720-09-02",
+          "notes": "Add +1 to existing value: 0 -> 1 (trucks without ACC, e.g. Pro) or 2 -> 3 (trucks with Intelligent ACC). Writing 1 on an ACC-equipped truck will disable Intelligent ACC in the IPC.",
+          "targets": [
+            {
+              "mask": "*xxx xx--",
+              "community_hex": "1",
+              "offset_hint": "+1",
+              "type": "discrete",
+              "bits": [
+                {
+                  "bit": 0,
+                  "action": 1,
+                  "feature_name": "Adaptive Headlamps Feature (AHF)",
+                  "target_state": "AHF enabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "module": "IPC",
+          "address": "720-10-01",
+          "notes": "Add +2 to existing value (0 -> 2 across all Lightnings).",
+          "targets": [
+            {
+              "mask": "xx*x xxxx xx--",
+              "community_hex": "2",
+              "offset_hint": "+2",
+              "type": "discrete",
+              "bits": [
+                {
+                  "bit": 1,
+                  "action": 1,
+                  "feature_name": "Predictive Lights (PL)",
+                  "target_state": "PL enabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "module": "APIM",
           "address": "7D0-09-02",
+          "notes": "Add +8 to existing nibble 9 value (e.g., 5 -> D) to enable Traffic Sign Recognition toggle in SYNC 4.",
           "targets": [
             {
               "mask": "xxxx xxxx x*--",
@@ -26088,23 +26359,76 @@
         {
           "module": "HCM",
           "address": "734-01-02",
-          "notes": "Set to exact nibble value 1 to enable Traffic Sign Deglare (TSDGE Enable). An external HCM checksum calculator is required for 734-11-01 \u2014 reach out to Firn on the F-150 Lightning Forum or 14th Gen F-150 Forum to discuss.",
+          "notes": "Set to exact nibble value 1 to enable m2_TSDG_Enable (TSDGE Enable). Note: Euro Kuga Mk3.5 Matrix and Euro Ranger Platinum leave this at 0. Requires valid 734-11-01 CRC.",
           "targets": [
             {
               "mask": "x*xx xxxx xx--",
               "community_hex": "1",
-              "type": "discrete"
+              "type": "discrete",
+              "bits": [
+                {
+                  "bit": 0,
+                  "action": 1,
+                  "feature_name": "m2_TSDG_Enable (TSDGE)",
+                  "target_state": "TSDGE Enable"
+                }
+              ]
             }
           ]
         },
         {
           "module": "HCM",
           "address": "734-05-01",
-          "notes": "Set to exact nibble value 1 (SLME Enable) or 2 (SLME Traffic sign deglare ON). An external HCM checksum calculator is required for 734-11-01 \u2014 reach out to Firn on the F-150 Lightning Forum or 14th Gen F-150 Forum to discuss.",
+          "notes": "Set to exact nibble value 2 (SLME Traffic sign deglare ON) or 1 (SLME Enable, matching Euro Kuga Matrix). Requires valid 734-11-01 CRC.",
           "targets": [
             {
               "mask": "xxxx xxx* xx--",
-              "community_hex": "1",
+              "community_hex": "2",
+              "type": "discrete",
+              "bits": [
+                {
+                  "bit": 1,
+                  "action": 1,
+                  "feature_name": "m2_SbLM_Enable (SLME)",
+                  "target_state": "SLME Traffic sign deglare ON"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "module": "HCM",
+          "address": "734-11-01",
+          "notes": "PLACEHOLDER HCM calibration CRC & line checksum block (0000 00) \u2014 exact CRC values are not yet finalized for this configuration. Replace with the recalculated 16-bit CRC + line checksum before flashing.",
+          "targets": [
+            {
+              "mask": "*xxx xxxx xx--",
+              "community_hex": "0",
+              "type": "discrete"
+            },
+            {
+              "mask": "x*xx xxxx xx--",
+              "community_hex": "0",
+              "type": "discrete"
+            },
+            {
+              "mask": "xx*x xxxx xx--",
+              "community_hex": "0",
+              "type": "discrete"
+            },
+            {
+              "mask": "xxx* xxxx xx--",
+              "community_hex": "0",
+              "type": "discrete"
+            },
+            {
+              "mask": "xxxx *xxx xx--",
+              "community_hex": "0",
+              "type": "discrete"
+            },
+            {
+              "mask": "xxxx x*xx xx--",
+              "community_hex": "0",
               "type": "discrete"
             }
           ]
