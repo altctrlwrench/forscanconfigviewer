@@ -618,14 +618,14 @@
     },
     {
       "title": "Audio System EQ Flattening & Subwoofer Calibration",
-      "category": "Lighting",
+      "category": "Convenience and Electrical",
       "platforms": {
         "Bronco": [
           {
             "file": "bronco/audio_system_eq_flattening_subwoofer_calibration_2021_plus.acwrecipe",
             "title": "Audio System EQ Flattening & Subwoofer Calibration",
             "raw_community_title": "Equalizer - assist with rear speakers and subwoofer",
-            "category": "Lighting",
+            "category": "Convenience and Electrical",
             "platform": "Bronco",
             "model_years": "2021+",
             "trim": "All",
@@ -16619,7 +16619,7 @@
       "file": "bronco/audio_system_eq_flattening_subwoofer_calibration_2021_plus.acwrecipe",
       "title": "Audio System EQ Flattening & Subwoofer Calibration",
       "raw_community_title": "Equalizer - assist with rear speakers and subwoofer",
-      "category": "Lighting",
+      "category": "Convenience and Electrical",
       "platform": "Bronco",
       "model_years": "2021+",
       "trim": "All",
