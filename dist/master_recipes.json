@@ -707,14 +707,14 @@
     },
     {
       "title": "Audio System Equalizer Configuration (non-LUX)",
-      "category": "Lighting",
+      "category": "Convenience and Electrical",
       "platforms": {
         "Bronco": [
           {
             "file": "bronco/audio_system_equalizer_configuration_non_lux_2021_plus.acwrecipe",
             "title": "Audio System Equalizer Configuration (non-LUX)",
             "raw_community_title": "Base EQ configuration (non-LUX)",
-            "category": "Lighting",
+            "category": "Convenience and Electrical",
             "platform": "Bronco",
             "model_years": "2021+",
             "trim": "All",
@@ -16700,7 +16700,7 @@
       "file": "bronco/audio_system_equalizer_configuration_non_lux_2021_plus.acwrecipe",
       "title": "Audio System Equalizer Configuration (non-LUX)",
       "raw_community_title": "Base EQ configuration (non-LUX)",
-      "category": "Lighting",
+      "category": "Convenience and Electrical",
       "platform": "Bronco",
       "model_years": "2021+",
       "trim": "All",
